@@ -12,7 +12,15 @@ function NavItem({ children, href, selected }) {
 }
 
 
-export default function Header() {
+export default function Header({ currentPath = '/' }) {
+  const navItems = [
+    { label: 'Home', href: '/' },
+    { label: 'About Us', href: '/about-us' },
+    { label: 'Highschool', href: '/highschool' },
+    { label: 'University', href: '/university' },
+    { label: 'Lead Program', href: '/lead-program' },
+    { label: 'Partners', href: '/partners' },
+  ];
   return (
     <header className="bg-secondary flex justify-between items-center px-16 h-16">
       <div className="flex flex-col py-2 mr-4">
@@ -22,12 +30,10 @@ export default function Header() {
         </div>
         <span className="text-white font-semibold">合领教育</span>
       </div>
-      <NavItem selected>Home</NavItem>
-      <NavItem>About Us</NavItem>
-      <NavItem>Highschool</NavItem>
-      <NavItem>University</NavItem>
-      <NavItem>Lead Program</NavItem>
-      <NavItem>Partners</NavItem>
+      {navItems.map(
+        ({ label, href }) =>
+          <NavItem key={label} href={href} selected={currentPath === href}>{label}</NavItem>
+      )}
       <button className="bg-primary text-white ml-4 p-2 rounded-sm">Contact Us</button>
     </header>
   );
