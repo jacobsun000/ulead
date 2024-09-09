@@ -34,7 +34,7 @@ export default function Header({ currentPath = '/' }) {
         ({ label, href }) =>
           <NavItem key={label} href={href} selected={currentPath === href}>{label}</NavItem>
       )}
-      <button className="bg-primary text-white ml-4 p-2 rounded-sm">Contact Us</button>
+      <a href="/contacts" className="bg-primary text-white ml-4 p-2 rounded-sm">Contact Us</a>
     </header>
   );
 }

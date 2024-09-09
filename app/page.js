@@ -5,6 +5,7 @@ export default function Home() {
     <div>
       <Header currentPath="/" />
       <h1 className="text-4xl font-bold text-center bg-[#ccc] text-black">Hello, world!</h1>
+
     </div>
   );
 }
