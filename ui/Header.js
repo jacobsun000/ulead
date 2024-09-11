@@ -51,7 +51,7 @@ export default function Header({ currentPath = '/' }) {
         {navItems.map(({ label, href }) => (
           <NavItem key={label} label={label} href={href} selected={currentPath === href} />
         ))}
-        <a href="/contacts" className="bg-primary text-white text-lg ml-4 p-1.5 rounded-[0.2rem]">
+        <a href="/contacts" className="bg-primary text-white text-lg ml-4 p-1.5 rounded-[0.2rem] hover:bg-primaryLight transition duration-300">
           Contact Us
         </a>
       </nav>
@@ -59,7 +59,7 @@ export default function Header({ currentPath = '/' }) {
       {/* Mobile View */}
       <div className="flex items-center md:hidden">
         {/* Contact Us Button for Mobile */}
-        <a href="/contacts" className="bg-primary text-white p-2 rounded-md mr-4">
+        <a href="/contacts" className="bg-primary text-white p-2 rounded-md mr-4 hover:bg-primaryLight transition duration-300">
           Contact Us
         </a>
 

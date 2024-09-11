@@ -42,7 +42,7 @@ function MainSection() {
           className="
             bg-primary text-white px-10 text-2xl py-3 rounded-sm shadow-lg 
             hidden md:block
-            hover:bg-red-700 transition duration-300"
+            hover:bg-primaryLight transition duration-300"
         >
           Chat Now
         </a>
