@@ -1,28 +1,43 @@
-function NavItem({ children, href, selected }) {
+'use client';
+import { useState } from 'react';
+
+const navItems = [
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/about-us' },
+  { label: 'Highschool', href: '/highschool' },
+  { label: 'University', href: '/university' },
+  { label: 'Lead Program', href: '/lead-program' },
+  { label: 'Partners', href: '/partners' },
+];
+
+function NavItem({ label, href, selected, isMobile = false }) {
   return (
-    <div className="h-full flex items-center">
-      <a
-        href={href}
-        className={`text-white pt-2 border-b-[6px] ${selected ? 'border-primary' : 'border-transparent'} h-full flex items-center`}
-      >
-        {children}
-      </a>
-    </div>
+    <a
+      href={href}
+      className={`
+        ${isMobile ? 'py-2 px-4 w-full border-b-[3px]' : 'pt-2 border-b-[6px] h-full flex items-center'}
+        ${isMobile ? 'md:hidden' : 'hidden md:flex'}
+        ${selected ? 'border-primary' : 'border-transparent'}
+        ${selected ? 'text-white' : 'text-faded'}
+        hover:border-primary hover:text-white transition-colors duration-300 ease-in-out
+      `}
+      onClick={isMobile ? () => setIsMobileMenuOpen(false) : null}
+    >
+      {label}
+    </a>
   );
 }
 
-
 export default function Header({ currentPath = '/' }) {
-  const navItems = [
-    { label: 'Home', href: '/' },
-    { label: 'About Us', href: '/about-us' },
-    { label: 'Highschool', href: '/highschool' },
-    { label: 'University', href: '/university' },
-    { label: 'Lead Program', href: '/lead-program' },
-    { label: 'Partners', href: '/partners' },
-  ];
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
-    <header className="bg-secondary flex justify-between items-center px-16 h-16">
+    <header className="bg-secondary flex justify-between items-center px-4 md:px-16 h-16">
+      {/* Logo */}
       <div className="flex flex-col py-2 mr-4">
         <div>
           <span className="text-primary text-xl font-semibold">U</span>
@@ -30,11 +45,42 @@ export default function Header({ currentPath = '/' }) {
         </div>
         <span className="text-white font-semibold">合领教育</span>
       </div>
-      {navItems.map(
-        ({ label, href }) =>
-          <NavItem key={label} href={href} selected={currentPath === href}>{label}</NavItem>
+
+      {/* Desktop Nav Items */}
+      <nav className="hidden md:flex w-full h-full justify-between items-center ml-16 space-x-6">
+        {navItems.map(({ label, href }) => (
+          <NavItem key={label} label={label} href={href} selected={currentPath === href} />
+        ))}
+        <a href="/contacts" className="bg-primary text-white ml-4 p-2 rounded-sm">
+          Contact Us
+        </a>
+      </nav>
+
+      {/* Mobile View */}
+      <div className="flex items-center md:hidden">
+        {/* Contact Us Button for Mobile */}
+        <a href="/contacts" className="bg-primary text-white p-2 rounded-sm mr-4">
+          Contact Us
+        </a>
+
+        {/* Burger Menu Button */}
+        <button onClick={toggleMobileMenu} className="text-white focus:outline-none">
+          <div className="space-y-1">
+            <span className="block w-6 h-[2px] bg-white"></span>
+            <span className="block w-6 h-[2px] bg-white"></span>
+            <span className="block w-6 h-[2px] bg-white"></span>
+          </div>
+        </button>
+      </div>
+
+      {/* Mobile Menu Dropdown */}
+      {isMobileMenuOpen && (
+        <nav className="absolute top-16 left-0 w-full bg-secondary flex flex-col items-start p-4 space-y-4 md:hidden">
+          {navItems.map(({ label, href }) => (
+            <NavItem key={label} label={label} href={href} selected={currentPath === href} isMobile />
+          ))}
+        </nav>
       )}
-      <a href="/contacts" className="bg-primary text-white ml-4 p-2 rounded-sm">Contact Us</a>
     </header>
   );
 }
