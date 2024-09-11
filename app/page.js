@@ -6,6 +6,33 @@ export default function Home() {
     <div>
       <Header currentPath="/" />
       <MainSection />
+      <SectionHeader title="Our Belief" />
+    </div>
+  );
+}
+
+function SectionHeader({ title }) {
+  return (
+    <div className="flex flex-col items-center mb-8 mt-10 mx-8">
+      {/* Title with surrounding lines and diamonds */}
+      <div className="flex items-center w-full justify-center">
+        {/* Left line with diamond */}
+        <div className="flex items-center w-1/4 md:w-2/5 justify-end">
+          <div className="w-full border-t border-gray-300"></div>
+          <div className="w-1 h-1 translate-x-[-0.5rem] bg-gray-400 rotate-45 transform ml-2"></div> {/* Diamond */}
+        </div>
+
+        {/* Title */}
+        <h2 className="text-2xl md:text-4xl md:font-medium text-black mx-6 md:mx-4">
+          {title}
+        </h2>
+
+        {/* Right line with diamond */}
+        <div className="flex items-center w-1/4 md:w-2/5">
+          <div className="w-1 h-1 translate-x-[0.5rem] bg-gray-400 rotate-45 transform mr-2"></div> {/* Diamond */}
+          <div className="w-full border-t border-gray-300"></div>
+        </div>
+      </div>
     </div>
   );
 }
