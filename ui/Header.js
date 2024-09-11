@@ -15,7 +15,7 @@ function NavItem({ label, href, selected, isMobile = false }) {
     <a
       href={href}
       className={`
-        ${isMobile ? 'py-2 px-4 w-full border-b-[3px]' : 'pt-2 border-b-[6px] h-full flex items-center'}
+        ${isMobile ? 'py-2 px-4 w-full border-b-[3px]' : 'pt-2 border-b-[6px] h-full flex items-center text-lg'}
         ${isMobile ? 'md:hidden' : 'hidden md:flex'}
         ${selected ? 'border-primary' : 'border-transparent'}
         ${selected ? 'text-white' : 'text-faded'}
@@ -36,14 +36,14 @@ export default function Header({ currentPath = '/' }) {
   };
 
   return (
-    <header className="bg-secondary flex justify-between items-center px-4 md:px-16 h-16">
+    <header className="bg-secondary flex justify-between items-center px-4 md:px-20 h-16">
       {/* Logo */}
       <div className="flex flex-col py-2 mr-4">
         <div>
-          <span className="text-primary text-xl font-semibold">U</span>
-          <span className="text-white text-xl font-semibold">LEAD</span>
+          <span className="text-primary md:text-xl font-semibold">U</span>
+          <span className="text-white md:text-xl font-semibold">LEAD</span>
         </div>
-        <span className="text-white font-semibold">合领教育</span>
+        <span className="text-white text-sm md:text-base md:font-semibold">合领教育</span>
       </div>
 
       {/* Desktop Nav Items */}
@@ -51,7 +51,7 @@ export default function Header({ currentPath = '/' }) {
         {navItems.map(({ label, href }) => (
           <NavItem key={label} label={label} href={href} selected={currentPath === href} />
         ))}
-        <a href="/contacts" className="bg-primary text-white ml-4 p-2 rounded-sm">
+        <a href="/contacts" className="bg-primary text-white text-lg ml-4 p-1.5 rounded-[0.2rem]">
           Contact Us
         </a>
       </nav>
@@ -59,12 +59,12 @@ export default function Header({ currentPath = '/' }) {
       {/* Mobile View */}
       <div className="flex items-center md:hidden">
         {/* Contact Us Button for Mobile */}
-        <a href="/contacts" className="bg-primary text-white p-2 rounded-sm mr-4">
+        <a href="/contacts" className="bg-primary text-white p-2 rounded-md mr-4">
           Contact Us
         </a>
 
         {/* Burger Menu Button */}
-        <button onClick={toggleMobileMenu} className="text-white focus:outline-none">
+        <button onClick={toggleMobileMenu} className="text-white focus:outline-none ml-4">
           <div className="space-y-1">
             <span className="block w-6 h-[2px] bg-white"></span>
             <span className="block w-6 h-[2px] bg-white"></span>
