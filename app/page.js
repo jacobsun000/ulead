@@ -38,7 +38,7 @@ function MainSection() {
 
         {/* "Chat Now" Button */}
         <a
-          href="#"
+          href="/contacts"
           className="
             bg-primary text-white px-10 text-2xl py-3 rounded-sm shadow-lg 
             hidden md:block
