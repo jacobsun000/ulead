@@ -53,7 +53,7 @@ export default function Partners() {
           priority
         />
         <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-center items-start p-8">
-          <h1 className="text-4xl font-bold text-black mb-8 ml-10">
+          <h1 className="text-6xl font-bold text-black mb-8 ml-10">
             University Application<br />Consultation
           </h1>
           <button className="ml-10 bg-blue-900 text-white px-11 py-2 rounded-full hover:bg-blue-700 transition duration-300">
