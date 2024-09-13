@@ -26,26 +26,20 @@ const ServiceItem = ({ title, description, isOpen, isRed }) => {
 };
 
 const ProcessStep = ({ number, title, description, isRed }) => (
-  <div className={`p-4 border rounded-lg ${isRed ? 'border-red-500' : 'border-blue-800'}`}>
+  <div className={`p-4 border rounded-lg w-60 h-60 ${isRed ? 'border-red-500' : 'border-blue-800'}`}>
     <div className={`w-8 h-8 rounded-full ${isRed ? 'bg-red-500' : 'bg-blue-800'} text-white flex items-center justify-center font-bold mb-2`}>
       {number}
     </div>
-    <h3 className="font-bold mb-2">{title}</h3>
-    <p className="text-sm">{description}</p>
+    <h3 className="font-bold mb-2 text-center">{title}</h3>
+    <p className="text-sm text-center">{description}</p>
   </div>
 );
 
-const Arrow = ({ direction }) => (
-  <div className={`flex items-center justify-center ${direction === 'down' ? 'h-8' : ''}`}>
-    {direction === 'right' ? (
-      <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-      </svg>
-    ) : (
-      <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-      </svg>
-    )}
+const Arrow = () => (
+  <div className="flex items-center px-2">
+    <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+    </svg>
   </div>
 );
 
@@ -132,23 +126,36 @@ export default function Partners() {
 
       <div className="max-w-6xl mx-auto py-12 px-4">
         <h2 className="text-3xl font-bold text-center mb-8">High School Application Service Process</h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <ProcessStep number={1} title="Interest Exploration and Development" description="" />
-          <ProcessStep number={2} title="Mentor Arrangement and Planning" description="" isRed />
-          <ProcessStep number={3} title="Application Planning" description="Academic Research Interest Exploration" />
-          <ProcessStep number={4} title="Full Process QC Management" description="Shared Application Email Management; Real-Time Information Updates" isRed />
-          <Arrow direction="right" />
-          <Arrow direction="right" />
-          <Arrow direction="right" />
-          <Arrow direction="down" />
-          <ProcessStep number={7} title="Campus Visit Guidance" description="" isRed />
-          <ProcessStep number={6} title="Interview Coaching" description="Self-Awareness Enhancement (Building a Story Game); Interview Awareness Enhancement (Key Interview Assessment Points); Personal Interview Video Practice Assessment & Feedback; Dimensional Comprehensive Improvement (Simulation)" />
-          <ProcessStep number={5} title="Third-Party Interview Coaching" description="Vericant or InitialView" isRed />
-          <Arrow direction="down" />
-          <ProcessStep number={8} title="School Selection Guidance and Interview Scheduling" description="" />
-          <ProcessStep number={9} title="Essay Guidance" description="Comell University and Harvard External QC Management" isRed />
-          <ProcessStep number={10} title="Supplemental Essay Guidance" description="Cornell University and Harvard External QC Management" />
-          <ProcessStep number={11} title="Offer Selection Strategy" description="" isRed />
+        <div className="space-y-6">
+          <div className="flex items-center">
+            <ProcessStep number={1} title="Interest Exploration and Development" />
+            <Arrow />
+            <ProcessStep number={2} title="Mentor Arrangement and Planning" isRed />
+            <Arrow />
+            <ProcessStep number={3} title="Application Planning" description="Academic Research Interest Exploration" />
+            <Arrow />
+            <ProcessStep number={4} title="Full Process QC Management" description="Shared Application Email Management; Real-Time Information Updates" isRed />
+          </div>
+          <div className="flex items-center">
+            <ProcessStep number={7} title="Campus Visit Guidance" isRed />
+            <Arrow />
+            <div className={`p-4 border rounded-lg w-80 h-60 border-blue-800`}>
+              <div className={`w-8 h-8 rounded-full bg-blue-800 text-white flex items-center justify-center font-bold mb-2`}>6</div>
+              <h3 className="font-bold mb-2 text-center">Interview Coaching</h3>
+              <p className="text-sm text-center">Self-Awareness Enhancement (Building a Story Game); Interview Awareness Enhancement (Key Interview Assessment Points); Personal Interview Video Practice Assessment & Feedback; Dimensional Comprehensive Improvement (Simulation)</p>
+            </div>
+            <Arrow />
+            <ProcessStep number={5} title="Third-Party Interview Coaching" description="Vericant or InitialView" isRed />
+          </div>
+          <div className="flex items-center">
+            <ProcessStep number={8} title="School Selection Guidance and Interview Scheduling" />
+            <Arrow />
+            <ProcessStep number={9} title="Essay Guidance" description="Cornell University and Harvard External QC Management" isRed />
+            <Arrow />
+            <ProcessStep number={10} title="Supplemental Essay Guidance" description="Cornell University and Harvard External QC Management" />
+            <Arrow />
+            <ProcessStep number={11} title="Offer Selection Strategy" isRed />
+          </div>
         </div>
       </div>
 
