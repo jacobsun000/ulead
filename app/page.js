@@ -1,6 +1,8 @@
 import Header from "@/ui/Header";
 import Image from "next/image";
 import Slider from "@/ui/Slider";
+import Panel from "@/ui/Panel";
+import { OfferItem } from "@/ui/OfferItem";
 
 export default function Home() {
   return (
@@ -12,6 +14,7 @@ export default function Home() {
       <SectionHeader title="Our Services" />
       <OurServicesSection />
       <SectionHeader title="Student Report" />
+      <StudentReportSection />
       <SectionHeader title="Our Team" />
       <SectionHeader title="ULead Alumn" />
       <SectionHeader title="Testimonials" />
@@ -103,7 +106,7 @@ function OurBeliefSection() {
             {`The company is fully committed to each student's individualized growth. Consultants serve as students' academic tutors, personal mentors, and collaborate closely with their families to form intimate, trusting relationships.`}
           </p>
           <div className="grid w-full justify-items-center md:justify-items-start">
-            <a href="/about-us" className="bg-primary text-white px-6 py-2 rounded-md hover:bg-primaryLight transition duration-300">
+            <a href="/about-us" className="bg-primary text-white md:text-2xl px-6 py-2 rounded-md hover:bg-primaryLight transition duration-300">
               About Us
             </a>
           </div>
@@ -170,8 +173,8 @@ function OurServicesSection() {
       iconBg="bg-primary"
       icon={
         <svg width="40" height="40" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2.08337 2.91675H6.66671C8.50767 2.91675 10 4.40912 10 6.25008V17.5001C10 16.1194 8.88075 15.0001 7.50004 15.0001H2.08337V2.91675Z" stroke="white" stroke-width="2" stroke-linejoin="round" />
-          <path d="M17.9167 2.91675H13.3333C11.4924 2.91675 10 4.40912 10 6.25008V17.5001C10 16.1194 11.1193 15.0001 12.5 15.0001H17.9167V2.91675Z" stroke="white" stroke-width="2" stroke-linejoin="round" />
+          <path d="M2.08337 2.91675H6.66671C8.50767 2.91675 10 4.40912 10 6.25008V17.5001C10 16.1194 8.88075 15.0001 7.50004 15.0001H2.08337V2.91675Z" stroke="white" strokeWidth="2" stroke-linejoin="round" />
+          <path d="M17.9167 2.91675H13.3333C11.4924 2.91675 10 4.40912 10 6.25008V17.5001C10 16.1194 11.1193 15.0001 12.5 15.0001H17.9167V2.91675Z" stroke="white" strokeWidth="2" stroke-linejoin="round" />
         </svg>
       }
       text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
@@ -202,6 +205,62 @@ function OurServicesSection() {
         {cards.map((card, _) => (
           card
         ))}
+      </div>
+    </section>
+  );
+}
+
+function OfferReport({ schools }) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {schools.map((school, index) => (
+        <div key={index} className={`${index >= 5 ? 'hidden' : ''} md:${index >= 10 ? 'hidden' : 'block'}`}>
+          <OfferItem {...school} />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function StudentReportSection() {
+  const university = [
+    { school: 'Baylor School(TN)', count: '1', logo: '/img/school/logo1.png' },
+    { school: 'Deerfield Academy', count: '3', logo: '/img/school/logo2.png' },
+    { school: 'Miss Hall\'s School', count: '2', logo: '/img/school/logo3.png' },
+    { school: 'The Hotchkiss School', count: '2', logo: '/img/school/logo4.png' },
+    { school: 'Choate Rosemary Hall', count: '2', logo: '/img/school/logo5.png' },
+    { school: 'Baylor School(TN)', count: '1', logo: '/img/school/logo1.png' },
+    { school: 'Deerfield Academy', count: '3', logo: '/img/school/logo2.png' },
+    { school: 'Miss Hall\'s School', count: '2', logo: '/img/school/logo3.png' },
+    { school: 'The Hotchkiss School', count: '2', logo: '/img/school/logo4.png' },
+    { school: 'Choate Rosemary Hall', count: '2', logo: '/img/school/logo5.png' }
+  ];
+  const highSchool = university;
+  const others = university;
+
+
+  const panels = [
+    {
+      title: "University",
+      content: <OfferReport schools={university} />,
+    },
+    {
+      title: "High School",
+      content: <OfferReport schools={highSchool} />,
+    },
+    {
+      title: "Others",
+      content: <OfferReport schools={others} />,
+    },
+
+  ]
+  return (
+    <section className="mx-8 md:mx-[16vw]">
+      <Panel elements={panels} />
+      <div className="flex justify-center mt-8">
+        <button className="bg-primary text-white md:text-xl px-6 py-2 rounded-md md:px-16 font-semibold hover:bg-primaryLight transition duration-300">
+          Read More
+        </button>
       </div>
     </section>
   );
