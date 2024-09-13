@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-export const OfferItem = ({ logo, school, count }) => {
+export default function OfferItem({ logo, school, count }) {
   return (
     <div className="bg-white flex w-full items-center justify-between p-4 rounded-full shadow-md">
       {/* School logo */}

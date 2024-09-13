@@ -2,7 +2,7 @@ import Header from "@/ui/Header";
 import Image from "next/image";
 import Slider from "@/ui/Slider";
 import Panel from "@/ui/Panel";
-import { OfferItem } from "@/ui/OfferItem";
+import OfferItem from "@/ui/OfferItem";
 
 export default function Home() {
   return (
@@ -106,7 +106,7 @@ function OurBeliefSection() {
             {`The company is fully committed to each student's individualized growth. Consultants serve as students' academic tutors, personal mentors, and collaborate closely with their families to form intimate, trusting relationships.`}
           </p>
           <div className="grid w-full justify-items-center md:justify-items-start">
-            <a href="/about-us" className="bg-primary text-white md:text-2xl px-6 py-2 rounded-md hover:bg-primaryLight transition duration-300">
+            <a href="/about-us" className="bg-primary text-white px-6 py-2 rounded-md hover:bg-primaryLight transition duration-300">
               About Us
             </a>
           </div>
@@ -265,3 +265,5 @@ function StudentReportSection() {
     </section>
   );
 }
+
+
