@@ -18,13 +18,45 @@ const ContactItem = ({ src, alt, text }) => (
 export default function Contacts() {
   return (
     <div>
-      <Header currentPath="/contacts-me" />
-      <div className="max-w-4xl mx-auto p-4">
+      <Header currentPath="/contacts" />
+      <div className="max-w-6xl mx-auto p-4 mb-4">
         <div className="grid grid-cols-4 gap-4 mb-8">
-          <div className="col-span-1 bg-gray-100 h-40"></div>
-          <div className="col-span-1 bg-gray-100 h-40"></div>
-          <div className="col-span-1 bg-gray-100 h-40"></div>
-          <div className="col-span-1 bg-gray-100 h-40"></div>
+          <div className="col-span-1 w-60 h-40 text-center">
+            <Image
+              src={"/img/contacts/ny.png"}
+              alt="New York"
+              width={800}
+              height={600}
+            />
+            <span className="font-bold text-blue-800 mt-3 block">New York, USA</span>
+          </div>
+          <div className="col-span-1 w-60 h-40 text-center">
+            <Image
+              src={"/img/contacts/bs.png"}
+              alt="New York"
+              width={800}
+              height={600}
+            />
+            <span className="font-bold text-red-600 mt-3 block">Boston, USA</span>
+          </div>
+          <div className="col-span-1 w-60 h-40 text-center">
+            <Image
+              src={"/img/contacts/bj.png"}
+              alt="New York"
+              width={800}
+              height={600}
+            />
+            <span className="font-bold text-blue-800 mt-3 block">Beijing, China</span>
+          </div>
+          <div className="col-span-1 w-60 h-40 text-center">
+            <Image
+              src={"/img/contacts/gz.png"}
+              alt="New York"
+              width={800}
+              height={600}
+            />
+            <span className="font-bold text-red-600 mt-3 block">Guangzhou, China</span>
+          </div>
         </div>
       </div>
 
