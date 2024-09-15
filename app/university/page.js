@@ -1,5 +1,7 @@
 import Header from "@/ui/Header";
 import Footer from "@/ui/Footer";
+import BackButton from "@/ui/Back";
+import SectionHeader from "@/ui/SectionHeader";
 import Image from 'next/image'
 
 const Card = ({ title, content }) => (
@@ -88,8 +90,9 @@ export default function Partners() {
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
           />
         </div>
-
-        <h2 className="mt-10 text-3xl font-bold text-center">Personalized Services</h2>
+      </div>
+      <SectionHeader title="Personalized Services" />
+      <div className="max-w-6xl mx-auto py-12 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mb-8">
           {services.map((service, index) => (
             <ServiceItem
@@ -107,12 +110,7 @@ export default function Partners() {
         </div>
       </div>
 
-      <div className="flex justify-center">
-        <button type="button" className="px-4 py-2 mb-10 bg-gray-300 text-gray-700 font-semibold rounded hover:bg-gray-400 transition duration-300">
-          Back to top
-        </button>
-      </div>
-
+      <BackButton />
       <Footer />
     </div>
   );
