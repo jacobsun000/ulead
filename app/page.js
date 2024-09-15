@@ -3,6 +3,8 @@ import Image from "next/image";
 import Slider from "@/ui/Slider";
 import Panel from "@/ui/Panel";
 import OfferItem from "@/ui/OfferItem";
+import Button from "@/ui/Button";
+import Tab from "@/ui/Tab";
 
 export default function Home() {
   return (
@@ -16,6 +18,7 @@ export default function Home() {
       <SectionHeader title="Student Report" />
       <StudentReportSection />
       <SectionHeader title="Our Team" />
+      <OurTeamSection />
       <SectionHeader title="ULead Alumn" />
       <SectionHeader title="Testimonials" />
       <SectionHeader title="Qualifications" />
@@ -106,9 +109,7 @@ function OurBeliefSection() {
             {`The company is fully committed to each student's individualized growth. Consultants serve as students' academic tutors, personal mentors, and collaborate closely with their families to form intimate, trusting relationships.`}
           </p>
           <div className="grid w-full justify-items-center md:justify-items-start">
-            <a href="/about-us" className="bg-primary text-white px-6 py-2 rounded-md hover:bg-primaryLight transition duration-300">
-              About Us
-            </a>
+            <Button href='/about-us' text='About Us' />
           </div>
         </div>
 
@@ -173,8 +174,8 @@ function OurServicesSection() {
       iconBg="bg-primary"
       icon={
         <svg width="40" height="40" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2.08337 2.91675H6.66671C8.50767 2.91675 10 4.40912 10 6.25008V17.5001C10 16.1194 8.88075 15.0001 7.50004 15.0001H2.08337V2.91675Z" stroke="white" strokeWidth="2" stroke-linejoin="round" />
-          <path d="M17.9167 2.91675H13.3333C11.4924 2.91675 10 4.40912 10 6.25008V17.5001C10 16.1194 11.1193 15.0001 12.5 15.0001H17.9167V2.91675Z" stroke="white" strokeWidth="2" stroke-linejoin="round" />
+          <path d="M2.08337 2.91675H6.66671C8.50767 2.91675 10 4.40912 10 6.25008V17.5001C10 16.1194 8.88075 15.0001 7.50004 15.0001H2.08337V2.91675Z" stroke="white" strokeWidth="2" strokeLinejoin="round" />
+          <path d="M17.9167 2.91675H13.3333C11.4924 2.91675 10 4.40912 10 6.25008V17.5001C10 16.1194 11.1193 15.0001 12.5 15.0001H17.9167V2.91675Z" stroke="white" strokeWidth="2" strokeLinejoin="round" />
         </svg>
       }
       text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
@@ -210,14 +211,20 @@ function OurServicesSection() {
   );
 }
 
-function OfferReport({ schools }) {
+function OfferReport({ schools, href }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {schools.map((school, index) => (
-        <div key={index} className={`${index >= 5 ? 'hidden' : ''} md:${index >= 10 ? 'hidden' : 'block'}`}>
-          <OfferItem {...school} />
-        </div>
-      ))}
+    <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {schools.map((school, index) => (
+          <div key={index} className={`${index >= 5 ? 'hidden' : ''} md:${index >= 10 ? 'hidden' : 'block'}`}>
+            <OfferItem {...school} />
+          </div>
+        ))}
+
+      </div>
+      <div className="flex justify-center mt-8">
+        <Button text="Read More" href={href} />
+      </div>
     </div>
   );
 }
@@ -242,28 +249,103 @@ function StudentReportSection() {
   const panels = [
     {
       title: "University",
-      content: <OfferReport schools={university} />,
+      content: <OfferReport schools={university} href="/university" />,
     },
     {
       title: "High School",
-      content: <OfferReport schools={highSchool} />,
+      content: <OfferReport schools={highSchool} href="/high-school" />,
     },
     {
       title: "Others",
-      content: <OfferReport schools={others} />,
+      content: <OfferReport schools={others} href="/university" />,
     },
 
   ]
   return (
     <section className="mx-8 md:mx-[16vw]">
       <Panel elements={panels} />
-      <div className="flex justify-center mt-8">
-        <button className="bg-primary text-white md:text-xl px-6 py-2 rounded-md md:px-16 font-semibold hover:bg-primaryLight transition duration-300">
-          Read More
-        </button>
-      </div>
     </section>
   );
 }
 
+function TeamMember({ imageSrc, name, description, link }) {
+  return (
+    <div className="bg-white shadow-lg rounded-lg p-4 flex items-center space-x-4 mb-6">
+      <div className="w-16 h-16 rounded-full overflow-hidden">
+        <Image src={imageSrc} alt={name} width={64} height={64} objectFit="cover" />
+      </div>
+      <div>
+        {/* <p className="font-semibold text-gray-800">{name}</p> */}
+        <p className="text-gray-600 text-sm">
+          {description}
+          <a href={link} className="text-primary cursor-pointer"> Read More</a>
+        </p>
+      </div>
+    </div>
+  );
+}
 
+function OurTeamSection() {
+  const tabs = [
+    {
+      key: 'consultant', label: 'Consultant', members: [
+        { imageSrc: '/img/team-1.png', name: 'Christina Wang', description: 'Christina Wang holds a bachelor\'s degree from Beijing Foreign Studies University...' },
+        { imageSrc: '/img/team-2.png', name: 'John Doe', description: 'John Doe holds a bachelor\'s degree from Beijing Foreign Studies University...' },
+        { imageSrc: '/img/team-3.png', name: 'Jane Smith', description: 'Jane Smith holds a bachelor\'s degree from Beijing Foreign Studies University...' },
+        { imageSrc: '/img/team-4.png', name: 'Adam White', description: 'Adam White holds a bachelor\'s degree from Beijing Foreign Studies University...' }
+      ]
+    },
+    {
+      key: 'professionals', label: 'Professionals', members: [
+        { imageSrc: '/img/team-1.png', name: 'Christina Wang', description: 'Christina Wang holds a bachelor\'s degree from Beijing Foreign Studies University...' },
+        { imageSrc: '/img/team-2.png', name: 'John Doe', description: 'John Doe holds a bachelor\'s degree from Beijing Foreign Studies University...' },
+        { imageSrc: '/img/team-3.png', name: 'Jane Smith', description: 'Jane Smith holds a bachelor\'s degree from Beijing Foreign Studies University...' },
+        { imageSrc: '/img/team-4.png', name: 'Adam White', description: 'Adam White holds a bachelor\'s degree from Beijing Foreign Studies University...' }
+      ]
+    },
+    {
+      key: 'planning', label: 'Planning', members: [
+        { imageSrc: '/img/team-1.png', name: 'Christina Wang', description: 'Christina Wang holds a bachelor\'s degree from Beijing Foreign Studies University...' },
+        { imageSrc: '/img/team-2.png', name: 'John Doe', description: 'John Doe holds a bachelor\'s degree from Beijing Foreign Studies University...' },
+        { imageSrc: '/img/team-3.png', name: 'Jane Smith', description: 'Jane Smith holds a bachelor\'s degree from Beijing Foreign Studies University...' },
+        { imageSrc: '/img/team-4.png', name: 'Adam White', description: 'Adam White holds a bachelor\'s degree from Beijing Foreign Studies University...' }
+      ]
+    },
+    {
+      key: 'interviews', label: 'Interviews', members: [
+        { imageSrc: '/img/team-1.png', name: 'Christina Wang', description: 'Christina Wang holds a bachelor\'s degree from Beijing Foreign Studies University...' },
+        { imageSrc: '/img/team-2.png', name: 'John Doe', description: 'John Doe holds a bachelor\'s degree from Beijing Foreign Studies University...' },
+        { imageSrc: '/img/team-3.png', name: 'Jane Smith', description: 'Jane Smith holds a bachelor\'s degree from Beijing Foreign Studies University...' },
+        { imageSrc: '/img/team-4.png', name: 'Adam White', description: 'Adam White holds a bachelor\'s degree from Beijing Foreign Studies University...' }
+      ]
+    }
+  ];
+
+  return (
+    <section className="mx-8 md:mx-[8vw]">
+      {/* Description (visible in desktop view) */}
+      <p className="text-gray-600 mb-8 hidden md:block">
+        {"ULead is different from other educational companies because it focuses as much on students' growth as on application results. ULead is committed to guiding students to lifelong success by providing psychological support, tutoring, and overall planning."}
+      </p>
+
+
+      {/* Team Members */}
+      <Tab elements={tabs.map((tab) => {
+        return {
+          key: tab.key, label: tab.label, content: (
+            <div className="md:grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {tab.members.map((member, index) => (
+                <TeamMember key={index} {...member} />
+              ))}
+            </div>
+          )
+        }
+      })} />
+
+      {/* Read More Button */}
+      <div className="flex justify-center mt-8">
+        <Button text="Read More" href="/about-us" />
+      </div>
+    </section>
+  );
+}
