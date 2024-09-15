@@ -59,7 +59,7 @@ export default function Header({ currentPath = '/' }) {
       {/* Mobile View */}
       <div className="flex items-center md:hidden">
         {/* Contact Us Button for Mobile */}
-        <a href="/contacts" className="bg-primary text-white p-2 rounded-md mr-4 hover:bg-primaryLight transition duration-300">
+        <a href="/contacts" className="bg-primary text-white text-xs p-2 rounded-md mr-4 hover:bg-primaryLight transition duration-300">
           Contact Us
         </a>
 
