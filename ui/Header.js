@@ -36,7 +36,7 @@ export default function Header({ currentPath = '/' }) {
   };
 
   return (
-    <header className="bg-secondary flex justify-between items-center px-4 md:px-20 h-16">
+    <header className="bg-secondary flex justify-between items-center px-4 md:px-20 h-16 z-auto">
       {/* Logo */}
       <div className="flex flex-col py-2 mr-4">
         <div>
@@ -75,7 +75,7 @@ export default function Header({ currentPath = '/' }) {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <nav className="absolute top-16 left-0 w-full bg-secondary flex flex-col items-start p-4 space-y-4 md:hidden">
+        <nav className="absolute top-16 left-0 w-full bg-secondary flex flex-col items-start p-4 space-y-4 md:hidden z-50">
           {navItems.map(({ label, href }) => (
             <NavItem key={label} label={label} href={href} selected={currentPath === href} isMobile />
           ))}

@@ -1,5 +1,5 @@
-import Header from "@/ui/Header";
 import Image from "next/image";
+import Header from "@/ui/Header";
 import Slider from "@/ui/Slider";
 import Panel from "@/ui/Panel";
 import OfferItem from "@/ui/OfferItem";
@@ -61,6 +61,7 @@ function MainSection() {
         objectPosition="center"
         quality={100}
         priority
+        className="z-0"
       />
 
       {/* Overlay Content */}
