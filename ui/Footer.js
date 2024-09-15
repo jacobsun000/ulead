@@ -2,9 +2,9 @@ import Image from 'next/image'
 
 const FooterColumn = ({ title, items, additionalContent, mobileDisplay = false }) => (
   <div className={`${mobileDisplay ? 'flex' : 'hidden md:flex'} flex-col`}>
-    <h3 className="text-white font-semibold mb-4">{title}</h3>
+    <h3 className="text-white text-sm md:text-lg font-semibold mb-4">{title}</h3>
     {items.map((item, index) => (
-      <a key={index} href="#" className="text-white text-sm mb-2 hover:underline">
+      <a key={index} href="#" className="text-white text-xs md:text-sm mb-2 hover:underline">
         {item}
       </a>
     ))}
@@ -18,20 +18,16 @@ const FooterColumn = ({ title, items, additionalContent, mobileDisplay = false }
 
 export default function Footer() {
   return (
-    <footer className="bg-secondary text-white py-10 px-16">
+    <footer className="bg-secondary text-white py-10 px-8 md:px-16">
       <div className="flex justify-between mb-8">
-        <div className="flex flex-col">
-          <div className="mb-4">
-            <span className="text-primary text-xl md:text-5xl font-bold">U</span>
-            <span className="text-white text-xl md:text-5xl font-bold">LEAD</span>
+        <div className="flex flex-col items-center">
+          <div className="">
+            <span className="text-primary text-2xl md:text-5xl font-bold">U</span>
+            <span className="text-white text-2xl md:text-5xl font-bold">LEAD</span>
           </div>
           <span className="text-white text-xl md:text-5xl">合领教育</span>
 
-          <div className="flex flex-col items-center mr-5 mt-5">
-            <Image src="/img/footer/qrcode.png" alt="WeChat QR Code" width={130} height={130} />
-          </div>
-
-          <div className="flex flex-col items-center mr-5 mt-5">
+          <div className="flex w-20 h-20 mt-5">
             <Image src="/img/footer/qrcode.png" alt="WeChat QR Code" width={130} height={130} />
           </div>
         </div>
@@ -45,7 +41,7 @@ export default function Footer() {
           ]}
           additionalContent={
             <div>
-              <h3 className="text-white font-semibold mb-2">Our Address</h3>
+              <h3 className="text-white font-semibold text-sm mb-2">Our Address</h3>
               <p className="text-sm">Location: Beijing, Chao Yang</p>
             </div>
           }
@@ -87,7 +83,7 @@ export default function Footer() {
         />
       </div>
 
-      <div className="text-center text-sm mt-8">
+      <div className="text-center text-[8px] mt-8">
         版权所有：北京合领教育咨询有限公司 www.ulead-edu.com (京ICP备19029988号-1)
       </div>
     </footer>
