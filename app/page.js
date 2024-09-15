@@ -6,10 +6,11 @@ import OfferItem from "@/ui/OfferItem";
 import SectionHeader from "@/ui/SectionHeader";
 import Button from "@/ui/Button";
 import Tab from "@/ui/Tab";
+import Footer from "@/ui/Footer";
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-[#f5f5f5]">
       <Header currentPath="/" />
       <MainSection />
       <SectionHeader title="Our Belief" />
@@ -21,8 +22,12 @@ export default function Home() {
       <SectionHeader title="Our Team" />
       <OurTeamSection />
       <SectionHeader title="ULead Alumn" />
+      <UleadAlumnSection />
       <SectionHeader title="Testimonials" />
+      <TestimonialsSection />
       <SectionHeader title="Qualifications" />
+      <QualificationsSection />
+      <Footer />
     </div>
   );
 }
@@ -250,7 +255,7 @@ function StudentReportSection() {
 
 function TeamMember({ imageSrc, name, description, link }) {
   return (
-    <div className="bg-white shadow-lg rounded-lg p-4 flex items-center space-x-4 mb-6">
+    <div className="bg-white md:border-1 md:border-y-gray-50 md:border-x-none md:rounded-none shadow-lg md:shadow-none rounded-lg p-4 flex md:flex-col items-center space-x-4 md:space-x-0 mb-6">
       <div className="w-16 h-16 rounded-full overflow-hidden">
         <Image src={imageSrc} alt={name} width={64} height={64} objectFit="cover" />
       </div>
@@ -258,7 +263,7 @@ function TeamMember({ imageSrc, name, description, link }) {
         {/* <p className="font-semibold text-gray-800">{name}</p> */}
         <p className="text-gray-600 text-sm">
           {description}
-          <a href={link} className="text-primary cursor-pointer"> Read More</a>
+          <a href={link} className="md:hidden text-primary cursor-pointer"> Read More</a>
         </p>
       </div>
     </div>
@@ -313,7 +318,7 @@ function OurTeamSection() {
       <Tab elements={tabs.map((tab) => {
         return {
           key: tab.key, label: tab.label, content: (
-            <div className="md:grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-0 rounded-xl bg-white overflow-clip md:pt-5">
               {tab.members.map((member, index) => (
                 <TeamMember key={index} {...member} />
               ))}
@@ -328,4 +333,39 @@ function OurTeamSection() {
       </div>
     </section>
   );
+}
+
+function UleadAlumnSection() {
+  return (
+    <section className="mx-8 md:mx-[8vw]">
+    </section>
+  )
+}
+
+function TestimonialsSection() {
+  return (
+    <section className="mx-8 md:mx-[8vw]">
+    </section>
+  )
+}
+
+function QualificationsSection() {
+  const qualifications = [
+    "/img/home/qualification1.png",
+    "/img/home/qualification2.png",
+    "/img/home/qualification3.png",
+    "/img/home/qualification4.png",
+    "/img/home/qualification5.png",
+  ]
+  return (
+    <section className="mx-8 md:mx-[8vw]">
+      <div className="flex">
+        {qualifications.map((qualification, index) => (
+          <div key={index} className="w-1/5">
+            <Image src={qualification} alt={`qualification-${index}`} width={200} height={200} />
+          </div>
+        ))}
+      </ div>
+    </section>
+  )
 }
