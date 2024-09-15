@@ -7,6 +7,7 @@ import SectionHeader from "@/ui/SectionHeader";
 import Button from "@/ui/Button";
 import Tab from "@/ui/Tab";
 import Footer from "@/ui/Footer";
+import BackToTopButton from "@/ui/Back";
 
 export default function Home() {
   return (
@@ -27,11 +28,11 @@ export default function Home() {
       <TestimonialsSection />
       <SectionHeader title="Qualifications" />
       <QualificationsSection />
+      <BackToTopButton />
       <Footer />
     </div>
   );
 }
-
 
 function MainSection() {
   return (
@@ -77,7 +78,7 @@ function MainSection() {
 
 function OurBeliefSection() {
   return (
-    <section className="mx-8 md:mx-[8vw] bg-white">
+    <section className="mx-8 md:mx-[8vw]">
       {/* Content */}
       <div className="flex flex-row md:flex-row items-center justify-between">
         {/* Text Section */}
@@ -183,9 +184,9 @@ function OurServicesSection() {
     />
   ];
   return (
-    <section className="py-8 mx-2 md:mx-[8vw]">
+    <section className="mx-2 md:mx-[8vw]">
       <div className="md:hidden">
-        <Slider elements={cards}></Slider>
+        <Slider elements={cards} showArrow showBullet />
       </div>
       <div className="hidden md:flex gap-x-16 justify-center items-center">
         {cards.map((card, _) => (
@@ -335,9 +336,123 @@ function OurTeamSection() {
   );
 }
 
-function UleadAlumnSection() {
+function AlumnProfileCard({ imageSrc, name, highschool, offers, experiences }) {
   return (
-    <section className="mx-8 md:mx-[8vw]">
+    <div className="bg-white rounded-lg shadow-lg p-6 max-w-md mx-auto">
+      {/* Top Section */}
+      <div className="flex items-center space-x-4 mb-6">
+        {/* Profile Image */}
+        <div className="flex flex-col">
+          <div className="w-16 h-16 rounded-full overflow-hidden">
+            <Image src={imageSrc} alt={name} width={64} height={64} objectFit="cover" />
+          </div>
+          <p className="md:hidden font-semibold text-xs text-secondary">{name}</p>
+        </div>
+
+        {/* Profile Information */}
+        <div>
+          <p className="hidden md:block text-xl font-semibold text-primary">{name}</p>
+          <p className="text-gray-600 text-xs md:text-sm mb-2"><span className="font-bold">Highschool:</span> {highschool}</p>
+          <p className="text-gray-600 text-xs md:text-sm"><span className="font-bold">Offers:</span></p>
+          {offers.map((offer, index) => (
+            <p key={index} className="text-gray-600 text-xs md:text-sm">{offer}</p>
+          ))}
+        </div>
+      </div>
+
+      {/* Divider */}
+      <hr className="border-t border-gray-300 mb-4" />
+
+      {/* Experience Sharing Section */}
+      <h3 className="text-sm md:text-lg text-center font-semibold text-secondary mb-4">Experience Sharing</h3>
+      <ul className="list-disc list-inside text-xs md:text-sm">
+        {experiences.map((experience, index) => (
+          <li key={index}>{experience}</li>
+        ))}
+      </ul>
+
+      {/* Read More Button */}
+      <div className="flex md:hidden mt-6 justify-center">
+        <Button style={'text-xs'} text="Read More" href="/about-us" />
+      </div>
+    </div>
+  );
+}
+
+function UleadAlumnSection() {
+  const alumnProfiles = [
+    {
+      imageSrc: '/img/team-1.png',
+      name: 'Christina Wang',
+      highschool: 'Deerfield Academy',
+      offers: ['Baylor School(TN)', 'Miss Hall\'s School'],
+      experiences: ['Experience 1', 'Experience 2', 'Experience 3']
+    },
+    {
+      imageSrc: '/img/team-1.png',
+      name: 'Christina Wang',
+      highschool: 'Deerfield Academy',
+      offers: ['Baylor School(TN)', 'Miss Hall\'s School'],
+      experiences: ['Experience 1', 'Experience 2', 'Experience 3']
+    },
+    {
+      imageSrc: '/img/team-1.png',
+      name: 'Christina Wang',
+      highschool: 'Deerfield Academy',
+      offers: ['Baylor School(TN)', 'Miss Hall\'s School'],
+      experiences: ['Experience 1', 'Experience 2', 'Experience 3']
+    },
+    {
+      imageSrc: '/img/team-1.png',
+      name: 'Christina Wang',
+      highschool: 'Deerfield Academy',
+      offers: ['Baylor School(TN)', 'Miss Hall\'s School'],
+      experiences: ['Experience 1', 'Experience 2', 'Experience 3']
+    },
+    {
+      imageSrc: '/img/team-1.png',
+      name: 'Christina Wang',
+      highschool: 'Deerfield Academy',
+      offers: ['Baylor School(TN)', 'Miss Hall\'s School'],
+      experiences: ['Experience 1', 'Experience 2', 'Experience 3']
+    },
+    {
+      imageSrc: '/img/team-1.png',
+      name: 'Christina Wang',
+      highschool: 'Deerfield Academy',
+      offers: ['Baylor School(TN)', 'Miss Hall\'s School'],
+      experiences: ['Experience 1', 'Experience 2', 'Experience 3']
+    },
+    {
+      imageSrc: '/img/team-1.png',
+      name: 'Christina Wang',
+      highschool: 'Deerfield Academy',
+      offers: ['Baylor School(TN)', 'Miss Hall\'s School'],
+      experiences: ['Experience 1', 'Experience 2', 'Experience 3']
+    },
+  ];
+  const alumnProfileCards = alumnProfiles.map((profile, index) => (
+    <AlumnProfileCard key={index} {...profile} />
+  ));
+
+  let alumnProfileCardsDesktop = [];
+
+  for (let i = 0; i < alumnProfileCards.length; i += 3) {
+    alumnProfileCardsDesktop.push((
+      <div key={i} className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {alumnProfileCards.slice(i, i + 3)}
+      </div>
+    ));
+  }
+
+  return (
+    <section className="mx-2 md:mx-[8vw]">
+      <div className="hidden md:block">
+        <Slider elements={alumnProfileCardsDesktop} showArrow />
+      </div>
+      <div className="md:hidden">
+        <Slider elements={alumnProfileCards} showArrow />
+      </div>
     </section>
   )
 }
@@ -358,8 +473,8 @@ function QualificationsSection() {
     "/img/home/qualification5.png",
   ]
   return (
-    <section className="mx-8 md:mx-[8vw]">
-      <div className="flex">
+    <section className="mx-8 md:mx-[8vw] mb-16">
+      <div className="flex items-center gap-x-2">
         {qualifications.map((qualification, index) => (
           <div key={index} className="w-1/5">
             <Image src={qualification} alt={`qualification-${index}`} width={200} height={200} />
