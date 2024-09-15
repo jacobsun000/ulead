@@ -59,7 +59,7 @@ export default function Partners() {
 
   return (
     <div>
-      <Header currentPath="/university" />
+      <Header currentPath="/highschool" />
       <div className="relative h-[80vh]">
         <Image
           src="/img/highschool/header.png"
