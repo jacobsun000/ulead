@@ -6,7 +6,7 @@ const navItems = [
   { label: 'About Us', href: '/about-us' },
   { label: 'Highschool', href: '/highschool' },
   { label: 'University', href: '/university' },
-  { label: 'Lead Program', href: '/lead-program' },
+  // { label: 'Lead Program', href: '/lead-program' },
   { label: 'Partners', href: '/partners' },
 ];
 
