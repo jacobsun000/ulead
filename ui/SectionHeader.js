@@ -1,6 +1,6 @@
-export default function SectionHeader({ title }) {
+export default function SectionHeader({ title, style }) {
   return (
-    <div className="flex items-center mx-8 md:mx-[8vw] my-16">
+    <div className={`flex items-center mx-8 md:mx-[8vw] my-16 ${style}`}>
       {/* Left Line with Diamond */}
       <div className="flex items-center flex-grow">
         <div className="border-t border-gray-300 flex-grow"></div>

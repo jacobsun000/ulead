@@ -8,13 +8,17 @@ import Button from "@/ui/Button";
 import Tab from "@/ui/Tab";
 import Footer from "@/ui/Footer";
 import BackToTopButton from "@/ui/Back";
+import Video from "@/ui/Video";
 
 export default function Home() {
   return (
     <div className="bg-[#f5f5f5]">
       <Header currentPath="/" />
       <MainSection />
-      <SectionHeader title="Our Belief" />
+      <div className="w-5/6 mx-auto md:hidden">
+        <Video src="/img/home/video.mp4" poster="/img/home/video_poster.png" />
+      </div>
+      <SectionHeader title="Our Belief" style={"mt-8 md:mt-16"} />
       <OurBeliefSection />
       <SectionHeader title="Our Services" />
       <OurServicesSection />
@@ -78,12 +82,16 @@ function MainSection() {
 
 function OurBeliefSection() {
   return (
-    <section className="mx-8 md:mx-[8vw]">
+    <section className="mx-8 md:mx-[10vw]">
       {/* Content */}
-      <div className="flex flex-row md:flex-row items-center justify-between">
+      <div className="flex flex-col md:flex-row-reverse items-center justify-center md:gap-x-16">
+        {/* Video Section */}
+        <div className="hidden md:block md:w-1/2 md:h-full mb-4">
+          <Video src="/img/home/video.mp4" poster="/img/home/video_poster.png" />
+        </div>
         {/* Text Section */}
         <div className="md:w-2/5 flex-col w-full">
-          <h3 className="hidden md:block text-3xl font-bold mb-4">
+          <h3 className="hidden md:block text-4xl font-bold mb-4">
             <span className="text-primary">U</span>
             <span className="text-secondary">LEAD Education</span>
           </h3>
@@ -96,25 +104,6 @@ function OurBeliefSection() {
           </p>
           <div className="grid w-full justify-items-center md:justify-items-start">
             <Button href='/about-us' text='About Us' />
-          </div>
-        </div>
-
-        {/* Image Section */}
-        <div className="hidden md:flex md:w-3/5 mt-8 md:mt-0 justify-center">
-          <div className="relative w-full max-w-md">
-            <Image
-              src="/img/home/student_learning.png"
-              alt="Student Learning"
-              width={600}
-              height={400}
-              className="rounded-md shadow-lg"
-            />
-            {/* Play Button Overlay */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <button className="p-2 rounded-full">
-                <Image src="/img/play_button.svg" width={80} height={80} alt="play" />
-              </button>
-            </div>
           </div>
         </div>
       </div>

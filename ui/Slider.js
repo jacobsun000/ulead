@@ -38,7 +38,7 @@ export default function Slider({ elements, showBullet, showArrow }) {
   return (
     <div className="relative w-full mt-4 flex flex-col items-center justify-center">
       <div
-        className="relative mx-10 group hover:-translate-y-2"
+        className="relative mx-10 group"
         onMouseOver={handleMouseOver}
         onMouseLeave={handleMouseLeave}
       >
