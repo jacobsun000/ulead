@@ -9,6 +9,7 @@ import Tab from "@/ui/Tab";
 import Footer from "@/ui/Footer";
 import BackToTopButton from "@/ui/Back";
 import Video from "@/ui/Video";
+import TabVertical from "@/ui/TabVertical";
 
 export default function Home() {
   return (
@@ -412,13 +413,6 @@ function UleadAlumnSection() {
       offers: ['Baylor School(TN)', 'Miss Hall\'s School'],
       experiences: ['Experience 1', 'Experience 2', 'Experience 3']
     },
-    {
-      imageSrc: '/img/team-1.png',
-      name: 'Christina Wang',
-      highschool: 'Deerfield Academy',
-      offers: ['Baylor School(TN)', 'Miss Hall\'s School'],
-      experiences: ['Experience 1', 'Experience 2', 'Experience 3']
-    },
   ];
   const alumnProfileCards = alumnProfiles.map((profile, index) => (
     <AlumnProfileCard key={index} {...profile} />
@@ -447,8 +441,72 @@ function UleadAlumnSection() {
 }
 
 function TestimonialsSection() {
+  const testimonials = [
+    {
+      name: "Parent A",
+      image: "/img/testimonial1.png",
+      major: "CSCI",
+      schools: ["Cornell (17)", "UCLA (20)", "UCB (22)"],
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      descriptionTitle: "Child Background",
+    }
+  ];
+
+  let testimonialCardsMobile = testimonials.map((testimonial, index) => (
+    <div key={index} className="bg-white rounded-lg shadow-lg gap-x-4 p-6 max-w-md flex">
+      <div className="w-16 h-16 gap-y-2 flex flex-col align-center">
+        <Image className="rounded-full border-secondary border-2" src={testimonial.image} alt="img" width={64} height={64} objectFit="cover" />
+        <h3 className="text-sm font-semibold text-primary text-center mb-4">{testimonial.major}</h3>
+      </div>
+      <div className="">
+        <p className="text-gray-600 text-xs mb-4">
+          {testimonial.schools.map((school, index) => (
+            <span key={index} className="mr-2">{school};</span>
+          ))}
+        </p>
+        <p className="text-gray-600 text-xs">{testimonial.description}</p>
+      </div>
+    </div>
+  ));
+
+  const testimonialCards = testimonials.map((t) => (
+    {
+      label: (
+        <div className="flex items-center gap-x-4">
+          <div className="flex flex-col items-center justify-center gap-y-4">
+            <div className="w-16 h-16 mx-auto rounded-full overflow-hidden mr-4 border-2 border-secondary">
+              <Image src={t.image} alt={t.name} width={48} height={48} objectFit="cover" />
+            </div>
+            <p className="font-semibold text-center">{t.name}</p>
+          </div>
+          <div className="text-left">
+            <p className="font-semibold mb-4">{t.major}</p>
+            <p className="font-semibold">Offers:</p>
+            <p className="mb-4">
+              {t.schools.map((school, index) => (
+                <span key={index} className="mr-2">{school};</span>
+              ))}
+            </p>
+          </div>
+        </div>
+      ),
+      content: (
+        <div>
+          <h3 className="text-lg font-semibold">{t.descriptionTitle}</h3>
+          <p>{t.description}</p>
+        </div>
+      ),
+    }
+  ));
   return (
-    <section className="mx-8 md:mx-[8vw]">
+    <section className="mx-0 md:mx-[8vw]">
+      <div className="md:hidden">
+        <Slider elements={testimonialCardsMobile} showBullet />
+      </div>
+      <div className="hidden md:flex flex-col items-center">
+        <TabVertical elements={testimonialCards} />
+        <Button text="Explore More" href="/about-us" style={"bg-secondary"} />
+      </div>
     </section>
   )
 }
