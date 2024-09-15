@@ -6,6 +6,7 @@ import OfferItem from "@/ui/OfferItem";
 import SectionHeader from "@/ui/SectionHeader";
 import Button from "@/ui/Button";
 import Tab from "@/ui/Tab";
+import Footer from "@/ui/Footer";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <SectionHeader title="ULead Alumn" />
       <SectionHeader title="Testimonials" />
       <SectionHeader title="Qualifications" />
+      <Footer />
     </div>
   );
 }

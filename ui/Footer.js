@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
-const FooterColumn = ({ title, items, additionalContent }) => (
-  <div className="flex flex-col">
+const FooterColumn = ({ title, items, additionalContent, mobileDisplay = false }) => (
+  <div className={`${mobileDisplay ? 'flex' : 'hidden md:flex'} flex-col`}>
     <h3 className="text-white font-semibold mb-4">{title}</h3>
     {items.map((item, index) => (
       <a key={index} href="#" className="text-white text-sm mb-2 hover:underline">
@@ -22,10 +22,10 @@ export default function Footer() {
       <div className="flex justify-between mb-8">
         <div className="flex flex-col">
           <div className="mb-4">
-            <span className="text-primary text-5xl font-bold">U</span>
-            <span className="text-white text-5xl font-bold">LEAD</span>
+            <span className="text-primary text-xl md:text-5xl font-bold">U</span>
+            <span className="text-white text-xl md:text-5xl font-bold">LEAD</span>
           </div>
-          <span className="text-white text-5xl">合领教育</span>
+          <span className="text-white text-xl md:text-5xl">合领教育</span>
 
           <div className="flex flex-col items-center mr-5 mt-5">
             <Image src="/img/footer/qrcode.png" alt="WeChat QR Code" width={130} height={130} />
@@ -37,6 +37,7 @@ export default function Footer() {
         </div>
 
         <FooterColumn
+          mobileDisplay
           title="Contact us"
           items={[
             'Tel: +86-10-53350508',
