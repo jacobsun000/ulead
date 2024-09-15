@@ -342,10 +342,10 @@ function AlumnProfileCard({ imageSrc, name, highschool, offers, experiences }) {
         {/* Profile Information */}
         <div>
           <p className="hidden md:block text-xl font-semibold text-primary">{name}</p>
-          <p className="text-gray-600 text-xs md:text-sm mb-2"><span className="font-bold">Highschool:</span> {highschool}</p>
-          <p className="text-gray-600 text-xs md:text-sm"><span className="font-bold">Offers:</span></p>
+          <p className="text-xs md:text-sm mb-2"><span className="font-bold">Highschool:</span> {highschool}</p>
+          <p className="text-xs md:text-sm"><span className="font-bold">Offers:</span></p>
           {offers.map((offer, index) => (
-            <p key={index} className="text-gray-600 text-xs md:text-sm">{offer}</p>
+            <p key={index} className="text-xs md:text-sm">{offer}</p>
           ))}
         </div>
       </div>
@@ -456,7 +456,7 @@ function TestimonialsSection() {
     <div key={index} className="bg-white rounded-lg shadow-lg gap-x-4 p-6 max-w-md flex">
       <div className="w-16 h-16 gap-y-2 flex flex-col align-center">
         <Image className="rounded-full border-secondary border-2" src={testimonial.image} alt="img" width={64} height={64} objectFit="cover" />
-        <h3 className="text-sm font-semibold text-primary text-center mb-4">{testimonial.major}</h3>
+        <h3 className="text-sm font-semibold text-center mb-4">{testimonial.major}</h3>
       </div>
       <div className="">
         <p className="text-gray-600 text-xs mb-4">
