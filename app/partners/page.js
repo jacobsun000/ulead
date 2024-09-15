@@ -1,5 +1,6 @@
 import Header from "@/ui/Header";
 import Footer from "@/ui/Footer";
+import BackButton from "@/ui/Back";
 import Image from 'next/image'
 
 const StatItem = ({ icon, number, description, isRed }) => (
@@ -59,23 +60,16 @@ export default function Partners() {
 
       <div className="mb-4">
         <p className="text-center mb-2">Pictures of past events and admissions</p>
-        <div className="grid grid-cols-4 gap-4">
-          {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-            <div key={num} className="aspect-square bg-gray-200">
-              <Image src={`/img/event${num}.jpg`} alt={`Event ${num}`} layout="fill" objectFit="cover" />
+        <div className="max-w-7xl mx-auto p-4 grid grid-cols-4 gap-4">
+          {[1, 2, 3, 4].map((num) => (
+            <div key={num} className="aspect-square">
+              <Image src={`/img/partners/event${num}.png`} alt={`Event ${num}`} width={900} height={700} />
             </div>
           ))}
         </div>
       </div>
 
-      <div className="flex justify-center">
-        <button type="button" className="px-4 py-2 mb-10 bg-gray-300 text-gray-700 font-semibold rounded hover:bg-gray-400 transition duration-300">
-          Back to top
-        </button>
-      </div>
-
-
-
+      <BackButton />
       <Footer />
     </div>
   );
