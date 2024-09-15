@@ -1,6 +1,7 @@
 import Header from "@/ui/Header";
 import Footer from "@/ui/Footer";
 import BackButton from "@/ui/Back";
+import SectionHeader from "@/ui/SectionHeader";
 import Image from 'next/image'
 
 const StatItem = ({ icon, number, description, isRed }) => (
@@ -19,8 +20,8 @@ export default function Partners() {
   return (
     <div>
       <Header currentPath="/partners" />
+      <SectionHeader title="Our Partners" />
       <div className="max-w-4xl mx-auto p-4">
-        <h2 className="text-2xl font-bold text-center mb-6">Our Partners</h2>
         <div className="relative mb-10">
           <Image
             src="/img/partners/map.svg"

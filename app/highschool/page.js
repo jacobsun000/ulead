@@ -1,6 +1,7 @@
 import Header from "@/ui/Header";
 import Footer from "@/ui/Footer";
 import BackButton from "@/ui/Back";
+import SectionHeader from "@/ui/SectionHeader";
 import Image from 'next/image'
 
 const Card = ({ title, content }) => (
@@ -59,7 +60,7 @@ export default function Partners() {
 
   return (
     <div>
-      <Header currentPath="/university" />
+      <Header currentPath="/highschool" />
       <div className="relative h-[80vh]">
         <Image
           src="/img/highschool/header.png"
@@ -105,7 +106,9 @@ export default function Partners() {
           />
         </div>
 
-        <h2 className="mt-10 text-3xl font-bold text-center">Personalized Services</h2>
+      </div>
+      <SectionHeader title="Personalized Services" />
+      <div className="max-w-6xl mx-auto py-12 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mb-8">
           {services.map((service, index) => (
             <ServiceItem
