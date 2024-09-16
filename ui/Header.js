@@ -10,7 +10,7 @@ const navItems = [
   { label: 'Partners', href: '/partners' },
 ];
 
-function NavItem({ label, href, selected, isMobile = false }) {
+function NavItem({ label, href, selected, setIsMobileMenuOpen, isMobile = false }) {
   return (
     <a
       href={href}
@@ -49,7 +49,7 @@ export default function Header({ currentPath = '/' }) {
       {/* Desktop Nav Items */}
       <nav className="hidden md:flex w-full h-full justify-between items-center ml-16 space-x-6">
         {navItems.map(({ label, href }) => (
-          <NavItem key={label} label={label} href={href} selected={currentPath === href} />
+          <NavItem key={label} label={label} href={href} setIsMobileMenuOpen={setIsMobileMenuOpen} selected={currentPath === href} />
         ))}
         <a href="/contacts" className="bg-primary text-white text-lg ml-4 p-1.5 rounded-[0.2rem] hover:bg-primaryLight transition duration-300">
           Contact Us
@@ -77,7 +77,7 @@ export default function Header({ currentPath = '/' }) {
       {isMobileMenuOpen && (
         <nav className="absolute top-16 left-0 w-full bg-secondary flex flex-col items-start p-4 space-y-4 md:hidden z-50">
           {navItems.map(({ label, href }) => (
-            <NavItem key={label} label={label} href={href} selected={currentPath === href} isMobile />
+            <NavItem setIsMobileMenuOpen={setIsMobileMenuOpen} key={label} label={label} href={href} selected={currentPath === href} isMobile />
           ))}
         </nav>
       )}
