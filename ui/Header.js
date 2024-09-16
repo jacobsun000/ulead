@@ -38,13 +38,13 @@ export default function Header({ currentPath = '/' }) {
   return (
     <header className="bg-secondary flex justify-between items-center px-4 md:px-20 h-16 z-auto">
       {/* Logo */}
-      <div className="flex flex-col py-2 mr-4">
+      <a href='/' className="flex flex-col py-2 mr-4">
         <div>
           <span className="text-primary md:text-xl font-semibold">U</span>
           <span className="text-white md:text-xl font-semibold">LEAD</span>
         </div>
         <span className="text-white text-sm md:text-base md:font-semibold">合领教育</span>
-      </div>
+      </a>
 
       {/* Desktop Nav Items */}
       <nav className="hidden md:flex w-full h-full justify-between items-center ml-16 space-x-6">
