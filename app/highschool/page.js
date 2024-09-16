@@ -3,10 +3,11 @@ import Footer from "@/ui/Footer";
 import BackButton from "@/ui/Back";
 import SectionHeader from "@/ui/SectionHeader";
 import Image from 'next/image'
+import Button from "@/ui/Button";
 
 const Card = ({ title, content }) => (
   <div className="bg-white rounded-lg shadow-md">
-    <h3 className={`text-lg font-bold mb-2 text-white p-2 rounded text-center w-full ${title.includes('Day') ? 'bg-red-600' : 'bg-blue-800'
+    <h3 className={`text-lg font-bold mb-2 text-white p-2 rounded text-center w-full ${title.includes('Day') ? 'bg-primary' : 'bg-secondary'
       }`}>{title}</h3>
     <p className="text-sm px-5 pb-5 text-center">{content}</p>
   </div>
@@ -17,7 +18,7 @@ const ServiceItem = ({ title, description, isOpen, isRed }) => {
     <details className="border-b py-4" open={isOpen}>
       <summary className="flex justify-between items-center cursor-pointer list-none">
         <span className="font-semibold">{title}</span>
-        <span className={`text-2xl ${isRed ? 'text-red-500' : 'text-blue-500'}`}>
+        <span className={`text-sm md:text-2xl ${isRed ? 'text-primary' : 'text-secondary'}`}>
           {isOpen ? '-' : '+'}
         </span>
       </summary>
@@ -27,18 +28,18 @@ const ServiceItem = ({ title, description, isOpen, isRed }) => {
 };
 
 const ProcessStep = ({ number, title, description, isRed }) => (
-  <div className={`p-4 border rounded-lg w-60 h-60 ${isRed ? 'border-red-500' : 'border-blue-800'}`}>
-    <div className={`w-8 h-8 rounded-full ${isRed ? 'bg-red-500' : 'bg-blue-800'} text-white flex items-center justify-center font-bold mb-2`}>
+  <div className={`p-4 border rounded-lg w-40 h-52 md:w-60 md:h-60 ${isRed ? 'border-primary' : 'border-secondary'}`}>
+    <div className={`w-5 h-5 md:w-8 md:h-8 rounded-full ${isRed ? 'bg-primary' : 'bg-secondary'} text-white flex items-center justify-center font-bold mb-2 text-xs md:text-lg`}>
       {number}
     </div>
-    <h3 className="font-bold mb-2 text-center">{title}</h3>
-    <p className="text-sm text-center">{description}</p>
+    <h3 className="font-semibold text-sm md:text-lg md:font-bold mb-2 text-center">{title}</h3>
+    <p className="text-xs md:text-sm text-center">{description}</p>
   </div>
 );
 
 const Arrow = () => (
-  <div className="flex items-center px-2">
-    <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <div className="flex items-center md:px-2">
+    <svg className="w-5 h-5 md:w-6 md:h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
     </svg>
   </div>
@@ -61,7 +62,7 @@ export default function Partners() {
   return (
     <div>
       <Header currentPath="/highschool" />
-      <div className="relative h-[80vh]">
+      <div className="relative h-[30vh] md:h-[80vh]">
         <Image
           src="/img/highschool/header.png"
           alt="Book"
@@ -70,25 +71,21 @@ export default function Partners() {
           priority
         />
         <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-center items-start p-8">
-          <h1 className="text-6xl font-bold text-white mb-8 ml-10">
+          <h1 className="text-2xl md:text-6xl font-bold text-white mb-8 ml-10">
             Private School <br />Application Consultation
           </h1>
-          <button className="ml-10 bg-blue-900 text-white px-11 py-2 rounded-full hover:bg-blue-700 transition duration-300">
-            Free Consultation
-          </button>
+          <Button href="/contacts" text="Free Consultation" style='bg-secondary ml-10' />
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto py-12 px-4">
-        <div className=" p-6 rounded-lg flex justify-between items-center mb-12">
+      <div className="max-w-6xl mx-auto pt:10 md:py-12 px-4">
+        <div className="p-6 rounded-lg flex flex-col gap-y-5 md:flex-row justify-between items-center mb-8 md:mb-12">
           <p className="text-lg max-w-3xl">
             From early-age potential development to private school/
             university applications, ULead can help your child continue
             to grow and progress.
           </p>
-          <button className="bg-red-600 text-white px-6 py-2 rounded-full hover:bg-red-500 transition duration-300">
-            Schedule Now!
-          </button>
+          <Button href="/contacts" text="Schedule Now!" style='px-6 py-2 rounded-full' />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
@@ -107,8 +104,8 @@ export default function Partners() {
         </div>
 
       </div>
-      <SectionHeader title="Personalized Services" />
-      <div className="max-w-6xl mx-auto py-12 px-4">
+      <SectionHeader title="Personalized Services" style='my-0' />
+      <div className="max-w-6xl mx-8 md:mx-auto py-12 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mb-8">
           {services.map((service, index) => (
             <ServiceItem
@@ -120,16 +117,14 @@ export default function Partners() {
           ))}
         </div>
         <div className="text-center">
-          <button className="bg-red-600 text-white px-12 py-2 rounded-md hover:bg-red-500 transition duration-300">
-            Contact us for more details
-          </button>
+          <Button text="Contact us for more details" href="/contacts" />
         </div>
       </div>
 
 
-      <div className="max-w-6xl mx-auto py-12 px-4">
+      <div className="max-w-6xl mx-auto py-12 px-4 hidden md:block">
         <h2 className="text-3xl font-bold text-center mb-8">High School Application Service Process</h2>
-        <div className="space-y-6">
+        <div className="space-y-2 md:space-y-6">
           <div className="flex items-center">
             <ProcessStep number={1} title="Interest Exploration and Development" />
             <Arrow />
@@ -142,10 +137,10 @@ export default function Partners() {
           <div className="flex items-center">
             <ProcessStep number={7} title="Campus Visit Guidance" isRed />
             <Arrow />
-            <div className={`p-4 border rounded-lg w-80 h-60 border-blue-800`}>
+            <div className={`p-4 border rounded-lg w-40 h-52 md:w-80 md:h-60 border-blue-800`}>
               <div className={`w-8 h-8 rounded-full bg-blue-800 text-white flex items-center justify-center font-bold mb-2`}>6</div>
               <h3 className="font-bold mb-2 text-center">Interview Coaching</h3>
-              <p className="text-sm text-center">Self-Awareness Enhancement (Building a Story Game); Interview Awareness Enhancement (Key Interview Assessment Points); Personal Interview Video Practice Assessment & Feedback; Dimensional Comprehensive Improvement (Simulation)</p>
+              <p className="text-sm text-center hidden md:block">{"Self-Awareness Enhancement (Building a Story Game); Interview Awareness Enhancement (Key Interview Assessment Points); Personal Interview Video Practice Assessment & Feedback; Dimensional Comprehensive Improvement (Simulation)"}</p>
             </div>
             <Arrow />
             <ProcessStep number={5} title="Third-Party Interview Coaching" description="Vericant or InitialView" isRed />
