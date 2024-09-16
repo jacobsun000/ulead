@@ -86,7 +86,7 @@ export default function AboutUs() {
                 <span className="text-red-600">U</span>
                 <span className="text-blue-900">LEAD</span> Mission
               </h2>
-              <p className="text-lg">A mentor for children's growth, a steward of education for families</p>
+              <p className="text-lg">{"A mentor for children's growth, a steward of education for families"}</p>
               <div className="flex justify-center mt-4">
                 <span className="h-2 w-2 mx-1 rounded-full bg-gray-300" />
                 <span className="h-2 w-2 mx-1 rounded-full bg-gray-300" />
