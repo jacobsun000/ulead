@@ -34,7 +34,7 @@ export default function Partners() {
 
       <h2 className="text-2xl font-bold text-center mb-6">How ULead works with our partners?</h2>
 
-      <div className="flex justify-between mb-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 justify-between mb-8">
         <StatItem
           icon="plane.svg"
           number="15"
