@@ -372,46 +372,52 @@ function AlumnProfileCard({ imageSrc, name, highschool, offers, experiences }) {
 function UleadAlumnSection() {
   const alumnProfiles = [
     {
-      imageSrc: '/img/team-1.png',
-      name: 'Christina Wang',
+      imageSrc: '/img/home/stu1.png',
+      name: 'Student L',
       highschool: 'Deerfield Academy',
-      offers: ['Baylor School(TN)', 'Miss Hall\'s School'],
-      experiences: ['Experience 1', 'Experience 2', 'Experience 3']
+      offers: ['Culver', 'Cranbrook'],
+      experiences: ['His athletic strengths have been professionally recognized by the coach. Through role-playing and learning from each other, as well as taking detailed notes and highlighting key points, his hard work further enhanced his interview performance. Both his fluency in language and logical thinking were effectively improved!']
     },
     {
-      imageSrc: '/img/team-1.png',
-      name: 'Christina Wang',
+      imageSrc: '/img/home/stu2.png',
+      name: 'Student Z',
       highschool: 'Deerfield Academy',
-      offers: ['Baylor School(TN)', 'Miss Hall\'s School'],
-      experiences: ['Experience 1', 'Experience 2', 'Experience 3']
+      offers: ['Choate', 'Taft', 'Loomis'],
+      experiences: ['In addition to attending Choat\'s summer school, the student also visited and compared several top boarding schools, thus deciding early on that Choate would be their dream school. The student started reading English literature at a young age and, besides an interest in math and physics, also developed a passion for history and Greek mythology. The teacher who interviewed the student happened to also teach history, so during the interview, the student\'s knowledge and background could be well demonstrated. Studying debate from a young age also helped the student enhance their logical thinking and communication skills, which further showcased their confidence.']
     },
     {
-      imageSrc: '/img/team-1.png',
-      name: 'Christina Wang',
+      imageSrc: '/img/home/stu3.png',
+      name: 'Student S',
       highschool: 'Deerfield Academy',
-      offers: ['Baylor School(TN)', 'Miss Hall\'s School'],
-      experiences: ['Experience 1', 'Experience 2', 'Experience 3']
+      offers: ['Westminster', 'Canterbury'],
+      experiences: ['He is a particularly warm-hearted child, very polite, and willing to share with others. The first draft of his application essay was already very vivid and full of imagery. He has strong comprehension skills and can quickly make adjustments to the logic of the essay, which is why the quality of his writing is exceptionally high!']
     },
     {
-      imageSrc: '/img/team-1.png',
-      name: 'Christina Wang',
+      imageSrc: '/img/home/stu4.png',
+      name: 'Student Y',
       highschool: 'Deerfield Academy',
-      offers: ['Baylor School(TN)', 'Miss Hall\'s School'],
-      experiences: ['Experience 1', 'Experience 2', 'Experience 3']
+      offers: ['St. Mark', 'EHS', 'Stony Brook'],
+      experiences: ['Student Y is a very kind and compassionate child, passionate about public service and genuinely dedicated! ',
+        'This was clearly reflected in his overall interview, essays, and other application materials. During the interview preparation, Y\'s stories were very touching, especially the one about helping a young Tibetan child with pronunciation.',
+        'Through repeated practice until his delivery was emotional and impactful, he ultimately left a lasting impression.']
     },
     {
-      imageSrc: '/img/team-1.png',
-      name: 'Christina Wang',
+      imageSrc: '/img/home/stu5.png',
+      name: 'Student D',
       highschool: 'Deerfield Academy',
-      offers: ['Baylor School(TN)', 'Miss Hall\'s School'],
-      experiences: ['Experience 1', 'Experience 2', 'Experience 3']
+      offers: ['Choate', 'Tabor'],
+      experiences: ['He excels in mathematics and enjoys playing the clarinet.',
+        'He has a strong ability to grasp concepts quickly and is highly efficient, always completing tasks on time without procrastination.',
+        'In the application process, the student\'s own potential, hard work, professional guidance, and close communication were all essential factors for success!']
     },
     {
-      imageSrc: '/img/team-1.png',
-      name: 'Christina Wang',
+      imageSrc: '/img/home/stu6.png',
+      name: 'Student T',
       highschool: 'Deerfield Academy',
-      offers: ['Baylor School(TN)', 'Miss Hall\'s School'],
-      experiences: ['Experience 1', 'Experience 2', 'Experience 3']
+      offers: ['Webbs', 'Mercersburg'],
+      experiences: ['Student T has a wealth of experiences, is multi-talented, and actively participates in various activities both inside and outside of school!',
+        'However, despite her optimism, she faced setbacks during her application to U.S. high schools, which weighed heavily on her mind. She didn’t want to give up any of her activities.',
+        'With patient support, she eventually learned to manage her time well, not only maintaining her extracurricular commitments but also dedicating significant time to her application preparation. Reflecting on this challenging yet rewarding journey, she gained many insights!']
     },
   ];
   const alumnProfileCards = alumnProfiles.map((profile, index) => (
@@ -444,7 +450,7 @@ function TestimonialsSection() {
   const testimonials = [
     {
       name: "Parent A",
-      image: "/img/testimonial1.png",
+      image: "/img/home/testimonial1.png",
       major: "CSCI",
       schools: ["Cornell (17)", "UCLA (20)", "UCB (22)"],
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
