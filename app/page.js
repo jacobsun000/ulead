@@ -114,14 +114,18 @@ function OurBeliefSection() {
 
 function ServiceCard({ title, icon, iconBg, text }) {
   return (
-    <div className="bg-white shadow-lg rounded-lg p-6 md:p-8 max-w-lg text-center">
+    <div className="bg-white shadow-lg rounded-lg p-6 md:p-4 md:w-1/3 h-[28rem] text-center">
       <div className="flex justify-center mb-4">
         <div className={`${iconBg} p-4 rounded-full`}>
           {icon}
         </div>
       </div>
       <h3 className="text-xl font-bold mb-4">{title}</h3>
-      <p className="text-gray-600 mb-4">{text}</p>
+      <div className="text-left pl-4">
+        {text.map((t, index) => (
+          <p key={index} className="text-gray-600 text-xs md:text-sm mb-4">{t}</p>
+        ))}
+      </div>
     </div>
   );
 }
@@ -142,7 +146,12 @@ function OurServicesSection() {
           </g>
         </svg>
       }
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+      text={["Parents Growth and Exchange Workshop",
+        "School/College Assessment Consulting ",
+        "Overseas School Knowledge Enrichment ",
+        "Parenting Philosiphy Guidance and Consulting",
+        "Psychological Support with Certified Professionals"]}
+
     />,
     <ServiceCard
       key="For Students"
@@ -154,7 +163,11 @@ function OurServicesSection() {
           <path d="M17.9167 2.91675H13.3333C11.4924 2.91675 10 4.40912 10 6.25008V17.5001C10 16.1194 11.1193 15.0001 12.5 15.0001H17.9167V2.91675Z" stroke="white" strokeWidth="2" strokeLinejoin="round" />
         </svg>
       }
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+      text={["Junior/High School Placement",
+        "USA/Canada/UK/Australia College Consulting",
+        "Younger Students Navigation Programs",
+        "150 Hours Cracking Method in 1.5 Year"]}
+
     />,
     <ServiceCard
       key="For Schools"
@@ -170,7 +183,13 @@ function OurServicesSection() {
           </g>
         </svg>
       }
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+      text={["School Reception Support in China",
+        "Joint Virtual School Events in Chinese Families",
+        "Marketing Research for Schools",
+        "Look for Qualified Candidates within and outside of China for Schools",
+        "Arrange Sino-US School Students Exchange Events ",
+        "Exclusive Promotion for Schools for the Targeted Families"]}
+
     />
   ];
   return (
@@ -178,7 +197,7 @@ function OurServicesSection() {
       <div className="md:hidden">
         <Slider elements={cards} showArrow showBullet />
       </div>
-      <div className="hidden md:flex gap-x-16 justify-center items-center">
+      <div className="hidden md:flex gap-x-8 justify-center items-center relative">
         {cards.map((card, _) => (
           card
         ))}
@@ -372,46 +391,52 @@ function AlumnProfileCard({ imageSrc, name, highschool, offers, experiences }) {
 function UleadAlumnSection() {
   const alumnProfiles = [
     {
-      imageSrc: '/img/team-1.png',
-      name: 'Christina Wang',
+      imageSrc: '/img/home/stu1.png',
+      name: 'Student L',
       highschool: 'Deerfield Academy',
-      offers: ['Baylor School(TN)', 'Miss Hall\'s School'],
-      experiences: ['Experience 1', 'Experience 2', 'Experience 3']
+      offers: ['Culver', 'Cranbrook'],
+      experiences: ['His athletic strengths have been professionally recognized by the coach. Through role-playing and learning from each other, as well as taking detailed notes and highlighting key points, his hard work further enhanced his interview performance. Both his fluency in language and logical thinking were effectively improved!']
     },
     {
-      imageSrc: '/img/team-1.png',
-      name: 'Christina Wang',
+      imageSrc: '/img/home/stu2.png',
+      name: 'Student Z',
       highschool: 'Deerfield Academy',
-      offers: ['Baylor School(TN)', 'Miss Hall\'s School'],
-      experiences: ['Experience 1', 'Experience 2', 'Experience 3']
+      offers: ['Choate', 'Taft', 'Loomis'],
+      experiences: ['In addition to attending Choat\'s summer school, the student also visited and compared several top boarding schools, thus deciding early on that Choate would be their dream school. The student started reading English literature at a young age and, besides an interest in math and physics, also developed a passion for history and Greek mythology. The teacher who interviewed the student happened to also teach history, so during the interview, the student\'s knowledge and background could be well demonstrated. Studying debate from a young age also helped the student enhance their logical thinking and communication skills, which further showcased their confidence.']
     },
     {
-      imageSrc: '/img/team-1.png',
-      name: 'Christina Wang',
+      imageSrc: '/img/home/stu3.png',
+      name: 'Student S',
       highschool: 'Deerfield Academy',
-      offers: ['Baylor School(TN)', 'Miss Hall\'s School'],
-      experiences: ['Experience 1', 'Experience 2', 'Experience 3']
+      offers: ['Westminster', 'Canterbury'],
+      experiences: ['He is a particularly warm-hearted child, very polite, and willing to share with others. The first draft of his application essay was already very vivid and full of imagery. He has strong comprehension skills and can quickly make adjustments to the logic of the essay, which is why the quality of his writing is exceptionally high!']
     },
     {
-      imageSrc: '/img/team-1.png',
-      name: 'Christina Wang',
+      imageSrc: '/img/home/stu4.png',
+      name: 'Student Y',
       highschool: 'Deerfield Academy',
-      offers: ['Baylor School(TN)', 'Miss Hall\'s School'],
-      experiences: ['Experience 1', 'Experience 2', 'Experience 3']
+      offers: ['St. Mark', 'EHS', 'Stony Brook'],
+      experiences: ['Student Y is a very kind and compassionate child, passionate about public service and genuinely dedicated! ',
+        'This was clearly reflected in his overall interview, essays, and other application materials. During the interview preparation, Y\'s stories were very touching, especially the one about helping a young Tibetan child with pronunciation.',
+        'Through repeated practice until his delivery was emotional and impactful, he ultimately left a lasting impression.']
     },
     {
-      imageSrc: '/img/team-1.png',
-      name: 'Christina Wang',
+      imageSrc: '/img/home/stu5.png',
+      name: 'Student D',
       highschool: 'Deerfield Academy',
-      offers: ['Baylor School(TN)', 'Miss Hall\'s School'],
-      experiences: ['Experience 1', 'Experience 2', 'Experience 3']
+      offers: ['Choate', 'Tabor'],
+      experiences: ['He excels in mathematics and enjoys playing the clarinet.',
+        'He has a strong ability to grasp concepts quickly and is highly efficient, always completing tasks on time without procrastination.',
+        'In the application process, the student\'s own potential, hard work, professional guidance, and close communication were all essential factors for success!']
     },
     {
-      imageSrc: '/img/team-1.png',
-      name: 'Christina Wang',
+      imageSrc: '/img/home/stu6.png',
+      name: 'Student T',
       highschool: 'Deerfield Academy',
-      offers: ['Baylor School(TN)', 'Miss Hall\'s School'],
-      experiences: ['Experience 1', 'Experience 2', 'Experience 3']
+      offers: ['Webbs', 'Mercersburg'],
+      experiences: ['Student T has a wealth of experiences, is multi-talented, and actively participates in various activities both inside and outside of school!',
+        'However, despite her optimism, she faced setbacks during her application to U.S. high schools, which weighed heavily on her mind. She didn’t want to give up any of her activities.',
+        'With patient support, she eventually learned to manage her time well, not only maintaining her extracurricular commitments but also dedicating significant time to her application preparation. Reflecting on this challenging yet rewarding journey, she gained many insights!']
     },
   ];
   const alumnProfileCards = alumnProfiles.map((profile, index) => (
@@ -444,7 +469,7 @@ function TestimonialsSection() {
   const testimonials = [
     {
       name: "Parent A",
-      image: "/img/testimonial1.png",
+      image: "/img/home/testimonial1.png",
       major: "CSCI",
       schools: ["Cornell (17)", "UCLA (20)", "UCB (22)"],
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
