@@ -209,7 +209,7 @@ function OurServicesSection() {
 function OfferReport({ schools, href }) {
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         {schools.map((school, index) => (
           <div key={index} className={`${index >= 5 ? 'hidden' : ''} md:${index >= 10 ? 'hidden' : 'block'}`}>
             <OfferItem {...school} />
