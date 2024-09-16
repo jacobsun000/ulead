@@ -3,6 +3,7 @@ import Footer from "@/ui/Footer";
 import BackButton from "@/ui/Back";
 import SectionHeader from "@/ui/SectionHeader";
 import Image from 'next/image';
+import Button from "@/ui/Button";
 
 const ContactItem = ({ src, alt, text }) => (
   <div className="flex items-center mb-6">
@@ -21,49 +22,50 @@ export default function Contacts() {
   return (
     <div>
       <Header currentPath="/contacts" />
-      <div className="max-w-6xl mx-auto p-4 mb-4">
-        <div className="grid grid-cols-4 gap-4 mb-8">
-          <div className="col-span-1 w-60 h-40 text-center">
+      <div className="md:max-w-6xl mx-auto p-4 mb-4">
+        <SectionHeader title="Our Offices" style='mt-0 mb-8 md:my-8' />
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="col-span-1 w-40 h-40 md:w-60 md:h-40 text-center">
             <Image
               src={"/img/contacts/ny.png"}
               alt="New York"
               width={800}
               height={600}
             />
-            <span className="font-bold text-blue-800 mt-3 block">New York, USA</span>
+            <span className="font-bold text-secondary mt-3 block">New York, USA</span>
           </div>
-          <div className="col-span-1 w-60 h-40 text-center">
+          <div className="col-span-1 w-40 h-40 md:w-60 md:h-40 text-center">
             <Image
               src={"/img/contacts/bs.png"}
               alt="New York"
               width={800}
               height={600}
             />
-            <span className="font-bold text-red-600 mt-3 block">Boston, USA</span>
+            <span className="font-bold text-primary mt-3 block">Boston, USA</span>
           </div>
-          <div className="col-span-1 w-60 h-40 text-center">
+          <div className="col-span-1 w-40 h-40 md:w-60 md:h-40 text-center">
             <Image
               src={"/img/contacts/bj.png"}
               alt="New York"
               width={800}
               height={600}
             />
-            <span className="font-bold text-blue-800 mt-3 block">Beijing, China</span>
+            <span className="font-bold text-secondary mt-3 block">Beijing, China</span>
           </div>
-          <div className="col-span-1 w-60 h-40 text-center">
+          <div className="col-span-1 w-40 h-40 md:w-60 md:h-40 text-center">
             <Image
               src={"/img/contacts/gz.png"}
               alt="New York"
               width={800}
               height={600}
             />
-            <span className="font-bold text-red-600 mt-3 block">Guangzhou, China</span>
+            <span className="font-bold text-primary mt-3 block">Guangzhou, China</span>
           </div>
         </div>
       </div>
 
       <div className="py-6">
-        <SectionHeader title="Contact Us" />
+        <SectionHeader title="Contact Us" style='mt-0 mb-8 md:my-8' />
         <div className="max-w-4xl mx-auto p-4">
           <div className="flex flex-col md:flex-row justify-between md:space-x-12">
             <div className="md:w-1/2">
@@ -139,9 +141,7 @@ export default function Contacts() {
             />
           </div>
           <div className="md:col-span-2 mt-4 mb-4 flex justify-center">
-            <button type="button" className="w-1/3 py-2 px-4 bg-red-600 text-white text-xl font-semibold rounded hover:bg-red-700 transition duration-300">
-              Submit
-            </button>
+            <Button text="Submit" href='/' style='text-xl font-semibold' />
           </div>
         </form>
       </div>
