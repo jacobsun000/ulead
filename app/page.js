@@ -114,14 +114,18 @@ function OurBeliefSection() {
 
 function ServiceCard({ title, icon, iconBg, text }) {
   return (
-    <div className="bg-white shadow-lg rounded-lg p-6 md:p-8 max-w-lg text-center">
+    <div className="bg-white shadow-lg rounded-lg p-6 md:p-4 md:w-1/3 h-[28rem] text-center">
       <div className="flex justify-center mb-4">
         <div className={`${iconBg} p-4 rounded-full`}>
           {icon}
         </div>
       </div>
       <h3 className="text-xl font-bold mb-4">{title}</h3>
-      <p className="text-gray-600 mb-4">{text}</p>
+      <div className="text-left pl-4">
+        {text.map((t, index) => (
+          <p key={index} className="text-gray-600 text-xs md:text-sm mb-4">{t}</p>
+        ))}
+      </div>
     </div>
   );
 }
@@ -142,7 +146,12 @@ function OurServicesSection() {
           </g>
         </svg>
       }
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+      text={["Parents Growth and Exchange Workshop",
+        "School/College Assessment Consulting ",
+        "Overseas School Knowledge Enrichment ",
+        "Parenting Philosiphy Guidance and Consulting",
+        "Psychological Support with Certified Professionals"]}
+
     />,
     <ServiceCard
       key="For Students"
@@ -154,7 +163,11 @@ function OurServicesSection() {
           <path d="M17.9167 2.91675H13.3333C11.4924 2.91675 10 4.40912 10 6.25008V17.5001C10 16.1194 11.1193 15.0001 12.5 15.0001H17.9167V2.91675Z" stroke="white" strokeWidth="2" strokeLinejoin="round" />
         </svg>
       }
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+      text={["Junior/High School Placement",
+        "USA/Canada/UK/Australia College Consulting",
+        "Younger Students Navigation Programs",
+        "150 Hours Cracking Method in 1.5 Year"]}
+
     />,
     <ServiceCard
       key="For Schools"
@@ -170,7 +183,13 @@ function OurServicesSection() {
           </g>
         </svg>
       }
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+      text={["School Reception Support in China",
+        "Joint Virtual School Events in Chinese Families",
+        "Marketing Research for Schools",
+        "Look for Qualified Candidates within and outside of China for Schools",
+        "Arrange Sino-US School Students Exchange Events ",
+        "Exclusive Promotion for Schools for the Targeted Families"]}
+
     />
   ];
   return (
@@ -178,7 +197,7 @@ function OurServicesSection() {
       <div className="md:hidden">
         <Slider elements={cards} showArrow showBullet />
       </div>
-      <div className="hidden md:flex gap-x-16 justify-center items-center">
+      <div className="hidden md:flex gap-x-8 justify-center items-center relative">
         {cards.map((card, _) => (
           card
         ))}
