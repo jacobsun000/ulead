@@ -5,7 +5,7 @@ export default function TabVertical({ elements }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
-    <div className="flex flex-col md:flex-row p-6 rounded-full overflow-hidden">
+    <div className="flex flex-col md:flex-row p-6 overflow-hidden">
       {/* Vertical Tabs (Left side) */}
       <div className="md:w-1/3 flex flex-col space-y-4 mb-6 md:mb-0">
         {elements.map((element, index) => (

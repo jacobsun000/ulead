@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 
-export default function Slider({ elements, showBullet, showArrow }) {
+export default function Slider({ elements, showBullet, showArrow, autoplay = true }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -16,7 +16,7 @@ export default function Slider({ elements, showBullet, showArrow }) {
   };
 
   useEffect(() => {
-    if (!isHovered) {
+    if (!isHovered && autoplay) {
       const interval = setInterval(() => {
         nextSlide();
       }, 3000);

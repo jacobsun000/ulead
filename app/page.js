@@ -27,9 +27,9 @@ export default function Home() {
       <StudentReportSection />
       <SectionHeader title="Our Team" />
       <OurTeamSection />
-      <SectionHeader title="ULead Alumn" />
-      <UleadAlumnSection />
       <SectionHeader title="Testimonials" />
+      <UleadAlumnSection />
+      <SectionHeader title="ULead Alumn" />
       <TestimonialsSection />
       <SectionHeader title="Qualifications" />
       <QualificationsSection />
@@ -266,11 +266,15 @@ function StudentReportSection() {
 function TeamMember({ imageSrc, name, description, link }) {
   return (
     <div className="bg-white md:border-1 md:border-y-gray-50 md:border-x-none md:rounded-none shadow-lg md:shadow-none rounded-lg p-4 flex md:flex-col items-center space-x-4 md:space-x-0 mb-6">
-      <div className="w-16 h-16 rounded-full overflow-hidden">
-        <Image src={imageSrc} alt={name} width={64} height={64} objectFit="cover" />
-      </div>
+      <Image
+        src={imageSrc}
+        alt={name}
+        width={64}
+        height={64}
+        className="rounded-full mb-4"
+      />
       <div>
-        {/* <p className="font-semibold text-gray-800">{name}</p> */}
+        <span className="md:hidden font-semibold text-xs text-gray-800">{name}</span>
         <p className="text-gray-600 text-sm">
           {description}
           <a href={link} className="md:hidden text-primary cursor-pointer"> Read More</a>
@@ -281,39 +285,57 @@ function TeamMember({ imageSrc, name, description, link }) {
 }
 
 function OurTeamSection() {
-  const tabs = [
+  const members = [
     {
-      key: 'consultant', label: 'Consultant', members: [
-        { imageSrc: '/img/team-1.png', name: 'Christina Wang', description: 'Christina Wang holds a bachelor\'s degree from Beijing Foreign Studies University...' },
-        { imageSrc: '/img/team-2.png', name: 'John Doe', description: 'John Doe holds a bachelor\'s degree from Beijing Foreign Studies University...' },
-        { imageSrc: '/img/team-3.png', name: 'Jane Smith', description: 'Jane Smith holds a bachelor\'s degree from Beijing Foreign Studies University...' },
-        { imageSrc: '/img/team-4.png', name: 'Adam White', description: 'Adam White holds a bachelor\'s degree from Beijing Foreign Studies University...' }
+      name: "Christina",
+      imageSrc: "/img/aboutus/founder.png",
+      description: [
+        "Certified Consultant of the Independent Educational Consultants Association (IECA). ",
+        "Certified Member of the Enrollment Management Association (EMA)...",
+      ]
+
+    },
+    {
+      name: "Tom",
+      imageSrc: "/img/aboutus/Tom.png",
+      description: [
+        "With 30 years of experience in admission management. ",
+        "A renowned expert in the United States. ",
+        "Leader in the field of independent school admissions...",
       ]
     },
     {
-      key: 'professionals', label: 'Professionals', members: [
-        { imageSrc: '/img/team-1.png', name: 'Christina Wang', description: 'Christina Wang holds a bachelor\'s degree from Beijing Foreign Studies University...' },
-        { imageSrc: '/img/team-2.png', name: 'John Doe', description: 'John Doe holds a bachelor\'s degree from Beijing Foreign Studies University...' },
-        { imageSrc: '/img/team-3.png', name: 'Jane Smith', description: 'Jane Smith holds a bachelor\'s degree from Beijing Foreign Studies University...' },
-        { imageSrc: '/img/team-4.png', name: 'Adam White', description: 'Adam White holds a bachelor\'s degree from Beijing Foreign Studies University...' }
+      name: "Andy",
+      imageSrc: "/img/aboutus/Andy.png",
+      description: [
+        "Former admissions officer at Columbia University. ",
+        "Master of Journalism from Northwestern University / Bachelor of Political Science from Columbia University...",
       ]
     },
     {
-      key: 'planning', label: 'Planning', members: [
-        { imageSrc: '/img/team-1.png', name: 'Christina Wang', description: 'Christina Wang holds a bachelor\'s degree from Beijing Foreign Studies University...' },
-        { imageSrc: '/img/team-2.png', name: 'John Doe', description: 'John Doe holds a bachelor\'s degree from Beijing Foreign Studies University...' },
-        { imageSrc: '/img/team-3.png', name: 'Jane Smith', description: 'Jane Smith holds a bachelor\'s degree from Beijing Foreign Studies University...' },
-        { imageSrc: '/img/team-4.png', name: 'Adam White', description: 'Adam White holds a bachelor\'s degree from Beijing Foreign Studies University...' }
+      name: "Ray",
+      imageSrc: "/img/aboutus/Ray.png",
+      description: [
+        "Chief Consultant, Master of Psychology in Education from the University of Hong Kong. ",
+        "Creative design activities. ",
+        "Close communication..."
       ]
     },
     {
-      key: 'interviews', label: 'Interviews', members: [
-        { imageSrc: '/img/team-1.png', name: 'Christina Wang', description: 'Christina Wang holds a bachelor\'s degree from Beijing Foreign Studies University...' },
-        { imageSrc: '/img/team-2.png', name: 'John Doe', description: 'John Doe holds a bachelor\'s degree from Beijing Foreign Studies University...' },
-        { imageSrc: '/img/team-3.png', name: 'Jane Smith', description: 'Jane Smith holds a bachelor\'s degree from Beijing Foreign Studies University...' },
-        { imageSrc: '/img/team-4.png', name: 'Adam White', description: 'Adam White holds a bachelor\'s degree from Beijing Foreign Studies University...' }
+      name: "Anna",
+      imageSrc: "/img/aboutus/Anna.png",
+      description: [
+        "Proficient in six languages. ",
+        "Specializes in multilingual translation/ language tutoring. ",
+        "Verbal and interview coaching..."
       ]
     }
+  ];
+  const tabs = [
+    { key: 'consultant', label: 'Consultant', members },
+    { key: 'professionals', label: 'Professionals', members },
+    { key: 'planning', label: 'Planning', members },
+    { key: 'interviews', label: 'Interviews', members }
   ];
 
   return (
@@ -391,28 +413,28 @@ function AlumnProfileCard({ imageSrc, name, highschool, offers, experiences }) {
 function UleadAlumnSection() {
   const alumnProfiles = [
     {
-      imageSrc: '/img/home/stu1.png',
+      imageSrc: '/img/icon-female.png',
       name: 'Student L',
       highschool: 'Deerfield Academy',
       offers: ['Culver', 'Cranbrook'],
       experiences: ['His athletic strengths have been professionally recognized by the coach. Through role-playing and learning from each other, as well as taking detailed notes and highlighting key points, his hard work further enhanced his interview performance. Both his fluency in language and logical thinking were effectively improved!']
     },
     {
-      imageSrc: '/img/home/stu2.png',
+      imageSrc: '/img/icon-male.png',
       name: 'Student Z',
       highschool: 'Deerfield Academy',
       offers: ['Choate', 'Taft', 'Loomis'],
       experiences: ['In addition to attending Choat\'s summer school, the student also visited and compared several top boarding schools, thus deciding early on that Choate would be their dream school. The student started reading English literature at a young age and, besides an interest in math and physics, also developed a passion for history and Greek mythology. The teacher who interviewed the student happened to also teach history, so during the interview, the student\'s knowledge and background could be well demonstrated. Studying debate from a young age also helped the student enhance their logical thinking and communication skills, which further showcased their confidence.']
     },
     {
-      imageSrc: '/img/home/stu3.png',
+      imageSrc: '/img/icon-female.png',
       name: 'Student S',
       highschool: 'Deerfield Academy',
       offers: ['Westminster', 'Canterbury'],
       experiences: ['He is a particularly warm-hearted child, very polite, and willing to share with others. The first draft of his application essay was already very vivid and full of imagery. He has strong comprehension skills and can quickly make adjustments to the logic of the essay, which is why the quality of his writing is exceptionally high!']
     },
     {
-      imageSrc: '/img/home/stu4.png',
+      imageSrc: '/img/icon-male.png',
       name: 'Student Y',
       highschool: 'Deerfield Academy',
       offers: ['St. Mark', 'EHS', 'Stony Brook'],
@@ -421,7 +443,7 @@ function UleadAlumnSection() {
         'Through repeated practice until his delivery was emotional and impactful, he ultimately left a lasting impression.']
     },
     {
-      imageSrc: '/img/home/stu5.png',
+      imageSrc: '/img/icon-female.png',
       name: 'Student D',
       highschool: 'Deerfield Academy',
       offers: ['Choate', 'Tabor'],
@@ -430,7 +452,7 @@ function UleadAlumnSection() {
         'In the application process, the student\'s own potential, hard work, professional guidance, and close communication were all essential factors for success!']
     },
     {
-      imageSrc: '/img/home/stu6.png',
+      imageSrc: '/img/icon-male.png',
       name: 'Student T',
       highschool: 'Deerfield Academy',
       offers: ['Webbs', 'Mercersburg'],
@@ -456,10 +478,10 @@ function UleadAlumnSection() {
   return (
     <section className="mx-2 md:mx-[8vw]">
       <div className="hidden md:block">
-        <Slider elements={alumnProfileCardsDesktop} showArrow />
+        <Slider elements={alumnProfileCardsDesktop} autoplay={false} showArrow />
       </div>
       <div className="md:hidden">
-        <Slider elements={alumnProfileCards} showArrow />
+        <Slider elements={alumnProfileCards} autoplay={false} showArrow />
       </div>
     </section>
   )
@@ -468,27 +490,52 @@ function UleadAlumnSection() {
 function TestimonialsSection() {
   const testimonials = [
     {
-      name: "Parent A",
-      image: "/img/home/testimonial1.png",
-      major: "CSCI",
-      schools: ["Cornell (17)", "UCLA (20)", "UCB (22)"],
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      descriptionTitle: "Child Background",
+      name: "Michael",
+      image: "/img/home/alumn1.jpg",
+      schools: ["The Webb Schools", "Princeton University"]
+    }, {
+      name: "Lily",
+      image: "/img/home/alumn2.jpg",
+      schools: ["Deerfield Academy", "Yale University"]
+    }, {
+      name: "Linda",
+      image: "/img/home/alumn3.jpg",
+      schools: ["St.Paul's School", "Columbia University"]
+    }, {
+      name: "David",
+      image: "/img/home/alumn4.png",
+      schools: ["Choate/Princeton Int School", "Massachusetts Institute of Technology"]
+    }, {
+      name: "Vanessa",
+      image: "/img/home/alumn5.jpg",
+      schools: ["The Thacher School", "University of Pennsylvania"]
+    }, {
+      name: "Russell",
+      image: "/img/home/alumn6.jpg",
+      schools: ["The Stony Brook School", "New York University-Stern School"]
+    }, {
+      name: "Jack",
+      image: "/img/home/alumn7.jpg",
+      schools: ["Cranbrook Schools", "University of Michigan"]
+    }, {
+      name: "Coco",
+      image: "/img/home/alumn8.jpg",
+      schools: ["Mercersburg Academy", "Berkelee College of Music"]
     }
   ];
 
   let testimonialCardsMobile = testimonials.map((testimonial, index) => (
-    <div key={index} className="bg-white rounded-lg shadow-lg gap-x-4 p-6 max-w-md flex">
-      <div className="w-16 h-16 gap-y-2 flex flex-col align-center">
-        <Image className="rounded-full border-secondary border-2" src={testimonial.image} alt="img" width={64} height={64} objectFit="cover" />
-        <h3 className="text-sm font-semibold text-center mb-4">{testimonial.major}</h3>
+    <div key={index} className="bg-white rounded-lg shadow-lg gap-x-4 p-6 md:max-w-md w-[80vw] flex">
+      <div className="w-16 h-16 gap-y-2 flex flex-col align-center mb-4">
+        <Image className="rounded-full" src={testimonial.image} alt="img" width={64} height={64} objectFit="cover" />
+        <h3 className="text-sm font-semibold text-center mb-8">{testimonial.name}</h3>
       </div>
       <div className="">
-        <p className="text-gray-600 text-xs mb-4">
+        <div className="text-gray-600 text-xs mb-4">
           {testimonial.schools.map((school, index) => (
-            <span key={index} className="mr-2">{school};</span>
+            <p key={index} className="mr-2">{school};</p>
           ))}
-        </p>
+        </div>
         <p className="text-gray-600 text-xs">{testimonial.description}</p>
       </div>
     </div>
@@ -528,8 +575,8 @@ function TestimonialsSection() {
       <div className="md:hidden">
         <Slider elements={testimonialCardsMobile} showBullet />
       </div>
-      <div className="hidden md:flex flex-col items-center">
-        <TabVertical elements={testimonialCards} />
+      <div className="hidden md:flex flex-col items-center gap-8">
+        <Slider showBullet showArrow elements={testimonialCardsMobile} />
         <Button text="Explore More" href="/about-us" style={"bg-secondary"} />
       </div>
     </section>
