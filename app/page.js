@@ -609,7 +609,7 @@ function TestimonialsSection() {
         <Image className="rounded-full" src={testimonial.image} alt="img" width={64} height={64} objectFit="cover" />
         <h3 className="text-sm font-semibold text-center mb-8">{testimonial.name}</h3>
       </div>
-      <div className="">
+      <div className="flex items-center">
         <div className="text-gray-600 text-xs mb-4">
           {testimonial.schools.map((school, index) => (
             <p key={index} className="mr-2">{school};</p>
@@ -644,7 +644,7 @@ function TestimonialsSection() {
       content: (
         <div>
           <h3 className="text-lg font-semibold">{t.descriptionTitle}</h3>
-          <p>{t.description}</p>
+          <p >{t.description}</p>
         </div>
       ),
     }
