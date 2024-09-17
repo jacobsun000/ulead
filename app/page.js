@@ -123,7 +123,9 @@ function ServiceCard({ title, icon, iconBg, text }) {
       <h3 className="text-xl font-bold mb-4">{title}</h3>
       <div className="text-left pl-4">
         {text.map((t, index) => (
-          <p key={index} className="text-gray-600 text-xs md:text-sm mb-4">{t}</p>
+          <p key={index} className="text-gray-600 text-xs md:text-sm mb-4 flex items-start">
+            <span className="w-2 h-2 bg-primary md:bg-primary rounded-full mr-2 mt-1 flex-shrink-0"></span>
+            {t}</p>
         ))}
       </div>
     </div>
@@ -393,12 +395,12 @@ function OurTeamSection() {
       ]
     },
     {
-      name: "Anna",
-      imageSrc: "/img/aboutus/Anna.png",
+      name: "Jay",
+      imageSrc: "/img/aboutus/Jay.png",
       description: [
-        "Proficient in six languages. ",
-        "Specializes in multilingual translation/ language tutoring. ",
-        "Verbal and interview coaching..."
+        "A published author worked extensively in both the US and Asia at independent schools",
+        "Invited a speaker at NAIS and TABs conferences.",
+        "Based in NYC and Boston..."
       ]
     }
   ];
@@ -488,21 +490,27 @@ function UleadAlumnSection() {
       name: 'Student L',
       highschool: 'Deerfield Academy',
       offers: ['Culver', 'Cranbrook'],
-      experiences: ['His athletic strengths have been professionally recognized by the coach. Through role-playing and learning from each other, as well as taking detailed notes and highlighting key points, his hard work further enhanced his interview performance. Both his fluency in language and logical thinking were effectively improved!']
+      experiences: ['His athletic strengths have been professionally recognized by the coach. ',
+        'Through role-playing and learning from each other, as well as taking detailed notes and highlighting key points, his hard work further enhanced his interview performance. ',
+        'Both his fluency in language and logical thinking were effectively improved!']
     },
     {
       imageSrc: '/img/icon-male.png',
       name: 'Student Z',
       highschool: 'Deerfield Academy',
       offers: ['Choate', 'Taft', 'Loomis'],
-      experiences: ['In addition to attending Choat\'s summer school, the student also visited and compared several top boarding schools, thus deciding early on that Choate would be their dream school. The student started reading English literature at a young age and, besides an interest in math and physics, also developed a passion for history and Greek mythology. The teacher who interviewed the student happened to also teach history, so during the interview, the student\'s knowledge and background could be well demonstrated. Studying debate from a young age also helped the student enhance their logical thinking and communication skills, which further showcased their confidence.']
+      experiences: ['In addition to attending Choat\'s summer school, the student also visited and compared several top boarding schools, thus deciding early on that Choate would be their dream school.',
+        'The student started reading English literature at a young age and, besides an interest in math and physics, also developed a passion for history and Greek mythology. ',
+        'The teacher who interviewed the student happened to also teach history, so during the interview, the student\'s knowledge and background could be well demonstrated. Studying debate from a young age also helped the student enhance their logical thinking and communication skills, which further showcased their confidence.']
     },
     {
       imageSrc: '/img/icon-female.png',
       name: 'Student S',
       highschool: 'Deerfield Academy',
       offers: ['Westminster', 'Canterbury'],
-      experiences: ['He is a particularly warm-hearted child, very polite, and willing to share with others. The first draft of his application essay was already very vivid and full of imagery. He has strong comprehension skills and can quickly make adjustments to the logic of the essay, which is why the quality of his writing is exceptionally high!']
+      experiences: ['He is a particularly warm-hearted child, very polite, and willing to share with others. ',
+        'The first draft of his application essay was already very vivid and full of imagery. ',
+        'He has strong comprehension skills and can quickly make adjustments to the logic of the essay, which is why the quality of his writing is exceptionally high!']
     },
     {
       imageSrc: '/img/icon-male.png',
