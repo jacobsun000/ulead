@@ -43,6 +43,7 @@ export default function Footer() {
             <div>
               <h3 className="text-white font-semibold text-sm mb-2">Our Address</h3>
               <p className="text-sm">Location: Beijing, Chao Yang</p>
+              <p className="text-sm">New York, Guangzhou</p>
             </div>
           }
         />
