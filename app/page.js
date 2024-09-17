@@ -604,13 +604,13 @@ function TestimonialsSection() {
   ];
 
   let testimonialCardsMobile = testimonials.map((testimonial, index) => (
-    <div key={index} className="bg-white rounded-lg shadow-lg gap-x-4 p-6 md:max-w-md w-[80vw] flex">
-      <div className="w-16 h-16 gap-y-2 flex flex-col align-center mb-4">
+    <div key={index} className="bg-white rounded-lg shadow-lg gap-x-4 p-6 md:w-[30vw] md:h-[10vw] w-[80vw] flex">
+      <div className="w-16 h-16 gap-y-2 flex flex-col align-center md:items-center md:mt-5 mb-4">
         <Image className="rounded-full" src={testimonial.image} alt="img" width={64} height={64} objectFit="cover" />
-        <h3 className="text-sm font-semibold text-center mb-8">{testimonial.name}</h3>
+        <h3 className="text-sm md:text-lg font-semibold text-center mb-8">{testimonial.name}</h3>
       </div>
       <div className="flex items-center">
-        <div className="text-gray-600 text-xs mb-4">
+        <div className="text-gray-600 text-xs md:text-lg mb-4">
           {testimonial.schools.map((school, index) => (
             <p key={index} className="mr-2">{school};</p>
           ))}
