@@ -29,7 +29,7 @@ export default function Home() {
       <OurTeamSection />
       <SectionHeader title="Testimonials" />
       <UleadAlumnSection />
-      <SectionHeader title="ULead Alumn" />
+      <SectionHeader title="ULead Alumni" />
       <TestimonialsSection />
       <SectionHeader title="Qualifications" />
       <QualificationsSection />
