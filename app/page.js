@@ -456,7 +456,7 @@ function AlumnProfileCard({ imageSrc, name, highschool, offers, experiences }) {
         {/* Profile Information */}
         <div>
           <p className="hidden md:block text-xl font-semibold text-primary">{name}</p>
-          <p className="text-xs md:text-sm mb-2"><span className="font-bold">Highschool:</span> {highschool}</p>
+          {/* <p className="text-xs md:text-sm mb-2"><span className="font-bold">Highschool:</span> {highschool}</p> */}
           <p className="text-xs md:text-sm"><span className="font-bold">Offers:</span></p>
           {offers.map((offer, index) => (
             <p key={index} className="text-xs md:text-sm">{offer}</p>
