@@ -18,14 +18,14 @@ const FooterColumn = ({ title, items, additionalContent, mobileDisplay = false }
 
 export default function Footer() {
   return (
-    <footer className="bg-secondary text-white py-10 px-8 md:px-16">
+    <footer className="bg-secondary text-white py-10 px-8 md:px-[8vw]">
       <div className="flex justify-between mb-8">
         <div className="flex flex-col items-center">
           <div className="">
-            <span className="text-primary text-2xl md:text-5xl font-bold">U</span>
-            <span className="text-white text-2xl md:text-5xl font-bold">LEAD</span>
+            <span className="text-primary text-2xl md:text-4xl font-bold">U</span>
+            <span className="text-white text-2xl md:text-4xl font-bold">LEAD</span>
           </div>
-          <span className="text-white text-xl md:text-5xl">合领教育</span>
+          <span className="text-white text-xl md:text-3xl">合领教育</span>
 
           <div className="flex w-20 h-20 mt-5">
             <Image src="/img/footer/qrcode.png" alt="WeChat QR Code" width={130} height={130} />
