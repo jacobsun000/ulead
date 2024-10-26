@@ -9,7 +9,6 @@ import Tab from "@/ui/Tab";
 import Footer from "@/ui/Footer";
 import BackToTopButton from "@/ui/Back";
 import Video from "@/ui/Video";
-import TabVertical from "@/ui/TabVertical";
 import IASBadge from "@/ui/IASBadge";
 
 export default function Home() {
@@ -115,7 +114,7 @@ function OurBeliefSection() {
 
 function ServiceCard({ title, icon, iconBg, text }) {
   return (
-    <div className="bg-white shadow-lg rounded-lg p-6 md:p-4 md:w-1/3 h-[28rem] text-center">
+    <div className="bg-white shadow-lg rounded-lg p-6 md:p-4 md:w-1/3 text-center">
       <div className="flex justify-center mb-4">
         <div className={`${iconBg} p-4 rounded-full`}>
           {icon}
@@ -200,7 +199,7 @@ function OurServicesSection() {
       <div className="md:hidden">
         <Slider elements={cards} showArrow showBullet />
       </div>
-      <div className="hidden md:flex gap-x-8 justify-center items-center relative">
+      <div className="hidden md:flex flex-1 min-h-full gap-x-8">
         {cards.map((card, _) => (
           card
         ))}
