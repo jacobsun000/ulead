@@ -330,7 +330,7 @@ function StudentReportSection() {
 
   ]
   return (
-    <section className="mx-8 md:mx-[16vw]">
+    <section className="mx-8 md:mx-[8vw]">
       <Panel elements={panels} />
     </section>
   );
