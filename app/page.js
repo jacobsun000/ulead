@@ -10,6 +10,7 @@ import Footer from "@/ui/Footer";
 import BackToTopButton from "@/ui/Back";
 import Video from "@/ui/Video";
 import TabVertical from "@/ui/TabVertical";
+import IASBadge from "@/ui/IASBadge";
 
 export default function Home() {
   return (
@@ -674,10 +675,11 @@ function QualificationsSection() {
     <section className="mx-8 md:mx-[8vw] mb-16">
       <div className="flex items-center gap-x-2">
         {qualifications.map((qualification, index) => (
-          <div key={index} className="w-1/5">
+          <div key={index} className="w-1/6">
             <Image src={qualification} alt={`qualification-${index}`} width={200} height={200} />
           </div>
         ))}
+        <IASBadge className="w-1/6" />
       </ div>
     </section>
   )
