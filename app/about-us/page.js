@@ -4,6 +4,7 @@ import BackButton from "@/ui/Back";
 import SectionHeader from "@/ui/SectionHeader";
 import Image from 'next/image'
 import Slider from "@/ui/Slider";
+import Quote from "@/ui/Quote";
 
 const TeamMember = ({ name, imageSrc, description }) => (
   <div className="flex flex-col items-center text-center">
@@ -115,11 +116,7 @@ export default function AboutUs() {
           </div>
         </div>
 
-        <div className="flex items-center p-4 mx-[8vw]">
-          <Image src="/img/aboutus/quote-start.svg" alt="Start Quote" width={135} height={98} className="w-6 md:w-24 h-6 md:h-24 text-pink-300 mr-2" />
-          <p className="text-gray-800 text-center text-sm md:text-lg font-bold flex-1">As a consultant, by continuously learning and accumulating experience, we continuously iterate the methodologies in counseling, focusing on leading children and families well!</p>
-          <Image src="/img/aboutus/quote-end.svg" alt="End Quote" width={135} height={98} className="w-6 md:w-24 h-6 md:h-24 text-pink-300 ml-2" />
-        </div>
+        <Quote text="As a consultant, by continuously learning and accumulating experience, we continuously iterate the methodologies in counseling, focusing on leading children and families well!" />
 
         <div className="flex flex-col items-center md:mx-[8vw]">
           <div className="flex flex-col md:flex-row items-center max-w-5xl w-full p-8 rounded-lg">
