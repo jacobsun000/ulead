@@ -119,7 +119,7 @@ export default function Partners() {
 
   return (
     <div>
-      <Header currentPath="/university" />
+      <Header currentPath="/lead-program" />
       <div className="relative h-[30vh] md:h-[40vh]">
         <Image
           src="/img/lead-program/bg.png"
@@ -130,15 +130,15 @@ export default function Partners() {
           priority
         />
         <div className="absolute inset-0 flex flex-col justify-center items-start p-8">
-          <h1 className="text-2xl md:text-6xl text-secondary font-bold md:text-black mb-8 md:ml-10">
+          <h1 className="text-2xl md:text-6xl text-secondary font-bold mb-8 md:ml-10">
             Lead Programs
           </h1>
-          <Button href="/contacts" text="Free Consultation" style={"text-white px-11 py-2 rounded-full bg-secondary md:text-2xl"} />
+          <Button href="/contacts" text="Free Consultation" style={"text-white px-11 py-2 rounded-full bg-secondary md:text-2xl md:ml-10"} />
         </div>
       </div>
 
       <SectionHeader title="Skills Development" style='my-8' />
-      <div className="mx-[8vw] flex flex-col">
+      <div className="mx-[8vw] max-w-6xl md:mx-auto flex flex-col">
         <span className="mb-8">
           Focusing on the child, growth advisors guide both the child and parents through personalized growth and application planning, allowing the child ample time to effectively enhance their background and abilities.
         </span>
@@ -216,7 +216,7 @@ export default function Partners() {
 
 
       <SectionHeader title="8 Core Competences" style='my-4' />
-      <div className="max-w-6xl mx-8 py-4 md:py-12 md:mx-[8vw]">
+      <div className="max-w-6xl mx-8 md:mx-auto py-4 md:py-12 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mb-8">
           {services.map((service, index) => (
             <ServiceItem
@@ -233,7 +233,7 @@ export default function Partners() {
         </div>
       </div>
 
-      <SectionHeader title="Abilities Training" style='my-4' />
+      <SectionHeader title="Abilities Training" style='my-4 md:my-16' />
       <GrowthPlan />
 
       <BackButton />

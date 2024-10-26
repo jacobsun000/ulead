@@ -4,7 +4,7 @@ import BackButton from "@/ui/Back";
 import SectionHeader from "@/ui/SectionHeader";
 import Image from 'next/image'
 import Button from "@/ui/Button";
-import Button2 from "@/ui/Button2";
+import Quote from "@/ui/Quote";
 
 const Card = ({ title }) => (
   <div className="flex-1 mx-1">
@@ -59,7 +59,7 @@ export default function Partners() {
           <h1 className="text-2xl md:text-6xl font-bold text-white mb-8 ml-10">
             Private School <br />Application Consultation
           </h1>
-          <Button href="/contacts" text="Free Consultation" style='bg-secondary' />
+          <Button href="/contacts" text="Free Consultation" style='bg-secondary ml-10' />
         </div>
       </div>
 

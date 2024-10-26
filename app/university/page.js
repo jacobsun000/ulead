@@ -60,7 +60,7 @@ export default function Partners() {
             class="[text-shadow:_0_1px_0_rgb(0_0_0_/_40%)">
             University Application<br />Consultation
           </h1>
-          <Button href="/contacts" text="Free Consultation" style='bg-secondary' />
+          <Button href="/contacts" text="Free Consultation" style='bg-secondary md:ml-10' />
         </div>
       </div>
 
