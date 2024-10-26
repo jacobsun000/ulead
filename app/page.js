@@ -659,7 +659,9 @@ function QualificationsSection() {
             <Image src={qualification} alt={`qualification-${index}`} width={200} height={200} />
           </div>
         ))}
-        <IASBadge className="w-1/6" />
+        <div className="w-1/5">
+          <IASBadge className="w-[200px] h-[200px]" />
+        </ div>
       </ div>
     </section>
   )
