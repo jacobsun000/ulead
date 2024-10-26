@@ -7,7 +7,7 @@ import Button from "@/ui/Button";
 
 const Card = ({ title }) => (
   <div className="flex-1 mx-1">
-    <h3 className={`text-xs mb-2 text-white p-2 rounded-lg text-center place-content-center w-full h-full ${title.includes('U.S.') ? 'bg-primary' : 'bg-secondary'
+    <h3 className={`text-xs md:text-lg mb-2 text-white p-2 rounded-lg text-center place-content-center w-full h-full ${title.includes('U.S.') ? 'bg-primary' : 'bg-secondary'
       }`}>{title}</h3>
   </div>
 );

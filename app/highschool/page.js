@@ -8,7 +8,7 @@ import Button2 from "@/ui/Button2";
 
 const Card = ({ title }) => (
   <div className="flex-1 mx-1">
-    <h3 className={`text-xs mb-2 text-white p-2 rounded-lg text-center place-content-center w-full h-full ${title.includes('Day') ? 'bg-primary' : 'bg-secondary'
+    <h3 className={`text-xs md:text-lg mb-2 text-white p-2 rounded-lg text-center place-content-center w-full h-full ${title.includes('Day') ? 'bg-primary' : 'bg-secondary'
       }`}>{title}</h3>
   </div>
 );
@@ -113,27 +113,45 @@ export default function Highschool() {
       </div>
 
 
-      <div className="max-w-6xl mx-auto py-12 px-4">
+      <div className="max-w-6xl mx-auto py-12 px-4 hidden md:block">
         <h2 className="text-lg font-bold text-center mb-8">High School Application Service Process</h2>
+
         <div className="flex items-center justify-center">
           <Image
             src="/img/highschool/process.svg"
             alt="process"
-            width={500}
-            height={500}
+            width={1000}
+            height={1000}
           />
         </div>
       </div>
-      <div className="text-center mb-5">
+      <div className="text-center mb-5 hidden md:block">
         <Button2 text="View Details of 150+ Service Hours" href="/contacts" />
       </div>
 
-      <div className="max-w-6xl mx-auto py-12 px-4">
+
+      <div className="max-w-6xl mx-auto py-12 px-4 hidden md:block">
         <h2 className="text-lg font-bold text-center mb-8">High School Application Service Process</h2>
         <div className="flex items-center justify-center">
           <Image
             src="/img/highschool/process2.svg"
             alt="process2"
+            width={1000}
+            height={1000}
+          />
+        </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto py-12 px-4 block md:hidden">
+        <h2 className="text-lg font-bold text-center">High School Application Service Process</h2>
+        <p className="text-center font-bold mb-8 md:hidden">150+ Service Hours</p>
+        <div className="text-center mb-5 block md:hidden">
+          <Button2 text="View Details" href="/contacts" />
+        </div>
+        <div className="flex items-center justify-center">
+          <Image
+            src="/img/highschool/process3.svg"
+            alt="process3"
             width={500}
             height={500}
           />
