@@ -28,9 +28,9 @@ export default function Home() {
       <SectionHeader title="Our Team" />
       <OurTeamSection />
       <SectionHeader title="Testimonials" />
-      <UleadAlumnSection />
-      <SectionHeader title="ULead Alumni" />
       <TestimonialsSection />
+      <SectionHeader title="ULead Alumni" />
+      <UleadAlumnSection />
       <SectionHeader title="Qualifications" />
       <QualificationsSection />
       <BackToTopButton />
@@ -483,8 +483,8 @@ function AlumnProfileCard({ imageSrc, name, highschool, offers, experiences }) {
   );
 }
 
-function UleadAlumnSection() {
-  const alumnProfiles = [
+function TestimonialsSection() {
+  const profiles = [
     {
       imageSrc: '/img/icon-female.png',
       name: 'Student L',
@@ -540,16 +540,16 @@ function UleadAlumnSection() {
         'With patient support, she eventually learned to manage her time well, not only maintaining her extracurricular commitments but also dedicating significant time to her application preparation. Reflecting on this challenging yet rewarding journey, she gained many insights!']
     },
   ];
-  const alumnProfileCards = alumnProfiles.map((profile, index) => (
+  const profileCards = profiles.map((profile, index) => (
     <AlumnProfileCard key={index} {...profile} />
   ));
 
-  let alumnProfileCardsDesktop = [];
+  let profileCardsDesktop = [];
 
-  for (let i = 0; i < alumnProfileCards.length; i += 3) {
-    alumnProfileCardsDesktop.push((
+  for (let i = 0; i < profileCards.length; i += 3) {
+    profileCardsDesktop.push((
       <div key={i} className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {alumnProfileCards.slice(i, i + 3)}
+        {profileCards.slice(i, i + 3)}
       </div>
     ));
   }
@@ -557,17 +557,17 @@ function UleadAlumnSection() {
   return (
     <section className="mx-2 md:mx-[8vw]">
       <div className="hidden md:block">
-        <Slider elements={alumnProfileCardsDesktop} autoplay={false} showArrow />
+        <Slider elements={profileCardsDesktop} autoplay={false} showArrow />
       </div>
       <div className="md:hidden">
-        <Slider elements={alumnProfileCards} autoplay={false} showArrow />
+        <Slider elements={profileCards} autoplay={false} showArrow />
       </div>
     </section>
   )
 }
 
-function TestimonialsSection() {
-  const testimonials = [
+function UleadAlumnSection() {
+  const alumns = [
     {
       name: "Michael",
       image: "/img/home/alumn1.jpg",
@@ -603,8 +603,8 @@ function TestimonialsSection() {
     }
   ];
 
-  let testimonialCardsMobile = testimonials.map((testimonial, index) => (
-    <div key={index} className="bg-white rounded-lg shadow-lg gap-x-4 p-6 md:w-[30vw] md:h-[10vw] w-[80vw] flex">
+  let alumnCardsMobile = alumns.map((testimonial, index) => (
+    <div key={index} className="bg-white rounded-lg shadow-lg gap-x-4 p-6 md:w-full w-[80vw] flex">
       <div className="w-16 h-16 gap-y-2 flex flex-col align-center md:items-center md:mt-5 mb-4">
         <Image className="rounded-full" src={testimonial.image} alt="img" width={64} height={64} objectFit="cover" />
         <h3 className="text-sm md:text-lg font-semibold text-center mb-8">{testimonial.name}</h3>
@@ -620,42 +620,24 @@ function TestimonialsSection() {
     </div>
   ));
 
-  const testimonialCards = testimonials.map((t) => (
-    {
-      label: (
-        <div className="flex items-center gap-x-4">
-          <div className="flex flex-col items-center justify-center gap-y-4">
-            <div className="w-16 h-16 mx-auto rounded-full overflow-hidden mr-4 border-2 border-secondary">
-              <Image src={t.image} alt={t.name} width={48} height={48} objectFit="cover" />
-            </div>
-            <p className="font-semibold text-center">{t.name}</p>
-          </div>
-          <div className="text-left">
-            <p className="font-semibold mb-4">{t.major}</p>
-            <p className="font-semibold">Offers:</p>
-            <p className="mb-4">
-              {t.schools.map((school, index) => (
-                <span key={index} className="mr-2">{school};</span>
-              ))}
-            </p>
-          </div>
-        </div>
-      ),
-      content: (
-        <div>
-          <h3 className="text-lg font-semibold">{t.descriptionTitle}</h3>
-          <p >{t.description}</p>
-        </div>
-      ),
-    }
-  ));
+
+  let alumnCardsDesktop = [];
+
+  for (let i = 0; i < alumnCardsMobile.length; i += 3) {
+    alumnCardsDesktop.push((
+      <div key={i} className="grid md:grid-cols-3 gap-4">
+        {alumnCardsMobile.slice(i, i + 3)}
+      </div>
+    ));
+  }
+
   return (
     <section className="mx-0 md:mx-[8vw]">
       <div className="md:hidden">
-        <Slider elements={testimonialCardsMobile} showBullet />
+        <Slider elements={alumnCardsMobile} showBullet />
       </div>
       <div className="hidden md:flex flex-col items-center gap-8">
-        <Slider showBullet showArrow elements={testimonialCardsMobile} />
+        <Slider showBullet showArrow elements={alumnCardsDesktop} />
         <Button text="Explore More" href="/about-us" style={"bg-secondary"} />
       </div>
     </section>
@@ -668,13 +650,12 @@ function QualificationsSection() {
     "/img/home/qualification2.png",
     "/img/home/qualification3.png",
     "/img/home/qualification4.png",
-    "/img/home/qualification5.png",
   ]
   return (
     <section className="mx-8 md:mx-[8vw] mb-16">
       <div className="flex items-center gap-x-2">
         {qualifications.map((qualification, index) => (
-          <div key={index} className="w-1/6">
+          <div key={index} className="w-1/5">
             <Image src={qualification} alt={`qualification-${index}`} width={200} height={200} />
           </div>
         ))}
