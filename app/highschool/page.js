@@ -4,12 +4,12 @@ import BackButton from "@/ui/Back";
 import SectionHeader from "@/ui/SectionHeader";
 import Image from 'next/image'
 import Button from "@/ui/Button";
+import Button2 from "@/ui/Button2";
 
-const Card = ({ title, content }) => (
-  <div className="bg-white rounded-lg shadow-md">
-    <h3 className={`text-lg font-bold mb-2 text-white p-2 rounded text-center w-full ${title.includes('Day') ? 'bg-primary' : 'bg-secondary'
+const Card = ({ title }) => (
+  <div className="flex-1 mx-1">
+    <h3 className={`text-xs mb-2 text-white p-2 rounded-lg text-center place-content-center w-full h-full ${title.includes('Day') ? 'bg-primary' : 'bg-secondary'
       }`}>{title}</h3>
-    <p className="text-sm px-5 pb-5 text-center">{content}</p>
   </div>
 );
 
@@ -45,7 +45,7 @@ const Arrow = () => (
   </div>
 );
 
-export default function Partners() {
+export default function Highschool() {
   const services = [
     { title: "Comprehensive Candidacy Development Plan", isOpen: false, isRed: false },
     { title: "School Selection Guidance", isOpen: false, isRed: false },
@@ -70,37 +70,28 @@ export default function Partners() {
           objectFit="cover"
           priority
         />
-        <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-center items-start p-8">
-          <h1 className="text-2xl md:text-6xl font-bold text-white mb-8 ml-10">
+        <div className="absolute inset-0 bg-black bg-opacity-5 flex flex-col justify-center items-start p-8">
+          <h1 className="text-2xl md:text-6xl font-bold text-white mb-5">
             Private School <br />Application Consultation
           </h1>
-          <Button href="/contacts" text="Free Consultation" style='bg-secondary ml-10' />
+          <Button href="/contacts" text="Free Consultation" style='bg-secondary' />
         </div>
       </div>
 
       <div className="max-w-6xl mx-auto pt:10 md:py-12 px-4">
         <div className="p-6 rounded-lg flex flex-col gap-y-5 md:flex-row justify-between items-center mb-8 md:mb-12">
-          <p className="text-lg max-w-3xl">
+          <p className="text-base md:text-lg max-w-2xl">
             From early-age potential development to private school/
             university applications, ULead can help your child continue
             to grow and progress.
           </p>
-          <Button href="/contacts" text="Schedule Now!" style='px-6 py-2 rounded-full' />
+          <Button href="/contacts" text="Schedule Now!" style='px-6 py-2 rounded-full hidden md:block' />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-          <Card
-            title="U.S. Boarding Middle/High School Application"
-            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          />
-          <Card
-            title="U.S. Day School Middle/High School Application"
-            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          />
-          <Card
-            title="U.S. Boarding Middle/High School Application"
-            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          />
+        <div className="flex border-2">
+          <Card title="U.S. Day School Middle/High School Application" />
+          <Card title="U.S. Boarding Middle/High School Application" />
+          <Card title="Canadian Boarding Middle/High School Application" />
         </div>
 
       </div>
@@ -122,43 +113,35 @@ export default function Partners() {
       </div>
 
 
-      <div className="max-w-6xl mx-auto py-12 px-4 hidden md:block">
-        <h2 className="text-3xl font-bold text-center mb-8">High School Application Service Process</h2>
-        <div className="space-y-2 md:space-y-6">
-          <div className="flex items-center">
-            <ProcessStep number={1} title="Interest Exploration and Development" />
-            <Arrow />
-            <ProcessStep number={2} title="Mentor Arrangement and Planning" isRed />
-            <Arrow />
-            <ProcessStep number={3} title="Application Planning" description="Academic Research Interest Exploration" />
-            <Arrow />
-            <ProcessStep number={4} title="Full Process QC Management" description="Shared Application Email Management; Real-Time Information Updates" isRed />
-          </div>
-          <div className="flex items-center">
-            <ProcessStep number={7} title="Campus Visit Guidance" isRed />
-            <Arrow />
-            <div className={`p-4 border rounded-lg w-40 h-52 md:w-80 md:h-60 border-blue-800`}>
-              <div className={`w-8 h-8 rounded-full bg-blue-800 text-white flex items-center justify-center font-bold mb-2`}>6</div>
-              <h3 className="font-bold mb-2 text-center">Interview Coaching</h3>
-              <p className="text-sm text-center hidden md:block">{"Self-Awareness Enhancement (Building a Story Game); Interview Awareness Enhancement (Key Interview Assessment Points); Personal Interview Video Practice Assessment & Feedback; Dimensional Comprehensive Improvement (Simulation)"}</p>
-            </div>
-            <Arrow />
-            <ProcessStep number={5} title="Third-Party Interview Coaching" description="Vericant or InitialView" isRed />
-          </div>
-          <div className="flex items-center">
-            <ProcessStep number={8} title="School Selection Guidance and Interview Scheduling" />
-            <Arrow />
-            <ProcessStep number={9} title="Essay Guidance" description="Cornell University and Harvard External QC Management" isRed />
-            <Arrow />
-            <ProcessStep number={10} title="Supplemental Essay Guidance" description="Cornell University and Harvard External QC Management" />
-            <Arrow />
-            <ProcessStep number={11} title="Offer Selection Strategy" isRed />
-          </div>
+      <div className="max-w-6xl mx-auto py-12 px-4">
+        <h2 className="text-lg font-bold text-center mb-8">High School Application Service Process</h2>
+        <div className="flex items-center justify-center">
+          <Image
+            src="/img/highschool/process.svg"
+            alt="process"
+            width={500}
+            height={500}
+          />
+        </div>
+      </div>
+      <div className="text-center mb-5">
+        <Button2 text="View Details of 150+ Service Hours" href="/contacts" />
+      </div>
+
+      <div className="max-w-6xl mx-auto py-12 px-4">
+        <h2 className="text-lg font-bold text-center mb-8">High School Application Service Process</h2>
+        <div className="flex items-center justify-center">
+          <Image
+            src="/img/highschool/process2.svg"
+            alt="process2"
+            width={500}
+            height={500}
+          />
         </div>
       </div>
 
       <BackButton />
       <Footer />
-    </div>
+    </div >
   );
 }
