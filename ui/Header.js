@@ -6,7 +6,7 @@ const navItems = [
   { label: 'About Us', href: '/about-us' },
   { label: 'Highschool', href: '/highschool' },
   { label: 'University', href: '/university' },
-  // { label: 'Lead Program', href: '/lead-program' },
+  { label: 'Lead Program', href: '/lead-program' },
   { label: 'Partners', href: '/partners' },
 ];
 
@@ -36,7 +36,7 @@ export default function Header({ currentPath = '/' }) {
   };
 
   return (
-    <header className="bg-secondary flex justify-between items-center px-4 md:px-20 h-16 z-auto">
+    <header className="bg-secondary flex justify-between items-center px-4 md:px-20 py-1 z-auto">
       {/* Logo */}
       <a href='/' className="flex flex-col py-2 mr-4">
         <div>
