@@ -3,6 +3,8 @@ import Footer from "@/ui/Footer";
 import BackButton from "@/ui/Back";
 import SectionHeader from "@/ui/SectionHeader";
 import Image from 'next/image'
+import Slider from "@/ui/Slider";
+import Quote from "@/ui/Quote";
 
 const TeamMember = ({ name, imageSrc, description }) => (
   <div className="flex flex-col items-center text-center">
@@ -14,7 +16,7 @@ const TeamMember = ({ name, imageSrc, description }) => (
       className="rounded-full mb-4"
     />
     <h3 className="font-bold text-xl mb-2">{name}</h3>
-    <ul className="text-sm list-disc list-inside text-left">
+    <ul className="text-xs list-disc list-inside text-left">
       {description.map((item, index) => (
         <li key={index}>{item}</li>
       ))}
@@ -72,7 +74,7 @@ export default function AboutUs() {
       <Header currentPath="/about-us" />
 
       <div className="mx-auto">
-        <div className="relative h-[400px] mb-12">
+        <div className="relative h-[250px] md:h-[400px] mb-12">
           <Image
             src="/img/aboutus/bg.png"
             alt="Graduation"
@@ -80,25 +82,45 @@ export default function AboutUs() {
             objectFit="cover"
             quality={100}
           />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <div className="bg-white bg-opacity-80 p-8 rounded-lg max-w-4xl w-full mx-4 text-center">
-              <h2 className="text-3xl font-bold mb-4">
-                <span className="text-red-600">U</span>
-                <span className="text-blue-900">LEAD</span> Mission
+          <div className="absolute inset-0 hidden md:flex items-center justify-center">
+            <div className="text-white text-center">
+              <h2 className="text-5xl font-bold mb-4">
+                About Us
               </h2>
-              <p className="text-lg">{"A mentor for children's growth, a steward of education for families"}</p>
-              <div className="flex justify-center mt-4">
-                <span className="h-2 w-2 mx-1 rounded-full bg-gray-300" />
-                <span className="h-2 w-2 mx-1 rounded-full bg-gray-300" />
-                <span className="h-2 w-2 mx-1 rounded-full bg-gray-300" />
-              </div>
             </div>
+          </div>
+          <div className="absolute inset-0 flex md:hidden items-center justify-center">
+            <Slider showBullet elements={[
+              <div key={'Mission'} className="rounded-xl shadow-sm h-full bg-white bg-opacity-70 p-4">
+                <h3 className="text-xl font-bold mt-2 mb-2 text-center">
+                  <span className="text-primary">U</span>
+                  <span className="text-secondary">LEAD Mission</span>
+                </h3>
+                <div className="">{"A mentor for children's growth, a steward of education for families"}</div>
+              </div>,
+              <div key={"Vision"} className="rounded-xl shadow-sm h-full bg-white bg-opacity-70 p-4">
+                <h3 className="text-xl font-bold mt-2 mb-2 text-center">
+                  <span className="text-primary">U</span>
+                  <span className="text-secondary">LEAD Vision</span>
+                </h3>
+                <div className="">{"We strive for excellence, fairness, inclusivity, continuous improvement, and sustainable development"}</div>
+              </div>,
+              <div key={"Value"} className="rounded-xl shadow-sm h-full bg-white bg-opacity-70 p-4">
+                <h3 className="text-xl font-bold mt-2 mb-2 text-center">
+                  <span className="text-primary">U</span>
+                  <span className="text-secondary">LEAD Value</span>
+                </h3>
+                <div className="">{"Integrity, professionalism, diversity, collaboration, responsibility, innovation"}</div>
+              </div>
+            ]} />
           </div>
         </div>
 
-        <div className="flex flex-col items-center px-4">
+        <Quote text="As a consultant, by continuously learning and accumulating experience, we continuously iterate the methodologies in counseling, focusing on leading children and families well!" />
+
+        <div className="flex flex-col items-center md:mx-[8vw]">
           <div className="flex flex-col md:flex-row items-center max-w-5xl w-full p-8 rounded-lg">
-            <div className="w-full md:w-1/3 mb-6 md:mb-0 md:pr-8">
+            <div className="w-1/2 md:w-1/3 mb-6 md:mb-0 md:pr-8">
               <Image
                 src="/img/aboutus/founder.png"
                 alt="ULEAD Founder"
@@ -106,13 +128,14 @@ export default function AboutUs() {
                 height={300}
                 className="rounded-full mx-auto"
               />
+              <h2 className="text-lg md:text-2xl font-bold mt-4 mb-4 text-center">
+                <span className="text-primary">U</span>
+                <span className="text-secondary">LEAD Founder</span>
+              </h2>
             </div>
             <div className="w-full md:w-2/3 ml-7">
-              <h2 className="text-3xl font-bold mb-4 text-center md:text-left">
-                <span className="text-red-600">U</span>
-                <span className="text-blue-800">LEAD</span> Founder
-              </h2>
-              <ul className="list-disc list-inside space-y-2 ml">
+              <h2 className="text-lg md:text-4xl text-secondary mb-4 md:mb-8">Christina Wang</h2>
+              <ul className="text-sm md:text-[1rem] list-disc list-inside space-y-2 ml">
                 <li>Certified Consultant of the Independent Educational Consultants Association (IECA)</li>
                 <li>Certified Member of the Enrollment Management Association (EMA)</li>
                 <li>Certified Member of the National Association for College Admission Counseling (NACAC)</li>
@@ -120,16 +143,39 @@ export default function AboutUs() {
               </ul>
             </div>
           </div>
-          <div className="max-w-5xl w-full mt-8 p-6 rounded-lg relative">
-            <p className="text-lg text-left px-8 font-bold">
-              As a consultant, by continuously learning and accumulating experience, we continuously iterate the methodologies in counseling, focusing on leading children and families well!
-            </p>
+        </div>
+
+        <div className="relative hidden md:flex flex-col items-center mb-24">
+          <Image src="/img/aboutus/arc.svg" alt="" width={1440} height={226} className="w-[120vw] overflow-auto max-h-[18rem]" />
+          <div className="grid grid-cols-3 mt-8 gap-8 absolute items-center mx-[8vw]">
+            <div className="rounded-xl shadow-sm h-full bg-white bg-opacity-70 p-4">
+              <h3 className="text-2xl font-bold mt-4 mb-4 text-center">
+                <span className="text-primary">U</span>
+                <span className="text-secondary">LEAD Mission</span>
+              </h3>
+              <div className="text-lg">{"A mentor for children's growth, a steward of education for families"}</div>
+            </div>
+            <div className="rounded-xl shadow-sm h-full bg-white bg-opacity-70 p-4">
+              <h3 className="text-2xl font-bold mt-4 mb-4 text-center">
+                <span className="text-primary">U</span>
+                <span className="text-secondary">LEAD Vision</span>
+              </h3>
+              <div className="text-lg">{"We strive for excellence, fairness, inclusivity, continuous improvement, and sustainable development"}</div>
+            </div>
+            <div className="rounded-xl shadow-sm h-full bg-white bg-opacity-70 p-4">
+              <h3 className="text-2xl font-bold mt-4 mb-4 text-center">
+                <span className="text-primary">U</span>
+                <span className="text-secondary">LEAD Value</span>
+              </h3>
+              <div className="text-lg">{"Integrity, professionalism, diversity, collaboration, responsibility, innovation"}</div>
+            </div>
           </div>
         </div>
       </div>
 
+
       <SectionHeader title={"Core Team"} />
-      <div className="mx-auto px-4 mb-12">
+      <div className="mx-[8vw] mb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {teamMembers.map((member) => (
             <TeamMember key={member.name} {...member} />

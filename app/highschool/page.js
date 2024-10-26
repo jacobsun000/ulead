@@ -13,11 +13,14 @@ const Card = ({ title }) => (
   </div>
 );
 
-const ServiceItem = ({ title, description, isOpen, isRed }) => {
+const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {
   return (
     <details className="border-b py-4" open={isOpen}>
       <summary className="flex justify-between items-center cursor-pointer list-none">
-        <span className="font-semibold">{title}</span>
+        <div className="w-8 h-8">
+          <Image src={icon} alt={title} width={40} height={40} />
+        </div>
+        <span className="font-semibold text-center md:text-left">{title}</span>
         <span className={`text-sm md:text-2xl ${isRed ? 'text-primary' : 'text-secondary'}`}>
           {isOpen ? '-' : '+'}
         </span>
@@ -27,42 +30,24 @@ const ServiceItem = ({ title, description, isOpen, isRed }) => {
   );
 };
 
-const ProcessStep = ({ number, title, description, isRed }) => (
-  <div className={`p-4 border rounded-lg w-40 h-52 md:w-60 md:h-60 ${isRed ? 'border-primary' : 'border-secondary'}`}>
-    <div className={`w-5 h-5 md:w-8 md:h-8 rounded-full ${isRed ? 'bg-primary' : 'bg-secondary'} text-white flex items-center justify-center font-bold mb-2 text-xs md:text-lg`}>
-      {number}
-    </div>
-    <h3 className="font-semibold text-sm md:text-lg md:font-bold mb-2 text-center">{title}</h3>
-    <p className="text-xs md:text-sm text-center">{description}</p>
-  </div>
-);
-
-const Arrow = () => (
-  <div className="flex items-center md:px-2">
-    <svg className="w-5 h-5 md:w-6 md:h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-    </svg>
-  </div>
-);
-
-export default function Highschool() {
+export default function Partners() {
   const services = [
-    { title: "Comprehensive Candidacy Development Plan", isOpen: false, isRed: false },
-    { title: "School Selection Guidance", isOpen: false, isRed: false },
-    { title: "Summer School Selection and Application", isOpen: false, isRed: false },
-    { title: "Application System Management Guidance", isOpen: false, isRed: false },
-    { title: "Student Resume Optimization Guidance (CV)", isOpen: false, isRed: false },
-    { title: "Ivy League Alumni Major Selection Guidance", isOpen: false, isRed: false },
-    { title: "Pre-College Admissions Officer", isOpen: false, isRed: false },
-    { title: "Essay Review", isOpen: false, isRed: false },
-    { title: "Essay Editing: Ivy League Mentor", isOpen: false, isRed: false },
-    { title: "Application System Management Guidance", isOpen: false, isRed: false },
+    { title: "Comprehensive Candidacy Development Plan", icon: "img/highschool/1.svg", isOpen: false, isRed: false },
+    { title: "School Selection Guidance", icon: "img/highschool/2.svg", isOpen: false, isRed: false },
+    { title: "Summer School Selection and Application", icon: "img/highschool/3.svg", isOpen: false, isRed: false },
+    { title: "Application System Management Guidance", icon: "img/highschool/4.svg", isOpen: false, isRed: false },
+    { title: "Student Resume Optimization Guidance (CV)", icon: "img/highschool/5.svg", isOpen: false, isRed: false },
+    { title: "Ivy League Alumni Major Selection Guidance", icon: "img/highschool/6.svg", isOpen: false, isRed: false },
+    { title: "Pre-College Admissions Officer", icon: "img/highschool/7.svg", isOpen: false, isRed: false },
+    { title: "Essay Review", icon: "img/highschool/8.svg", isOpen: false, isRed: false },
+    { title: "Essay Editing: Ivy League Mentor", icon: "img/highschool/9.svg", isOpen: false, isRed: false },
+    { title: "Application System Management Guidance", icon: "img/highschool/10.svg", isOpen: false, isRed: false },
   ];
 
   return (
     <div>
       <Header currentPath="/highschool" />
-      <div className="relative h-[30vh] md:h-[80vh]">
+      <div className="relative h-[30vh] md:h-[40vh]">
         <Image
           src="/img/highschool/header.png"
           alt="Book"
@@ -70,92 +55,55 @@ export default function Highschool() {
           objectFit="cover"
           priority
         />
-        <div className="absolute inset-0 bg-black bg-opacity-5 flex flex-col justify-center items-start p-8">
-          <h1 className="text-2xl md:text-6xl font-bold text-white mb-5">
+        <div className="absolute inset-0 flex flex-col justify-center items-start p-8">
+          <h1 className="text-2xl md:text-6xl font-bold text-white mb-8 ml-10">
             Private School <br />Application Consultation
           </h1>
           <Button href="/contacts" text="Free Consultation" style='bg-secondary' />
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto pt:10 md:py-12 px-4">
-        <div className="p-6 rounded-lg flex flex-col gap-y-5 md:flex-row justify-between items-center mb-8 md:mb-12">
-          <p className="text-base md:text-lg max-w-2xl">
-            From early-age potential development to private school/
-            university applications, ULead can help your child continue
-            to grow and progress.
-          </p>
-          <Button href="/contacts" text="Schedule Now!" style='px-6 py-2 rounded-full hidden md:block' />
-        </div>
+      <div className="my-4" >
+        <Quote text="From early-age potential development to private school/university applications, ULead can help your child continue to grow and progress." />
+      </div>
 
-        <div className="flex border-2">
+      <div className="max-w-6xl mx-auto pt:10 md:py-12 px-4">
+        <div className="grid grid-cols-3 md:grid-cols-3 gap-2 md:gap-8 mb-8 md:mb-20">
+          <Card title="U.S. Boarding Middle/High School Application" />
           <Card title="U.S. Day School Middle/High School Application" />
           <Card title="U.S. Boarding Middle/High School Application" />
-          <Card title="Canadian Boarding Middle/High School Application" />
         </div>
-
       </div>
-      <SectionHeader title="Personalized Services" style='my-0' />
-      <div className="max-w-6xl mx-8 md:mx-auto py-12 px-4">
+
+      <SectionHeader title="Personalized Services" style='my-4' />
+      <div className="max-w-6xl mx-8 md:mx-auto py-4 md:py-12 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mb-8">
           {services.map((service, index) => (
             <ServiceItem
               key={index}
               title={service.title}
+              icon={service.icon}
               isOpen={service.isOpen}
               isRed={service.isRed}
             />
           ))}
         </div>
         <div className="text-center">
-          <Button text="Contact us for more details" href="/contacts" />
+          <Button text="More Details" href="/contacts" />
         </div>
       </div>
 
-
-      <div className="max-w-6xl mx-auto py-12 px-4 hidden md:block">
+      <div className="flex md:hidden flex-col items-center justify-center my-8">
         <h2 className="text-lg font-bold text-center mb-8">High School Application Service Process</h2>
-
-        <div className="flex items-center justify-center">
-          <Image
-            src="/img/highschool/process.svg"
-            alt="process"
-            width={1000}
-            height={1000}
-          />
-        </div>
-      </div>
-      <div className="text-center mb-5 hidden md:block">
-        <Button2 text="View Details of 150+ Service Hours" href="/contacts" />
+        <Image src="/img/highschool/process-mobile.svg" alt="Process" width={327} height={735} />
       </div>
 
 
-      <div className="max-w-6xl mx-auto py-12 px-4 hidden md:block">
-        <h2 className="text-lg font-bold text-center mb-8">High School Application Service Process</h2>
-        <div className="flex items-center justify-center">
-          <Image
-            src="/img/highschool/process2.svg"
-            alt="process2"
-            width={1000}
-            height={1000}
-          />
-        </div>
-      </div>
-
-      <div className="max-w-6xl mx-auto py-12 px-4 block md:hidden">
-        <h2 className="text-lg font-bold text-center">High School Application Service Process</h2>
-        <p className="text-center font-bold mb-8 md:hidden">150+ Service Hours</p>
-        <div className="text-center mb-5 block md:hidden">
-          <Button2 text="View Details" href="/contacts" />
-        </div>
-        <div className="flex items-center justify-center">
-          <Image
-            src="/img/highschool/process3.svg"
-            alt="process3"
-            width={500}
-            height={500}
-          />
-        </div>
+      <div className="max-w-6xl mx-auto py-12 px-4 hidden md:flex flex-col items-center justify-center">
+        <h2 className="text-3xl font-bold text-center mb-16">High School Application Service Process</h2>
+        <Image src="/img/highschool/process-desktop1.svg" alt="Process" width={956} height={1345} />
+        <h2 className="text-3xl font-bold text-center mb-16 mt-32">High School Application Service Process</h2>
+        <Image src="/img/highschool/process-desktop2.svg" alt="Process" width={1311} height={856} />
       </div>
 
       <BackButton />
