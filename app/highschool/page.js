@@ -27,24 +27,6 @@ const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {
   );
 };
 
-const ProcessStep = ({ number, title, description, isRed }) => (
-  <div className={`p-4 border rounded-lg w-40 h-52 md:w-60 md:h-60 ${isRed ? 'border-primary' : 'border-secondary'}`}>
-    <div className={`w-5 h-5 md:w-8 md:h-8 rounded-full ${isRed ? 'bg-primary' : 'bg-secondary'} text-white flex items-center justify-center font-bold mb-2 text-xs md:text-lg`}>
-      {number}
-    </div>
-    <h3 className="font-semibold text-sm md:text-lg md:font-bold mb-2 text-center">{title}</h3>
-    <p className="text-xs md:text-sm text-center">{description}</p>
-  </div>
-);
-
-const Arrow = () => (
-  <div className="flex items-center md:px-2">
-    <svg className="w-5 h-5 md:w-6 md:h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-    </svg>
-  </div>
-);
-
 export default function Partners() {
   const services = [
     { title: "Comprehensive Candidacy Development Plan", icon: "img/highschool/1.svg", isOpen: false, isRed: false },
