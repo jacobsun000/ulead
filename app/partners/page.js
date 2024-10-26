@@ -6,11 +6,11 @@ import Image from 'next/image'
 
 const StatItem = ({ icon, number, description, isRed }) => (
   <div className="flex flex-col items-center ml-7 mr-7">
-    <p className="text-left text-sm mb-2 flex items-center font-bold">{description}</p>
+    <p className="text-left text-xs md:text-sm mb-2 flex items-center font-bold">{description}</p>
     <div className="relative w-24 h-24">
       <Image src={`/img/partners/${icon}`} alt={description} layout="fill" objectFit="contain" />
       <div className="absolute bottom-0 right-0 bg-trasparent rounded-full p-1">
-        <span className={`text-3xl font-bold ${isRed ? 'text-red-600' : 'text-blue-900'}`}>{number}</span>
+        <span className={`text-2xl md:text-3xl font-bold ${isRed ? 'text-red-600' : 'text-blue-900'}`}>{number}</span>
       </div>
     </div>
   </div>
@@ -22,7 +22,7 @@ export default function Partners() {
       <Header currentPath="/partners" />
       <SectionHeader title="Our Partners" />
       <div className="max-w-4xl mx-auto p-4">
-        <div className="relative mb-10">
+        <div className="relative mb-10 hidden md:block">
           <Image
             src="/img/partners/map.svg"
             alt="US Map"
@@ -30,9 +30,38 @@ export default function Partners() {
             height={700}
           />
         </div>
+        <div className="flex">
+          <div className="flex-col justify-center gap-4 mr-2">
+            <div className="bg-white rounded-lg border-2 p-4 w-full mb-2">
+              <ul className="text-sm list-disc list-inside">
+                <li>Culver Academies (IN)</li>
+              </ul>
+            </div>
+
+            {/* Second Group */}
+            <div className="bg-white rounded-lg border-2 p-4 w-full">
+              <ul className="space-y-2 text-sm list-disc list-inside">
+                <li>Episcopal High School(VA)</li>
+                <li>Christchurch School(VA)</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Third Group */}
+          <div className="bg-white rounded-lg border-2 p-4 border-2 w-60 justify-center">
+            <ul className="space-y-2 text-sm list-disc list-inside">
+              <li>The Webb Schools(CA)</li>
+              <li>Stevenson School (CA)</li>
+              <li>Thatcher School(CA)</li>
+              <li>Cate School(CA)</li>
+              <li>Santa Catalina(CA)</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <h2 className="text-2xl font-bold text-center mb-6">How ULead works with our partners?</h2>
+
+      <h2 className="text-2xl md:text-2xl font-bold text-center mb-6">How ULead works with our partners?</h2>
 
       <div className="grid grid-cols-2 md:grid-cols-4 justify-between mb-8">
         <StatItem
