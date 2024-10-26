@@ -52,7 +52,7 @@ export default function Partners() {
           objectFit="cover"
           priority
         />
-        <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-center items-start p-8">
+        <div className="absolute inset-0 flex flex-col justify-center items-start p-8">
           <h1 className="text-2xl md:text-6xl font-bold text-white mb-8 ml-10">
             Private School <br />Application Consultation
           </h1>

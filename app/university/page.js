@@ -55,7 +55,7 @@ export default function Partners() {
           objectPosition="center"
           priority
         />
-        <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-center items-start p-8">
+        <div className="absolute inset-0 flex flex-col justify-center items-start p-8">
           <h1 className="text-2xl md:text-6xl text-white font-bold md:text-black mb-8 md:ml-10"
             class="[text-shadow:_0_1px_0_rgb(0_0_0_/_40%)">
             University Application<br />Consultation
