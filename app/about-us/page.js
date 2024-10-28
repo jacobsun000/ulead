@@ -59,12 +59,12 @@ export default function AboutUs() {
       ]
     },
     {
-      name: "Anna",
-      imageSrc: "/img/aboutus/Anna.png",
+      name: "Jay",
+      imageSrc: "/img/aboutus/Jay.png",
       description: [
-        "Proficient in six languages",
-        "Specializes in multilingual translation/ language tutoring",
-        "Verbal and interview coaching"
+        "A published author worked extensively in both the US and Asia at independent schools",
+        "Invited a speaker at NAIS and TABs conferences. Based in NYC and Boston",
+        "Serving both domestic and international families in school placement and providing year-round guardianship."
       ]
     }
   ];

@@ -389,7 +389,7 @@ function OurTeamSection() {
       name: "Ray",
       imageSrc: "/img/aboutus/Ray.png",
       description: [
-        "Chief Consultant, Master of Psychology in Education from the University of Hong Kong. ",
+        "Chief Consultant, Master of Education from the University of Hong Kong. ",
         "Creative design activities. ",
         "Close communication..."
       ]

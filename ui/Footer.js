@@ -28,7 +28,7 @@ export default function Footer() {
           <span className="text-white text-xl md:text-3xl">合领教育</span>
 
           <div className="flex w-20 h-20 mt-5">
-            <Image src="/img/footer/qrcode.png" alt="WeChat QR Code" width={130} height={130} />
+            <Image src="/img/footer/qr.jpg" alt="WeChat QR Code" width={130} height={130} />
           </div>
         </div>
 
