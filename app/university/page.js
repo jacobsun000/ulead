@@ -56,8 +56,7 @@ export default function Partners() {
           priority
         />
         <div className="absolute inset-0 flex flex-col justify-center items-start p-8">
-          <h1 className="text-2xl md:text-6xl text-white font-bold md:text-black mb-8 md:ml-10"
-            class="[text-shadow:_0_1px_0_rgb(0_0_0_/_40%)">
+          <h1 className="text-2xl md:text-6xl text-white font-bold md:text-black mb-8 md:ml-10">
             University Application<br />Consultation
           </h1>
           <Button href="/contacts" text="Free Consultation" style='bg-secondary md:ml-10' />
