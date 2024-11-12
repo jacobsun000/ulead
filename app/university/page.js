@@ -19,10 +19,10 @@ const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {
         </div>
         <span className="font-semibold text-center md:text-left">{title}</span>
         <span className={`text-sm md:text-2xl ${isRed ? 'text-primary' : 'text-secondary'}`}>
-          {isOpen ? '-' : '+'}
+          {/* {isOpen ? '-' : '+'} */}
         </span>
       </summary>
-      <p className="mt-2 text-gray-600">{description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque diam lectus, sit amet congue ante mollis eget.'}</p>
+      {/* <p className="mt-2 text-gray-600">{description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque diam lectus, sit amet congue ante mollis eget.'}</p> */}
     </details>
   );
 };

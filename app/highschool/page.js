@@ -22,10 +22,10 @@ const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {
         </div>
         <span className="font-semibold text-center md:text-left">{title}</span>
         <span className={`text-sm md:text-2xl ${isRed ? 'text-primary' : 'text-secondary'}`}>
-          {isOpen ? '-' : '+'}
+          {/* {isOpen ? '-' : '+'} */}
         </span>
       </summary>
-      <p className="mt-2 text-gray-600">{description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque diam lectus, sit amet congue ante mollis eget.'}</p>
+      {/* <p className="mt-2 text-gray-600">{description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque diam lectus, sit amet congue ante mollis eget.'}</p> */}
     </details>
   );
 };
@@ -104,6 +104,10 @@ export default function Partners() {
         <Image src="/img/highschool/process-desktop1.svg" alt="Process" width={956} height={1345} />
         <h2 className="text-3xl font-bold text-center mb-16 mt-32">High School Application Service Process</h2>
         <Image src="/img/highschool/process-desktop2.svg" alt="Process" width={1311} height={856} />
+      </div>
+
+      <div className="text-center mb-4">
+        <Button text="More Details" href="/contacts" />
       </div>
 
       <BackButton />

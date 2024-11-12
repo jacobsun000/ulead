@@ -33,6 +33,9 @@ export default function Home() {
       <UleadAlumnSection />
       <SectionHeader title="Qualifications" />
       <QualificationsSection />
+      <div className="text-center mb-4">
+        <Button text="More Details" href="/contacts" />
+      </div>
       <BackToTopButton />
       <Footer />
     </div>
@@ -337,6 +340,8 @@ function StudentReportSection() {
 }
 
 function TeamMember({ imageSrc, name, description, link }) {
+  const fullText = description.join(' ');
+  const isLongText = fullText.length > 100;
   return (
     <div className="bg-white md:border-1 md:border-y-gray-50 md:border-x-none md:rounded-none shadow-lg md:shadow-none rounded-lg p-4 flex md:flex-col items-center space-x-4 md:space-x-0 mb-6">
       <Image
@@ -348,10 +353,30 @@ function TeamMember({ imageSrc, name, description, link }) {
       />
       <div>
         <span className="md:hidden font-semibold text-xs text-gray-800">{name}</span>
-        <p className="text-gray-600 text-sm">
+        {/* <p className="text-gray-600 text-sm">
           {description}
           <a href={link} className="md:hidden text-primary cursor-pointer"> Read More</a>
-        </p>
+        </p> */}
+        <div className="text-gray-600 text-sm group">
+          <div className="collapsed-content">
+            <div className="line-clamp-wrapper">
+              {fullText}
+              {isLongText && (
+                <span className="read-more">
+                  <label className="text-primary hover:text-primaryLight cursor-pointer">
+                    <input type="checkbox" className="hidden" />
+                    ...read more
+                  </label>
+                </span>
+              )}
+            </div>
+          </div>
+          <div className="hidden expanded-content">
+            {description.map((item, index) => (
+              <div key={index} className="mb-1">{item}</div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -391,7 +416,7 @@ function OurTeamSection() {
       description: [
         "Chief Consultant, Master of Education from the University of Hong Kong. ",
         "Creative design activities. ",
-        "Close communication..."
+        "Helped hundreds of children apply to top U.S. high schools and prestigious universities",
       ]
     },
     {

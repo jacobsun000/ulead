@@ -22,4 +22,29 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+
+  .line-clamp-wrapper {
+    position: relative;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+
+  .read-more {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to left, white 50%, transparent);
+    padding-left: 20px;
+  }
+  
+  .group:has(input:checked) .expanded-content {
+    display: block;
+  }
+
+  .group:has(input:checked) .collapsed-content {
+    display: none;
+  }
 }

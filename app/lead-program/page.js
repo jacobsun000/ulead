@@ -66,7 +66,7 @@ const GrowthPlan = () => {
         ))}
       </div>
 
-      <div className="bg-primary text-white font-bold text-sm md:text-lg my-2 py-2 px-6 rounded-full">
+      <div className="bg-white text-black font-bold text-sm md:text-lg my-2 py-2 px-6 rounded-full">
         Lead Program Student Growth Plan
       </div>
 
@@ -235,6 +235,10 @@ export default function Partners() {
 
       <SectionHeader title="Abilities Training" style='my-4 md:my-16' />
       <GrowthPlan />
+
+      <div className="text-center mb-4">
+        <Button text="More Details" href="/contacts" />
+      </div>
 
       <BackButton />
       <Footer />

@@ -2,6 +2,7 @@ import Header from "@/ui/Header";
 import Footer from "@/ui/Footer";
 import BackButton from "@/ui/Back";
 import SectionHeader from "@/ui/SectionHeader";
+import Button from "@/ui/Button";
 import Image from 'next/image'
 
 const StatItem = ({ icon, number, description, isRed }) => (
@@ -97,6 +98,10 @@ export default function Partners() {
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="text-center mb-4">
+        <Button text="More Details" href="/contacts" />
       </div>
 
       <BackButton />

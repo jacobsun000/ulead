@@ -5,6 +5,8 @@ import SectionHeader from "@/ui/SectionHeader";
 import Image from 'next/image'
 import Slider from "@/ui/Slider";
 import Quote from "@/ui/Quote";
+import Button from "@/ui/Button";
+
 
 const TeamMember = ({ name, imageSrc, description }) => (
   <div className="flex flex-col items-center text-center">
@@ -15,8 +17,8 @@ const TeamMember = ({ name, imageSrc, description }) => (
       height={250}
       className="rounded-full mb-4"
     />
-    <h3 className="font-bold text-xl mb-2">{name}</h3>
-    <ul className="text-xs list-disc list-inside text-left">
+    <h3 className="font-bold text-lg mb-2">{name}</h3>
+    <ul className="text-sm list-disc list-inside text-left">
       {description.map((item, index) => (
         <li key={index}>{item}</li>
       ))}
@@ -134,7 +136,7 @@ export default function AboutUs() {
               </h2>
             </div>
             <div className="w-full md:w-2/3 ml-7">
-              <h2 className="text-lg md:text-4xl text-secondary mb-4 md:mb-8">Christina Wang</h2>
+              <h2 className="font-bold text-lg md:text-4xl text-secondary mb-4 md:mb-8">Christina Wang</h2>
               <ul className="text-sm md:text-[1rem] list-disc list-inside space-y-2 ml">
                 <li>Certified Consultant of the Independent Educational Consultants Association (IECA)</li>
                 <li>Certified Member of the Enrollment Management Association (EMA)</li>
@@ -181,6 +183,10 @@ export default function AboutUs() {
             <TeamMember key={member.name} {...member} />
           ))}
         </div>
+      </div>
+
+      <div className="text-center mb-4">
+        <Button text="More Details" href="/contacts" />
       </div>
 
       <BackButton />

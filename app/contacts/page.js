@@ -19,6 +19,11 @@ const ContactItem = ({ src, alt, text }) => (
 );
 
 export default function Contacts() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    window.location.href = '/';
+  };
+
   return (
     <div>
       <Header currentPath="/contacts" />
@@ -69,6 +74,7 @@ export default function Contacts() {
               type="text"
               id="name"
               name="name"
+              required
               className="w-full p-2 border border-gray-500 rounded"
             />
           </div>
@@ -78,6 +84,7 @@ export default function Contacts() {
               type="text"
               id="contact"
               name="contact"
+              required
               className="w-full p-2 border border-gray-500 rounded"
             />
           </div>
@@ -100,7 +107,12 @@ export default function Contacts() {
             />
           </div>
           <div className="md:col-span-2 mt-4 mb-4 flex justify-center">
-            <Button text="Submit" href='/' style='text-xl font-semibold' />
+            <button
+              type="submit"
+              className="px-8 py-2 rounded bg-primary hover:bg-primaryLight text-white text-xl font-semibold transition duration-300"
+            >
+              Submit
+            </button>
           </div>
         </form>
       </div>
@@ -145,6 +157,10 @@ export default function Contacts() {
             <span className="font-bold text-primary mt-3 block">Guangzhou, China</span>
           </div>
         </div>
+      </div>
+
+      <div className="text-center mb-4">
+        <Button text="More Details" href="/contacts" />
       </div>
 
       <BackButton />
