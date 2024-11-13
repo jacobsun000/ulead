@@ -599,7 +599,7 @@ function QualificationsSection() {
           </div>
         ))}
         <div className="w-1/5">
-          <IASBadge className="w-[200px] h-[200px]" />
+          <IASBadge className="w-[200px] h-[200px]" certNum={'6036'} />
         </ div>
       </ div>
     </section>
