@@ -1,3 +1,5 @@
+'use client'
+
 import Header from "@/ui/Header";
 import Footer from "@/ui/Footer";
 import BackButton from "@/ui/Back";
@@ -19,9 +21,34 @@ const ContactItem = ({ src, alt, text }) => (
 );
 
 export default function Contacts() {
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    window.location.href = '/';
+
+    const formData = {
+      name: e.target.name.value,
+      contact: e.target.contact.value,
+      source: e.target.source.value,
+      questions: e.target.questions.value,
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      console.log(response);
+
+      if (response.ok) {
+        alert('Your contact information has been submitted successfully!');
+      } else {
+        alert('There was an error submitting your contact information.');
+      }
+    } catch (error) {
+      alert('Network error. Please try again later.');
+    }
   };
 
   return (
@@ -67,7 +94,7 @@ export default function Contacts() {
 
       <div className="mx-auto p-4 rounded-lg">
         <h2 className="text-xl font-bold text-center mb-6">Fill this form and we will get back to you ASAP</h2>
-        <form className="grid grid-cols-1 md:grid-cols-2 gap-4 mx-[8vw]">
+        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4 mx-[8vw]">
           <div>
             <label htmlFor="name" className="block mb-1 text-lg">Your Name*</label>
             <input
