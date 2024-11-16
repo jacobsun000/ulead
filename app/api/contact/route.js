@@ -1,4 +1,3 @@
-// app/api/contact/route.js
 import { db } from '@vercel/postgres';
 
 export async function POST(req) {

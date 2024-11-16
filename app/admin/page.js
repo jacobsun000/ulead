@@ -1,31 +1,36 @@
-'use client'
-import { useState, useEffect } from 'react';
+'use client';
 
-const ADMIN_USERNAME = 'admin';
-const ADMIN_PASSWORD = 'password123';
+import { useState } from 'react';
 
 export default function AdminPage() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [contacts, setContacts] = useState([]);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [page, setPage] = useState(1);
 
-  const handleLogin = () => {
-    if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
-      setIsLoggedIn(true);
-    } else {
-      alert('Invalid credentials');
+  const handleLogin = async () => {
+    try {
+      const response = await fetch('/api/admin/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password, page }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setContacts(data.contacts);
+        setIsLoggedIn(true);
+      } else {
+        alert('Invalid credentials');
+      }
+    } catch (error) {
+      console.error('Error logging in:', error);
+      alert('An error occurred. Please try again.');
     }
   };
-
-  useEffect(() => {
-    if (isLoggedIn) {
-      fetch('/api/contact')
-        .then((response) => response.json())
-        .then((data) => setContacts(data.contacts))
-        .catch((error) => console.error('Error fetching contacts:', error));
-    }
-  }, [isLoggedIn]);
 
   if (!isLoggedIn) {
     return (
@@ -65,33 +70,45 @@ export default function AdminPage() {
       {contacts.length === 0 ? (
         <p>No contact submissions available.</p>
       ) : (
-        <table className="min-w-full bg-white border">
-          <thead>
-            <tr>
-              <th className="py-2 px-4 border-b">Name</th>
-              <th className="py-2 px-4 border-b">Contact</th>
-              <th className="py-2 px-4 border-b">Source</th>
-              <th className="py-2 px-4 border-b">Questions</th>
-              <th className="py-2 px-4 border-b">Created At</th>
-            </tr>
-          </thead>
-          <tbody>
-            {contacts.map((contact) => (
-              <tr key={contact.id}>
-                <td className="py-2 px-4 border-b">{contact.name}</td>
-                <td className="py-2 px-4 border-b">{contact.contact}</td>
-                <td className="py-2 px-4 border-b">{contact.source}</td>
-                <td className="py-2 px-4 border-b">{contact.questions}</td>
-                <td className="py-2 px-4 border-b">{contact.created_at}</td>
+        <div className="overflow-x-auto">
+          <table className="min-w-full bg-white border rounded-lg">
+            <thead className="bg-gray-100">
+              <tr>
+                <th className="py-3 px-6 border-b text-left font-semibold text-gray-600">Name</th>
+                <th className="py-3 px-6 border-b text-left font-semibold text-gray-600">Contact</th>
+                <th className="py-3 px-6 border-b text-left font-semibold text-gray-600">Source</th>
+                <th className="py-3 px-6 border-b text-left font-semibold text-gray-600">Questions</th>
+                <th className="py-3 px-6 border-b text-left font-semibold text-gray-600">Created At</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {contacts.map((contact, index) => (
+                <tr key={contact.id} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <td className="py-4 px-6 border-b text-gray-700">{contact.name}</td>
+                  <td className="py-4 px-6 border-b text-gray-700">{contact.contact}</td>
+                  <td className="py-4 px-6 border-b text-gray-700">{contact.source}</td>
+                  <td className="py-4 px-6 border-b text-gray-700">{contact.questions}</td>
+                  <td className="py-4 px-6 border-b text-gray-700">{contact.created_at}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
+      <div className="mt-6 flex justify-between">
+        <button
+          onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
+          className="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400 transition duration-200"
+        >
+          Previous
+        </button>
+        <button
+          onClick={() => setPage((prev) => prev + 1)}
+          className="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400 transition duration-200"
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 }
-
-// Notes:
-// 1. The credentials are hardcoded as 'admin' and 'password123' for simplicity.
-// 2. The /api/contact endpoint should be updated to support a GET request to return all contacts.
