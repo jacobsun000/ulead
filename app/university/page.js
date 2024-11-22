@@ -48,15 +48,15 @@ export default function Partners() {
       <Header currentPath="/university" />
       <div className="relative h-[30vh] md:h-[40vh]">
         <Image
-          src="/img/university/header.png"
+          src="/img/university/header.jpg"
           alt="Graduation"
           layout="fill"
           objectFit="cover"
-          objectPosition="center"
+          objectPosition="top"
           priority
         />
         <div className="absolute inset-0 flex flex-col justify-center items-start p-8">
-          <h1 className="text-2xl md:text-6xl text-white font-bold md:text-black mb-8 md:ml-10">
+          <h1 className="text-2xl md:text-6xl font-bold text-black md:text-secondary mb-8 md:ml-10">
             University Application<br />Consultation
           </h1>
           <Button href="/contacts" text="Free Consultation" style='bg-secondary md:ml-10' />

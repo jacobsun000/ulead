@@ -48,7 +48,7 @@ function MainSection() {
     <section className="relative w-full h-[25vh] md:h-[40vh]"> {/* 20% of screen height */}
       {/* Background Image */}
       <Image
-        src="/img/home/gallery1.png"
+        src="/img/home/header.jpg"
         alt="Slider"
         layout="fill"
         objectFit="cover"

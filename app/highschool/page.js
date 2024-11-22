@@ -49,17 +49,17 @@ export default function Partners() {
       <Header currentPath="/highschool" />
       <div className="relative h-[30vh] md:h-[40vh]">
         <Image
-          src="/img/highschool/header.png"
+          src="/img/highschool/header.jpg"
           alt="Book"
           layout="fill"
           objectFit="cover"
           priority
         />
         <div className="absolute inset-0 flex flex-col justify-center items-start p-8">
-          <h1 className="text-2xl md:text-6xl font-bold text-white mb-8 ml-10">
+          <h1 className="text-2xl md:text-6xl font-bold text-white mb-8 md:ml-10">
             Private School <br />Application Consultation
           </h1>
-          <Button href="/contacts" text="Free Consultation" style='bg-secondary ml-10' />
+          <Button href="/contacts" text="Free Consultation" style='bg-secondary md:ml-10' />
         </div>
       </div>
 

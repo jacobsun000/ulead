@@ -122,7 +122,7 @@ export default function Partners() {
       <Header currentPath="/lead-program" />
       <div className="relative h-[30vh] md:h-[40vh]">
         <Image
-          src="/img/lead-program/bg.png"
+          src="/img/lead-program/header.jpg"
           alt="Graduation"
           layout="fill"
           objectFit="cover"
