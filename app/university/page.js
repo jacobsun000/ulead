@@ -5,6 +5,8 @@ import SectionHeader from "@/ui/SectionHeader";
 import Image from 'next/image'
 import Button from "@/ui/Button";
 import Quote from "@/ui/Quote";
+import OfferReport from "@/ui/OfferReport";
+import { university } from "@/data/admission";
 
 const Card = ({ title }) => (
   <h3 className={`text-sm mb-2 text-white p-2 rounded-xl text-center ${title.includes('Canadian') ? 'bg-primary' : 'bg-secondary'}`}>{title}</h3>
@@ -91,6 +93,12 @@ export default function Partners() {
         <div className="text-center">
           <Button text="More Details" href="/contacts" />
         </div>
+      </div>
+
+      <SectionHeader title="Offer Report" style='my-4 mt-12' />
+
+      <div className="max-w-6xl mx-8 md:mx-auto py-4 md:py-12 px-4">
+        <OfferReport schools={university} />
       </div>
 
       <BackButton />

@@ -2,7 +2,6 @@ import Image from "next/image";
 import Header from "@/ui/Header";
 import Slider from "@/ui/Slider";
 import Panel from "@/ui/Panel";
-import OfferItem from "@/ui/OfferItem";
 import SectionHeader from "@/ui/SectionHeader";
 import Button from "@/ui/Button";
 import Tab from "@/ui/Tab";
@@ -10,6 +9,7 @@ import Footer from "@/ui/Footer";
 import BackToTopButton from "@/ui/Back";
 import Video from "@/ui/Video";
 import IASBadge from "@/ui/IASBadge";
+import OfferReport from "@/ui/OfferReport";
 import { university, highSchool, others } from "@/data/admission";
 
 export default function Home() {
@@ -212,37 +212,19 @@ function OurServicesSection() {
   );
 }
 
-function OfferReport({ schools, href }) {
-  return (
-    <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-        {schools.map((school, index) => (
-          <div key={index} className={`${index >= 5 ? 'hidden' : ''} md:${index >= 10 ? 'hidden' : 'block'}`}>
-            <OfferItem {...school} />
-          </div>
-        ))}
-
-      </div>
-      <div className="flex justify-center mt-8">
-        <Button text="Read More" href={href} />
-      </div>
-    </div>
-  );
-}
-
 function StudentReportSection() {
   const panels = [
     {
       title: "University",
-      content: <OfferReport schools={university} href="/university" />,
+      content: <OfferReport schools={university} href="/university" limitMobile={5} limitDesktop={10} />,
     },
     {
       title: "High School",
-      content: <OfferReport schools={highSchool} href="/highschool" />,
+      content: <OfferReport schools={highSchool} href="/highschool" limitMobile={5} limitDesktop={10} />,
     },
     {
       title: "Others",
-      content: <OfferReport schools={others} href="/university" />,
+      content: <OfferReport schools={others} href="/university" limitMobile={5} limitDesktop={10} />,
     },
 
   ]

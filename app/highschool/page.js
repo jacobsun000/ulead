@@ -5,6 +5,8 @@ import SectionHeader from "@/ui/SectionHeader";
 import Image from 'next/image'
 import Button from "@/ui/Button";
 import Quote from "@/ui/Quote";
+import OfferReport from "@/ui/OfferReport";
+import { highSchool } from "@/data/admission";
 
 const Card = ({ title }) => (
   <div className="flex-1 mx-1">
@@ -108,6 +110,13 @@ export default function Partners() {
 
       <div className="text-center mb-4">
         <Button text="More Details" href="/contacts" />
+      </div>
+
+
+      <SectionHeader title="Offer Report" style='my-4 mt-12' />
+
+      <div className="max-w-6xl mx-8 md:mx-auto py-4 md:py-12 px-4">
+        <OfferReport schools={highSchool} />
       </div>
 
       <BackButton />
