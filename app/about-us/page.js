@@ -84,7 +84,7 @@ export default function AboutUs() {
             objectFit="cover"
             quality={100}
           />
-          <div className="absolute inset-0 hidden md:flex items-center justify-center">
+          <div className="absolute inset-0 bg-black/50 hidden md:flex items-center justify-center">
             <div className="text-white text-center">
               <h2 className="text-5xl font-bold mb-4">
                 About Us

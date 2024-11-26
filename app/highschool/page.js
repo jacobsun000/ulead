@@ -57,11 +57,11 @@ export default function Partners() {
           objectFit="cover"
           priority
         />
-        <div className="absolute inset-0 flex flex-col justify-center items-start p-8">
+        <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-start p-8">
           <h1 className="text-2xl md:text-6xl font-bold text-white mb-8 md:ml-10">
             Private School <br />Application Consultation
           </h1>
-          <Button href="/contacts" text="Free Consultation" style='bg-secondary md:ml-10' />
+          <Button href="/contacts" text="Free Consultation" style={"text-white px-11 py-2 rounded-full bg-secondary md:text-2xl md:ml-10"} />
         </div>
       </div>
 
