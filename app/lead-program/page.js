@@ -18,10 +18,7 @@ const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {
         </span>
       </summary>
       <ul className="mt-2 text-gray-600">
-        <li>Explore personal academic strengths and develop a growth plan, set academic benchmarks and long-term development strategies.</li>
-        <li>English learning habits and methods, learning points and methods to connect other subjects with international learning styles.</li>
-        <li>Domestic and international bilingual systems, international education systems, analysis and choices of public and private education.</li>
-        <li>Analysis and choices of the U.S. private and public school systems, including elite private schools.</li>
+        {description && description.map((item, index) => (<li key={index}>{item}</li>))}
       </ul>
     </details>
   );
@@ -107,14 +104,62 @@ const GrowthPlan = () => {
 
 export default function Partners() {
   const services = [
-    { title: "Academic Growth Plan", icon: "img/lead-program/1.svg", isOpen: false, isRed: false },
-    { title: "Artistic Growth Plan", icon: "img/lead-program/2.svg", isOpen: false, isRed: false },
-    { title: "Sports Growth Plan", icon: "img/lead-program/3.svg", isOpen: false, isRed: false },
-    { title: "Parental Growth Course", icon: "img/lead-program/4.svg", isOpen: false, isRed: false },
-    { title: "Leadership Growth Plan", icon: "img/lead-program/5.svg", isOpen: false, isRed: false },
-    { title: "Holiday Growth Plan", icon: "img/lead-program/6.svg", isOpen: false, isRed: false },
-    { title: "Overseas Growth Plan", icon: "img/lead-program/7.svg", isOpen: false, isRed: false },
-    { title: "Public Welfare Growth Plan", icon: "img/lead-program/8.svg", isOpen: false, isRed: false },
+    {
+      title: "Academic Growth Plan", icon: "img/lead-program/1.svg", isOpen: false, isRed: false,
+      description: ["Explore personal academic strengths and develop a growth plan, set academic benchmarks and long-term development strategies.",
+        "English learning habits and methods, learning points and methods to connect other subjects with international learning styles.",
+        "Domestic and international bilingual systems, international education systems, analysis and choices of public and private education.",
+        "Analysis and choices of the U.S. private and public school systems, including elite private schools."]
+    },
+    {
+      title: "Artistic Growth Plan", icon: "img/lead-program/2.svg", isOpen: false, isRed: false,
+      description: ["Help children discover their own artistic strengths, understand their advantages, and analyze opportunities.",
+        "Foster international perspectives and guide children in nurturing unique artistic talents.",
+        "Visual and performing arts learning points, methods, and resources to connect with international art education.",
+        "International development pathways for non-arts major students with artistic talents."]
+    },
+    {
+      title: "Sports Growth Plan", icon: "img/lead-program/3.svg", isOpen: false, isRed: false,
+      description: ["Develop children's physical strengths, skills, and resilience through tailored sports training and activities.",
+        "Set short- and long-term athletic development goals while nurturing sportsmanship and teamwork.",
+        "Introduce learning points and methods to connect sports training with academic and international education systems.",
+        "Explore pathways for domestic and international sports development, including opportunities in elite athletic programs and schools."]
+    },
+    {
+      title: "Parental Growth Course", icon: "img/lead-program/4.svg", isOpen: false, isRed: false,
+      description: ["Equip parents with the skills to support their children's academic, artistic, and personal growth effectively.",
+        "Understand domestic and international education systems, bridging gaps between home and school learning.",
+        "Offer strategies for effective communication, motivation, and the creation of a nurturing and growth-focused family environment.",
+        "Provide resources for guiding children through critical life transitions, from school selection to personal development milestones."]
+    },
+    {
+      title: "Leadership Growth Plan", icon: "img/lead-program/5.svg", isOpen: false, isRed: false,
+      description: ["Cultivate leadership skills in children, focusing on teamwork, problem-solving, and decision-making.",
+        "Guide students in setting personal and community goals, emphasizing responsibility and initiative.",
+        "Introduce international frameworks for leadership development, connecting them with domestic and global opportunities.",
+        "Develop customized plans for leadership growth through mentorship, extracurricular activities, and community involvement."]
+    },
+    {
+      title: "Holiday Growth Plan", icon: "img/lead-program/6.svg", isOpen: false, isRed: false,
+      description: ["Maximize holiday breaks with meaningful and educational activities tailored to children's unique strengths.",
+        "Combine academic, artistic, and physical activities with cultural exploration and international learning opportunities.",
+        "Create balanced schedules that encourage skill-building, relaxation, and family bonding.",
+        "Provide resources for leveraging holiday periods to enhance personal growth, including travel programs and workshops."]
+    },
+    {
+      title: "Overseas Growth Plan", icon: "img/lead-program/7.svg", isOpen: false, isRed: false,
+      description: ["Guide families in planning for overseas education and cultural adaptation.",
+        "Offer strategies for selecting suitable schools and programs abroad while addressing cultural and academic challenges.",
+        "Provide resources for personal, academic, and extracurricular growth in international environments.",
+        "Develop comprehensive plans for future global opportunities, including college admissions and career development."]
+    },
+    {
+      title: "Public Welfare Growth Plan", icon: "img/lead-program/8.svg", isOpen: false, isRed: false,
+      description: ["Instill a sense of social responsibility by introducing children to volunteerism and public service.",
+        "Design activities that align with children's strengths and interests, fostering empathy and community awareness.",
+        "Explore domestic and international public welfare projects, offering pathways to meaningful involvement.",
+        "Encourage family and community participation in public service activities, building lifelong habits of giving back."]
+    },
   ];
 
   return (
@@ -164,14 +209,14 @@ export default function Partners() {
           </div>
         </div>
 
-        <div className="flex gap-4 mb-8">
-          <div className="w-1/2 rounded-xl border-2 p-4 border-primary">
+        <div className="flex flex-col gap-4 mb-8">
+          <div className="rounded-xl border-2 p-4 border-primary">
             <span className="text-primary">Aligning with elite overseas educational training models </span>
             {"to improve the child's real abilities, such as "}
             <span className="text-primary">intrinsic motivation, academic competence, critical thinking, and analytical skills</span>
             , which will benefit them for a lifetime.
           </div>
-          <div className="w-1/2 rounded-xl border-2 p-4 border-secondary">
+          <div className="rounded-xl border-2 p-4 border-secondary">
             {"Providing professional guidance and targeted training to influence the child's "}
             <span className="text-secondary">thinking methods and depth of thought</span>
             {", helping them advance in school selection, majors, and even "}
@@ -191,13 +236,13 @@ export default function Partners() {
           </div>
         </div>
 
-        <div className="flex gap-4 mb-8">
-          <div className="w-1/2 rounded-xl border-2 p-4 border-primary">
+        <div className="flex flex-col gap-4 mb-8">
+          <div className="rounded-xl border-2 p-4 border-primary">
             {"Expanding the child's "}
             <span className="text-primary">academic and extracurricular activities </span>
             in multiple dimensions and directions, while connecting them with valuable resources.
           </div>
-          <div className="w-1/2 rounded-xl border-2 p-4 border-secondary">
+          <div className="rounded-xl border-2 p-4 border-secondary">
             Parents in the leadership program will gain an understanding of
             <span className="text-secondary">international education systems in the U.S., U.K., and Canada, </span>
             as well as expert-shared experiences, helping the family make better decisions.
@@ -225,6 +270,7 @@ export default function Partners() {
               icon={service.icon}
               isOpen={service.isOpen}
               isRed={service.isRed}
+              description={service.description}
             />
           ))}
         </div>
