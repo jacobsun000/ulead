@@ -16,10 +16,10 @@ const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {
   return (
     <details className="border-b py-4" open={isOpen}>
       <summary className="flex justify-between items-center cursor-pointer list-none">
-        <div className="w-8 h-8">
+        <div className="w-1/12 md:w-8 h-8">
           <Image src={icon} alt={title} width={40} height={40} />
         </div>
-        <span className="font-semibold text-center md:text-left">{title}</span>
+        <span className="w-10/12 font-semibold text-center md:text-left">{title}</span>
         <span className={`text-sm md:text-2xl ${isRed ? 'text-primary' : 'text-secondary'}`}>
           {/* {isOpen ? '-' : '+'} */}
         </span>
