@@ -22,10 +22,3 @@ export async function POST(request) {
     return NextResponse.json({ error: 'Failed to upload image' }, { status: 500 });
   }
 }
-
-// To disable body parsing for App Router
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};

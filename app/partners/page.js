@@ -2,6 +2,7 @@ import BackButton from "@/ui/Back";
 import SectionHeader from "@/ui/SectionHeader";
 import Button from "@/ui/Button";
 import Image from 'next/image'
+import PartnerMap from "@/ui/PartnerMap";
 
 const StatItem = ({ icon, number, description, isRed }) => (
   <div className="flex flex-col items-center ml-7 mr-7">
@@ -18,44 +19,9 @@ const StatItem = ({ icon, number, description, isRed }) => (
 export default function Partners() {
   return (
     <div className="mt-28">
-      <SectionHeader title="Our Partners" />
-      <div className="max-w-4xl mx-auto p-4">
-        <div className="relative mb-10 md:block">
-          <Image
-            src="/img/partners/map.svg"
-            alt="US Map"
-            width={900}
-            height={700}
-          />
-        </div>
-        <div className="flex">
-          <div className="flex-col justify-center gap-4 mr-2">
-            <div className="bg-white rounded-lg border-2 p-2 md:p-4 w-full mb-2">
-              <ul className="text-sm list-disc list-inside">
-                <li>Culver Academies (IN)</li>
-              </ul>
-            </div>
-
-            {/* Second Group */}
-            <div className="bg-white rounded-lg border-2 p-2 md:p-4 w-full">
-              <ul className="space-y-2 text-sm list-disc list-inside">
-                <li>Episcopal High School (VA)</li>
-                <li>Christchurch School (VA)</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Third Group */}
-          <div className="bg-white rounded-lg p-2 md:p-4 border-2 justify-center">
-            <ul className="space-y-2 text-sm list-disc list-inside">
-              <li>The Webb Schools (CA)</li>
-              <li>Stevenson School (CA)</li>
-              <li>Thatcher School (CA)</li>
-              <li>Cate School (CA)</li>
-              <li>Santa Catalina (CA)</li>
-            </ul>
-          </div>
-        </div>
+      <SectionHeader title="Our Target School" style={"mb-0"} />
+      <div className="md:max-w-7xl mx-auto">
+        <PartnerMap />
       </div>
 
 
