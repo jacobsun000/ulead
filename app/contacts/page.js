@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react';
 import Header from "@/ui/Header";
 import Footer from "@/ui/Footer";
 import BackButton from "@/ui/Back";
@@ -20,7 +21,27 @@ const ContactItem = ({ src, alt, text }) => (
   </div>
 );
 
+const SuccessModal = ({ message }) => (
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div className="bg-white p-6 rounded-lg shadow-lg w-4/5 md:w-1/3">
+      <h2 className="text-xl font-bold mb-4 text-center">Success</h2>
+      <p className="text-center mb-6">{message}</p>
+      <div className="flex justify-center">
+        <button
+          onClick={() => (window.location.href = '/')}
+          className="px-6 py-2 bg-primary text-white font-semibold rounded hover:bg-primaryLight transition duration-300"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+);
+
 export default function Contacts() {
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -39,15 +60,17 @@ export default function Contacts() {
         },
         body: JSON.stringify(formData),
       });
-      console.log(response);
 
       if (response.ok) {
-        alert('Your contact information has been submitted successfully!');
+        setSuccessMessage('Your contact information has been submitted successfully!');
+        setShowSuccess(true);
       } else {
-        alert('There was an error submitting your contact information.');
+        setSuccessMessage('There was an error submitting your contact information. Please try again later.');
+        setShowSuccess(true);
       }
     } catch (error) {
-      alert('Network error. Please try again later.');
+      setSuccessMessage('There was an error submitting your contact information. Please try again later.');
+      setShowSuccess(true);
     }
   };
 
@@ -56,7 +79,7 @@ export default function Contacts() {
       <Header currentPath="/contacts" />
 
       <div className="py-6">
-        <SectionHeader title="Contact Us" style='mt-0 mb-8 md:my-8' />
+        <SectionHeader title="Contact Us" style="mt-0 mb-8 md:my-8" />
         <div className="p-4 mx-[8vw]">
           <div className="flex flex-col md:flex-row justify-between md:space-x-12">
             <div className="md:w-1/2">
@@ -142,53 +165,51 @@ export default function Contacts() {
             </button>
           </div>
         </form>
-      </div>
 
-      <div className="mx-auto p-4 mb-4">
-        <SectionHeader title="Our Offices" style='mt-0 mb-8 md:my-8' />
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mx-[8vw]">
-          <div className="col-span-1 text-center">
-            <Image
-              src={"/img/contacts/ny.png"}
-              alt="New York"
-              width={800}
-              height={600}
-            />
-            <span className="font-bold text-secondary mt-3 block">New York, USA</span>
-          </div>
-          <div className="col-span-1 text-center">
-            <Image
-              src={"/img/contacts/bs.png"}
-              alt="New York"
-              width={800}
-              height={600}
-            />
-            <span className="font-bold text-primary mt-3 block">Boston, USA</span>
-          </div>
-          <div className="col-span-1 text-center">
-            <Image
-              src={"/img/contacts/bj.png"}
-              alt="New York"
-              width={800}
-              height={600}
-            />
-            <span className="font-bold text-secondary mt-3 block">Beijing, China</span>
-          </div>
-          <div className="col-span-1 text-center">
-            <Image
-              src={"/img/contacts/gz.png"}
-              alt="New York"
-              width={800}
-              height={600}
-            />
-            <span className="font-bold text-primary mt-3 block">Guangzhou, China</span>
+        <div className="mx-auto p-4 mb-4">
+          <SectionHeader title="Our Offices" style='mt-0 mb-8 md:my-8' />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mx-[8vw]">
+            <div className="col-span-1 text-center">
+              <Image
+                src={"/img/contacts/ny.png"}
+                alt="New York"
+                width={800}
+                height={600}
+              />
+              <span className="font-bold text-secondary mt-3 block">New York, USA</span>
+            </div>
+            <div className="col-span-1 text-center">
+              <Image
+                src={"/img/contacts/bs.png"}
+                alt="New York"
+                width={800}
+                height={600}
+              />
+              <span className="font-bold text-primary mt-3 block">Boston, USA</span>
+            </div>
+            <div className="col-span-1 text-center">
+              <Image
+                src={"/img/contacts/bj.png"}
+                alt="New York"
+                width={800}
+                height={600}
+              />
+              <span className="font-bold text-secondary mt-3 block">Beijing, China</span>
+            </div>
+            <div className="col-span-1 text-center">
+              <Image
+                src={"/img/contacts/gz.png"}
+                alt="New York"
+                width={800}
+                height={600}
+              />
+              <span className="font-bold text-primary mt-3 block">Guangzhou, China</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="text-center mb-4">
-        <Button text="More Details" href="/contacts" />
-      </div>
+      {showSuccess && <SuccessModal message={successMessage} onClose={() => setShowSuccess(false)} />}
 
       <BackButton />
       <Footer />
