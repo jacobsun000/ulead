@@ -19,7 +19,6 @@ const IASBadge = ({ certNum }) => {
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         if (!Array.isArray(data.records)) {
           console.warn('Not an IAS Agent');
           setError('Not an IAS Agent.');

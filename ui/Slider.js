@@ -46,7 +46,7 @@ export default function Slider({ elements, showBullet, showArrow, autoplay = tru
       </div>
       {showArrow && (
         <button
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 p-2 hover:bg-secondary rounded-full transition duration-300"
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 p-2 hover:bg-primaryLight rounded-full transition duration-300"
           onClick={prevSlide}
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -56,7 +56,7 @@ export default function Slider({ elements, showBullet, showArrow, autoplay = tru
       )}
       {showArrow && (
         <button
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 hover:bg-secondary rounded-full transition-all duration-300"
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 hover:bg-primaryLight rounded-full transition-all duration-300"
           onClick={nextSlide}
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">

@@ -5,8 +5,6 @@ export async function POST(req) {
 
   const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
   const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
-  console.log('ADMIN_USERNAME:', ADMIN_USERNAME);
-  console.log('ADMIN_PASSWORD:', ADMIN_PASSWORD);
 
   if (username !== ADMIN_USERNAME || password !== ADMIN_PASSWORD) {
     return new Response(JSON.stringify({ message: 'Invalid credentials' }), { status: 401 });

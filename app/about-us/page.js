@@ -1,5 +1,3 @@
-import Header from "@/ui/Header";
-import Footer from "@/ui/Footer";
 import BackButton from "@/ui/Back";
 import SectionHeader from "@/ui/SectionHeader";
 import Image from 'next/image'
@@ -64,7 +62,6 @@ export default function AboutUs() {
 
   return (
     <div>
-      <Header currentPath="/about-us" />
 
       <div className="mx-auto">
         <div className="relative h-[250px] md:h-[400px] mb-12">
@@ -181,7 +178,6 @@ export default function AboutUs() {
       </div>
 
       <BackButton />
-      <Footer />
     </div >
   );
 }

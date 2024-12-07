@@ -1,5 +1,3 @@
-import Header from "@/ui/Header";
-import Footer from "@/ui/Footer";
 import BackButton from "@/ui/Back";
 import SectionHeader from "@/ui/SectionHeader";
 import Button from "@/ui/Button";
@@ -19,8 +17,7 @@ const StatItem = ({ icon, number, description, isRed }) => (
 
 export default function Partners() {
   return (
-    <div>
-      <Header currentPath="/partners" />
+    <div className="mt-28">
       <SectionHeader title="Our Partners" />
       <div className="max-w-4xl mx-auto p-4">
         <div className="relative mb-10 md:block">
@@ -105,7 +102,6 @@ export default function Partners() {
       </div>
 
       <BackButton />
-      <Footer />
     </div>
   );
 }

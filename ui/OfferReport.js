@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
 import Button from "@/ui/Button";
 
@@ -27,24 +30,29 @@ function OfferItem({ logo, school, count }) {
   );
 }
 
-export default function OfferReport({ schools, href, limitMobile, limitDesktop }) {
-  const max = (a, b) => (a > b) ? a : b;
-  const limit = (limitMobile && limitDesktop) ? max(limitMobile, limitDesktop) : schools.length;
+export default function OfferReport({ schools, href, expand = false }) {
+  const [limit, setLimit] = useState(5);
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-        {schools.slice(0, limit).map((school, index) => (
-          <div key={index} className={`${index >= limitMobile ? 'hidden' : ''} md:${index >= limitDesktop ? 'hidden' : 'block'}`}>
+        {schools.slice(0, limit * 2).map((school, index) => (
+          <div key={index} className={`${index >= limit ? 'hidden' : ''} md:${index >= limit * 2 ? 'hidden' : 'block'}`}>
             <OfferItem {...school} />
           </div>
         ))}
 
       </div>
-      {(href &&
-        <div className="flex justify-center mt-8">
+      <div className="flex justify-center mt-8">
+        {(expand &&
+          <button
+            className="bg-primary text-white px-6 py-2 rounded-md hover:bg-primaryLight transition duration-300"
+            onClick={() => setLimit(limit + 5)}>Load More</button>
+        )}
+
+        {(href &&
           <Button text="Read More" href={href} />
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }

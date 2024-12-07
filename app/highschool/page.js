@@ -1,5 +1,3 @@
-import Header from "@/ui/Header";
-import Footer from "@/ui/Footer";
 import BackButton from "@/ui/Back";
 import SectionHeader from "@/ui/SectionHeader";
 import Image from 'next/image'
@@ -18,7 +16,7 @@ const Card = ({ title }) => (
 const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {
   return (
     <details className="border-b py-4" open={isOpen}>
-      <summary className="flex justify-between items-center cursor-none list-none">
+      <summary className="flex justify-between items-center list-none">
         <div className="w-1/12 md:w-8 h-8">
           <Image src={icon} alt={title} width={40} height={40} />
         </div>
@@ -48,7 +46,6 @@ export default function Partners() {
 
   return (
     <div>
-      <Header currentPath="/highschool" />
       <div className="relative h-[30vh] md:h-[40vh]">
         <Image
           src="/img/highschool/header.jpg"
@@ -113,14 +110,13 @@ export default function Partners() {
       </div>
 
 
-      <SectionHeader title="Offer Report" style='my-4 mt-12' />
+      <SectionHeader title="Matriculation" style='my-4 mt-12' />
 
       <div className="max-w-6xl mx-8 md:mx-auto py-4 md:py-12 px-4">
-        <OfferReport schools={highSchool} />
+        <OfferReport schools={highSchool} expand={true} />
       </div>
 
       <BackButton />
-      <Footer />
     </div >
   );
 }

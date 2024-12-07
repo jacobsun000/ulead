@@ -1,11 +1,9 @@
 import Image from "next/image";
-import Header from "@/ui/Header";
 import Slider from "@/ui/Slider";
 import Panel from "@/ui/Panel";
 import SectionHeader from "@/ui/SectionHeader";
 import Button from "@/ui/Button";
 import Tab from "@/ui/Tab";
-import Footer from "@/ui/Footer";
 import BackToTopButton from "@/ui/Back";
 import Video from "@/ui/Video";
 import IASBadge from "@/ui/IASBadge";
@@ -15,7 +13,6 @@ import { university, highSchool, others } from "@/data/admission";
 export default function Home() {
   return (
     <div className="bg-[#f5f5f5]">
-      <Header currentPath="/" />
       <MainSection />
       <div className="w-5/6 mx-auto md:hidden my-4">
         <Video src="/img/home/video.mp4" poster="/img/home/video_poster.png" />
@@ -38,7 +35,6 @@ export default function Home() {
         <Button text="More Details" href="/contacts" />
       </div>
       <BackToTopButton />
-      <Footer />
     </div>
   );
 }
@@ -216,15 +212,15 @@ function StudentReportSection() {
   const panels = [
     {
       title: "University",
-      content: <OfferReport schools={university} href="/university" limitMobile={5} limitDesktop={10} />,
+      content: <OfferReport schools={university} href="/university" />,
     },
     {
       title: "High School",
-      content: <OfferReport schools={highSchool} href="/highschool" limitMobile={5} limitDesktop={10} />,
+      content: <OfferReport schools={highSchool} href="/highschool" />,
     },
     {
       title: "Others",
-      content: <OfferReport schools={others} href="/university" limitMobile={5} limitDesktop={10} />,
+      content: <OfferReport schools={others} href="/lead-program" />,
     },
 
   ]
@@ -238,39 +234,34 @@ function StudentReportSection() {
 function TeamMember({ imageSrc, name, description, link }) {
   const fullText = description.join(' ');
   const isLongText = fullText.length > 100;
+  const trimmedText = fullText.slice(0, 100) + '...';
   return (
-    <div className="bg-white md:border-1 md:border-y-gray-50 md:border-x-none md:rounded-none shadow-lg md:shadow-none rounded-lg p-4 flex md:flex-col items-center space-x-4 md:space-x-0 mb-6">
-      <Image
-        src={imageSrc}
-        alt={name}
-        width={64}
-        height={64}
-        className="rounded-full mb-4"
-      />
-      <div>
-        <span className="md:hidden font-semibold text-xs text-gray-800">{name}</span>
-        {/* <p className="text-gray-600 text-sm">
-          {description}
-          <a href={link} className="md:hidden text-primary cursor-pointer"> Read More</a>
-        </p> */}
+    <div className="bg-white md:border-1 md:border-y-gray-50 md:border-x-none md:rounded-none shadow-lg md:shadow-none rounded-lg p-4 flex flex-col items-center space-x-4 md:space-x-0 mb-6">
+      <div className="w-32 h-32">
+        <Image
+          src={imageSrc}
+          alt={name}
+          width={200}
+          height={200}
+          className="rounded-full mb-4"
+        />
+      </div>
+      <div className="flex flex-col items-center">
+        <span className="font-semibold text-sm text-gray-800">{name}</span>
         <div className="text-gray-600 text-sm group">
           <div className="collapsed-content">
             <div className="line-clamp-wrapper">
-              {fullText}
+              {trimmedText}
               {isLongText && (
                 <span className="read-more">
                   <label className="text-primary hover:text-primaryLight cursor-pointer">
-                    <input type="checkbox" className="hidden" />
-                    ...read more
-                  </label>
+                    <input type="checkbox" className="hidden" />read more</label>
                 </span>
               )}
             </div>
           </div>
           <div className="hidden expanded-content">
-            {description.map((item, index) => (
-              <div key={index} className="mb-1">{item}</div>
-            ))}
+            {fullText}
           </div>
         </div>
       </div>
@@ -284,8 +275,8 @@ function OurTeamSection() {
       name: "Christina",
       imageSrc: "/img/aboutus/founder.png",
       description: [
-        "Certified Consultant of the Independent Educational Consultants Association (IECA). ",
-        "Certified Member of the Enrollment Management Association (EMA)...",
+        "Certified Consultant of the Independent Educational Consultants Association (IECA).",
+        "Certified Member of the Enrollment Management Association (EMA).",
       ]
 
     },
@@ -293,35 +284,26 @@ function OurTeamSection() {
       name: "Tom",
       imageSrc: "/img/aboutus/Tom.png",
       description: [
-        "With 30 years of experience in admission management. ",
-        "A renowned expert in the United States. ",
-        "Leader in the field of independent school admissions...",
+        "With 30 years of experience in admission management.",
+        "A renowned expert in the United States.",
+        "Leader in the field of independent school admissions.",
       ]
     },
     {
       name: "Andy",
       imageSrc: "/img/aboutus/Andy.png",
       description: [
-        "Former admissions officer at Columbia University. ",
-        "Master of Journalism from Northwestern University / Bachelor of Political Science from Columbia University...",
+        "Former admissions officer at Columbia University.",
+        "Master of Journalism from Northwestern University / Bachelor of Political Science from Columbia University.",
       ]
     },
     {
       name: "Ray",
       imageSrc: "/img/aboutus/Ray.png",
       description: [
-        "Chief Consultant, Master of Education from the University of Hong Kong. ",
-        "Creative design activities. ",
-        "Helped hundreds of children apply to top U.S. high schools and prestigious universities",
-      ]
-    },
-    {
-      name: "Jay",
-      imageSrc: "/img/aboutus/Jay.png",
-      description: [
-        "A published author worked extensively in both the US and Asia at independent schools",
-        "Invited a speaker at NAIS and TABs conferences.",
-        "Based in NYC and Boston..."
+        "Chief Consultant, Master of Education from the University of Hong Kong.",
+        "Creative design activities.",
+        "Helped hundreds of children apply to top U.S. high schools and prestigious universities.",
       ]
     }
   ];
@@ -341,17 +323,11 @@ function OurTeamSection() {
 
 
       {/* Team Members */}
-      <Tab elements={tabs.map((tab) => {
-        return {
-          key: tab.key, label: tab.label, content: (
-            <div className="md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-0 rounded-xl bg-white overflow-clip md:pt-5">
-              {tab.members.map((member, index) => (
-                <TeamMember key={index} {...member} />
-              ))}
-            </div>
-          )
-        }
-      })} />
+      <div className="md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-0 rounded-xl bg-white overflow-clip md:pt-5">
+        {members.map((member, index) => (
+          <TeamMember key={index} {...member} />
+        ))}
+      </div>
 
       {/* Read More Button */}
       <div className="flex justify-center mt-8">
@@ -379,9 +355,7 @@ function AlumnProfileCard({ imageSrc, name, highschool, offers, experiences }) {
           <p className="hidden md:block text-xl font-semibold text-primary">{name}</p>
           {/* <p className="text-xs md:text-sm mb-2"><span className="font-bold">Highschool:</span> {highschool}</p> */}
           <p className="text-xs md:text-sm"><span className="font-bold">Offers:</span></p>
-          {offers.map((offer, index) => (
-            <p key={index} className="text-xs md:text-sm">{offer}</p>
-          ))}
+          <p className="text-xs md:text-sm">{offers.join(', ')}</p>
         </div>
       </div>
 
@@ -573,8 +547,8 @@ function QualificationsSection() {
     "/img/home/qualification4.png",
   ]
   return (
-    <section className="mx-8 md:mx-[8vw] mb-16">
-      <div className="flex items-center gap-x-2">
+    <section className="mx-8 md:mx-[8vw] mb-16 flex flex-col items-center">
+      <div className="flex items-center  gap-x-2 md:gap-x-20">
         {qualifications.map((qualification, index) => (
           <div key={index} className="w-1/5">
             <Image src={qualification} alt={`qualification-${index}`} width={200} height={200} />

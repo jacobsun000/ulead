@@ -1,8 +1,6 @@
 'use client'
 
 import { useState } from 'react';
-import Header from "@/ui/Header";
-import Footer from "@/ui/Footer";
 import BackButton from "@/ui/Back";
 import SectionHeader from "@/ui/SectionHeader";
 import Image from 'next/image';
@@ -76,7 +74,6 @@ export default function Contacts() {
 
   return (
     <div>
-      <Header currentPath="/contacts" />
 
       <div className="py-6">
         <SectionHeader title="Contact Us" style="mt-0 mb-8 md:my-8" />
@@ -212,7 +209,6 @@ export default function Contacts() {
       {showSuccess && <SuccessModal message={successMessage} onClose={() => setShowSuccess(false)} />}
 
       <BackButton />
-      <Footer />
     </div>
   );
 }

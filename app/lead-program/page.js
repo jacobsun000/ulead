@@ -1,5 +1,3 @@
-import Header from "@/ui/Header";
-import Footer from "@/ui/Footer";
 import BackButton from "@/ui/Back";
 import SectionHeader from "@/ui/SectionHeader";
 import Image from 'next/image'
@@ -164,7 +162,6 @@ export default function Partners() {
 
   return (
     <div>
-      <Header currentPath="/lead-program" />
       <div className="relative h-[30vh] md:h-[40vh]">
         <Image
           src="/img/lead-program/header.jpg"
@@ -287,7 +284,6 @@ export default function Partners() {
       </div>
 
       <BackButton />
-      <Footer />
     </div>
   );
 }
