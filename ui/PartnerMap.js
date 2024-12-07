@@ -142,39 +142,61 @@ export default function PartnerMap() {
   const [hlIndex, setHlIndex] = useState(0);
   const [isScrollingStates, setIsScollingStates] = useState(true);
   const containerRef = useRef(null);
+  const touchStartYRef = useRef(null);
+  const touchThreshold = 30;
 
   useEffect(() => {
+    const container = containerRef.current || window;
+
+    // Wheel handling for desktop
     const handleWheel = (e) => {
-      if (!isScrollingStates) {
-        return;
-      }
+      if (!isScrollingStates) return;
       e.preventDefault();
 
-      // Detect scroll direction: down (deltaY > 0), up (deltaY < 0)
       if (e.deltaY > 0) {
-        // Scroll down: Move forward in the highlight list if possible
-        setHlIndex((prev) => {
-          const nextIndex = Math.min(prev + 1, partners.length - 1);
-          return nextIndex;
-        });
+        setHlIndex((prev) => Math.min(prev + 1, partners.length - 1));
       } else if (e.deltaY < 0) {
-        // Scroll up: Move backward if not at the start
-        setHlIndex((prev) => {
-          const nextIndex = Math.max(prev - 1, 0);
-          return nextIndex;
-        });
+        setHlIndex((prev) => Math.max(prev - 1, 0));
       }
     };
 
-    const container = containerRef.current || window;
+    // Touch handling for mobile
+    const handleTouchStart = (e) => {
+      if (!isScrollingStates) return;
+      const touch = e.touches[0];
+      touchStartYRef.current = touch.clientY;
+    };
+
+    const handleTouchMove = (e) => {
+      if (!isScrollingStates) return;
+      e.preventDefault();
+
+      const touch = e.touches[0];
+      const deltaY = touchStartYRef.current - touch.clientY;
+
+      if (Math.abs(deltaY) > touchThreshold) {
+        if (deltaY > 0) {
+          setHlIndex((prev) => Math.min(prev + 1, partners.length - 1));
+        } else {
+          setHlIndex((prev) => Math.max(prev - 1, 0));
+        }
+        touchStartYRef.current = touch.clientY;
+      }
+    };
+
     container.addEventListener('wheel', handleWheel, { passive: false });
+    container.addEventListener('touchstart', handleTouchStart, { passive: false });
+    container.addEventListener('touchmove', handleTouchMove, { passive: false });
 
     return () => {
       container.removeEventListener('wheel', handleWheel);
+      container.removeEventListener('touchstart', handleTouchStart);
+      container.removeEventListener('touchmove', handleTouchMove);
     };
   }, [isScrollingStates]);
 
   useEffect(() => {
+    // If we've hit the last state, allow normal scroll
     if (hlIndex === partners.length - 1) {
       setIsScollingStates(false);
     }
