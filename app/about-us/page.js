@@ -18,7 +18,7 @@ const TeamMember = ({ name, imageSrc, description }) => (
       className="rounded-full mb-4"
     />
     <h3 className="font-bold text-lg mb-2">{name}</h3>
-    <ul className="text-sm list-disc list-inside text-left">
+    <ul className="text-sm list-disc text-left">
       {description.map((item, index) => (
         <li key={index}>{item}</li>
       ))}
@@ -58,15 +58,6 @@ export default function AboutUs() {
         "Chief Consultant, Master of Psychology in Education from the University of Hong Kong",
         "Creative design activities",
         "Close communication"
-      ]
-    },
-    {
-      name: "Jay",
-      imageSrc: "/img/aboutus/Jay.png",
-      description: [
-        "A published author worked extensively in both the US and Asia at independent schools",
-        "Invited a speaker at NAIS and TABs conferences. Based in NYC and Boston",
-        "Serving both domestic and international families in school placement and providing year-round guardianship."
       ]
     }
   ];
@@ -137,7 +128,7 @@ export default function AboutUs() {
             </div>
             <div className="w-full md:w-2/3 ml-7">
               <h2 className="font-bold text-lg md:text-4xl text-secondary mb-4 md:mb-8">Christina Wang</h2>
-              <ul className="text-sm md:text-[1rem] list-disc list-inside space-y-2 ml">
+              <ul className="text-sm md:text-[1rem] list-disc space-y-2 ml ml-4">
                 <li>Certified Consultant of the Independent Educational Consultants Association (IECA)</li>
                 <li>Certified Member of the Enrollment Management Association (EMA)</li>
                 <li>Certified Member of the National Association for College Admission Counseling (NACAC)</li>
@@ -155,21 +146,21 @@ export default function AboutUs() {
                 <span className="text-primary">U</span>
                 <span className="text-secondary">LEAD Mission</span>
               </h3>
-              <div className="text-lg">{"A mentor for children's growth, a steward of education for families"}</div>
+              <div className="text-lg px-4">{"A mentor for children's growth, a steward of education for families"}</div>
             </div>
             <div className="rounded-xl shadow-sm h-full bg-white bg-opacity-70 p-4">
               <h3 className="text-2xl font-bold mt-4 mb-4 text-center">
                 <span className="text-primary">U</span>
                 <span className="text-secondary">LEAD Vision</span>
               </h3>
-              <div className="text-lg">{"We strive for excellence, fairness, inclusivity, continuous improvement, and sustainable development"}</div>
+              <div className="text-lg px-4">{"We strive for excellence, fairness, inclusivity, continuous improvement, and sustainable development"}</div>
             </div>
             <div className="rounded-xl shadow-sm h-full bg-white bg-opacity-70 p-4">
               <h3 className="text-2xl font-bold mt-4 mb-4 text-center">
                 <span className="text-primary">U</span>
                 <span className="text-secondary">LEAD Value</span>
               </h3>
-              <div className="text-lg">{"Integrity, professionalism, diversity, collaboration, responsibility, innovation"}</div>
+              <div className="text-lg px-4">{"Integrity, professionalism, diversity, collaboration, responsibility, innovation"}</div>
             </div>
           </div>
         </div>
@@ -178,7 +169,7 @@ export default function AboutUs() {
 
       <SectionHeader title={"Core Team"} />
       <div className="mx-[8vw] mb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {teamMembers.map((member) => (
             <TeamMember key={member.name} {...member} />
           ))}
