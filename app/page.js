@@ -1,3 +1,4 @@
+import { sql } from '@vercel/postgres';
 import Image from "next/image";
 import Slider from "@/ui/Slider";
 import Panel from "@/ui/Panel";
@@ -461,53 +462,20 @@ function TestimonialsSection() {
   )
 }
 
-function UleadAlumnSection() {
-  const alumns = [
-    {
-      name: "Michael",
-      image: "/img/home/alumn1.jpg",
-      schools: ["The Webb Schools", "Princeton University"]
-    }, {
-      name: "Lily",
-      image: "/img/home/alumn2.jpg",
-      schools: ["Deerfield Academy", "Yale University"]
-    }, {
-      name: "Linda",
-      image: "/img/home/alumn3.jpg",
-      schools: ["St.Paul's School", "Columbia University"]
-    }, {
-      name: "David",
-      image: "/img/home/alumn4.png",
-      schools: ["Choate/Princeton Int School", "Massachusetts Institute of Technology"]
-    }, {
-      name: "Vanessa",
-      image: "/img/home/alumn5.jpg",
-      schools: ["The Thacher School", "University of Pennsylvania"]
-    }, {
-      name: "Russell",
-      image: "/img/home/alumn6.jpg",
-      schools: ["The Stony Brook School", "New York University-Stern School"]
-    }, {
-      name: "Jack",
-      image: "/img/home/alumn7.jpg",
-      schools: ["Cranbrook Schools", "University of Michigan"]
-    }, {
-      name: "Coco",
-      image: "/img/home/alumn8.jpg",
-      schools: ["Mercersburg Academy", "Berkelee College of Music"]
-    }
-  ];
+async function UleadAlumnSection() {
+  const { rows } = await sql`SELECT * FROM alumni`;
+  const alumns = rows;
 
   let alumnCardsMobile = alumns.map((testimonial, index) => (
-    <div key={index} className="bg-white rounded-lg shadow-lg gap-x-4 p-6 md:w-full w-[80vw] flex">
+    <div key={index} className="bg-white rounded-lg shadow-lg gap-x-4 p-6 md:py-0 md:w-full w-[80vw] flex">
       <div className="w-16 h-16 gap-y-2 flex flex-col align-center md:items-center md:mt-5 mb-4">
         <Image className="rounded-full" src={testimonial.image} alt="img" width={64} height={64} objectFit="cover" />
         <h3 className="text-sm md:text-lg font-semibold text-center mb-8">{testimonial.name}</h3>
       </div>
-      <div className="flex items-center">
+      <div className="flex items-center md:py-8">
         <div className="text-gray-600 text-xs md:text-lg mb-4">
           {testimonial.schools.map((school, index) => (
-            <p key={index} className="mr-2">{school};</p>
+            <p key={index} className="mr-2">{school}</p>
           ))}
         </div>
         <p className="text-gray-600 text-xs">{testimonial.description}</p>
@@ -520,7 +488,7 @@ function UleadAlumnSection() {
 
   for (let i = 0; i < alumnCardsMobile.length; i += 3) {
     alumnCardsDesktop.push((
-      <div key={i} className="grid md:grid-cols-3 gap-4">
+      <div key={i} className="grid grid-cols-3 gap-4">
         {alumnCardsMobile.slice(i, i + 3)}
       </div>
     ));
