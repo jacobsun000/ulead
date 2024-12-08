@@ -42,7 +42,7 @@ export default function Home() {
 
 function MainSection() {
   return (
-    <section className="relative w-full h-[25vh] md:h-[40vh]"> {/* 20% of screen height */}
+    <section className="relative w-full h-52 md:h-96">
       {/* Background Image */}
       <Image
         src="/img/home/header.jpg"

@@ -64,7 +64,7 @@ export default function AboutUs() {
     <div>
 
       <div className="mx-auto">
-        <div className="relative h-[250px] md:h-[400px] mb-12">
+        <div className="relative h-52 md:h-96 mb-12">
           <Image
             src="/img/aboutus/bg.png"
             alt="Graduation"

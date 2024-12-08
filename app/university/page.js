@@ -45,7 +45,7 @@ export default function Partners() {
 
   return (
     <div>
-      <div className="relative h-[30vh] md:h-[40vh]">
+      <div className="relative h-52 md:h-96">
         <Image
           src="/img/university/header.jpg"
           alt="Graduation"
