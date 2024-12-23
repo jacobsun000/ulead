@@ -22,7 +22,7 @@ export default function Footer() {
       <div className="flex justify-between mb-8">
         <div className="flex flex-col items-center">
           <div className="relative md:w-32 md:h-16 w-24 h-12 p-2">
-            <Image src="/img/logo.png" alt="ULEAD" fill className="object-cover" />
+            <Image src="/img/logo.png" alt="ULEAD" fill className="object-contain" />
           </div>
           {/* <div className=""> */}
           {/*   <span className="text-primary text-2xl md:text-4xl font-bold">U</span> */}
