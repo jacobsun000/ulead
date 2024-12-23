@@ -465,16 +465,16 @@ function TestimonialsSection() {
 function AlumniCard({ alumni }) {
   const { name, image, highschool, university, universitylogo } = alumni;
   return (
-    <div className="bg-white h-48 shadow-lg rounded-xl border">
+    <div className="bg-white h-48 md:h-64 shadow-lg rounded-xl border">
       <div className="flex flex-col content-start justify-start">
         {/* Header */}
         <div className="flex items-start justify-between">
-          <div className="w-48">
+          <div className="w-48 md:w-64">
             <div className="flex w-full flex-col items-center justify-start">
-              <div className="bg-primary w-full mt-4 pl-4 h-10 flex items-center">
+              <div className="bg-primary w-full mt-4 md:mt-8 md:pl-8 md:h-14 pl-4 h-10 flex items-center">
                 <h2 className="text-xl font-bold bg-primary text-white">{name}</h2>
               </div>
-              <div className="text-left w-full p-4">
+              <div className="text-left w-full p-4 md:p-8">
                 <p className="text-sm font-semibold">{university}</p>
                 <p className="text-gray-500 text-xs font-bold mt-2">
                   Highschool:
@@ -485,8 +485,8 @@ function AlumniCard({ alumni }) {
               </div>
             </div>
           </div>
-          <div className="relative w-24 h-24 mt-4">
-            <div className="absolute z-10 -top-1 border-secrondary rounded-full right-[calc(100%-1.5rem)] w-12 h-12">
+          <div className="relative w-24 md:w-32 md:h-32 h-24 mt-4 md:mt-8">
+            <div className="absolute z-10 -top-1 border-secrondary rounded-full right-[calc(100%-1.5rem)] md:right-[calc(100%-2rem)] w-12 h-12 md:w-16 md:h-16">
               <Image
                 src={universitylogo}
                 alt="University Logo"
