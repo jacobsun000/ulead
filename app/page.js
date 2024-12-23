@@ -510,7 +510,6 @@ function AlumniCard({ alumni }) {
 async function UleadAlumnSection() {
   const { rows } = await sql`SELECT * FROM alumni`;
   const alumns = rows;
-  console.log(alumns);
 
   let alumnCardsMobile = alumns.map((alumni, index) => (
     <AlumniCard alumni={alumni} key={index} />
