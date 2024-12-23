@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 
-const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
+const geoUrl = "/states-10m.json"; //"https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json"
 
 const partners = [
   {
