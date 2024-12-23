@@ -462,25 +462,58 @@ function TestimonialsSection() {
   )
 }
 
+function AlumniCard({ alumni }) {
+  const { name, image, highschool, university, universitylogo } = alumni;
+  return (
+    <div className="bg-white h-48 shadow-lg rounded-xl border">
+      <div className="flex flex-col content-start justify-start">
+        {/* Header */}
+        <div className="flex items-start justify-between">
+          <div className="w-48">
+            <div className="flex w-full flex-col items-center justify-start">
+              <div className="bg-primary w-full mt-4 pl-4 h-10 flex items-center">
+                <h2 className="text-xl font-bold bg-primary text-white">{name}</h2>
+              </div>
+              <div className="text-left w-full p-4">
+                <p className="text-sm font-semibold">{university}</p>
+                <p className="text-gray-500 text-xs font-bold mt-2">
+                  Highschool:
+                </p>
+                <p className="text-gray-500 text-xs">
+                  {highschool}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="relative w-24 h-24 mt-4">
+            <div className="absolute z-50 -top-1 border-secrondary rounded-full right-[calc(100%-1.5rem)] w-12 h-12">
+              <Image
+                src={universitylogo}
+                alt="University Logo"
+                className="rounded-full object-cover border-[1px] border-gray-300"
+                fill
+              />
+            </div>
+            <Image
+              src={image}
+              alt="User"
+              fill
+            />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
+}
+
 async function UleadAlumnSection() {
   const { rows } = await sql`SELECT * FROM alumni`;
   const alumns = rows;
+  console.log(alumns);
 
-  let alumnCardsMobile = alumns.map((testimonial, index) => (
-    <div key={index} className="bg-white rounded-lg shadow-lg gap-x-4 p-6 md:py-0 md:w-full w-[80vw] flex">
-      <div className="w-16 h-16 gap-y-2 flex flex-col align-center md:items-center md:mt-5 mb-4">
-        <Image className="rounded-full" src={testimonial.image} alt="img" width={64} height={64} objectFit="cover" />
-        <h3 className="text-sm md:text-lg font-semibold text-center mb-8">{testimonial.name}</h3>
-      </div>
-      <div className="flex items-center md:py-8">
-        <div className="text-gray-600 text-xs md:text-lg mb-4">
-          {testimonial.schools.map((school, index) => (
-            <p key={index} className="mr-2">{school}</p>
-          ))}
-        </div>
-        <p className="text-gray-600 text-xs">{testimonial.description}</p>
-      </div>
-    </div>
+  let alumnCardsMobile = alumns.map((alumni, index) => (
+    <AlumniCard alumni={alumni} key={index} />
   ));
 
 
