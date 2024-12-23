@@ -21,11 +21,14 @@ export default function Footer() {
     <footer className="bg-secondary text-white py-10 px-8 md:px-[8vw]">
       <div className="flex justify-between mb-8">
         <div className="flex flex-col items-center">
-          <div className="">
-            <span className="text-primary text-2xl md:text-4xl font-bold">U</span>
-            <span className="text-white text-2xl md:text-4xl font-bold">LEAD</span>
+          <div className="relative md:w-32 md:h-16 w-24 h-12 p-2">
+            <Image src="/img/logo.png" alt="ULEAD" fill className="object-cover" />
           </div>
-          <span className="text-white text-xl md:text-3xl">合领教育</span>
+          {/* <div className=""> */}
+          {/*   <span className="text-primary text-2xl md:text-4xl font-bold">U</span> */}
+          {/*   <span className="text-white text-2xl md:text-4xl font-bold">LEAD</span> */}
+          {/* </div> */}
+          {/* <span className="text-white text-xl md:text-3xl">合领教育</span> */}
 
           <div className="flex w-20 h-20 mt-5">
             <Image src="/img/footer/qr.jpg" alt="WeChat QR Code" width={130} height={130} />

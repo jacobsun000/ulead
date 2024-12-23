@@ -1,4 +1,5 @@
 'use client';
+import Image from "next/image";
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 
@@ -40,13 +41,16 @@ export default function Header() {
   return (
     <header className="bg-secondary flex justify-between items-center w-full px-4 md:px-20 py-1 fixed top-0 z-50">
       {/* Logo */}
-      <a href='/' className="flex flex-col py-2 mr-4">
-        <div>
-          <span className="text-primary md:text-xl font-semibold">U</span>
-          <span className="text-white md:text-xl font-semibold">LEAD</span>
-        </div>
-        <span className="text-white text-sm md:text-base md:font-semibold">合领教育</span>
-      </a>
+      {/* <a href='/' className="flex flex-col py-2 mr-4"> */}
+      {/*   <div> */}
+      {/*     <span className="text-primary md:text-xl font-semibold">U</span> */}
+      {/*     <span className="text-white md:text-xl font-semibold">LEAD</span> */}
+      {/*   </div> */}
+      {/*   <span className="text-white text-sm md:text-base md:font-semibold">合领教育</span> */}
+      {/* </a> */}
+      <div className="relative md:w-32 md:h-16 w-24 h-12 p-2">
+        <Image src="/img/logo.png" alt="ULEAD" fill className="object-cover" />
+      </div>
 
       {/* Desktop Nav Items */}
       <nav className="hidden md:flex w-full h-full justify-between items-center ml-16 space-x-6">
