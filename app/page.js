@@ -486,7 +486,7 @@ function AlumniCard({ alumni }) {
             </div>
           </div>
           <div className="relative w-24 h-24 mt-4">
-            <div className="absolute z-50 -top-1 border-secrondary rounded-full right-[calc(100%-1.5rem)] w-12 h-12">
+            <div className="absolute z-10 -top-1 border-secrondary rounded-full right-[calc(100%-1.5rem)] w-12 h-12">
               <Image
                 src={universitylogo}
                 alt="University Logo"
