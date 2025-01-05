@@ -1,3 +1,4 @@
+import { sql } from '@vercel/postgres';
 import BackButton from "@/ui/Back";
 import SectionHeader from "@/ui/SectionHeader";
 import Image from 'next/image'
@@ -6,7 +7,7 @@ import Quote from "@/ui/Quote";
 import Button from "@/ui/Button";
 
 
-const TeamMember = ({ name, imageSrc, description }) => (
+const TeamMember = ({ name, image_url: imageSrc, description }) => (
   <div className="flex flex-col items-center text-center">
     <Image
       src={imageSrc}
@@ -24,41 +25,9 @@ const TeamMember = ({ name, imageSrc, description }) => (
   </div>
 );
 
-export default function AboutUs() {
-
-  const teamMembers = [
-    {
-      name: "Tom",
-      imageSrc: "/img/aboutus/Tom.png",
-      description: [
-        "With 30 years of experience in admission management",
-        "A renowned expert in the United States",
-        "Leader in the field of independent school admissions",
-        "Alumni of Dartmouth College, an Ivy League school",
-        "Former admissions officer at Cardigan Mountain School",
-        "Has served as principal and director of admissions at several independent schools"
-      ]
-    },
-    {
-      name: "Andy",
-      imageSrc: "/img/aboutus/Andy.png",
-      description: [
-        "Former admissions officer at Columbia University",
-        "Master of Journalism from Northwestern University / Bachelor of Political Science from Columbia University",
-        "Awards as a journalist and writer: DuPont–Columbia Award, Emmy Award, Peabody Award, etc.",
-        "Successful admissions cases at Ivy League schools like Harvard and top 30 U.S. undergraduate programs"
-      ]
-    },
-    {
-      name: "Ray",
-      imageSrc: "/img/aboutus/Ray.png",
-      description: [
-        "Chief Consultant, Master of Psychology in Education from the University of Hong Kong",
-        "Creative design activities",
-        "Close communication"
-      ]
-    }
-  ];
+export default async function AboutUs() {
+  const { rows: members } = await sql`SELECT * FROM team_members`;
+  console.log(members);
 
   return (
     <div>
@@ -112,7 +81,7 @@ export default function AboutUs() {
           <div className="flex flex-col md:flex-row items-center max-w-5xl w-full p-8 rounded-lg">
             <div className="w-1/2 md:w-1/3 mb-6 md:mb-0 md:pr-8">
               <Image
-                src="/img/aboutus/founder.png"
+                src={members[0].image_url}
                 alt="ULEAD Founder"
                 width={300}
                 height={300}
@@ -124,12 +93,11 @@ export default function AboutUs() {
               </h2>
             </div>
             <div className="w-full md:w-2/3 ml-7">
-              <h2 className="font-bold text-lg md:text-4xl text-secondary mb-4 md:mb-8">Christina Wang</h2>
+              <h2 className="font-bold text-lg md:text-4xl text-secondary mb-4 md:mb-8">{members[0].name}</h2>
               <ul className="text-sm md:text-[1rem] list-disc space-y-2 ml ml-4">
-                <li>Certified Consultant of the Independent Educational Consultants Association (IECA)</li>
-                <li>Certified Member of the Enrollment Management Association (EMA)</li>
-                <li>Certified Member of the National Association for College Admission Counseling (NACAC)</li>
-                <li>Certified Psychologist of the Chinese Academy of Sciences</li>
+                {members[0].description.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
               </ul>
             </div>
           </div>
@@ -167,7 +135,7 @@ export default function AboutUs() {
       <SectionHeader title={"Core Team"} />
       <div className="mx-[8vw] mb-12">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {teamMembers.map((member) => (
+          {members.slice(1).map((member) => (
             <TeamMember key={member.name} {...member} />
           ))}
         </div>

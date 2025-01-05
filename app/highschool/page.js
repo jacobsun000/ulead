@@ -1,10 +1,10 @@
+import { sql } from '@vercel/postgres';
 import BackButton from "@/ui/Back";
 import SectionHeader from "@/ui/SectionHeader";
 import Image from 'next/image'
 import Button from "@/ui/Button";
 import Quote from "@/ui/Quote";
 import OfferReport from "@/ui/OfferReport";
-import { highSchool } from "@/data/admission";
 
 const Card = ({ title }) => (
   <div className="flex-1 mx-1">
@@ -30,7 +30,9 @@ const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {
   );
 };
 
-export default function Partners() {
+export default async function Partners() {
+  const { rows: highSchool } = await sql`SELECT * FROM high_school`;
+
   const services = [
     { title: "Comprehensive Candidacy Development Plan", icon: "img/highschool/1.svg", isOpen: false, isRed: false },
     { title: "School Selection Guidance", icon: "img/highschool/2.svg", isOpen: false, isRed: false },

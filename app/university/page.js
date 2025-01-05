@@ -1,10 +1,10 @@
+import { sql } from '@vercel/postgres';
 import BackButton from "@/ui/Back";
 import SectionHeader from "@/ui/SectionHeader";
 import Image from 'next/image'
 import Button from "@/ui/Button";
 import Quote from "@/ui/Quote";
 import OfferReport from "@/ui/OfferReport";
-import { university } from "@/data/admission";
 
 const Card = ({ title }) => (
   <h3 className={`text-sm mb-2 text-white p-2 rounded-xl text-center ${title.includes('Canadian') ? 'bg-primary' : 'bg-secondary'}`}>{title}</h3>
@@ -27,7 +27,8 @@ const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {
   );
 };
 
-export default function Partners() {
+export default async function Partners() {
+  const { rows: university } = await sql`SELECT * FROM university`;
   const services = [
     { title: "Candidacy Development", icon: "img/university/1.svg", isOpen: false, isRed: false },
     { title: "GPA Management Plan", icon: "img/university/2.svg", isOpen: false, isRed: false },

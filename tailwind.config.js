@@ -12,7 +12,7 @@ module.exports = {
         secondary: "#213A6C",
         faded: "#b0b0b0",
         white: "#FFFFFF",
-        background: "#FFFFFF",
+        background: "#F5F5F5",
         foreground: "#000000",
       },
     },

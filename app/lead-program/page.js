@@ -253,7 +253,7 @@ export default function Partners() {
       </div>
 
       <div className="mx-[8vw] mb-8 hidden md:flex items-center justify-center">
-        <Image src="/img/lead-program/services_desktop.svg" alt="Skills Development" width={1212} height={887} />
+        <Image src="/img/lead-program/services_desktop.svg" className="max-w-screen-sm" alt="Skills Development" width={1212} height={887} />
       </div>
 
 

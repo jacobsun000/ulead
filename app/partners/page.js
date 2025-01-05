@@ -1,3 +1,4 @@
+import { sql } from '@vercel/postgres';
 import BackButton from "@/ui/Back";
 import SectionHeader from "@/ui/SectionHeader";
 import Button from "@/ui/Button";
@@ -16,12 +17,13 @@ const StatItem = ({ icon, number, description, isRed }) => (
   </div>
 );
 
-export default function Partners() {
+export default async function Partners() {
+  const { rows: schools } = await sql`SELECT * FROM target_school;`;
   return (
     <div className="mt-28">
       <SectionHeader title="Our Target School" style={"mb-0"} />
       <div className="md:max-w-7xl mx-auto">
-        <PartnerMap />
+        <PartnerMap schools={schools} />
       </div>
 
 

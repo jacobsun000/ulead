@@ -9,7 +9,7 @@ import BackToTopButton from "@/ui/Back";
 import Video from "@/ui/Video";
 import IASBadge from "@/ui/IASBadge";
 import OfferReport from "@/ui/OfferReport";
-import { university, highSchool, others } from "@/data/admission";
+import AlumnProfileCard from "@/ui/AlumniProfileCard";
 
 export default function Home() {
   return (
@@ -26,8 +26,8 @@ export default function Home() {
       <StudentReportSection />
       <SectionHeader title="Our Team" />
       <OurTeamSection />
-      <SectionHeader title="Testimonials" />
-      <TestimonialsSection />
+      <SectionHeader title="Matriculation" />
+      <MatriculationSection />
       <SectionHeader title="ULead Alumni" />
       <UleadAlumnSection />
       <SectionHeader title="Qualifications" />
@@ -209,7 +209,10 @@ function OurServicesSection() {
   );
 }
 
-function StudentReportSection() {
+async function StudentReportSection() {
+  const { rows: university } = await sql`SELECT * FROM university LIMIT 10`;
+  const { rows: highSchool } = await sql`SELECT * FROM high_school LIMIT 10`;
+  const { rows: others } = await sql`SELECT * FROM other_school LIMIT 10`;
   const panels = [
     {
       title: "University",
@@ -232,7 +235,7 @@ function StudentReportSection() {
   );
 }
 
-function TeamMember({ imageSrc, name, description, link }) {
+function TeamMember({ image_url: imageSrc, name, description, link }) {
   const fullText = description.join(' ');
   const isLongText = fullText.length > 100;
   const trimmedText = fullText.slice(0, 100) + '...';
@@ -270,44 +273,8 @@ function TeamMember({ imageSrc, name, description, link }) {
   );
 }
 
-function OurTeamSection() {
-  const members = [
-    {
-      name: "Christina",
-      imageSrc: "/img/aboutus/founder.png",
-      description: [
-        "Certified Consultant of the Independent Educational Consultants Association (IECA).",
-        "Certified Member of the Enrollment Management Association (EMA).",
-      ]
-
-    },
-    {
-      name: "Tom",
-      imageSrc: "/img/aboutus/Tom.png",
-      description: [
-        "With 30 years of experience in admission management.",
-        "A renowned expert in the United States.",
-        "Leader in the field of independent school admissions.",
-      ]
-    },
-    {
-      name: "Andy",
-      imageSrc: "/img/aboutus/Andy.png",
-      description: [
-        "Former admissions officer at Columbia University.",
-        "Master of Journalism from Northwestern University / Bachelor of Political Science from Columbia University.",
-      ]
-    },
-    {
-      name: "Ray",
-      imageSrc: "/img/aboutus/Ray.png",
-      description: [
-        "Chief Consultant, Master of Education from the University of Hong Kong.",
-        "Creative design activities.",
-        "Helped hundreds of children apply to top U.S. high schools and prestigious universities.",
-      ]
-    }
-  ];
+async function OurTeamSection() {
+  const { rows: members } = await sql`SELECT * FROM team_members`;
   const tabs = [
     { key: 'consultant', label: 'Consultant', members },
     { key: 'professionals', label: 'Professionals', members },
@@ -338,104 +305,8 @@ function OurTeamSection() {
   );
 }
 
-function AlumnProfileCard({ imageSrc, name, highschool, offers, experiences }) {
-  return (
-    <div className="bg-white rounded-lg shadow-lg p-6 max-w-md mx-auto">
-      {/* Top Section */}
-      <div className="flex items-center space-x-4 mb-6">
-        {/* Profile Image */}
-        <div className="flex flex-col">
-          <div className="w-16 h-16 rounded-full overflow-hidden">
-            <Image src={imageSrc} alt={name} width={64} height={64} objectFit="cover" />
-          </div>
-          <p className="md:hidden font-semibold text-xs text-secondary">{name}</p>
-        </div>
-
-        {/* Profile Information */}
-        <div>
-          <p className="hidden md:block text-xl font-semibold text-primary">{name}</p>
-          {/* <p className="text-xs md:text-sm mb-2"><span className="font-bold">Highschool:</span> {highschool}</p> */}
-          <p className="text-xs md:text-sm"><span className="font-bold">Offers:</span></p>
-          <p className="text-xs md:text-sm">{offers.join(', ')}</p>
-        </div>
-      </div>
-
-      {/* Divider */}
-      <hr className="border-t border-gray-300 mb-4" />
-
-      {/* Experience Sharing Section */}
-      <h3 className="text-sm md:text-lg text-center font-semibold text-secondary mb-4">Experience Sharing</h3>
-      <ul className="list-disc list-inside text-xs md:text-sm">
-        {experiences.map((experience, index) => (
-          <li key={index}>{experience}</li>
-        ))}
-      </ul>
-
-      {/* Read More Button */}
-      <div className="flex md:hidden mt-6 justify-center">
-        <Button style={'text-xs'} text="Read More" href="/about-us" />
-      </div>
-    </div>
-  );
-}
-
-function TestimonialsSection() {
-  const profiles = [
-    {
-      imageSrc: '/img/icon-female.png',
-      name: 'Student L',
-      highschool: 'Deerfield Academy',
-      offers: ['Culver', 'Cranbrook'],
-      experiences: ['His athletic strengths have been professionally recognized by the coach. ',
-        'Through role-playing and learning from each other, as well as taking detailed notes and highlighting key points, his hard work further enhanced his interview performance. ',
-        'Both his fluency in language and logical thinking were effectively improved!']
-    },
-    {
-      imageSrc: '/img/icon-male.png',
-      name: 'Student Z',
-      highschool: 'Deerfield Academy',
-      offers: ['Choate', 'Taft', 'Loomis'],
-      experiences: ['In addition to attending Choat\'s summer school, the student also visited and compared several top boarding schools, thus deciding early on that Choate would be their dream school.',
-        'The student started reading English literature at a young age and, besides an interest in math and physics, also developed a passion for history and Greek mythology. ',
-        'The teacher who interviewed the student happened to also teach history, so during the interview, the student\'s knowledge and background could be well demonstrated. Studying debate from a young age also helped the student enhance their logical thinking and communication skills, which further showcased their confidence.']
-    },
-    {
-      imageSrc: '/img/icon-female.png',
-      name: 'Student S',
-      highschool: 'Deerfield Academy',
-      offers: ['Westminster', 'Canterbury'],
-      experiences: ['He is a particularly warm-hearted child, very polite, and willing to share with others. ',
-        'The first draft of his application essay was already very vivid and full of imagery. ',
-        'He has strong comprehension skills and can quickly make adjustments to the logic of the essay, which is why the quality of his writing is exceptionally high!']
-    },
-    {
-      imageSrc: '/img/icon-male.png',
-      name: 'Student Y',
-      highschool: 'Deerfield Academy',
-      offers: ['St. Mark', 'EHS', 'Stony Brook'],
-      experiences: ['Student Y is a very kind and compassionate child, passionate about public service and genuinely dedicated! ',
-        'This was clearly reflected in his overall interview, essays, and other application materials. During the interview preparation, Y\'s stories were very touching, especially the one about helping a young Tibetan child with pronunciation.',
-        'Through repeated practice until his delivery was emotional and impactful, he ultimately left a lasting impression.']
-    },
-    {
-      imageSrc: '/img/icon-female.png',
-      name: 'Student D',
-      highschool: 'Deerfield Academy',
-      offers: ['Choate', 'Tabor'],
-      experiences: ['He excels in mathematics and enjoys playing the clarinet.',
-        'He has a strong ability to grasp concepts quickly and is highly efficient, always completing tasks on time without procrastination.',
-        'In the application process, the student\'s own potential, hard work, professional guidance, and close communication were all essential factors for success!']
-    },
-    {
-      imageSrc: '/img/icon-male.png',
-      name: 'Student T',
-      highschool: 'Deerfield Academy',
-      offers: ['Webbs', 'Mercersburg'],
-      experiences: ['Student T has a wealth of experiences, is multi-talented, and actively participates in various activities both inside and outside of school!',
-        'However, despite her optimism, she faced setbacks during her application to U.S. high schools, which weighed heavily on her mind. She didn’t want to give up any of her activities.',
-        'With patient support, she eventually learned to manage her time well, not only maintaining her extracurricular commitments but also dedicating significant time to her application preparation. Reflecting on this challenging yet rewarding journey, she gained many insights!']
-    },
-  ];
+async function MatriculationSection() {
+  const { rows: profiles } = await sql`SELECT * FROM testimonials`;
   const profileCards = profiles.map((profile, index) => (
     <AlumnProfileCard key={index} {...profile} />
   ));
@@ -444,7 +315,7 @@ function TestimonialsSection() {
 
   for (let i = 0; i < profileCards.length; i += 3) {
     profileCardsDesktop.push((
-      <div key={i} className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div key={i} className="grid grid-cols-1 md:grid-cols-3 gap-8 overflow-clip">
         {profileCards.slice(i, i + 3)}
       </div>
     ));
@@ -508,8 +379,7 @@ function AlumniCard({ alumni }) {
 }
 
 async function UleadAlumnSection() {
-  const { rows } = await sql`SELECT * FROM alumni`;
-  const alumns = rows;
+  const { rows: alumns } = await sql`SELECT * FROM alumni`;
 
   let alumnCardsMobile = alumns.map((alumni, index) => (
     <AlumniCard alumni={alumni} key={index} />
@@ -520,7 +390,7 @@ async function UleadAlumnSection() {
 
   for (let i = 0; i < alumnCardsMobile.length; i += 3) {
     alumnCardsDesktop.push((
-      <div key={i} className="grid grid-cols-3 gap-4">
+      <div key={i} className="grid grid-cols-3 gap-8">
         {alumnCardsMobile.slice(i, i + 3)}
       </div>
     ));

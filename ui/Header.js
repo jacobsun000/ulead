@@ -81,7 +81,7 @@ export default function Header() {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <nav className="absolute top-16 left-0 w-full bg-secondary flex flex-col items-start p-4 space-y-4 md:hidden z-50">
+        <nav className="absolute top-14 left-0 w-full bg-secondary flex flex-col items-start p-4 space-y-4 md:hidden z-50">
           {navItems.map(({ label, href }) => (
             <NavItem setIsMobileMenuOpen={setIsMobileMenuOpen} key={label} label={label} href={href} selected={pathname === href} isMobile />
           ))}
