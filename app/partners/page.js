@@ -22,12 +22,12 @@ export default async function Partners() {
   return (
     <div className="mt-28">
       <SectionHeader title="Our Target School" style={"mb-0"} />
-      <div className="md:max-w-7xl mx-auto">
+      <div className="md:max-w-[90vw] mx-auto">
         <PartnerMap schools={schools} />
       </div>
 
 
-      <h2 className="text-2xl md:text-2xl font-bold text-center mb-6">How ULead works with our partners?</h2>
+      <h2 className="text-2xl md:text-2xl font-bold text-center my-12">How ULead works with our partners?</h2>
 
       <div className="grid grid-cols-2 md:grid-cols-4 justify-between mb-8">
         <StatItem
