@@ -47,7 +47,6 @@ export default function PartnerMap({ schools }) {
       })
     };
   });
-  console.log(regionSchools);
 
   const [index, setIndex] = useState(0);
   return (

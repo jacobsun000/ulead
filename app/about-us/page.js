@@ -27,7 +27,6 @@ const TeamMember = ({ name, image_url: imageSrc, description }) => (
 
 export default async function AboutUs() {
   const { rows: members } = await sql`SELECT * FROM team_members`;
-  console.log(members);
 
   return (
     <div>
