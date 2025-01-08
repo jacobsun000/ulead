@@ -11,7 +11,7 @@ const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {
           <Image src={icon} alt={title} width={40} height={40} />
         </div>
         <span className="font-semibold">{title}</span>
-        <span className={`text-sm md:text-2xl ${isRed ? 'text-primary' : 'text-secondary'}`}>
+        <span className={`text-sm lg:text-2xl ${isRed ? 'text-primary' : 'text-secondary'}`}>
           {isOpen ? '-' : '+'}
         </span>
       </summary>
@@ -54,14 +54,14 @@ const GrowthPlan = () => {
         {tags1.map((tag, index) => (
           <div
             key={index}
-            className={`px-2 py-2 border ${tag.color} text-gray-700 rounded-full text-xs md:text-sm font-medium`}
+            className={`px-2 py-2 border ${tag.color} text-gray-700 rounded-full text-xs lg:text-sm font-medium`}
           >
             {tag.text}
           </div>
         ))}
       </div>
 
-      <div className="bg-white text-black font-bold text-sm md:text-lg my-2 py-2 px-6 rounded-full">
+      <div className="bg-white text-black font-bold text-sm lg:text-lg my-2 py-2 px-6 rounded-full">
         Lead Program Student Growth Plan
       </div>
 
@@ -69,7 +69,7 @@ const GrowthPlan = () => {
         {tags2.map((tag, index) => (
           <div
             key={index}
-            className={`px-2 py-2 border ${tag.color} text-gray-700 rounded-full text-xs md:text-sm font-medium`}
+            className={`px-2 py-2 border ${tag.color} text-gray-700 rounded-full text-xs lg:text-sm font-medium`}
           >
             {tag.text}
           </div>
@@ -78,7 +78,7 @@ const GrowthPlan = () => {
 
 
       {/* Legend */}
-      <div className="grid grid-cols-2 md:grid-cols-4 mt-8 gap-4 mx-4 mb-8">
+      <div className="grid grid-cols-2 lg:grid-cols-4 mt-8 gap-4 mx-4 mb-8">
         <div className="flex items-center">
           <span className="w-3 h-3 bg-yellow-500 rounded-full inline-block mr-2"></span>
           <span className="text-sm">U.S. Admissions Integration</span>
@@ -180,7 +180,7 @@ export default function Partners() {
       </div>
 
       <SectionHeader title="Skills Development" style='my-8' />
-      <div className="mx-[8vw] max-w-6xl md:mx-auto flex flex-col">
+      <div className="mx-[8vw] max-w-6xl lg:mx-auto flex flex-col">
         <span className="mb-8">
           Focusing on the child, growth advisors guide both the child and parents through personalized growth and application planning, allowing the child ample time to effectively enhance their background and abilities.
         </span>
@@ -195,13 +195,13 @@ export default function Partners() {
           <div className="w-1/3">
             <Image src="/img/lead-program/public_welfare.svg" alt="Public Welfare" width={120} height={120} />
           </div>
-          <div className="w-1/3 hidden md:block">
+          <div className="w-1/3 hidden lg:block">
             <Image src="/img/lead-program/art.svg" alt="Sports" width={120} height={120} />
           </div>
-          <div className="w-1/3 hidden md:block">
+          <div className="w-1/3 hidden lg:block">
             <Image src="/img/lead-program/academic2.svg" alt="Academic" width={120} height={120} />
           </div>
-          <div className="w-1/3 hidden md:block">
+          <div className="w-1/3 hidden lg:block">
             <Image src="/img/lead-program/music.svg" alt="Public Welfare" width={120} height={120} />
           </div>
         </div>
@@ -221,7 +221,7 @@ export default function Partners() {
           </div>
         </div>
 
-        <div className="flex md:hidden gap-8 mb-8">
+        <div className="flex lg:hidden gap-8 mb-8">
           <div className="w-1/3">
             <Image src="/img/lead-program/art.svg" alt="Sports" width={120} height={120} />
           </div>
@@ -248,17 +248,17 @@ export default function Partners() {
       </div>
 
       <SectionHeader title="Lead Program Services" style='my-8' />
-      <div className="mx-[8vw] mb-8 md:hidden">
-        <Image src="/img/lead-program/services.svg" alt="Skills Development" width={358} height={334} />
+      <div className="mx-[8vw] mb-8 lg:hidden flex justify-center">
+        <Image src="/img/lead-program/services.svg" alt="Skills Development" width={537} height={501} />
       </div>
 
-      <div className="mx-[8vw] mb-8 hidden md:flex items-center justify-center">
+      <div className="mx-[8vw] mb-8 hidden lg:flex items-center justify-center">
         <Image src="/img/lead-program/services_desktop.svg" className="max-w-screen-sm" alt="Skills Development" width={1212} height={887} />
       </div>
 
 
       <SectionHeader title="8 Core Competences" style='my-4' />
-      <div className="max-w-6xl mx-8 md:mx-auto py-4 md:py-12 px-4">
+      <div className="max-w-6xl mx-8 md:mx-12 lg:mx-auto py-4 md:py-12 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mb-8">
           {services.map((service, index) => (
             <ServiceItem

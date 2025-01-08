@@ -51,10 +51,10 @@ export default function PartnerMap({ schools }) {
   const [index, setIndex] = useState(0);
   return (
     <div className='flex flex-col items-center'>
-      <div className='grid grid-rows-2 grid-cols-3 md:grid-rows-none md:grid-cols-5 gap-2 md:max-w-7xl md:gap-4 m-4 mb-0 md:m-8'>
+      <div className='grid grid-rows-2 grid-cols-3 lg:grid-rows-none lg:grid-cols-5 gap-2 lg:max-w-7xl lg:gap-4 m-4 mb-0 lg:m-8'>
         {regionSchools.map((region, i) => (
           <div key={i}
-            className={`${i === index ? 'bg-[#E9CDCF]' : ''} text-center border-[1px] border-secondary rounded-lg md:p-4 text-lg cursor-pointer hover:bg-faded p-1`}
+            className={`${i === index ? 'bg-[#E9CDCF]' : ''} text-center border-[1px] border-secondary rounded-lg lg:p-4 text-lg cursor-pointer hover:bg-faded p-1`}
             onClick={() => setIndex(i)}
           >
             {region.region}
@@ -62,8 +62,8 @@ export default function PartnerMap({ schools }) {
         )
         )}
       </div>
-      <div className='flex flex-col md:flex-row px-4 md:p-0 md:max-h-[80vh] w-full'>
-        <ComposableMap className='mt-0 md:w-3/4' projection="geoAlbersUsa">
+      <div className='flex flex-col lg:flex-row px-4 lg:p-0 lg:max-h-[80vh] w-full'>
+        <ComposableMap className='mt-0 lg:w-3/4' projection="geoAlbersUsa">
           <Geographies geography={geoUrl}>
             {({ geographies }) =>
               geographies.map(geo => {
@@ -81,14 +81,14 @@ export default function PartnerMap({ schools }) {
             }
           </Geographies>
         </ComposableMap>
-        <div className='flex flex-col max-h-[45vh] md:max-h-full md:w-1/4 mx-4 md:m-0 overflow-y-scroll'>
+        <div className='flex flex-col max-h-[45vh] lg:max-h-full lg:w-1/4 mx-4 lg:m-0 overflow-y-scroll'>
           {regionSchools[index].states.map((s, i) => {
             if (!s.schools.length) return null;
             return (
               <div key={i} className="rounded-lg mb-2 bg-white px-12 py-8">
                 <ul className="list-disc">
                   {s.schools.map((school, i) => (
-                    <li key={i}>{school} <span className='hidden md:inline-block'>({s.state})</span></li>
+                    <li key={i}>{school} <span className='hidden lg:inline-block'>({s.state})</span></li>
                   ))}
                 </ul>
               </div>

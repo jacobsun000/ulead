@@ -18,7 +18,7 @@ function NavItem({ label, href, selected, setIsMobileMenuOpen, isMobile = false 
       href={href}
       className={`
         ${isMobile ? 'py-2 px-4 w-full border-b-[3px]' : 'pt-2 border-b-[6px] h-full flex items-center text-lg'}
-        ${isMobile ? 'md:hidden' : 'hidden md:flex'}
+        ${isMobile ? 'lg:hidden' : 'hidden lg:flex'}
         ${selected ? 'border-primary' : 'border-transparent'}
         ${selected ? 'text-white' : 'text-faded'}
         hover:border-primary hover:text-white transition-colors duration-300 ease-in-out
@@ -39,7 +39,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-secondary flex justify-between items-center w-full px-4 md:px-20 py-1 fixed top-0 z-50">
+    <header className="bg-secondary flex justify-between items-center w-full px-4 lg:px-20 py-1 fixed top-0 z-50">
       {/* Logo */}
       {/* <a href='/' className="flex flex-col py-2 mr-4"> */}
       {/*   <div> */}
@@ -48,12 +48,12 @@ export default function Header() {
       {/*   </div> */}
       {/*   <span className="text-white text-sm md:text-base md:font-semibold">合领教育</span> */}
       {/* </a> */}
-      <div className="relative md:w-32 md:h-16 w-24 h-12 p-2">
+      <div className="relative lg:w-32 lg:h-16 w-24 h-12 p-2">
         <Image src="/img/logo.png" alt="ULEAD" fill className="object-contain" />
       </div>
 
       {/* Desktop Nav Items */}
-      <nav className="hidden md:flex w-full h-full justify-between items-center ml-16 space-x-6">
+      <nav className="hidden lg:flex w-full h-full justify-between items-center ml-16 space-x-6">
         {navItems.map(({ label, href }) => (
           <NavItem key={label} label={label} href={href} setIsMobileMenuOpen={setIsMobileMenuOpen} selected={pathname === href} />
         ))}
@@ -63,7 +63,7 @@ export default function Header() {
       </nav>
 
       {/* Mobile View */}
-      <div className="flex items-center md:hidden">
+      <div className="flex items-center lg:hidden">
         {/* Contact Us Button for Mobile */}
         <a href="/contacts" className="bg-primary text-white text-xs p-2 rounded-md mr-4 hover:bg-primaryLight transition duration-300">
           Contact Us
@@ -81,7 +81,7 @@ export default function Header() {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <nav className="absolute top-14 left-0 w-full bg-secondary flex flex-col items-start p-4 space-y-4 md:hidden z-50">
+        <nav className="absolute top-14 left-0 w-full bg-secondary flex flex-col items-start p-4 space-y-4 lg:hidden z-50">
           {navItems.map(({ label, href }) => (
             <NavItem setIsMobileMenuOpen={setIsMobileMenuOpen} key={label} label={label} href={href} selected={pathname === href} isMobile />
           ))}

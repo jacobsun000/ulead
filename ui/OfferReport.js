@@ -34,9 +34,9 @@ export default function OfferReport({ schools, href, expand = false }) {
   const [limit, setLimit] = useState(5);
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
         {schools.slice(0, limit * 2).map((school, index) => (
-          <div key={index} className={`${index >= limit ? 'hidden' : ''} md:${index >= limit * 2 ? 'hidden' : 'block'}`}>
+          <div key={index} className={`${index >= limit ? 'hidden' : ''} lg:${index >= limit * 2 ? 'hidden' : 'block'}`}>
             <OfferItem {...school} />
           </div>
         ))}
@@ -45,7 +45,7 @@ export default function OfferReport({ schools, href, expand = false }) {
       <div className="flex justify-center mt-8">
         {(expand &&
           <button
-            className="bg-primary text-white px-6 py-2 rounded-md hover:bg-primaryLight transition duration-300"
+            className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primaryLight transition duration-300"
             onClick={() => setLimit(limit + 5)}>Load More</button>
         )}
 

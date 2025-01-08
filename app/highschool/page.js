@@ -8,7 +8,7 @@ import OfferReport from "@/ui/OfferReport";
 
 const Card = ({ title }) => (
   <div className="flex-1 mx-1">
-    <h3 className={`text-xs md:text-lg mb-2 text-white p-2 rounded-lg text-center place-content-center w-full h-full ${title.includes('Day') ? 'bg-primary' : 'bg-secondary'
+    <h3 className={`text-xs lg:text-lg mb-2 text-white p-2 rounded-lg text-center place-content-center w-full h-full ${title.includes('Day') ? 'bg-primary' : 'bg-secondary'
       }`}>{title}</h3>
   </div>
 );
@@ -17,11 +17,11 @@ const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {
   return (
     <details className="border-b py-4" open={isOpen}>
       <summary className="flex justify-between items-center list-none">
-        <div className="w-1/12 md:w-8 h-8">
+        <div className="w-1/12 lg:w-8 h-8">
           <Image src={icon} alt={title} width={40} height={40} />
         </div>
-        <span className="w-10/12 font-semibold text-center md:text-left">{title}</span>
-        <span className={`text-sm md:text-2xl ${isRed ? 'text-primary' : 'text-secondary'}`}>
+        <span className="w-10/12 font-semibold text-center lg:text-left">{title}</span>
+        <span className={`text-sm lg:text-2xl ${isRed ? 'text-primary' : 'text-secondary'}`}>
           {/* {isOpen ? '-' : '+'} */}
         </span>
       </summary>
@@ -68,8 +68,8 @@ export default async function Partners() {
         <Quote text="From early-age potential development to private school/university applications, ULead can help your child continue to grow and progress." />
       </div>
 
-      <div className="max-w-6xl mx-auto pt:10 md:py-12 px-4">
-        <div className="grid grid-cols-3 md:grid-cols-3 gap-2 md:gap-8 mb-8 md:mb-20">
+      <div className="max-w-6xl mx-auto pt:10 lg:py-12 px-4">
+        <div className="grid grid-cols-3 gap-2 md:gap-8 mb-8 md:mb-20">
           <Card title="U.S. Boarding Middle/High School Application" />
           <Card title="U.S. Day School Middle/High School Application" />
           <Card title="U.S. Boarding Middle/High School Application" />
@@ -100,7 +100,7 @@ export default async function Partners() {
       </div>
 
 
-      <div className="max-w-6xl mx-auto py-12 px-4 hidden md:flex flex-col items-center justify-center">
+      <div className="max-w-6xl py-12 mx-4 md:mx-16 lg:mx-auto hidden md:flex flex-col items-center justify-center">
         <h2 className="text-3xl font-bold text-center mb-16">High School Application Service Process</h2>
         <Image src="/img/highschool/process-desktop1.svg" alt="Process" width={956} height={1345} />
         <h2 className="text-3xl font-bold text-center mb-16 mt-32">High School Application Service Process</h2>
@@ -114,7 +114,7 @@ export default async function Partners() {
 
       <SectionHeader title="Matriculation" style='my-4 mt-12' />
 
-      <div className="max-w-6xl mx-8 md:mx-auto py-4 md:py-12 px-4">
+      <div className="max-w-6xl mx-8 md:mx-auto py-4 md:py-12 px-4 md:px-16">
         <OfferReport schools={highSchool} expand={true} />
       </div>
 

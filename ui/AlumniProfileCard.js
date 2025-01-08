@@ -16,7 +16,7 @@ export default function AlumnProfileCard({ image_url: imageSrc, name, highschool
   let expandable = experiencesCount < experiences.length;
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 max-w-md mx-auto">
+    <div className="bg-white rounded-lg shadow-lg p-6 max-w-md mx-auto w-[80vw] lg:w-full">
       {/* Top Section */}
       <div className="flex items-center space-x-4 mb-6">
         {/* Profile Image */}

@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className="bg-[#f5f5f5]">
       <MainSection />
-      <div className="w-5/6 mx-auto md:hidden my-4">
+      <div className="w-5/6 mx-auto lg:hidden my-4">
         <Video src="/img/home/video.mp4" poster="/img/home/video_poster.png" />
       </div>
       <SectionHeader title="Our Belief" style={"mt-8 md:mt-16"} />
@@ -56,7 +56,7 @@ function MainSection() {
       />
 
       {/* Overlay Content */}
-      <div className="absolute inset-0 flex flex-col justify-center items-start pl-4 md:pl-32 text-center text-white">
+      <div className="absolute inset-0 flex flex-col justify-center items-start pl-4 lg:pl-32 text-center text-white">
         {/* Title */}
         <h1 className="text-[1.4rem] md:text-5xl font-bold mb-2">
           ULEAD Education Planning
@@ -84,16 +84,16 @@ function MainSection() {
 
 function OurBeliefSection() {
   return (
-    <section className="mx-8 md:mx-[10vw]">
+    <section className="mx-8 lg:mx-[10vw]">
       {/* Content */}
-      <div className="flex flex-col md:flex-row-reverse items-center justify-center md:gap-x-16">
+      <div className="flex flex-col lg:flex-row-reverse items-center justify-center lg:gap-x-16">
         {/* Video Section */}
-        <div className="hidden md:block md:w-1/2 md:h-full mb-4">
+        <div className="hidden lg:block lg:w-1/2 lg:h-full mb-4">
           <Video src="/img/home/video.mp4" poster="/img/home/video_poster.png" />
         </div>
         {/* Text Section */}
-        <div className="md:w-2/5 flex-col w-full">
-          <h3 className="hidden md:block text-4xl font-bold mb-4">
+        <div className="lg:w-2/5 flex-col w-full">
+          <h3 className="hidden lg:block text-4xl font-bold mb-4">
             <span className="text-primary">U</span>
             <span className="text-secondary">LEAD Education</span>
           </h3>
@@ -104,7 +104,7 @@ function OurBeliefSection() {
           <p className="text-md md:text-lg text-black mb-4 md:mb-8 w-full">
             {`The company is fully committed to each student's individualized growth. Consultants serve as students' academic tutors, personal mentors, and collaborate closely with their families to form intimate, trusting relationships.`}
           </p>
-          <div className="grid w-full justify-items-center md:justify-items-start">
+          <div className="grid w-full justify-items-center lg:justify-items-start">
             <Button href='/about-us' text='About Us' />
           </div>
         </div>
@@ -115,7 +115,7 @@ function OurBeliefSection() {
 
 function ServiceCard({ title, icon, iconBg, text }) {
   return (
-    <div className="bg-white shadow-lg rounded-lg p-6 md:p-4 md:w-1/3 text-center">
+    <div className="bg-white shadow-lg rounded-lg p-6 lg:p-4 lg:w-1/3 text-center">
       <div className="flex justify-center mb-4">
         <div className={`${iconBg} p-4 rounded-full`}>
           {icon}
@@ -124,8 +124,8 @@ function ServiceCard({ title, icon, iconBg, text }) {
       <h3 className="text-xl font-bold mb-4">{title}</h3>
       <div className="text-left pl-4">
         {text.map((t, index) => (
-          <p key={index} className="text-gray-600 text-xs md:text-sm mb-4 flex items-start">
-            <span className="w-2 h-2 bg-primary md:bg-primary rounded-full mr-2 mt-1 flex-shrink-0"></span>
+          <p key={index} className="text-gray-600 text-xs lg:text-sm mb-4 flex items-start">
+            <span className="w-2 h-2 bg-primary lg:bg-primary rounded-full mr-2 mt-1 flex-shrink-0"></span>
             {t}</p>
         ))}
       </div>
@@ -196,11 +196,11 @@ function OurServicesSection() {
     />
   ];
   return (
-    <section className="mx-2 md:mx-[8vw]">
-      <div className="md:hidden">
+    <section className="mx-2 lg:mx-[8vw]">
+      <div className="lg:hidden">
         <Slider elements={cards} showArrow showBullet />
       </div>
-      <div className="hidden md:flex flex-1 min-h-full gap-x-8">
+      <div className="hidden lg:flex flex-1 min-h-full gap-x-8">
         {cards.map((card, _) => (
           card
         ))}
@@ -275,12 +275,6 @@ function TeamMember({ image_url: imageSrc, name, description, link }) {
 
 async function OurTeamSection() {
   const { rows: members } = await sql`SELECT * FROM team_members`;
-  const tabs = [
-    { key: 'consultant', label: 'Consultant', members },
-    { key: 'professionals', label: 'Professionals', members },
-    { key: 'planning', label: 'Planning', members },
-    { key: 'interviews', label: 'Interviews', members }
-  ];
 
   return (
     <section className="mx-8 md:mx-[8vw]">
@@ -323,10 +317,10 @@ async function MatriculationSection() {
 
   return (
     <section className="mx-2 md:mx-[8vw]">
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         <Slider elements={profileCardsDesktop} autoplay={false} showArrow />
       </div>
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <Slider elements={profileCards} autoplay={false} showArrow />
       </div>
     </section>
@@ -398,10 +392,10 @@ async function UleadAlumnSection() {
 
   return (
     <section className="mx-0 md:mx-[8vw]">
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <Slider elements={alumnCardsMobile} showBullet />
       </div>
-      <div className="hidden md:flex flex-col items-center gap-8">
+      <div className="hidden lg:flex flex-col items-center gap-8">
         <Slider showBullet showArrow elements={alumnCardsDesktop} />
         <Button text="Explore More" href="/about-us" style={"bg-secondary"} />
       </div>

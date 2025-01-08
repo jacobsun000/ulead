@@ -32,7 +32,7 @@ export default async function AboutUs() {
     <div>
 
       <div className="mx-auto">
-        <div className="relative h-52 md:h-96 mb-12">
+        <div className="relative h-52 lg:h-96 mb-12">
           <Image
             src="/img/aboutus/bg.png"
             alt="Graduation"
@@ -40,35 +40,35 @@ export default async function AboutUs() {
             objectFit="cover"
             quality={100}
           />
-          <div className="absolute inset-0 bg-black/50 hidden md:flex items-center justify-center">
+          <div className="absolute inset-0 bg-black/50 hidden lg:flex items-center justify-center">
             <div className="text-white text-center">
               <h2 className="text-5xl font-bold mb-4">
                 About Us
               </h2>
             </div>
           </div>
-          <div className="absolute inset-0 flex md:hidden items-center justify-center">
+          <div className="absolute inset-0 flex lg:hidden items-center justify-center">
             <Slider showBullet elements={[
               <div key={'Mission'} className="rounded-xl shadow-sm h-full bg-white bg-opacity-70 p-4">
-                <h3 className="text-xl font-bold mt-2 mb-2 text-center">
+                <h3 className="md:text-xl font-bold mt-2 mb-2 text-center">
                   <span className="text-primary">U</span>
                   <span className="text-secondary">LEAD Mission</span>
                 </h3>
-                <div className="">{"A mentor for children's growth, a steward of education for families"}</div>
+                <div className="text-sm md:text-lg">{"A mentor for children's growth, a steward of education for families"}</div>
               </div>,
               <div key={"Vision"} className="rounded-xl shadow-sm h-full bg-white bg-opacity-70 p-4">
-                <h3 className="text-xl font-bold mt-2 mb-2 text-center">
+                <h3 className="md:text-xl font-bold mt-2 mb-2 text-center">
                   <span className="text-primary">U</span>
                   <span className="text-secondary">LEAD Vision</span>
                 </h3>
-                <div className="">{"We strive for excellence, fairness, inclusivity, continuous improvement, and sustainable development"}</div>
+                <div className="text-sm md:text-lg">{"We strive for excellence, fairness, inclusivity, continuous improvement, and sustainable development"}</div>
               </div>,
               <div key={"Value"} className="rounded-xl shadow-sm h-full bg-white bg-opacity-70 p-4">
-                <h3 className="text-xl font-bold mt-2 mb-2 text-center">
+                <h3 className="md:text-xl font-bold mt-2 mb-2 text-center">
                   <span className="text-primary">U</span>
                   <span className="text-secondary">LEAD Value</span>
                 </h3>
-                <div className="">{"Integrity, professionalism, diversity, collaboration, responsibility, innovation"}</div>
+                <div className="text-sm md:text-lg">{"Integrity, professionalism, diversity, collaboration, responsibility, innovation"}</div>
               </div>
             ]} />
           </div>
@@ -102,9 +102,9 @@ export default async function AboutUs() {
           </div>
         </div>
 
-        <div className="relative hidden md:flex flex-col items-center mb-24">
-          <Image src="/img/aboutus/arc.svg" alt="" width={1440} height={226} className="w-[120vw] overflow-auto max-h-[18rem]" />
-          <div className="grid grid-cols-3 mt-8 gap-8 absolute items-center mx-[8vw]">
+        <div className="hidden md:flex flex-col items-center lg:mb-24">
+          <Image src="/img/aboutus/arc.svg" alt="" width={1440} height={226} className="w-[120vw] absolute overflow-auto max-h-[18rem]" />
+          <div className="grid grid-cols-3 mt-8 gap-4 lg:gap-8 items-center mx-[8vw]">
             <div className="rounded-xl shadow-sm h-full bg-white bg-opacity-70 p-4">
               <h3 className="text-2xl font-bold mt-4 mb-4 text-center">
                 <span className="text-primary">U</span>
