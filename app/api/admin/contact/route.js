@@ -1,35 +1,42 @@
-import { db } from '@vercel/postgres';
+import { sql } from "@vercel/postgres";
 
-export async function POST(req) {
-  const { username, password, page } = await req.json();
-
-  const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
-  const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
-
-  if (username !== ADMIN_USERNAME || password !== ADMIN_PASSWORD) {
-    return new Response(JSON.stringify({ message: 'Invalid credentials' }), { status: 401 });
+export async function GET(req) {
+  try {
+    const { rows } = await sql`SELECT * FROM contact_us ORDER BY created_at DESC`;
+    return new Response(JSON.stringify({ success: true, data: rows }), {
+      status: 200,
+    });
+  } catch (error) {
+    return new Response(
+      JSON.stringify({ success: false, message: "Error fetching contacts" }),
+      { status: 500 }
+    );
   }
-
-  return await fetchContacts(page);
 }
 
-async function fetchContacts(page) {
+export async function DELETE(req) {
   try {
-    const client = await db.connect();
-    const PAGE_SIZE = 10;
-    const offset = (page - 1) * PAGE_SIZE;
+    const { ids } = await req.json();
 
-    const query = `
-      SELECT * FROM contact_us
-      ORDER BY created_at DESC
-      LIMIT ${PAGE_SIZE} OFFSET ${offset}
-    `;
-    const result = await client.query(query);
-    client.release();
+    if (!ids || ids.length === 0) {
+      return new Response(
+        JSON.stringify({ success: false, message: "No IDs provided" }),
+        { status: 400 }
+      );
+    }
 
-    return new Response(JSON.stringify({ contacts: result.rows }), { status: 200 });
+    const { rowCount } = await sql`DELETE FROM contact_us WHERE id = ANY(${ids})`;
+    return new Response(
+      JSON.stringify({
+        success: true,
+        message: `${rowCount} contact(s) deleted`,
+      }),
+      { status: 200 }
+    );
   } catch (error) {
-    console.error('Error fetching contacts:', error);
-    return new Response(JSON.stringify({ message: 'Internal server error', error: error.message }), { status: 500 });
+    return new Response(
+      JSON.stringify({ success: false, message: "Error deleting contacts" }),
+      { status: 500 }
+    );
   }
 }

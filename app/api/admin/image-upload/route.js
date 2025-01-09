@@ -1,17 +1,22 @@
 import { put } from '@vercel/blob';
 import { NextResponse } from 'next/server';
+import { v4 as uuidv4 } from 'uuid';
 
 export async function POST(request) {
   const { searchParams } = new URL(request.url);
-  const filename = searchParams.get('filename');
+  const originalFilename = searchParams.get('filename');
+  console.log(originalFilename);
 
-  if (!filename) {
+  if (!originalFilename) {
     return NextResponse.json({ error: 'Filename is required' }, { status: 400 });
   }
 
   try {
+    // Generate a unique filename
+    const uniqueFilename = `${uuidv4()}-${originalFilename}`;
+
     // Upload the file to Vercel Blob Storage
-    const blob = await put(filename, request.body, {
+    const blob = await put(uniqueFilename, request.body, {
       access: 'public', // Makes the file publicly accessible
     });
 
