@@ -6,6 +6,7 @@ export default function AdminHomePage() {
     { name: "Team", link: "/admin/team" },
     { name: "Offer", link: "/admin/offer" },
     { name: "Partner", link: "/admin/partner" },
+    { name: "Abilities", link: "/admin/ability" },
   ];
 
   return (
