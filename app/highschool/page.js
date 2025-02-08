@@ -103,8 +103,8 @@ export default async function Partners() {
       <div className="max-w-6xl py-12 mx-4 md:mx-16 lg:mx-auto hidden md:flex flex-col items-center justify-center">
         <h2 className="text-3xl font-bold text-center mb-16">High School Application Service Process</h2>
         <Image src="/img/highschool/process-desktop1.svg" alt="Process" width={956} height={1345} />
-        <h2 className="text-3xl font-bold text-center mb-16 mt-32">High School Application Service Process</h2>
-        <Image src="/img/highschool/process-desktop2.svg" alt="Process" width={1311} height={856} />
+        {/* <h2 className="text-3xl font-bold text-center mb-16 mt-32">High School Application Service Process</h2> */}
+        {/* <Image src="/img/highschool/process-desktop2.svg" alt="Process" width={1311} height={856} /> */}
       </div>
 
       <div className="text-center mb-4">

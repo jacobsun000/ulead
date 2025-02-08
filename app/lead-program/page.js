@@ -2,59 +2,43 @@ import BackButton from "@/ui/Back";
 import SectionHeader from "@/ui/SectionHeader";
 import Image from 'next/image'
 import Button from "@/ui/Button";
+import { sql } from "@vercel/postgres";
 
 const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {
   return (
-    <details className="border-b py-4" open={isOpen}>
-      <summary className="flex justify-between items-center cursor-pointer list-none">
+    <div className="border-b py-4" open={isOpen}>
+      <div className="flex items-center cursor-pointer list-none">
         <div className="w-8 h-8">
           <Image src={icon} alt={title} width={40} height={40} />
         </div>
-        <span className="font-semibold">{title}</span>
-        <span className={`text-sm lg:text-2xl ${isRed ? 'text-primary' : 'text-secondary'}`}>
-          {isOpen ? '-' : '+'}
-        </span>
-      </summary>
+        <span className="pl-2 font-semibold text-left">{title}</span>
+      </div>
       <ul className="mt-2 text-gray-600">
         {description && description.map((item, index) => (<li key={index}>{item}</li>))}
       </ul>
-    </details>
+    </div>
   );
 };
 
 
-const GrowthPlan = () => {
-  const tags1 = [
-    { text: "International Masterclass", color: "border-yellow-500" },
-    { text: "English Literature and Writing", color: "border-red-500" },
-    { text: "Competition Resources", color: "border-blue-500" },
-    { text: "Extracurricular Activities", color: "border-teal-500" },
-    { text: "Family Guidance", color: "border-yellow-500" },
-    { text: "Music Creation", color: "border-blue-500" },
-    { text: "Creative Writing", color: "border-red-500" },
-    { text: "Art Portfolio", color: "border-blue-500" },
-    { text: "U.S. Professor Course Topics", color: "border-yellow-500" },
-    { text: "Sports Activities", color: "border-blue-500" },
-  ];
-  const tags2 = [
-    { text: "Exam Tutoring", color: "border-blue-500" },
-    { text: "Science and Innovation", color: "border-teal-500" },
-    { text: "Academic Tutoring", color: "border-red-500" },
-    { text: "English Reading", color: "border-red-500" },
-    { text: "Holiday Activities", color: "border-teal-500" },
-    { text: "Stress Writing", color: "border-red-500" },
-    { text: "GPA Management", color: "border-teal-500" },
-    { text: "Summer School Application", color: "border-red-500" },
-  ];
+const GrowthPlan = async () => {
+  const { rows: tags } = await sql`SELECT * FROM tag`;
+  const { rows: tagColors } = await sql`SELECT * FROM tag_color`;
+  const colors = Object.fromEntries(tagColors.map(tag => [tag.type, tag.color]));
+  console.log(colors);
+
+  const topTags = tags.filter(tag => tag.pos === 'top');
+  const bottomTags = tags.filter(tag => tag.pos === 'bottom');
 
   return (
     <div className="flex flex-col items-center">
 
       <div className="flex flex-wrap justify-center gap-2">
-        {tags1.map((tag, index) => (
+        {topTags.map((tag, index) => (
           <div
             key={index}
-            className={`px-2 py-2 border ${tag.color} text-gray-700 rounded-full text-xs lg:text-sm font-medium`}
+            className={`px-2 py-2 border text-gray-700 rounded-full text-xs lg:text-sm font-medium`}
+            style={{ borderColor: colors[tag.type] }}
           >
             {tag.text}
           </div>
@@ -66,10 +50,11 @@ const GrowthPlan = () => {
       </div>
 
       <div className="flex flex-wrap justify-center gap-2">
-        {tags2.map((tag, index) => (
+        {bottomTags.map((tag, index) => (
           <div
             key={index}
-            className={`px-2 py-2 border ${tag.color} text-gray-700 rounded-full text-xs lg:text-sm font-medium`}
+            className={`px-2 py-2 border text-gray-700 rounded-full text-xs lg:text-sm font-medium`}
+            style={{ borderColor: colors[tag.type] }}
           >
             {tag.text}
           </div>
@@ -104,59 +89,43 @@ export default function Partners() {
   const services = [
     {
       title: "Academic Growth Plan", icon: "img/lead-program/1.svg", isOpen: false, isRed: false,
-      description: ["Explore personal academic strengths and develop a growth plan, set academic benchmarks and long-term development strategies.",
-        "English learning habits and methods, learning points and methods to connect other subjects with international learning styles.",
-        "Domestic and international bilingual systems, international education systems, analysis and choices of public and private education.",
-        "Analysis and choices of the U.S. private and public school systems, including elite private schools."]
+      description: ["Identify academic strengths, set goals, and develop effective learning strategies.",
+        "Compare education systems to make informed schooling choices."]
     },
     {
       title: "Artistic Growth Plan", icon: "img/lead-program/2.svg", isOpen: false, isRed: false,
-      description: ["Help children discover their own artistic strengths, understand their advantages, and analyze opportunities.",
-        "Foster international perspectives and guide children in nurturing unique artistic talents.",
-        "Visual and performing arts learning points, methods, and resources to connect with international art education.",
-        "International development pathways for non-arts major students with artistic talents."]
+      description: ["Discover and develop artistic talents with structured guidance.",
+        "Connect arts education to international learning pathways."]
     },
     {
       title: "Sports Growth Plan", icon: "img/lead-program/3.svg", isOpen: false, isRed: false,
-      description: ["Develop children's physical strengths, skills, and resilience through tailored sports training and activities.",
-        "Set short- and long-term athletic development goals while nurturing sportsmanship and teamwork.",
-        "Introduce learning points and methods to connect sports training with academic and international education systems.",
-        "Explore pathways for domestic and international sports development, including opportunities in elite athletic programs and schools."]
+      description: ["Enhance athletic skills, resilience, and teamwork through tailored training.",
+        "Explore pathways for academic and competitive sports development."]
     },
     {
       title: "Parental Growth Course", icon: "img/lead-program/4.svg", isOpen: false, isRed: false,
-      description: ["Equip parents with the skills to support their children's academic, artistic, and personal growth effectively.",
-        "Understand domestic and international education systems, bridging gaps between home and school learning.",
-        "Offer strategies for effective communication, motivation, and the creation of a nurturing and growth-focused family environment.",
-        "Provide resources for guiding children through critical life transitions, from school selection to personal development milestones."]
+      description: ["Help parents support their child's education and personal growth.",
+        "Bridge home and school learning with effective strategies."]
     },
     {
       title: "Leadership Growth Plan", icon: "img/lead-program/5.svg", isOpen: false, isRed: false,
-      description: ["Cultivate leadership skills in children, focusing on teamwork, problem-solving, and decision-making.",
-        "Guide students in setting personal and community goals, emphasizing responsibility and initiative.",
-        "Introduce international frameworks for leadership development, connecting them with domestic and global opportunities.",
-        "Develop customized plans for leadership growth through mentorship, extracurricular activities, and community involvement."]
+      description: ["Develop leadership, teamwork, and decision-making skills.",
+        "Create personalized growth plans through mentorship and activities."]
     },
     {
       title: "Holiday Growth Plan", icon: "img/lead-program/6.svg", isOpen: false, isRed: false,
-      description: ["Maximize holiday breaks with meaningful and educational activities tailored to children's unique strengths.",
-        "Combine academic, artistic, and physical activities with cultural exploration and international learning opportunities.",
-        "Create balanced schedules that encourage skill-building, relaxation, and family bonding.",
-        "Provide resources for leveraging holiday periods to enhance personal growth, including travel programs and workshops."]
+      description: ["Maximize holiday breaks with educational and skill-building activities.",
+        "Balance learning, relaxation, and cultural exploration."]
     },
     {
       title: "Overseas Growth Plan", icon: "img/lead-program/7.svg", isOpen: false, isRed: false,
-      description: ["Guide families in planning for overseas education and cultural adaptation.",
-        "Offer strategies for selecting suitable schools and programs abroad while addressing cultural and academic challenges.",
-        "Provide resources for personal, academic, and extracurricular growth in international environments.",
-        "Develop comprehensive plans for future global opportunities, including college admissions and career development."]
+      description: ["Guide families in planning overseas education and adaptation.",
+        "Provide resources for academic success and global opportunities."]
     },
     {
       title: "Public Welfare Growth Plan", icon: "img/lead-program/8.svg", isOpen: false, isRed: false,
-      description: ["Instill a sense of social responsibility by introducing children to volunteerism and public service.",
-        "Design activities that align with children's strengths and interests, fostering empathy and community awareness.",
-        "Explore domestic and international public welfare projects, offering pathways to meaningful involvement.",
-        "Encourage family and community participation in public service activities, building lifelong habits of giving back."]
+      description: ["Encourage social responsibility through volunteerism and public service.",
+        "Explore meaningful community engagement opportunities."]
     },
   ];
 
