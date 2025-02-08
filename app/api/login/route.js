@@ -1,5 +1,3 @@
-import bcrypt from "bcrypt";
-
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 const JWT_SECRET = new TextEncoder().encode(process.env.JWT_SECRET);
@@ -12,9 +10,7 @@ export async function POST(req) {
     return new Response(JSON.stringify({ message: 'Invalid credentials' }), { status: 401 });
   }
 
-  // Compare hashed password
-  const passwordMatch = await bcrypt.compare(password, ADMIN_PASSWORD);
-  if (!passwordMatch) {
+  if (password !== ADMIN_PASSWORD) {
     return new Response(JSON.stringify({ message: 'Invalid credentials' }), { status: 401 });
   }
 
