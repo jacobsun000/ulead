@@ -64,25 +64,16 @@ const GrowthPlan = async () => {
 
       {/* Legend */}
       <div className="grid grid-cols-2 lg:grid-cols-4 mt-8 gap-4 mx-4 mb-8">
-        <div className="flex items-center">
-          <span className="w-3 h-3 bg-yellow-500 rounded-full inline-block mr-2"></span>
-          <span className="text-sm">U.S. Admissions Integration</span>
-        </div>
-        <div className="flex items-center">
-          <span className="w-3 h-3 bg-red-500 rounded-full inline-block mr-2"></span>
-          <span className="text-sm">Academic Skills</span>
-        </div>
-        <div className="flex items-center">
-          <span className="w-3 h-3 bg-teal-500 rounded-full inline-block mr-2"></span>
-          <span className="text-sm">GPA Management</span>
-        </div>
-        <div className="flex items-center">
-          <span className="w-3 h-3 bg-blue-500 rounded-full inline-block mr-2"></span>
-          <span className="text-sm">Background Abilities</span>
-        </div>
+        {tagColors.map((tag, index) => (
+          <div key={index} className="flex items-center">
+            <span className={`w-3 h-3 rounded-full inline-block mr-2`}
+              style={{ backgroundColor: tag.color }}
+            ></span>
+            <span className="text-sm">{tag.type}</span>
+          </div>
+        ))}
       </div>
-    </div>
-  );
+    </div>);
 };
 
 export default function Partners() {
