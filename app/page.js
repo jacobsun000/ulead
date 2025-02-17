@@ -210,9 +210,9 @@ function OurServicesSection() {
 }
 
 async function StudentReportSection() {
-  const { rows: university } = await sql`SELECT * FROM university LIMIT 10`;
-  const { rows: highSchool } = await sql`SELECT * FROM high_school LIMIT 10`;
-  const { rows: others } = await sql`SELECT * FROM other_school LIMIT 10`;
+  const { rows: university } = await sql`SELECT * FROM university LIMIT 12`;
+  const { rows: highSchool } = await sql`SELECT * FROM high_school LIMIT 12`;
+  const { rows: others } = await sql`SELECT * FROM other_school LIMIT 12`;
   const panels = [
     {
       title: "University",
