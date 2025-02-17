@@ -10,6 +10,7 @@ module.exports = {
         primary: "#B62C3A",
         primaryLight: "#F59793",
         secondary: "#213A6C",
+        secondaryLight: "#B0B6D8",
         faded: "#b0b0b0",
         white: "#FFFFFF",
         background: "#F5F5F5",
