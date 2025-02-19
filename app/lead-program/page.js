@@ -217,7 +217,7 @@ export default function Partners() {
 
 
       <SectionHeader title="8 Core Competences" style='my-4' />
-      <div className="max-w-6xl mx-8 md:mx-12 lg:mx-auto py-4 md:py-12 px-4">
+      <div className="max-w-6xl mx-8 md:mx-12 lg:mx-auto py-4 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mb-8">
           {services.map((service, index) => (
             <ServiceItem
@@ -230,12 +230,9 @@ export default function Partners() {
             />
           ))}
         </div>
-        <div className="text-center">
-          <Button text="More Details" href="/contacts" />
-        </div>
       </div>
 
-      <SectionHeader title="Abilities Training" style='my-4 md:my-16' />
+      <SectionHeader title="Abilities Training" style='my-4 md:my-16 md:mt-8' />
       <GrowthPlan />
 
       <div className="text-center mb-4">
