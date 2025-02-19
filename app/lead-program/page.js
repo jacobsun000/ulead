@@ -95,7 +95,7 @@ export default function Partners() {
     },
     {
       title: "Parental Growth Course", icon: "img/lead-program/4.svg", isOpen: false, isRed: false,
-      description: ["Help parents support their child's education and personal growth.",
+      description: ["Help parents support their students' education and personal growth.",
         "Bridge home and school learning with effective strategies."]
     },
     {
@@ -142,7 +142,7 @@ export default function Partners() {
       <SectionHeader title="Skills Development" style='my-8' />
       <div className="mx-[8vw] max-w-6xl lg:mx-auto flex flex-col">
         <span className="mb-8">
-          Focusing on the child, growth advisors guide both the child and parents through personalized growth and application planning, allowing the child ample time to effectively enhance their background and abilities.
+          Focusing on students, growth advisors guide both students and parents through personalized growth and application planning, allowing students ample time to effectively enhance their background and abilities.
         </span>
 
         <div className="flex gap-8 mb-8">
@@ -169,12 +169,12 @@ export default function Partners() {
         <div className="flex flex-col gap-4 mb-8">
           <div className="rounded-xl border-2 p-4 border-primary">
             <span className="text-primary">Aligning with elite overseas educational training models </span>
-            {"to improve the child's real abilities, such as "}
+            {"to improve the students' real abilities, such as "}
             <span className="text-primary">intrinsic motivation, academic competence, critical thinking, and analytical skills</span>
             , which will benefit them for a lifetime.
           </div>
           <div className="rounded-xl border-2 p-4 border-secondary">
-            {"Providing professional guidance and targeted training to influence the child's "}
+            {"Providing professional guidance and targeted training to influence the students' "}
             <span className="text-secondary">thinking methods and depth of thought</span>
             {", helping them advance in school selection, majors, and even "}
             <span className="text-secondary">future career development.</span>
@@ -195,13 +195,13 @@ export default function Partners() {
 
         <div className="flex flex-col gap-4 mb-8">
           <div className="rounded-xl border-2 p-4 border-primary">
-            {"Expanding the child's "}
+            {"Expanding the students' "}
             <span className="text-primary">academic and extracurricular activities </span>
             in multiple dimensions and directions, while connecting them with valuable resources.
           </div>
           <div className="rounded-xl border-2 p-4 border-secondary">
             Parents in the leadership program will gain an understanding of
-            <span className="text-secondary">international education systems in the U.S., U.K., and Canada, </span>
+            <span className="text-secondary"> international education systems in the U.S., U.K., and Canada, </span>
             as well as expert-shared experiences, helping the family make better decisions.
           </div>
         </div>
