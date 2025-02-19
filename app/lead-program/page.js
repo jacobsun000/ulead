@@ -25,7 +25,6 @@ const GrowthPlan = async () => {
   const { rows: tags } = await sql`SELECT * FROM tag`;
   const { rows: tagColors } = await sql`SELECT * FROM tag_color`;
   const colors = Object.fromEntries(tagColors.map(tag => [tag.type, tag.color]));
-  console.log(colors);
 
   const topTags = tags.filter(tag => tag.pos === 'top');
   const bottomTags = tags.filter(tag => tag.pos === 'bottom');

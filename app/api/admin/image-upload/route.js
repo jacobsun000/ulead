@@ -5,7 +5,6 @@ import { v4 as uuidv4 } from 'uuid';
 export async function POST(request) {
   const { searchParams } = new URL(request.url);
   const originalFilename = searchParams.get('filename');
-  console.log(originalFilename);
 
   if (!originalFilename) {
     return NextResponse.json({ error: 'Filename is required' }, { status: 400 });
