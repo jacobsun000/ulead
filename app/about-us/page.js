@@ -102,29 +102,38 @@ export default async function AboutUs() {
           </div>
         </div>
 
-        <div className="hidden md:flex flex-col items-center lg:mb-24">
-          <Image src="/img/aboutus/arc.svg" alt="" width={1440} height={226} className="w-[120vw] absolute overflow-auto max-h-[18rem]" />
+        <div className="relative flex flex-col items-center lg:pb-16 lg:mb-8">
+          <div className="w-full h-full bg-[#213A6C] opacity-10 absolute mb-4 top-0 left-0 rounded-b-[50%] -z-10"></div>
+
           <div className="grid grid-cols-3 mt-8 gap-4 lg:gap-8 items-center mx-[8vw]">
             <div className="rounded-xl shadow-sm h-full bg-white bg-opacity-70 p-4">
               <h3 className="text-2xl font-bold mt-4 mb-4 text-center">
                 <span className="text-primary">U</span>
                 <span className="text-secondary">LEAD Mission</span>
               </h3>
-              <div className="text-lg px-4">{"A mentor for children's growth, a steward of education for families"}</div>
+              <div className="text-lg px-4">
+                {"A mentor for children's growth, a steward of education for families"}
+              </div>
             </div>
+
             <div className="rounded-xl shadow-sm h-full bg-white bg-opacity-70 p-4">
               <h3 className="text-2xl font-bold mt-4 mb-4 text-center">
                 <span className="text-primary">U</span>
                 <span className="text-secondary">LEAD Vision</span>
               </h3>
-              <div className="text-lg px-4">{"We strive for excellence, fairness, inclusivity, continuous improvement, and sustainable development"}</div>
+              <div className="text-lg px-4">
+                {"We strive for excellence, fairness, inclusivity, continuous improvement, and sustainable development"}
+              </div>
             </div>
+
             <div className="rounded-xl shadow-sm h-full bg-white bg-opacity-70 p-4">
               <h3 className="text-2xl font-bold mt-4 mb-4 text-center">
                 <span className="text-primary">U</span>
                 <span className="text-secondary">LEAD Value</span>
               </h3>
-              <div className="text-lg px-4">{"Integrity, professionalism, diversity, collaboration, responsibility, innovation"}</div>
+              <div className="text-lg px-4">
+                {"Integrity, professionalism, diversity, collaboration, responsibility, innovation"}
+              </div>
             </div>
           </div>
         </div>
