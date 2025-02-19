@@ -17,7 +17,7 @@ const TeamMember = ({ name, image_url: imageSrc, description }) => (
       className="rounded-full mb-4"
     />
     <h3 className="font-bold text-lg mb-2">{name}</h3>
-    <ul className="text-sm list-disc text-left">
+    <ul className="text-sm list-none text-center">
       {description.map((item, index) => (
         <li key={index}>{item}</li>
       ))}
@@ -111,7 +111,7 @@ export default async function AboutUs() {
                 <span className="text-primary">U</span>
                 <span className="text-secondary">LEAD Mission</span>
               </h3>
-              <div className="text-lg px-4">
+              <div className="text-lg px-4 text-center">
                 {"A mentor for children's growth, a steward of education for families"}
               </div>
             </div>
@@ -121,7 +121,7 @@ export default async function AboutUs() {
                 <span className="text-primary">U</span>
                 <span className="text-secondary">LEAD Vision</span>
               </h3>
-              <div className="text-lg px-4">
+              <div className="text-lg px-4 text-center">
                 {"We strive for excellence, fairness, inclusivity, continuous improvement, and sustainable development"}
               </div>
             </div>
@@ -131,7 +131,7 @@ export default async function AboutUs() {
                 <span className="text-primary">U</span>
                 <span className="text-secondary">LEAD Value</span>
               </h3>
-              <div className="text-lg px-4">
+              <div className="text-lg px-4 text-center">
                 {"Integrity, professionalism, diversity, collaboration, responsibility, innovation"}
               </div>
             </div>
