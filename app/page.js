@@ -156,7 +156,7 @@ function OurServicesSection() {
       text={["Parents Growth and Exchange Workshop",
         "School/College Assessment Consulting ",
         "Overseas School Knowledge Enrichment ",
-        "Parenting Philosiphy Guidance and Consulting",
+        "Parenting Philosophy Guidance and Consulting",
         "Psychological Support with Certified Professionals"]}
 
     />,
@@ -190,11 +190,11 @@ function OurServicesSection() {
           </g>
         </svg>
       }
-      text={["School Reception Support in China",
-        "Joint Virtual School Events in Chinese Families",
+      text={["Overseas Campaign Support",
+        "Host Virtual School Events For Potential Families",
         "Marketing Research for Schools",
-        "Look for Qualified Candidates within and outside of China for Schools",
-        "Arrange Sino-US School Students Exchange Events ",
+        "Develop Connection with Qualified Candidate with Schools",
+        "Arrange Sino-US School Students Exchange Events",
         "Exclusive Promotion for Schools for the Targeted Families"]}
 
     />
