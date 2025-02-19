@@ -17,7 +17,7 @@ const StatItem = ({ icon, number, description, isRed }) => (
   </div>
 );
 
-export default async function Partners() {
+export default async function Schools() {
   const { rows: schools } = await sql`SELECT * FROM target_school;`;
   return (
     <div className="mt-28">
@@ -27,7 +27,7 @@ export default async function Partners() {
       </div>
 
 
-      <h2 className="text-2xl md:text-2xl font-bold text-center my-12">How ULead works with our partners?</h2>
+      <h2 className="text-2xl md:text-2xl font-bold text-center my-12">How ULead works with schools?</h2>
 
       <div className="grid grid-cols-2 md:grid-cols-4 justify-between mb-8">
         <StatItem
@@ -54,7 +54,7 @@ export default async function Partners() {
         />
       </div>
 
-      <h2 className="text-2xl md:text-2xl font-bold text-center mb-6">Pictures of past events and admissions</h2>
+      <h2 className="text-2xl md:text-2xl font-bold text-center mb-6">Past Events and Admissions</h2>
       <div className="mb-4">
         <div className="max-w-7xl mx-auto p-4 grid grid-cols-4 gap-4">
           {[1, 2, 3, 4].map((num) => (

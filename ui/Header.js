@@ -9,7 +9,7 @@ const navItems = [
   { label: 'High School', href: '/highschool' },
   { label: 'University', href: '/university' },
   { label: 'Lead Program', href: '/lead-program' },
-  { label: 'Partners', href: '/partners' },
+  { label: 'Schools', href: '/schools' },
 ];
 
 function NavItem({ label, href, selected, setIsMobileMenuOpen, isMobile = false }) {
