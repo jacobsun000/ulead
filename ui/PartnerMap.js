@@ -68,7 +68,7 @@ export default function PartnerMap({ schools }) {
             {({ geographies }) =>
               geographies.map(geo => {
                 const stateCode = getStateCodeByStateName(geo.properties.name);
-                const fill = regionSchools[index].states.some(s => s.state === stateCode) ? "#B62C3A" : "#213A6C";
+                const fill = regionSchools[index].states.some(s => s.state === stateCode) ? "#DCA5AA" : "#E9CDCF";
                 return (
                   <Geography
                     key={geo.rsmKey}
