@@ -69,7 +69,7 @@ export default async function Partners() {
       </div>
 
       <div className="max-w-6xl mx-auto pt:10 lg:py-12 px-4">
-        <div className="grid grid-cols-3 gap-2 md:gap-8 mb-8 md:mb-20">
+        <div className="grid grid-cols-3 gap-2 md:gap-8 mb-8">
           <Card title="U.S. Boarding Middle/High School Application" />
           <Card title="U.S. Day School Middle/High School Application" />
           <Card title="U.S. Boarding Middle/High School Application" />
@@ -102,15 +102,11 @@ export default async function Partners() {
 
       <div className="max-w-6xl py-12 mx-4 md:mx-16 lg:mx-auto hidden md:flex flex-col items-center justify-center">
         <h2 className="text-3xl font-bold text-center mb-16">High School Application Service Process</h2>
+        {/*TODO: Interview Coaching line break*/}
         <Image src="/img/highschool/process-desktop1.svg" alt="Process" width={956} height={1345} />
         {/* <h2 className="text-3xl font-bold text-center mb-16 mt-32">High School Application Service Process</h2> */}
         {/* <Image src="/img/highschool/process-desktop2.svg" alt="Process" width={1311} height={856} /> */}
       </div>
-
-      <div className="text-center mb-4">
-        <Button text="More Details" href="/contacts" />
-      </div>
-
 
       <SectionHeader title="Matriculation" style='my-4 mt-12' />
 

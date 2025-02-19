@@ -70,7 +70,7 @@ export default async function Partners() {
     { title: "Ivy League Academic and Major Selection Guidance", icon: "img/university/8.svg", isOpen: false, isRed: false },
     { title: "Application System Management Guidance", icon: "img/university/9.svg", isOpen: false, isRed: false },
     { title: "9th-12th Grade Planning Guidance", icon: "img/university/10.svg", isOpen: false, isRed: false },
-    { title: "Document Review by Admissions Officers", icon: "img/university/11.svg", isOpen: false, isRed: false },
+    { title: "Former Admission Officers", icon: "img/university/11.svg", isOpen: false, isRed: false },
     { title: "Student CV Optimization Guidance", icon: "img/university/12.svg", isOpen: false, isRed: false },
   ];
 
@@ -98,7 +98,7 @@ export default async function Partners() {
       </div>
 
       <div className="max-w-6xl mx-auto pt:10 lg:py-12 px-4">
-        <div className="grid grid-cols-3 gap-2 md:gap-8 mb-8 md:mb-20">
+        <div className="grid grid-cols-3 gap-2 md:gap-8 mb-8">
           <Card title="U.S. University Application" />
           <Card title="Canadian University Application" />
           <Card title="U.K. University Application" />
