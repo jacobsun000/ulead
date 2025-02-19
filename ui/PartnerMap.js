@@ -75,6 +75,11 @@ export default function PartnerMap({ schools }) {
                     geography={geo}
                     fill={fill}
                     stroke="#FFF"
+                    style={{
+                      default: { outline: "none" },
+                      hover: { outline: "none" },
+                      pressed: { outline: "none" },
+                    }}
                   />
                 );
               })
