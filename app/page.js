@@ -239,6 +239,7 @@ function TeamMember({ image_url: imageSrc, name, description, link }) {
   const fullText = description.join(' ');
   const isLongText = fullText.length > 100;
   const trimmedText = fullText.slice(0, 100) + '...';
+
   return (
     <div className="bg-white md:border-1 md:border-y-gray-50 md:border-x-none md:rounded-none shadow-lg md:shadow-none rounded-lg p-4 flex flex-col items-center space-x-4 md:space-x-0 mb-6">
       <div className="w-32 h-32">
@@ -252,21 +253,20 @@ function TeamMember({ image_url: imageSrc, name, description, link }) {
       </div>
       <div className="flex flex-col items-center">
         <span className="font-semibold text-sm text-gray-800">{name}</span>
-        <div className="text-gray-600 text-sm group">
+        <div className="text-gray-600 text-sm group text-center">
           <div className="collapsed-content">
             <div className="line-clamp-wrapper">
-              {trimmedText}
+              <div className="inline-block">{trimmedText}</div>
               {isLongText && (
-                <span className="read-more">
+                <div className="flex justify-end">
                   <label className="text-primary hover:text-primaryLight cursor-pointer">
-                    <input type="checkbox" className="hidden" />read more</label>
-                </span>
+                    <input type="checkbox" className="hidden" /> read more
+                  </label>
+                </div>
               )}
             </div>
           </div>
-          <div className="hidden expanded-content">
-            {fullText}
-          </div>
+          <div className="hidden expanded-content">{fullText}</div>
         </div>
       </div>
     </div>
