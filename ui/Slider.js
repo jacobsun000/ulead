@@ -9,19 +9,22 @@ export default function Slider({
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [isSelected, setIsSelected] = useState(false);
 
   const prevSlide = () => {
     setCurrentIndex(
       (prevIndex) => (prevIndex - 1 + elements.length) % elements.length
     );
+    setIsSelected(true);
   };
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % elements.length);
+    setIsSelected(true);
   };
 
   useEffect(() => {
-    if (!isHovered && autoplay) {
+    if (!isHovered && autoplay && !isSelected) {
       const interval = setInterval(() => {
         nextSlide();
       }, 3000);
@@ -30,7 +33,7 @@ export default function Slider({
         clearInterval(interval);
       };
     }
-  }, [isHovered, autoplay]);
+  }, [isHovered, isSelected, autoplay]);
 
   const handleMouseOver = () => {
     setIsHovered(true);
