@@ -216,7 +216,7 @@ function OurServicesSection() {
 async function StudentReportSection() {
   const { rows: university } = await sql`SELECT * FROM university LIMIT 12`;
   const { rows: highSchool } = await sql`SELECT * FROM high_school LIMIT 12`;
-  const { rows: others } = await sql`SELECT * FROM other_school LIMIT 12`;
+  const { rows: juniorSchool } = await sql`SELECT * FROM other_school LIMIT 12`;
   const panels = [
     {
       title: "University",
@@ -227,8 +227,8 @@ async function StudentReportSection() {
       content: <OfferReport schools={highSchool} href="/highschool" />,
     },
     {
-      title: "Others",
-      content: <OfferReport schools={others} href="/lead-program" />,
+      title: "Junior High School",
+      content: <OfferReport schools={juniorSchool} />,
     },
 
   ]
