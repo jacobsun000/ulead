@@ -4,9 +4,10 @@ import { useState, useEffect } from "react";
 export default function Panel({ elements }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
-    if (!isHovered) {
+    if (!isHovered && !isClicked) {
       const interval = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % elements.length);
       }, 3000);
@@ -15,7 +16,7 @@ export default function Panel({ elements }) {
         clearInterval(interval);
       };
     }
-  }, [isHovered, elements.length]);
+  }, [isHovered, isClicked, elements.length]);
 
   const handleMouseOver = () => {
     setIsHovered(true);
@@ -32,7 +33,7 @@ export default function Panel({ elements }) {
           <button
             key={index}
             className={`text-lg font-semibold ${currentIndex === index ? 'text-black border-b-2 border-red-600' : 'text-gray-400'}`}
-            onClick={() => setCurrentIndex(index)}
+            onClick={() => { setCurrentIndex(index); setIsClicked(true); }}
           >
             {element.title}
           </button>
