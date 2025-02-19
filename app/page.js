@@ -59,12 +59,16 @@ function MainSection() {
       <div className="absolute inset-0 flex flex-col justify-center items-start pl-4 lg:pl-32 text-center text-white">
         {/* Title */}
         <h1 className="text-[1.4rem] md:text-5xl font-bold mb-2">
-          ULEAD Education Planning
+          ULEAD Consulting
         </h1>
 
         {/* Subtitle */}
-        <p className="text-xs md:text-xl md:pt-4 mb-4">
-          ——Straight A Student Learning Skill Program!
+        <p className="text-xs md:text-xl md:pt-4">
+          Coaching and Guidance for International Students
+        </p>
+
+        <p className="text-xs md:text-xl mb-4">
+          Applying to Schools and Universities
         </p>
 
         {/* "Chat Now" Button */}
