@@ -54,7 +54,7 @@ export default function PartnerMap({ schools }) {
       <div className='grid grid-rows-2 grid-cols-3 lg:grid-rows-none lg:grid-cols-5 gap-2 lg:max-w-7xl lg:gap-4 m-4 mb-0 lg:m-8'>
         {regionSchools.map((region, i) => (
           <div key={i}
-            className={`${i === index ? 'bg-primary text-white' : ''} text-center border-[1px] border-secondary rounded-lg lg:p-4 text-lg cursor-pointer hover:bg-secondary hover:text-white p-1`}
+            className={`${i === index ? 'bg-[#f05751] text-white' : ''} text-center border-[1px] border-secondary rounded-lg lg:p-4 text-lg cursor-pointer hover:bg-[#f59793] hover:text-white p-1`}
             onClick={() => setIndex(i)}
           >
             {region.region}
@@ -68,7 +68,7 @@ export default function PartnerMap({ schools }) {
             {({ geographies }) =>
               geographies.map(geo => {
                 const stateCode = getStateCodeByStateName(geo.properties.name);
-                const fill = regionSchools[index].states.some(s => s.state === stateCode) ? "#f05751" : "#F59793";
+                const fill = regionSchools[index].states.some(s => s.state === stateCode) ? "#f05751" : "#aaa";
                 return (
                   <Geography
                     key={geo.rsmKey}
