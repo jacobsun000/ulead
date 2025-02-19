@@ -22,11 +22,11 @@ export default function Home() {
       <OurBeliefSection />
       <SectionHeader title="Our Services" />
       <OurServicesSection />
-      <SectionHeader title="Student Report" />
+      <SectionHeader title="Matriculation" />
       <StudentReportSection />
       <SectionHeader title="Our Team" />
       <OurTeamSection />
-      <SectionHeader title="Matriculation" />
+      <SectionHeader title="Success Stories" />
       <MatriculationSection />
       <SectionHeader title="ULead Alumni" />
       <UleadAlumnSection />
@@ -240,7 +240,7 @@ async function StudentReportSection() {
 }
 
 function TeamMember({ image_url: imageSrc, name, description, link }) {
-  const fullText = description.join(' ');
+  const fullText = description.join(' '); // TODO:
   const isLongText = fullText.length > 100;
   const trimmedText = fullText.slice(0, 100) + '...';
 
@@ -304,6 +304,7 @@ async function OurTeamSection() {
 }
 
 async function MatriculationSection() {
+  // TODO: 三个高中三个大学 一上一下 gpa sat toefl/ vericant ssat toefl
   const { rows: profiles } = await sql`SELECT * FROM testimonials`;
   const profileCards = profiles.map((profile, index) => (
     <AlumnProfileCard key={index} {...profile} />

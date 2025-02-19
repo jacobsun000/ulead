@@ -29,7 +29,7 @@ const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {
   );
 };
 
-async function StudentReportSection() {
+async function SuccessStoriesSection() {
   const { rows: profiles } = await sql`SELECT * FROM testimonials`;
   const profileCards = profiles.map((profile, index) => (
     <AlumnProfileCard key={index} {...profile} />
@@ -128,8 +128,8 @@ export default async function Partners() {
         <OfferReport schools={university} expand={true} />
       </div>
 
-      <SectionHeader title="Student Report" style='my-4 mt-12' />
-      <StudentReportSection />
+      <SectionHeader title="Success Stories" style='my-4 mt-12' />
+      <SuccessStoriesSection />
 
       <BackButton />
     </div>
