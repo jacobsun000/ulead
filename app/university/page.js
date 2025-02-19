@@ -1,10 +1,12 @@
 import { sql } from '@vercel/postgres';
+import Slider from "@/ui/Slider";
 import BackButton from "@/ui/Back";
 import SectionHeader from "@/ui/SectionHeader";
 import Image from 'next/image'
 import Button from "@/ui/Button";
 import Quote from "@/ui/Quote";
 import OfferReport from "@/ui/OfferReport";
+import AlumnProfileCard from "@/ui/AlumniProfileCard";
 
 const Card = ({ title }) => (
   <h3 className={`text-sm mb-2 text-white p-2 rounded-xl text-center ${title.includes('Canadian') ? 'bg-primary' : 'bg-secondary'}`}>{title}</h3>
@@ -26,6 +28,34 @@ const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {
     </details>
   );
 };
+
+async function StudentReportSection() {
+  const { rows: profiles } = await sql`SELECT * FROM testimonials`;
+  const profileCards = profiles.map((profile, index) => (
+    <AlumnProfileCard key={index} {...profile} />
+  ));
+
+  let profileCardsDesktop = [];
+
+  for (let i = 0; i < profileCards.length; i += 3) {
+    profileCardsDesktop.push((
+      <div key={i} className="grid grid-cols-1 md:grid-cols-3 gap-8 overflow-clip">
+        {profileCards.slice(i, i + 3)}
+      </div>
+    ));
+  }
+
+  return (
+    <section className="mx-2 md:mx-[8vw]">
+      <div className="hidden lg:block">
+        <Slider elements={profileCardsDesktop} autoplay={false} showArrow />
+      </div>
+      <div className="lg:hidden">
+        <Slider elements={profileCards} autoplay={false} showArrow />
+      </div>
+    </section>
+  )
+}
 
 export default async function Partners() {
   const { rows: university } = await sql`SELECT * FROM university`;
@@ -94,10 +124,12 @@ export default async function Partners() {
       </div>
 
       <SectionHeader title="Matriculation" style='my-4 mt-12' />
-
       <div className="max-w-6xl mx-8 md:mx-auto py-4 md:py-12 px-4 md:px-16">
         <OfferReport schools={university} expand={true} />
       </div>
+
+      <SectionHeader title="Student Report" style='my-4 mt-12' />
+      <StudentReportSection />
 
       <BackButton />
     </div>
