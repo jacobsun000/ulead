@@ -42,13 +42,9 @@ const IASBadge = ({ certNum }) => {
 
   return (
     <div id="iasBadge">
-      {error ? (
-        <div style={{ color: 'red' }}>{error}</div>
-      ) : (
-        <a href={`https://www.icef.com/agency/${masterAccountId}`} target="_blank">
-          <Image src="/img/ICEF_Badge.png" alt="ICEF Badge" width="120" height="120" />
-        </a>
-      )}
+      <a href={`https://www.icef.com/agency/${masterAccountId}`} target="_blank">
+        <Image src="/img/ICEF_Badge.png" alt="ICEF Badge" width="120" height="120" />
+      </a>
     </div>
   );
 };
