@@ -83,12 +83,12 @@ export default function Contacts() {
               <ContactItem
                 src="/img/contacts/add.png"
                 alt="Address"
-                text="Beijing, Chaoyang District, Wang Jing Jia Mei Center"
+                text="Wang Jing Jia Mei Center, Chaoyang District, Beijing,"
               />
               <ContactItem
                 src="/img/contacts/phone.png"
                 alt="Phone"
-                text="+86-10-53505008"
+                text="+86-10-53350508"
               />
               <ContactItem
                 src="/img/contacts/world.png"
@@ -100,7 +100,7 @@ export default function Contacts() {
               <ContactItem
                 src="/img/contacts/email.png"
                 alt="Email"
-                text="Christina.wang@ulead-edu.com"
+                text="program@ulead-edu.com"
               />
               <ContactItem
                 src="/img/contacts/date.png"
