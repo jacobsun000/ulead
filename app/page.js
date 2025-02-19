@@ -18,7 +18,7 @@ export default function Home() {
       <div className="w-5/6 mx-auto lg:hidden my-4">
         <Video src="/img/home/video.mp4" poster="/img/home/video_poster.png" />
       </div>
-      <SectionHeader title="Our Belief" style={"mt-8 md:mt-16"} />
+      <SectionHeader title="Our Mission" style={"mt-8 md:mt-16"} />
       <OurBeliefSection />
       <SectionHeader title="Our Services" />
       <OurServicesSection />

@@ -72,7 +72,7 @@ export default async function Partners() {
         <div className="grid grid-cols-3 gap-2 md:gap-8 mb-8">
           <Card title="U.S. Boarding Middle/High School Application" />
           <Card title="U.S. Day School Middle/High School Application" />
-          <Card title="U.S. Boarding Middle/High School Application" />
+          <Card title="Canada Middle/High School Application" />
         </div>
       </div>
 
