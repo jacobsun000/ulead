@@ -240,9 +240,7 @@ async function StudentReportSection() {
 }
 
 function TeamMember({ image_url: imageSrc, name, description, link }) {
-  const fullText = description.join(' '); // TODO:
-  const isLongText = fullText.length > 100;
-  const trimmedText = fullText.slice(0, 100) + '...';
+  const isLongText = description.length > 2;
 
   return (
     <div className="bg-white md:border-1 md:border-y-gray-50 md:border-x-none md:rounded-none shadow-lg md:shadow-none rounded-lg p-4 flex flex-col items-center space-x-4 md:space-x-0 mb-6">
@@ -260,7 +258,11 @@ function TeamMember({ image_url: imageSrc, name, description, link }) {
         <div className="text-gray-600 text-sm group text-center">
           <div className="collapsed-content">
             <div className="line-clamp-wrapper">
-              <div className="inline-block">{trimmedText}</div>
+              <div className="inline-block">
+                {description.slice(0, 2).map((text, index) => (
+                  <p key={index} className="text-gray-600 text-sm">{text}</p>
+                ))}
+              </div>
               {isLongText && (
                 <div className="flex justify-end">
                   <label className="text-primary hover:text-primaryLight cursor-pointer">
@@ -270,7 +272,11 @@ function TeamMember({ image_url: imageSrc, name, description, link }) {
               )}
             </div>
           </div>
-          <div className="hidden expanded-content">{fullText}</div>
+          <div className="hidden expanded-content">
+            {description.map((text, index) => (
+              <p key={index} className="text-gray-600 text-sm">{text}</p>
+            ))}
+          </div>
         </div>
       </div>
     </div>
