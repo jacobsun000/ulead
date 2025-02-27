@@ -1,12 +1,11 @@
 import { sql } from '@vercel/postgres';
-import Slider from "@/ui/Slider";
 import BackButton from "@/ui/Back";
 import SectionHeader from "@/ui/SectionHeader";
 import Image from 'next/image'
 import Button from "@/ui/Button";
 import Quote from "@/ui/Quote";
 import OfferReport from "@/ui/OfferReport";
-import AlumnProfileCard from "@/ui/AlumniProfileCard";
+import SuccessStories from '@/ui/SuccessStories';
 
 const Card = ({ title }) => (
   <h3 className={`text-sm mb-2 text-white p-2 rounded-xl text-center ${title.includes('Canadian') ? 'bg-primary' : 'bg-secondary'}`}>{title}</h3>
@@ -30,34 +29,11 @@ const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {
 };
 
 async function SuccessStoriesSection() {
-  const { rows: profiles } = await sql`SELECT * FROM testimonials`;
-  const profileCards = profiles.map((profile, index) => (
-    <AlumnProfileCard key={index} {...profile} />
-  ));
-
-  let profileCardsDesktop = [];
-
-  for (let i = 0; i < profileCards.length; i += 3) {
-    profileCardsDesktop.push((
-      <div key={i} className="grid grid-cols-1 md:grid-cols-3 gap-8 overflow-clip">
-        {profileCards.slice(i, i + 3)}
-      </div>
-    ));
-  }
-
-  return (
-    <section className="mx-2 md:mx-[8vw]">
-      <div className="hidden lg:block">
-        <Slider elements={profileCardsDesktop} autoplay={false} showArrow />
-      </div>
-      <div className="lg:hidden">
-        <Slider elements={profileCards} autoplay={false} showArrow />
-      </div>
-    </section>
-  )
+  const { rows: profiles } = await sql`SELECT * FROM success_story WHERE type = 'University'`;
+  return <SuccessStories profiles={profiles} />;
 }
 
-export default async function Partners() {
+export default async function University() {
   const { rows: university } = await sql`SELECT * FROM university`;
   const services = [
     { title: "Candidacy Development", icon: "img/university/1.svg", isOpen: false, isRed: false },

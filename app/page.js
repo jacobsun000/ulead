@@ -4,12 +4,13 @@ import Slider from "@/ui/Slider";
 import Panel from "@/ui/Panel";
 import SectionHeader from "@/ui/SectionHeader";
 import Button from "@/ui/Button";
-import Tab from "@/ui/Tab";
 import BackToTopButton from "@/ui/Back";
 import Video from "@/ui/Video";
 import IASBadge from "@/ui/IASBadge";
 import OfferReport from "@/ui/OfferReport";
-import AlumnProfileCard from "@/ui/AlumniProfileCard";
+import SuccessStory from "@/ui/SuccessStory";
+import Tab from '@/ui/Tab';
+import SuccessStories from '@/ui/SuccessStories';
 
 export default function Home() {
   return (
@@ -23,11 +24,11 @@ export default function Home() {
       <SectionHeader title="Our Services" />
       <OurServicesSection />
       <SectionHeader title="Matriculation" />
-      <StudentReportSection />
+      <MatriculationSection />
       <SectionHeader title="Our Team" />
       <OurTeamSection />
       <SectionHeader title="Success Stories" />
-      <MatriculationSection />
+      <SuccessStoriesSection />
       <SectionHeader title="ULead Alumni" />
       <UleadAlumnSection />
       <SectionHeader title="Qualifications" />
@@ -213,7 +214,7 @@ function OurServicesSection() {
   );
 }
 
-async function StudentReportSection() {
+async function MatriculationSection() {
   const { rows: university } = await sql`SELECT * FROM university LIMIT 12`;
   const { rows: highSchool } = await sql`SELECT * FROM high_school LIMIT 12`;
   const { rows: juniorSchool } = await sql`SELECT * FROM other_school LIMIT 12`;
@@ -309,31 +310,18 @@ async function OurTeamSection() {
   );
 }
 
-async function MatriculationSection() {
-  // TODO: 三个高中三个大学 一上一下 gpa sat toefl/ vericant ssat toefl
-  const { rows: profiles } = await sql`SELECT * FROM testimonials`;
-  const profileCards = profiles.map((profile, index) => (
-    <AlumnProfileCard key={index} {...profile} />
-  ));
+async function SuccessStoriesSection() {
+  const { rows: hProfiles } = await sql`SELECT * FROM success_story WHERE type = 'HighSchool'`;
+  const { rows: uProfiles } = await sql`SELECT * FROM success_story WHERE type = 'University'`;
 
-  let profileCardsDesktop = [];
-
-  for (let i = 0; i < profileCards.length; i += 3) {
-    profileCardsDesktop.push((
-      <div key={i} className="grid grid-cols-1 md:grid-cols-3 gap-8 overflow-clip">
-        {profileCards.slice(i, i + 3)}
-      </div>
-    ));
-  }
+  const panels = [
+    { title: "High School", content: <SuccessStories profiles={hProfiles} /> },
+    { title: "University", content: <SuccessStories profiles={uProfiles} /> },
+  ];
 
   return (
     <section className="mx-2 md:mx-[8vw]">
-      <div className="hidden lg:block">
-        <Slider elements={profileCardsDesktop} autoplay={false} showArrow />
-      </div>
-      <div className="lg:hidden">
-        <Slider elements={profileCards} autoplay={false} showArrow />
-      </div>
+      <Panel elements={panels} />
     </section>
   )
 }

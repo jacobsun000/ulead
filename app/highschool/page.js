@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Button from "@/ui/Button";
 import Quote from "@/ui/Quote";
 import OfferReport from "@/ui/OfferReport";
+import SuccessStories from '@/ui/SuccessStories';
 
 const Card = ({ title }) => (
   <div className="flex-1 mx-1">
@@ -30,7 +31,12 @@ const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {
   );
 };
 
-export default async function Partners() {
+async function SuccessStoriesSection() {
+  const { rows: profiles } = await sql`SELECT * FROM success_story WHERE type = 'University'`;
+  return <SuccessStories profiles={profiles} />;
+}
+
+export default async function Highschool() {
   const { rows: highSchool } = await sql`SELECT * FROM high_school`;
 
   const services = [
@@ -108,10 +114,12 @@ export default async function Partners() {
       </div>
 
       <SectionHeader title="Matriculation" style='my-4 mt-12' />
-
       <div className="max-w-6xl mx-8 md:mx-auto py-4 md:py-12 px-4 md:px-16">
         <OfferReport schools={highSchool} expand={true} />
       </div>
+
+      <SectionHeader title="Success Stories" style='my-4 mt-12' />
+      <SuccessStoriesSection />
 
       <BackButton />
     </div >
