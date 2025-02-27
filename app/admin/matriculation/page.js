@@ -37,7 +37,7 @@ export default function MatriculationManager() {
   const handleImageUpload = async () => {
     const res = await fetch(`/api/admin/image-upload?filename=${imageFile.name}`, {
       method: "POST",
-      body: file,
+      body: imageFile,
     });
 
     const data = await res.json();
