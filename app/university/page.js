@@ -6,35 +6,15 @@ import Button from "@/ui/Button";
 import Quote from "@/ui/Quote";
 import OfferReport from "@/ui/OfferReport";
 import SuccessStories from '@/ui/SuccessStories';
+import Services from '@/ui/Services';
 
 const Card = ({ title }) => (
   <h3 className={`text-sm mb-2 text-white p-2 rounded-xl text-center ${title.includes('Canadian') ? 'bg-primary' : 'bg-secondary'}`}>{title}</h3>
 );
 
-const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {
-  return (
-    <details className="border-b py-4" open={isOpen}>
-      <summary className="flex justify-between items-center list-none">
-        <div className="w-1/12 lg:w-8 h-8">
-          <Image src={icon} alt={title} width={40} height={40} />
-        </div>
-        <span className="w-10/12 font-semibold text-center lg:text-left">{title}</span>
-        <span className={`text-sm lg:text-2xl ${isRed ? 'text-primary' : 'text-secondary'}`}>
-          {/* {isOpen ? '-' : '+'} */}
-        </span>
-      </summary>
-      {/* <p className="mt-2 text-gray-600">{description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque diam lectus, sit amet congue ante mollis eget.'}</p> */}
-    </details>
-  );
-};
-
-async function SuccessStoriesSection() {
-  const { rows: profiles } = await sql`SELECT * FROM success_story WHERE type = 'University'`;
-  return <SuccessStories profiles={profiles} />;
-}
-
 export default async function University() {
   const { rows: university } = await sql`SELECT * FROM university`;
+  const { rows: profiles } = await sql`SELECT * FROM success_story WHERE type = 'University'`;
   const services = [
     { title: "Candidacy Development", icon: "img/university/1.svg", isOpen: false, isRed: false },
     { title: "GPA Management Plan", icon: "img/university/2.svg", isOpen: false, isRed: false },
@@ -82,22 +62,7 @@ export default async function University() {
       </div>
 
       <SectionHeader title="Personalized Services" style='my-4' />
-      <div className="max-w-6xl mx-8 md:mx-auto py-4 md:py-12 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mb-8">
-          {services.map((service, index) => (
-            <ServiceItem
-              key={index}
-              title={service.title}
-              icon={service.icon}
-              isOpen={service.isOpen}
-              isRed={service.isRed}
-            />
-          ))}
-        </div>
-        <div className="text-center">
-          <Button text="More Details" href="/contacts" />
-        </div>
-      </div>
+      <Services services={services} />
 
       <SectionHeader title="Matriculation" style='my-4 mt-12' />
       <div className="max-w-6xl mx-8 md:mx-auto py-4 md:py-12 px-4 md:px-16">
@@ -105,7 +70,7 @@ export default async function University() {
       </div>
 
       <SectionHeader title="Success Stories" style='my-4 mt-12' />
-      <SuccessStoriesSection />
+      <SuccessStories profiles={profiles} />
 
       <BackButton />
     </div>

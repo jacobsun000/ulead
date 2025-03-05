@@ -6,6 +6,7 @@ import Button from "@/ui/Button";
 import Quote from "@/ui/Quote";
 import OfferReport from "@/ui/OfferReport";
 import SuccessStories from '@/ui/SuccessStories';
+import Services from '@/ui/Services';
 
 const Card = ({ title }) => (
   <div className="flex-1 mx-1">
@@ -14,30 +15,9 @@ const Card = ({ title }) => (
   </div>
 );
 
-const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {
-  return (
-    <details className="border-b py-4" open={isOpen}>
-      <summary className="flex justify-between items-center list-none">
-        <div className="w-1/12 lg:w-8 h-8">
-          <Image src={icon} alt={title} width={40} height={40} />
-        </div>
-        <span className="w-10/12 font-semibold text-center lg:text-left">{title}</span>
-        <span className={`text-sm lg:text-2xl ${isRed ? 'text-primary' : 'text-secondary'}`}>
-          {/* {isOpen ? '-' : '+'} */}
-        </span>
-      </summary>
-      {/* <p className="mt-2 text-gray-600">{description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque diam lectus, sit amet congue ante mollis eget.'}</p> */}
-    </details>
-  );
-};
-
-async function SuccessStoriesSection() {
-  const { rows: profiles } = await sql`SELECT * FROM success_story WHERE type = 'University'`;
-  return <SuccessStories profiles={profiles} />;
-}
-
 export default async function Highschool() {
   const { rows: highSchool } = await sql`SELECT * FROM high_school`;
+  const { rows: profiles } = await sql`SELECT * FROM success_story WHERE type = 'University'`;
 
   const services = [
     { title: "Comprehensive Candidacy Development Plan", icon: "img/highschool/1.svg", isOpen: false, isRed: false },
@@ -83,22 +63,7 @@ export default async function Highschool() {
       </div>
 
       <SectionHeader title="Personalized Services" style='my-4' />
-      <div className="max-w-6xl mx-8 md:mx-auto py-4 md:py-12 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mb-8">
-          {services.map((service, index) => (
-            <ServiceItem
-              key={index}
-              title={service.title}
-              icon={service.icon}
-              isOpen={service.isOpen}
-              isRed={service.isRed}
-            />
-          ))}
-        </div>
-        <div className="text-center">
-          <Button text="More Details" href="/contacts" />
-        </div>
-      </div>
+      <Services services={services} />
 
       <div className="flex md:hidden flex-col items-center justify-center my-8">
         <h2 className="text-lg font-bold text-center mb-8">High School Application Service Process</h2>
@@ -119,7 +84,7 @@ export default async function Highschool() {
       </div>
 
       <SectionHeader title="Success Stories" style='my-4 mt-12' />
-      <SuccessStoriesSection />
+      <SuccessStories profiles={profiles} />
 
       <BackButton />
     </div >
