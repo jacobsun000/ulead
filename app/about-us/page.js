@@ -77,7 +77,7 @@ export default async function AboutUs() {
         </div>
 
         <div className="hidden lg:block">
-          <Quote text="As a consultant, by continuously learning and accumulating experience, we continuously iterate the methodologies in counseling, focusing on leading children and families well!" />
+          <Quote text="As a consultant, I continuously refine my methodologies through ongoing learning and accumulated experience, with a strong focus on effectively guiding children and families." />
         </div>
 
         <div className="flex flex-col items-center md:mx-[8vw]">
@@ -144,7 +144,7 @@ export default async function AboutUs() {
       </div>
 
       <div className="lg:hidden">
-        <Quote text="As a consultant, by continuously learning and accumulating experience, we continuously iterate the methodologies in counseling, focusing on leading children and families well!" />
+        <Quote text="As a consultant, I continuously refine my methodologies through ongoing learning and accumulated experience, with a strong focus on effectively guiding children and families." />
       </div>
 
       <SectionHeader title={"Core Team"} />
