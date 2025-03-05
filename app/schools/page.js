@@ -56,7 +56,7 @@ export default async function Schools() {
 
       <h2 className="text-2xl md:text-2xl font-bold text-center mb-6">Past Events and Admissions</h2>
       <div className="mb-4">
-        <div className="max-w-7xl mx-auto p-4 grid grid-cols-4 gap-4">
+        <div className="max-w-7xl mx-auto p-4 grid md:grid-cols-4 grid-cols-2 gap-4">
           {[1, 2, 3, 4].map((num) => (
             <div key={num} className="aspect-square">
               <Image src={`/img/partners/event${num}.png`} alt={`Event ${num}`} width={900} height={700} />
