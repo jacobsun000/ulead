@@ -321,7 +321,7 @@ async function SuccessStoriesSection() {
 
   return (
     <section className="mx-2 md:mx-[8vw]">
-      <Panel elements={panels} />
+      <Panel elements={panels} autoplay={false} />
     </section>
   )
 }

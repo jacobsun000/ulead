@@ -1,13 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
 
-export default function Panel({ elements }) {
+export default function Panel({ elements, autoplay = true }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
-    if (!isHovered && !isClicked) {
+    if (!isHovered && !isClicked && autoplay) {
       const interval = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % elements.length);
       }, 3000);
@@ -16,7 +16,7 @@ export default function Panel({ elements }) {
         clearInterval(interval);
       };
     }
-  }, [isHovered, isClicked, elements.length]);
+  }, [isHovered, isClicked, autoplay, elements.length]);
 
   const handleMouseOver = () => {
     setIsHovered(true);

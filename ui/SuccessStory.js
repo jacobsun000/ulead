@@ -2,10 +2,10 @@ import Image from "next/image";
 
 export default function AlumniCard({ name, image, school, labels, offers, evaluation }) {
   return (
-    <div className="bg-white shadow-lg rounded-xl border content-center justify-start md:w-[26rem] w-72">
+    <div className="bg-white shadow-lg rounded-xl border justify-start md:w-[26rem] w-72">
       {/* Header */}
       <div className="mt-8 mr-8 mb-4 flex flex-row items-center">
-        <p className="md:text-xl text-sm md:w-40 w-28 md:p-4 p-2 bg-secondary text-white rounded-r-full">{name}</p>
+        <p className="md:text-xl text-sm md:w-32 w-20 md:p-4 md:pr-8 p-2 bg-secondary text-white rounded-r-full">{name}</p>
         <p className="md:text-xl text-sm md:p-4 md:pr-2 p-2 font-semibold text-black">{school}</p>
       </div>
       {/* Personal information */}
@@ -16,9 +16,11 @@ export default function AlumniCard({ name, image, school, labels, offers, evalua
         <div className="md:p-4 pl-4 pt-0">
           {labels.map((label, i) => (<p className="text-xs md:text-sm font-bold" key={i}>{label}</p>))}
           <p className="md:text-sm text-xs font-bold pt-2">Offers:</p>
-          {offers.map((offer, i) => (
-            <p key={i} className="text-xs md:text-sm text-gray-500">{offer}</p>
-          ))}
+          <div className="h-20 overflow-y-scroll">
+            {offers.map((offer, i) => (
+              <p key={i} className="text-xs md:text-sm text-gray-500">{offer}</p>
+            ))}
+          </div>
         </div>
       </div>
 
