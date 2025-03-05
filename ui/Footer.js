@@ -1,28 +1,32 @@
 import Image from 'next/image'
 
-const FooterColumn = ({ title, items, additionalContent, mobileDisplay = false }) => (
-  <div className={`${mobileDisplay ? 'flex' : 'hidden lg:flex'} flex-col`}>
-    <h3 className="text-white text-sm md:text-lg font-semibold mb-4">{title}</h3>
-    {items.map((item, index) => (
-      <a key={index} href="#" className="text-white text-xs md:text-sm mb-2 hover:underline">
-        {item}
+function getLink(title, href) {
+  if (href !== undefined) {
+    return href;
+  }
+  return "#" + title.toLowerCase().replaceAll(" ", "-");
+}
+
+const FooterItem = ({ title, href, sections }) => (
+  <div className='flex flex-col mb-4'>
+    <a href={href} className="text-white text-sm md:text-lg font-semibold mb-2 hover:underline">
+      {title}
+    </a>
+    {sections.map((section, index) => (
+      <a key={index} href={href + getLink(section.title, section.href)} className="text-white text-xs md:text-sm mb-2 hover:underline">
+        {section.title}
       </a>
     ))}
-    {additionalContent && (
-      <div className="mt-4">
-        {additionalContent}
-      </div>
-    )}
   </div>
 );
 
 export default function Footer() {
   return (
     <footer className="bg-secondary text-white py-10 px-8 md:px-[8vw]">
-      <div className="flex justify-between mb-8">
+      <div className="flex flex-wrap justify-between mb-8">
         <div className="flex flex-col items-center">
           <div className="relative md:w-32 md:h-16 w-24 h-12 p-2">
-            <Image src="/img/logo.png" alt="ULEAD" fill className="object-contain" />
+            <Image src="/img/logo.png" alt="Ulead" fill className="object-contain" />
           </div>
 
           <div className="flex w-20 h-20 mt-5">
@@ -30,56 +34,90 @@ export default function Footer() {
           </div>
         </div>
 
-        <FooterColumn
-          mobileDisplay
-          title="Contact us"
-          items={[
-            'Tel: +86-10-53350508',
-            'E-mail: program@ulead-edu.com'
-          ]}
-          additionalContent={
-            <div>
-              <h3 className="text-white font-semibold text-sm mb-2">Our Address</h3>
-              <p className="text-sm">Location: Beijing, Chao Yang</p>
-              <p className="text-sm">New York, Guangzhou</p>
-            </div>
-          }
-        />
+        <div>
+          <FooterItem
+            title="Contact Us"
+            href="/contacts"
+            sections={[
+              { title: "Tel: +86-10-53350508", href: "" },
+              { title: "E-Mail: program@ulead-edu.com", href: "" },
+            ]} />
+          <FooterItem
+            title="Our Address"
+            href="/contacts#our-offices"
+            sections={[
+              { title: "Location: Beijing, Chao Yang", href: "" },
+              { title: "New York, Guangzhou", href: "" },
+            ]} />
+        </div>
 
-        <FooterColumn
-          title="Team"
-          items={[
-            'Consultant',
-            'Professional',
-            'Planning',
-            'Interviews'
-          ]}
-          additionalContent={
-            <div>
-              <h3 className="text-white font-semibold mb-2">Feedback</h3>
-              <a href="#" className="text-sm hover:underline">Testimonials</a>
-            </div>
-          }
-        />
+        <div className="hidden lg:block">
+          <FooterItem
+            className="hidden lg:block"
+            title="Home"
+            href="/"
+            sections={[
+              { title: "Our Mission" },
+              { title: "Our Services" },
+              { title: "Matriculation" },
+              { title: "Our Team" },
+              { title: "Success Stories" },
+              { title: "Ulead Alumni" },
+              { title: "Qualifications" },
+            ]}
+          />
+        </div>
 
-        <FooterColumn
-          title="Highschool"
-          items={[
-            'Planning Services',
-            'Successful Cases',
-            'Offers'
-          ]}
-        />
+        <div className="hidden lg:block">
+          <FooterItem
+            title="About Us"
+            href="/about-us"
+            sections={[
+              { title: "Founder" },
+              { title: "Core Team" }
+            ]} />
+          <FooterItem
+            title="Lead Program"
+            href="/lead-program"
+            sections={[
+              { title: "Skills Development" },
+              { title: "Lead Program Services" },
+              { title: "8 Core Competences" },
+              { title: "Abilities Training" },
+            ]} />
+        </div>
 
-        <FooterColumn
-          title="University"
-          items={[
-            'Exclusive Advantages',
-            'Specialty',
-            'Summer School',
-            'Process'
-          ]}
-        />
+        <div className="hidden lg:block">
+          <FooterItem
+            title="High School"
+            href="/highschool"
+            sections={[
+              { title: "Personalized Services" },
+              { title: "Application Service Process", href: "#high-school-application-service-process" },
+              { title: "Matriculation" },
+            ]} />
+
+          <FooterItem
+            title="University"
+            href="/university"
+            sections={[
+              { title: "Personalized Services" },
+              { title: "Matriculation" },
+            ]} />
+        </div>
+
+        <div className="hidden lg:block">
+          <FooterItem
+            title="Schools"
+            href="/schools"
+            sections={[
+              { title: "Our Target School" },
+              { title: "How Ulead works with schools?" },
+              { title: "Past Events and Admissions" },
+            ]} />
+        </div>
+
+
       </div>
 
       <div className="text-center text-[8px] mt-8">

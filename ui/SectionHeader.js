@@ -1,6 +1,7 @@
 export default function SectionHeader({ title, style }) {
+  const id = title.toLowerCase().replaceAll(" ", "-");
   return (
-    <div className={`flex items-center mx-8 md:mx-[8vw] my-16 ${style}`}>
+    <div id={id} className={`flex items-center mx-8 md:mx-[8vw] my-16 scroll-mt-20 md:scroll-mt-24 ${style}`}>
       {/* Left Line with Diamond */}
       <div className="flex items-center flex-grow">
         <div className="border-t border-gray-300 flex-grow"></div>

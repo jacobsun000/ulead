@@ -8,8 +8,6 @@ import BackToTopButton from "@/ui/Back";
 import Video from "@/ui/Video";
 import IASBadge from "@/ui/IASBadge";
 import OfferReport from "@/ui/OfferReport";
-import SuccessStory from "@/ui/SuccessStory";
-import Tab from '@/ui/Tab';
 import SuccessStories from '@/ui/SuccessStories';
 
 export default function Home() {
@@ -29,7 +27,7 @@ export default function Home() {
       <OurTeamSection />
       <SectionHeader title="Success Stories" />
       <SuccessStoriesSection />
-      <SectionHeader title="ULead Alumni" />
+      <SectionHeader title="Ulead Alumni" />
       <UleadAlumnSection />
       <SectionHeader title="Qualifications" />
       <QualificationsSection />
@@ -60,7 +58,7 @@ function MainSection() {
       <div className="absolute inset-0 flex flex-col justify-center items-start pl-4 lg:pl-32 text-center text-white">
         {/* Title */}
         <h1 className="text-[1.4rem] md:text-5xl font-bold mb-2">
-          ULEAD Consulting
+          Ulead Consulting
         </h1>
 
         {/* Subtitle */}
@@ -103,7 +101,7 @@ function OurBeliefSection() {
             <span className="text-secondary">LEAD Education</span>
           </h3>
           <p className="text-md md:text-lg text-black w-full">
-            <b className="text-md md:text-lg md:font-normal">ULead Education</b>
+            <b className="text-md md:text-lg md:font-normal">Ulead Education</b>
             {` provides high-level, personalized advising and tutoring for elite families from Mainland China, Singapore, South Korea, and Japan.`}
           </p>
           <p className="text-md md:text-lg text-black mb-4 md:mb-8 w-full">
@@ -291,7 +289,7 @@ async function OurTeamSection() {
     <section className="mx-8 md:mx-[8vw]">
       {/* Description (visible in desktop view) */}
       <p className="text-gray-600 mb-8 hidden md:block">
-        {"ULead is different from other educational companies because it focuses as much on students' growth as on application results. ULead is committed to guiding students to lifelong success by providing psychological support, tutoring, and overall planning."}
+        {"Ulead is different from other educational companies because it focuses as much on students' growth as on application results. Ulead is committed to guiding students to lifelong success by providing psychological support, tutoring, and overall planning."}
       </p>
 
 

@@ -51,7 +51,7 @@ export default async function Highschool() {
       </div>
 
       <div className="my-4" >
-        <Quote text="From early-age potential development to private school/university applications, ULead can help your child continue to grow and progress." />
+        <Quote text="From early-age potential development to private school/university applications, Ulead can help your child continue to grow and progress." />
       </div>
 
       <div className="max-w-6xl mx-auto pt:10 lg:py-12 px-4">

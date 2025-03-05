@@ -50,7 +50,7 @@ export default function Header() {
       {/*   <span className="text-white text-sm md:text-base md:font-semibold">合领教育</span> */}
       {/* </a> */}
       <div className="relative lg:w-32 lg:h-16 w-24 h-12 p-2">
-        <Image src="/img/logo.png" alt="ULEAD" fill className="object-contain" />
+        <Image src="/img/logo.png" alt="Ulead" fill className="object-contain" />
       </div>
 
       {/* Desktop Nav Items */}

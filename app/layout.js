@@ -16,8 +16,8 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "ULead Education",
-  description: "ULead Education - Focus on US High School Application and College Admission",
+  title: "Ulead Education",
+  description: "Ulead Education - Focus on US High School Application and College Admission",
 };
 
 export default function RootLayout({ children }) {

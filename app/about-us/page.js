@@ -80,12 +80,12 @@ export default async function AboutUs() {
           <Quote text="As a consultant, I continuously refine my methodologies through ongoing learning and accumulated experience, with a strong focus on effectively guiding children and families." />
         </div>
 
-        <div className="flex flex-col items-center md:mx-[8vw]">
+        <div id="founder" className="flex flex-col items-center md:mx-[8vw]">
           <div className="flex flex-col md:flex-row items-center max-w-5xl w-full p-8 rounded-lg">
             <div className="w-1/2 md:w-1/3 mb-6 md:mb-0 md:pr-8">
               <Image
                 src={founder.image_url}
-                alt="ULEAD Founder"
+                alt="Ulead Founder"
                 width={300}
                 height={300}
                 className="rounded-full mx-auto"

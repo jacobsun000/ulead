@@ -27,8 +27,7 @@ export default async function Schools() {
       </div>
 
 
-      <h2 className="text-2xl md:text-2xl font-bold text-center my-12">How ULead works with schools?</h2>
-
+      <SectionHeader title="How Ulead works with schools?" />
       <div className="grid grid-cols-2 md:grid-cols-4 justify-between mb-8">
         <StatItem
           icon="plane.svg"
@@ -54,15 +53,13 @@ export default async function Schools() {
         />
       </div>
 
-      <h2 className="text-2xl md:text-2xl font-bold text-center mb-6">Past Events and Admissions</h2>
-      <div className="mb-4">
-        <div className="max-w-7xl mx-auto p-4 grid md:grid-cols-4 grid-cols-2 gap-4">
-          {[1, 2, 3, 4].map((num) => (
-            <div key={num} className="aspect-square">
-              <Image src={`/img/partners/event${num}.png`} alt={`Event ${num}`} width={900} height={700} />
-            </div>
-          ))}
-        </div>
+      <SectionHeader title="Past Events and Admissions" style="mb-6" />
+      <div className="max-w-7xl mx-auto p-4 grid md:grid-cols-4 grid-cols-2 gap-4 mb-6">
+        {[1, 2, 3, 4].map((num) => (
+          <div key={num}>
+            <Image src={`/img/partners/event${num}.png`} alt={`Event ${num}`} width={900} height={700} />
+          </div>
+        ))}
       </div>
 
       <div className="text-center mb-4">
