@@ -285,7 +285,7 @@ function TeamMember({ image_url: imageSrc, name, description, link }) {
 }
 
 async function OurTeamSection() {
-  const { rows: members } = await sql`SELECT * FROM team_members`;
+  const { rows: members } = await sql`SELECT * FROM team_members order by id`;
 
   return (
     <section className="mx-8 md:mx-[8vw]">

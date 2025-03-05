@@ -21,7 +21,8 @@ function NavItem({ label, href, selected, setIsMobileMenuOpen, isMobile = false 
         ${isMobile ? 'lg:hidden' : 'hidden lg:flex'}
         ${selected ? 'border-primary' : 'border-transparent'}
         ${selected ? 'text-white' : 'text-faded'}
-        hover:border-primary hover:text-white transition-colors duration-300 ease-in-out
+        ${!isMobile ? 'hover:border-primary hover:text-white' : ''}
+        transition-colors duration-300 ease-in-out
       `}
       onClick={isMobile ? () => setIsMobileMenuOpen(false) : null}
     >

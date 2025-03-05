@@ -26,7 +26,9 @@ const TeamMember = ({ name, image_url: imageSrc, description }) => (
 );
 
 export default async function AboutUs() {
-  const { rows: members } = await sql`SELECT * FROM team_members`;
+  let { rows: members } = await sql`SELECT * FROM team_members`;
+  const founder = members.find(member => member.id === 1);
+  members = members.filter(member => member.id !== 1);
 
   return (
     <div>
@@ -74,13 +76,15 @@ export default async function AboutUs() {
           </div>
         </div>
 
-        <Quote text="As a consultant, by continuously learning and accumulating experience, we continuously iterate the methodologies in counseling, focusing on leading children and families well!" />
+        <div className="hidden lg:block">
+          <Quote text="As a consultant, by continuously learning and accumulating experience, we continuously iterate the methodologies in counseling, focusing on leading children and families well!" />
+        </div>
 
         <div className="flex flex-col items-center md:mx-[8vw]">
           <div className="flex flex-col md:flex-row items-center max-w-5xl w-full p-8 rounded-lg">
             <div className="w-1/2 md:w-1/3 mb-6 md:mb-0 md:pr-8">
               <Image
-                src={members[0].image_url}
+                src={founder.image_url}
                 alt="ULEAD Founder"
                 width={300}
                 height={300}
@@ -92,9 +96,9 @@ export default async function AboutUs() {
               </h2>
             </div>
             <div className="w-full md:w-2/3 ml-7">
-              <h2 className="font-bold text-lg md:text-4xl text-secondary mb-4 md:mb-8">{members[0].name}</h2>
+              <h2 className="font-bold text-lg md:text-4xl text-secondary mb-4 md:mb-8">{founder.name}</h2>
               <ul className="text-sm md:text-[1rem] list-disc space-y-2 ml ml-4">
-                {members[0].description.map((item, index) => (
+                {founder.description.map((item, index) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
@@ -102,7 +106,7 @@ export default async function AboutUs() {
           </div>
         </div>
 
-        <div className="relative flex flex-col items-center lg:pb-16 lg:mb-8">
+        <div className="relative hidden lg:flex flex-col items-center lg:pb-16 lg:mb-8">
           <div className="w-full h-full bg-[#213A6C] opacity-10 absolute mb-4 top-0 left-0 rounded-b-[50%] -z-10"></div>
 
           <div className="grid grid-cols-3 mt-8 gap-4 lg:gap-8 items-center mx-[8vw]">
@@ -139,11 +143,14 @@ export default async function AboutUs() {
         </div>
       </div>
 
+      <div className="lg:hidden">
+        <Quote text="As a consultant, by continuously learning and accumulating experience, we continuously iterate the methodologies in counseling, focusing on leading children and families well!" />
+      </div>
 
       <SectionHeader title={"Core Team"} />
       <div className="mx-[8vw] mb-12">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {members.slice(1).map((member) => (
+          {members.map((member) => (
             <TeamMember key={member.name} {...member} />
           ))}
         </div>
