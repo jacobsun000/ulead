@@ -40,7 +40,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-secondary flex justify-between items-center w-full px-4 lg:px-20 py-1 fixed top-0 z-50">
+    <header className="bg-secondary flex justify-between items-center w-full px-4 lg:px-16 xl:px-20 py-1 fixed top-0 z-50">
       {/* Logo */}
       {/* <a href='/' className="flex flex-col py-2 mr-4"> */}
       {/*   <div> */}
