@@ -24,22 +24,23 @@ export default function AlumniCard({ name, image, school, labels, offers, evalua
         </div>
       </div>
 
-      {/* Seperator */}
-      <div className="flex items-center flex-grow md:mx-6 mx-2 md:my-4 my-2">
-        <div className="w-[0.35rem] h-[0.35rem] bg-slate-500 translate-x-[0.5rem] rotate-45 transform mr-2"></div> {/* Diamond */}
-        <div className="border-t border-slate-500 flex-grow"></div>
-      </div>
+      {evaluation && (<div>
+        {/* Seperator */}
+        <div className="flex items-center flex-grow md:mx-6 mx-2 md:my-4 my-2">
+          <div className="w-[0.35rem] h-[0.35rem] bg-slate-500 translate-x-[0.5rem] rotate-45 transform mr-2"></div> {/* Diamond */}
+          <div className="border-t border-slate-500 flex-grow"></div>
+        </div>
 
-      {/* Case Evaluation*/}
-      <div className="relative text-center">
-        <h3 className="md:text-xl text-sm font-bold relative">Case Evaluation</h3>
-        <Image src="/img/aboutus/quote-end.svg" alt="End Quote" width={135} height={98} className="md:w-6 md:h-6 w-4 h-4 absolute top-0 right-6" />
-        <p className="mt-2 md:p-8 p-4 pt-0 text-left text-gray-500 md:text-sm text-xs">
-          {evaluation}
-        </p>
-      </div>
+        {/* Case Evaluation*/}
+        <div className="relative text-center">
+          <h3 className="md:text-xl text-sm font-bold relative">Case Evaluation</h3>
+          <Image src="/img/aboutus/quote-end.svg" alt="End Quote" width={135} height={98} className="md:w-6 md:h-6 w-4 h-4 absolute top-0 right-6" />
+          <p className="mt-2 md:p-8 p-4 pt-0 text-left text-gray-500 md:text-sm text-xs">
+            {evaluation}
+          </p>
+        </div>
 
-
+      </div>)}
     </div>
   );
 }
