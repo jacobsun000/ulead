@@ -5,7 +5,7 @@ export default function AlumniCard({ name, image, school, labels, offers, evalua
     <div className="bg-white shadow-lg rounded-xl border justify-start md:w-[26rem] w-72">
       {/* Header */}
       <div className="mt-8 mr-8 mb-4 flex flex-row items-center">
-        <p className="md:text-xl text-sm md:w-32 w-20 md:p-4 md:pr-8 p-2 bg-secondary text-white rounded-r-full">{name}</p>
+        <p className="md:text-xl text-xs md:w-32 w-20 md:p-4 p-2 bg-secondary text-white rounded-r-full">{name}</p>
         <p className="md:text-xl text-sm md:p-4 md:pr-2 p-2 font-semibold text-black">{school}</p>
       </div>
       {/* Personal information */}
