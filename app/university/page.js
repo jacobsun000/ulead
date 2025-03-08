@@ -32,7 +32,7 @@ export default async function University() {
 
   return (
     <div>
-      <div className="relative h-52 md:h-96">
+      <div className="relative h-52 md:h-[30rem]">
         <Image
           src="/img/university/header.jpg"
           alt="Graduation"

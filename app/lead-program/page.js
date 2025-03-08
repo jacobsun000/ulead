@@ -121,7 +121,7 @@ export default function Partners() {
 
   return (
     <div>
-      <div className="relative h-52 md:h-96">
+      <div className="relative h-52 md:h-[30rem]">
         <Image
           src="/img/lead-program/header.jpg"
           alt="Graduation"

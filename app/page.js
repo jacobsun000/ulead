@@ -41,7 +41,7 @@ export default function Home() {
 
 function MainSection() {
   return (
-    <section className="relative w-full h-52 md:h-96">
+    <section className="relative w-full h-52 md:h-[30rem]">
       {/* Background Image */}
       <Image
         src="/img/home/header.jpg"
