@@ -341,9 +341,9 @@ function AlumniCard({ alumni }) {
                 <p className="text-gray-500 text-xs font-bold mt-2">
                   Highschool:
                 </p>
-                <p className="text-gray-500 text-xs">
-                  {highschool}
-                </p>
+                {highschool.split(",").map((hs, index) => (
+                  <p key={index} className="text-gray-500 text-xs">{hs}</p>
+                ))}
               </div>
             </div>
           </div>
