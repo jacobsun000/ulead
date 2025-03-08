@@ -254,28 +254,28 @@ function TeamMember({ image_url: imageSrc, name, description, link }) {
       </div>
       <div className="flex flex-col items-center">
         <span className="font-semibold text-sm text-gray-800">{name}</span>
-        <div className="text-gray-600 text-sm group text-center">
+        <div className="text-gray-600 text-sm group">
           <div className="collapsed-content">
             <div className="line-clamp-wrapper">
-              <div className="inline-block">
+              <ul className="pl-4 list-disc">
                 {description.slice(0, 2).map((text, index) => (
-                  <p key={index} className="text-gray-600 text-sm">{text}</p>
+                  <li key={index} className="text-gray-600 text-xs">{text}</li>
                 ))}
-              </div>
+              </ul>
               {isLongText && (
                 <div className="flex justify-end">
-                  <label className="text-primary hover:text-primaryLight cursor-pointer">
+                  <label className="text-primary text-xs hover:text-primaryLight cursor-pointer">
                     <input type="checkbox" className="hidden" /> read more
                   </label>
                 </div>
               )}
             </div>
           </div>
-          <div className="hidden expanded-content">
+          <ul className="hidden expanded-content pl-4 list-disc">
             {description.map((text, index) => (
-              <p key={index} className="text-gray-600 text-sm">{text}</p>
+              <li key={index} className="text-gray-600 text-xs">{text}</li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </div>
