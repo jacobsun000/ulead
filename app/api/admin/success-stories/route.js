@@ -19,7 +19,7 @@ export async function POST(req) {
   try {
     const { type, name, image, school, labels, offers, evaluation } = await req.json();
 
-    if (!type || !name || !name || !school || !labels || !offers || !evaluation) {
+    if (!type || !name || !name || !school || !labels || !offers || (!evaluation && type === "HighSchool")) {
       return new Response(
         JSON.stringify({ success: false, message: "All fields are required" }),
         { status: 400 }
@@ -46,7 +46,7 @@ export async function PUT(req) {
   try {
     const { id, type, name, image, school, labels, offers, evaluation } = await req.json();
 
-    if (!id || !type || !name || !name || !school || !labels || !offers || !evaluation) {
+    if (!id || !type || !name || !name || !school || !labels || !offers || (!evaluation && type === "HighSchool")) {
       return new Response(
         JSON.stringify({ success: false, message: "All fields are required" }),
         { status: 400 }

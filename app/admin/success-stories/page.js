@@ -215,7 +215,7 @@ export default function StoriesManager() {
             onChange={(e) => setForm({ ...form, evaluation: e.target.value })}
             placeholder="Case Evaluation"
             className="w-1/2 p-2 border rounded"
-            required
+            required={type === "HighSchool"}
           />
         </div>
         <button type="submit" className="bg-primary text-white px-4 py-2 rounded">
