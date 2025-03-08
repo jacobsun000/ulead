@@ -14,7 +14,7 @@ function OfferItem({ logo, school, count }) {
 
       {/* School name - centered */}
       <div className="flex-1 text-center">
-        <p className="text-gray-700 text-sm md:text-xl">{school}</p>
+        <p className="text-gray-700 text-sm md:text-lg">{school}</p>
       </div>
 
       {/* Count and arrow - aligned to the right */}
