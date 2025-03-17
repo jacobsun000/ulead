@@ -30,7 +30,7 @@ const regions = [
   },
 ];
 
-export default function PartnerMap({ schools }) {
+export default function PartnerMap({ schools, color1, color2 }) {
   schools = schools.reduce((result, school) => {
     const { state, name } = school;
     if (!result[state]) {
@@ -54,8 +54,9 @@ export default function PartnerMap({ schools }) {
       <div className='grid grid-rows-2 grid-cols-3 lg:grid-rows-none lg:grid-cols-5 gap-2 lg:max-w-7xl lg:gap-4 m-4 mb-0 lg:m-8'>
         {regionSchools.map((region, i) => (
           <div key={i}
-            className={`${i === index ? 'bg-[#f05751]' : 'bg-[#F59793]'} text-white text-center border-[1px] border-secondary rounded-lg lg:p-4 text-lg cursor-pointer hover:bg-[#F05751] hover:text-white p-1`}
+            className={`bg-[${i === index ? color1 : color2}] text-white text-center border-[1px] border-secondary rounded-lg lg:p-4 text-lg cursor-pointer hover:bg-[${color1}] hover:text-white p-1`}
             onClick={() => setIndex(i)}
+            style={{ backgroundColor: i === index ? color1 : color2, }}
           >
             {region.region}
           </div>
@@ -68,7 +69,7 @@ export default function PartnerMap({ schools }) {
             {({ geographies }) =>
               geographies.map(geo => {
                 const stateCode = getStateCodeByStateName(geo.properties.name);
-                const fill = regionSchools[index].states.some(s => s.state === stateCode) ? "#f05751" : "#F59793";
+                const fill = regionSchools[index].states.some(s => s.state === stateCode) ? color1 : color2;
                 return (
                   <Geography
                     key={geo.rsmKey}

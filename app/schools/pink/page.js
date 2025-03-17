@@ -24,7 +24,7 @@ export default async function Schools() {
     <div className="mt-28">
       <SectionHeader title="Our Target School" style={"mb-0"} />
       <div className="md:max-w-[90vw] mx-auto">
-        <PartnerMap schools={schools} color1={'#f05751'} color2={'#F59793'} />
+        <PartnerMap schools={schools} color1={'#ff0089'} color2={'#f98ac5'} />
       </div>
 
 
