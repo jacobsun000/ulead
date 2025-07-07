@@ -35,7 +35,7 @@ export default function TeamManager() {
   const handleImageUpload = async () => {
     const res = await fetch(`/api/admin/image-upload?filename=${imageFile.name}`, {
       method: "POST",
-      body: file,
+      body: imageFile,
     });
 
     const data = await res.json();
@@ -61,6 +61,7 @@ export default function TeamManager() {
         fetchTeamMembers(); // Refresh list
         setForm({ id: null, name: "", image_url: "", description: [] });
         setImageFile(null);
+        setError("");
       } else setError(data.message);
     } catch {
       setError("Failed to save team member");
