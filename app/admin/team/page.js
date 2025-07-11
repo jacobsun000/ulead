@@ -7,6 +7,7 @@ export default function TeamManager() {
   const [form, setForm] = useState({
     id: null,
     name: "",
+    order_index: 0,
     image_url: "",
     description: [],
   });
@@ -59,7 +60,7 @@ export default function TeamManager() {
       const data = await res.json();
       if (data.success) {
         fetchTeamMembers(); // Refresh list
-        setForm({ id: null, name: "", image_url: "", description: [] });
+        setForm({ id: null, name: "", order_index: 0, image_url: "", description: [] });
         setImageFile(null);
         setError("");
       } else setError(data.message);
@@ -119,6 +120,14 @@ export default function TeamManager() {
             required
           />
         </div>
+        <input
+          type="number"
+          value={form.order_index ?? 0}
+          onChange={(e) => setForm({ ...form, order_index: parseInt(e.target.value) })}
+          placeholder="Order"
+          className="w-1/4 p-2 border rounded"
+          required
+        />
         <div className="flex gap-4 mb-4">
           <label className="block w-1/2">
             <span>Image:</span>
@@ -172,6 +181,7 @@ export default function TeamManager() {
               <tr>
                 <th className="p-4">ID</th>
                 <th className="p-4">Name</th>
+                <th className="p-4">Order</th>
                 <th className="p-4">Image</th>
                 <th className="p-4">Description</th>
                 <th className="p-4">Actions</th>
@@ -182,6 +192,7 @@ export default function TeamManager() {
                 <tr key={t.id} className="hover:bg-gray-100">
                   <td className="p-4">{t.id}</td>
                   <td className="p-4">{t.name}</td>
+                  <td className="p-4">{t.order_index}</td>
                   <td className="p-4">
                     <img src={t.image_url} alt={t.name} className="w-16 h-16 object-cover rounded" />
                   </td>

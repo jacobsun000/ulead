@@ -17,9 +17,9 @@ export async function GET() {
 
 export async function POST(req) {
   try {
-    const { name, image_url, description } = await req.json();
+    const { name, order_index, image_url, description } = await req.json();
 
-    if (!name || !image_url || !description) {
+    if (!name || !image_url || !description || !order_index) {
       return new Response(
         JSON.stringify({ success: false, message: "All fields are required" }),
         { status: 400 }
@@ -27,8 +27,8 @@ export async function POST(req) {
     }
 
     const { rows } = await sql`
-      INSERT INTO team_members (name, image_url, description)
-      VALUES (${name}, ${image_url}, ${description})
+      INSERT INTO team_members (name, order_index, image_url, description)
+      VALUES (${name}, ${order_index}, ${image_url}, ${description})
       RETURNING *;
     `;
     return new Response(JSON.stringify({ success: true, data: rows[0] }), {
@@ -45,7 +45,7 @@ export async function POST(req) {
 
 export async function PUT(req) {
   try {
-    const { id, name, image_url, description } = await req.json();
+    const { id, name, order_index, image_url, description } = await req.json();
 
     if (!id || !name || !image_url || !description) {
       return new Response(
@@ -56,7 +56,7 @@ export async function PUT(req) {
 
     const { rows } = await sql`
       UPDATE team_members
-      SET name = ${name}, image_url = ${image_url}, description = ${description}
+      SET name = ${name}, image_url = ${image_url}, description = ${description}, order_index = ${order_index}
       WHERE id = ${id}
       RETURNING *;
     `;
