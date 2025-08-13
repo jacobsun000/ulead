@@ -1,5 +1,5 @@
-import ServiceItem from '@/ui/ServiceItem';
-import Button from '@/ui/Button';
+import ServiceItem from '@/ui/en/ServiceItem';
+import Button from '@/ui/en/Button';
 
 export default function Services({ services }) {
   return (

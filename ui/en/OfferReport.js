@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import Button from "@/ui/Button";
+import Button from "@/ui/en/Button";
 
 function OfferItem({ logo, school, count }) {
   return (

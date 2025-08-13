@@ -1,12 +1,12 @@
 import { sql } from '@vercel/postgres';
-import BackButton from "@/ui/Back";
-import SectionHeader from "@/ui/SectionHeader";
+import BackButton from "@/ui/en/Back";
+import SectionHeader from "@/ui/en/SectionHeader";
 import Image from 'next/image'
-import Button from "@/ui/Button";
-import Quote from "@/ui/Quote";
-import OfferReport from "@/ui/OfferReport";
-import SuccessStories from '@/ui/SuccessStories';
-import Services from '@/ui/Services';
+import Button from "@/ui/en/Button";
+import Quote from "@/ui/en/Quote";
+import OfferReport from "@/ui/en/OfferReport";
+import SuccessStories from '@/ui/en/SuccessStories';
+import Services from '@/ui/en/Services';
 
 const Card = ({ title }) => (
   <h3 className={`text-sm mb-2 text-white p-2 rounded-xl text-center ${title.includes('Canadian') ? 'bg-primary' : 'bg-secondary'}`}>{title}</h3>

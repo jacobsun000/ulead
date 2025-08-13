@@ -1,7 +1,7 @@
-import BackButton from "@/ui/Back";
-import SectionHeader from "@/ui/SectionHeader";
+import BackButton from "@/ui/en/Back";
+import SectionHeader from "@/ui/en/SectionHeader";
 import Image from 'next/image'
-import Button from "@/ui/Button";
+import Button from "@/ui/en/Button";
 import { sql } from "@vercel/postgres";
 
 const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {

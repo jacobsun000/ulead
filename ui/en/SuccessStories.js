@@ -7,7 +7,7 @@ export default function SuccessStories({ profiles }) {
   let storyCardsDesktop = [];
   for (let i = 0; i < storyCards.length; i += 3) {
     storyCardsDesktop.push((
-      <div key={i} className="grid grid-cols-1 md:grid-cols-3 gap-8 overflow-clip">
+      <div key={i} className="grid grid-cols-1 md:grid-cols-3 gap-4 overflow-clip">
         {storyCards.slice(i, i + 3)}
       </div>
     ));

@@ -1,10 +1,10 @@
 'use client'
 
 import { useState } from 'react';
-import BackButton from "@/ui/Back";
-import SectionHeader from "@/ui/SectionHeader";
+import BackButton from "@/ui/en/Back";
+import SectionHeader from "@/ui/en/SectionHeader";
 import Image from 'next/image';
-import Button from "@/ui/Button";
+import Button from "@/ui/en/Button";
 
 const ContactItem = ({ src, alt, text }) => (
   <div className="flex items-center mb-6">

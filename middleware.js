@@ -7,6 +7,7 @@ export async function middleware(req) {
   const token = req.cookies.get("token")?.value; // Extract JWT token from cookies
   const url = req.nextUrl.pathname;
 
+  // Handle admin authentication
   if (url.startsWith("/admin")) {
     if (!token) {
       // Redirect to login if no token is found
@@ -24,6 +25,13 @@ export async function middleware(req) {
       // Redirect to login if token is invalid or expired
       return NextResponse.redirect(new URL("/login", req.url));
     }
+  }
+
+  // Handle locale redirects for root path
+  if (url === "/") {
+    // You can add logic here to detect user's preferred language
+    // For now, default to English (no redirect needed since (en) is the default)
+    return NextResponse.next();
   }
 
   // Allow access to other routes

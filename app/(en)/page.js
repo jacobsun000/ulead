@@ -1,14 +1,14 @@
 import { sql } from '@vercel/postgres';
 import Image from "next/image";
-import Slider from "@/ui/Slider";
-import Panel from "@/ui/Panel";
-import SectionHeader from "@/ui/SectionHeader";
-import Button from "@/ui/Button";
-import BackToTopButton from "@/ui/Back";
-import Video from "@/ui/Video";
-import IASBadge from "@/ui/IASBadge";
-import OfferReport from "@/ui/OfferReport";
-import SuccessStories from '@/ui/SuccessStories';
+import Slider from "@/ui/en/Slider";
+import Panel from "@/ui/en/Panel";
+import SectionHeader from "@/ui/en/SectionHeader";
+import Button from "@/ui/en/Button";
+import BackToTopButton from "@/ui/en/Back";
+import Video from "@/ui/en/Video";
+import IASBadge from "@/ui/en/IASBadge";
+import OfferReport from "@/ui/en/OfferReport";
+import SuccessStories from '@/ui/en/SuccessStories';
 
 export default function Home() {
   return (

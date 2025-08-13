@@ -1,10 +1,10 @@
 import { sql } from '@vercel/postgres';
-import BackButton from "@/ui/Back";
-import SectionHeader from "@/ui/SectionHeader";
+import BackButton from "@/ui/en/Back";
+import SectionHeader from "@/ui/en/SectionHeader";
 import Image from 'next/image'
-import Slider from "@/ui/Slider";
-import Quote from "@/ui/Quote";
-import Button from "@/ui/Button";
+import Slider from "@/ui/en/Slider";
+import Quote from "@/ui/en/Quote";
+import Button from "@/ui/en/Button";
 
 
 const TeamMember = ({ name, image_url: imageSrc, description }) => (

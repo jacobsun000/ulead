@@ -1,7 +1,7 @@
 'use client';
 import { useState } from "react";
 import Image from "next/image";
-import Button from "@/ui/Button";
+import Button from "@/ui/en/Button";
 
 export default function AlumnProfileCard({ image_url: imageSrc, name, highschool, offers, experiences }) {
   const [isExpanded, setIsExpanded] = useState(false);

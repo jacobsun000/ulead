@@ -1,9 +1,9 @@
 import { sql } from '@vercel/postgres';
-import BackButton from "@/ui/Back";
-import SectionHeader from "@/ui/SectionHeader";
-import Button from "@/ui/Button";
+import BackButton from "@/ui/en/Back";
+import SectionHeader from "@/ui/en/SectionHeader";
+import Button from "@/ui/en/Button";
 import Image from 'next/image'
-import PartnerMap from "@/ui/PartnerMap";
+import PartnerMap from "@/ui/en/PartnerMap";
 
 const StatItem = ({ icon, number, description, isRed }) => (
   <div className="flex flex-col items-center ml-7 mr-7">
