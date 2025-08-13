@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "../globals.css";
+import Header from "@/ui/zh/Header";
 
 const geistSans = localFont({
   src: "../../public/fonts/GeistVF.woff",
@@ -37,7 +38,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background`}
       >
-        {/* Chinese header and footer components will be added later */}
+        <Header transparent={true} />
         {children}
       </body>
     </html>
