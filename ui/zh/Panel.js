@@ -1,7 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
+import { cn } from "@/lib/utils";
 
-export default function Panel({ elements, autoplay = false }) {
+export default function Panel({ elements, autoplay = false, variant = "white" }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
@@ -32,7 +33,10 @@ export default function Panel({ elements, autoplay = false }) {
         {elements.map((element, index) => (
           <button
             key={index}
-            className={`text-lg font-semibold ${currentIndex === index ? 'text-white border-b-2 border-white' : 'text-[rgba(255,255,255,0.4)]'}`}
+            className={cn('text-lg font-semibold',
+              currentIndex === index ? `${variant === 'black' ? "text-black border-[#0796E5]" : "text-white"} border-b-4`
+                : `${variant === 'black' ? "text-black/40" : "text-white/40"}`,
+            )}
             onClick={() => { setCurrentIndex(index); setIsClicked(true); }}
           >
             {element.title}
