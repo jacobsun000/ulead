@@ -12,6 +12,8 @@
     "@vercel/blob": "^0.27.0",
     "@vercel/postgres": "^0.10.0",
     "bcrypt": "^5.1.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "file-saver": "^2.0.5",
     "jose": "^5.9.6",
     "next": "14.2.8",
@@ -19,6 +21,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-simple-maps": "^3.0.0",
+    "tailwind-merge": "^3.3.1",
     "us-state-codes": "^1.1.2",
     "uuid": "^11.0.4"
   },

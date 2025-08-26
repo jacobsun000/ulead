@@ -1,0 +1,51 @@
+"use client";
+import { useState, useEffect } from "react";
+
+export default function Panel({ elements, autoplay = false }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
+
+  useEffect(() => {
+    if (!isHovered && !isClicked && autoplay) {
+      const interval = setInterval(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % elements.length);
+      }, 3000);
+
+      return () => {
+        clearInterval(interval);
+      };
+    }
+  }, [isHovered, isClicked, autoplay, elements.length]);
+
+  const handleMouseOver = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  return (
+    <div className="relative w-full mt-4 flex flex-col items-center justify-center">
+      <div className="flex justify-center space-x-8 mb-8">
+        {elements.map((element, index) => (
+          <button
+            key={index}
+            className={`text-lg font-semibold ${currentIndex === index ? 'text-white border-b-2 border-white' : 'text-[rgba(255,255,255,0.4)]'}`}
+            onClick={() => { setCurrentIndex(index); setIsClicked(true); }}
+          >
+            {element.title}
+          </button>
+        ))}
+      </div>
+      <div
+        className="w-full"
+        onMouseOver={handleMouseOver}
+        onMouseLeave={handleMouseLeave}
+      >
+        {elements[currentIndex].content}
+      </div>
+    </div>
+  );
+}

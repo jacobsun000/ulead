@@ -36,9 +36,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="zh-CN">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header transparent={true} />
+        <div className="h-16 lg:h-[4.5rem]"></div>
+        <Header />
         {children}
       </body>
     </html>

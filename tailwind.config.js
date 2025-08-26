@@ -17,19 +17,22 @@ module.exports = {
         foreground: "#000000",
       },
       backgroundImage: {
-        'ulead-gradient': 'linear-gradient(135deg, #6E4AC8 0%, #0796E5 100%)',
-        'ulead-gradient-horizontal': 'linear-gradient(90deg, #6E4AC8 0%, #0796E5 100%)',
-      },
-      animation: {
-        'float': 'float 6s ease-in-out infinite',
-        'float-delayed': 'float 6s ease-in-out 2s infinite',
+        'ulead-gradient': 'linear-gradient(90deg, #6E4AC8 0%, #0796E5 100%)',
       },
       keyframes: {
         float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
-        }
-      }
+          '0%, 100%': { transform: 'translateY(-50%) translateX(0)' },
+          '50%': { transform: 'translateY(calc(-50% - 12px)) translateX(4px)' },
+        },
+        float2: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+      },
+      animation: {
+        float: 'float 8s ease-in-out infinite',
+        'float-delayed': 'float2 10s ease-in-out 0.6s infinite',
+      },
     },
   },
   plugins: [],
