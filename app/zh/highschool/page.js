@@ -1,39 +1,40 @@
-import DecorativeShapes from "@/ui/zh/DecorativeShapes";
+import { sql } from '@vercel/postgres';
+import Image from 'next/image'
 
-export default function ChineseHighSchoolPage() {
+import OfferReport from "@/ui/zh/OfferReport";
+import { SchoolCards } from '@/ui/zh/SchoolCard';
+
+export default async function University() {
+  const { rows: highschool } = await sql`SELECT * FROM high_school`;
+  const { rows: schools } = await sql`SELECT * FROM summer_school WHERE type = 'highschool'`;
+
   return (
-    <div className="min-h-screen">
-      {/* Hero Section with Gradient Background */}
-      <div className="relative bg-ulead-gradient h-screen">
-        <DecorativeShapes />
-        
-        <div className="relative z-10 container mx-auto px-4 lg:px-16 xl:px-20 pt-20">
-          <div className="flex items-center justify-center min-h-screen">
-            <div className="text-center text-white space-y-6">
-              <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
-                美国高中个性化申请规划服务
-              </h1>
-              <p className="text-xl lg:text-2xl text-white/90 max-w-2xl mx-auto">
-                专业的美国高中申请指导，为您的孩子开启国际教育之路
-              </p>
-              <button className="bg-white text-primary px-8 py-3 rounded-full text-lg font-medium hover:bg-gray-100 transition duration-300">
-                咨询申请
-              </button>
-            </div>
-          </div>
-        </div>
+    <div className="min-w-full">
+      <Image src="/img/zh/highschool/head.svg" alt="" width={1920} height={1080} className="w-full h-full" />
+      <div className="px-16 md:px-[8vw] py-16 bg-ulead-gradient">
+        <h1 className="text-4xl text-white text-center font-bold mb-16">高中录取榜单</h1>
+        <OfferReport schools={highschool} expand />
       </div>
-      
-      {/* Content sections below with white/light backgrounds */}
-      <div className="bg-white py-16">
-        <div className="container mx-auto px-4 lg:px-16 xl:px-20">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold mb-8">我们的服务优势</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              这里可以添加更多内容部分，背景为白色，形成层次感
-            </p>
-          </div>
-        </div>
+      <div className="px-16 md:px-[8vw] py-16 flex flex-col items-center">
+        <h1 className="text-4xl text-center font-bold mb-16">高中夏校项目</h1>
+        <SchoolCards schools={schools} />
+        <a
+          href="/zh/summer-school/highschool"
+          className="px-16 py-2 mt-16 rounded-full bg-ulead-gradient
+                 bg-white hover:shadow-lg transition-shadow text-white
+                 active:scale-95"
+        >
+          更多项目
+        </a>
+      </div>
+
+      <div className="px-16 md:px-[8vw] py-16 flex flex-col items-center">
+        <h1 className="text-4xl text-center font-bold mb-16">招生官会面</h1>
+        <Image src="/img/zh/highschool/admissions.png" alt="" width={800} height={400} className="w-2/3 h-auto" />
+      </div>
+
+      <div className="px-16 md:px-[8vw] py-16 flex flex-col items-center">
+        <Image src="/img/zh/highschool/successStories.svg" alt="" width={800} height={400} className="w-2/3 h-auto" />
       </div>
     </div>
   );
