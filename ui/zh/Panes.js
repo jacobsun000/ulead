@@ -8,7 +8,7 @@ export default function Panes({ panes }) {
 
   return (
     <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full bg-ulead-gradient p-6 flex flex-row rounded-xl items-center">
-      <TabsList className="flex flex-col items-center justify-between gap-2 p-4 h-72 rounded-l-2xl text-white min-w-[120px]">
+      <TabsList className="flex flex-col items-center justify-between gap-2 p-4 h-72 rounded-l-2xl text-white bg-transparent min-w-[120px]">
         {panes.map((pane) => (
           <TabsTrigger
             key={pane.title}

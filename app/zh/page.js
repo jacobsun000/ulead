@@ -198,17 +198,8 @@ async function TeamSection() {
     {
       title: '资深顾问',
       content: (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Example Person */}
-          <div className="text-center">
-            <img src="/img/team/michael.jpg" alt="Michael老师" className="mx-auto w-24 h-24 rounded-full" />
-            <p className="mt-2 font-semibold">Michael老师</p>
-            <p className="text-sm text-gray-600">导师顾问</p>
-            <p className="mt-2 text-sm text-gray-700 leading-relaxed">
-              哥伦比亚大学理科硕士、CFA；曾任华尔街分析师；优化文书策略与美本申请
-            </p>
-          </div>
-          {/* ...Other advisors */}
+        <div>
+          <Image alt="" src="/img/zh/home/consultant.svg" height={800} width={800} />
         </div>
       ),
     },
