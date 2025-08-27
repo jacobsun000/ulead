@@ -1,7 +1,83 @@
 import PageBackground from "@/ui/zh/PageBackground";
 import Footer from "@/ui/zh/Footer";
+import SectionHeader from "@/ui/zh/SectionHeader";
+import Image from 'next/image'
+
+const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {
+  return (
+    <div className="border-b py-4" open={isOpen}>
+      <div className="flex items-center cursor-pointer list-none">
+        <div className="w-8 h-8">
+          <Image src={icon} alt={title} width={40} height={40} />
+        </div>
+        <span className="pl-2 font-semibold text-left">{title}</span>
+      </div>
+      <ul className="mt-2 text-gray-600">
+        {description && description.map((item, index) => (<li key={index}>{item}</li>))}
+      </ul>
+    </div>
+  );
+};
 
 export default function LeadProgramPage() {
+  const services = [
+    {
+      title: "学术成长计划", icon: "/img/lead-program/11.svg", isOpen: false, isRed: false,
+      description: ["挖掘重点特科，并制定发展计划，学术标签打造及发展逻辑梳理。",
+        "英语学习节点和方法，其他学科的国际化接轨的学习节点和方法。",
+        "国内双语私立体系、国际教育体系、公立体系的分析和选择。",
+        "美国私立走读体系、私立寄宿体系、公立体系的分析和选择。"]
+    },
+    {
+      title: "艺术成长计划", icon: "/img/lead-program/22.svg", isOpen: false, isRed: false,
+      description: ["启发孩子自身对艺术发展的认识，优势和劣势分析。",
+        "国际化视角和审美力建立和增长。",
+        "典型艺术和设计赛道及目标院校的学习节点、方法和资源。",
+        "个性化艺术生和艺术性生的国际化发展路径。"]
+    },
+    {
+      title: "Sports Growth Plan", icon: "/img/lead-program/33.svg", isOpen: false, isRed: false,
+      description: ["挖掘重点特科，并制定发展计划，学术标签打造及发展逻辑梳理。",
+        "英语学习节点和方法，其他学科的国际化接轨的学习节点和方法。",
+        "国内双语私立体系、国际教育体系、公立体系的分析和选择。",
+        "美国私立走读体系、私立寄宿体系、公立体系的分析和选择。"]
+    },
+    {
+      title: "家长教育成长计划", icon: "/img/lead-program/44.svg", isOpen: false, isRed: false,
+      description: ["启发孩子自身对艺术发展的认识，优势和劣势分析。",
+        "国际化视角和审美力建立和增长。",
+        "典型艺术和设计赛道及目标院校的学习节点、方法和资源。",
+        "个性化艺术生和艺术性生的国际化发展路径。"]
+    },
+    {
+      title: "领导力成长计划", icon: "/img/lead-program/55.svg", isOpen: false, isRed: false,
+      description: ["挖掘重点特科，并制定发展计划，学术标签打造及发展逻辑梳理。",
+        "英语学习节点和方法，其他学科的国际化接轨的学习节点和方法。",
+        "国内双语私立体系、国际教育体系、公立体系的分析和选择。",
+        "美国私立走读体系、私立寄宿体系、公立体系的分析和选择。"]
+    },
+    {
+      title: "节假日成长计划", icon: "/img/lead-program/66.svg", isOpen: false, isRed: false,
+      description: ["启发孩子自身对艺术发展的认识，优势和劣势分析。",
+        "国际化视角和审美力建立和增长。",
+        "典型艺术和设计赛道及目标院校的学习节点、方法和资源。",
+        "个性化艺术生和艺术性生的国际化发展路径。"]
+    },
+    {
+      title: "海外成长计划", icon: "/img/lead-program/77.svg", isOpen: false, isRed: false,
+      description: ["挖掘重点特科，并制定发展计划，学术标签打造及发展逻辑梳理。",
+        "英语学习节点和方法，其他学科的国际化接轨的学习节点和方法。",
+        "国内双语私立体系、国际教育体系、公立体系的分析和选择。",
+        "美国私立走读体系、私立寄宿体系、公立体系的分析和选择。"]
+    },
+    {
+      title: "公益活动成长计划", icon: "/img/lead-program/88.svg", isOpen: false, isRed: false,
+      description: ["启发孩子自身对艺术发展的认识，优势和劣势分析。",
+        "国际化视角和审美力建立和增长。",
+        "典型艺术和设计赛道及目标院校的学习节点、方法和资源。",
+        "个性化艺术生和艺术性生的国际化发展路径。"]
+    },
+  ];
   return (
     <PageBackground page="lead-program">
       {/* ===== Hero ===== */}
@@ -74,117 +150,22 @@ export default function LeadProgramPage() {
           {/* ===== 八项核心竞争力 ===== */}
           <section id="section-core" className="mx-auto mt-16">
             <h2 className="text-center text-2xl md:text-3xl font-bold">八项核心竞争力</h2>
-
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6 relative mt-20 ml-20 mr-20">
-              <div className="hidden md:block absolute left-1/2 top-0 h-full w-px bg-gray-200" aria-hidden />
-
-              {/* 左列 */}
-              <div className="space-y-6">
-                {/* 1 */}
-                <div className="pb-4 border-b border-gray-200">
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-center">
-                      <img src="/img/lead-program/11.svg" alt="学术成长计划" className="w-8 h-8" />
-                      <span className="pl-2 font-semibold">学术成长计划</span>
-                    </div>
-                    <span className="text-primary text-xl leading-none select-none">－</span>
-                  </div>
-                  <ul className="mt-2 text-gray-600 list-disc pl-6 space-y-1">
-                    <li>根据学生特点制定发展计划，学术标靶打通及发展逻辑梳理。</li>
-                    <li>英语学习节点和方法，其他学科国际接轨的学习节奏和方法。</li>
-                    <li>国内外教育体系的比较与选择。</li>
-                    <li>美国私立/公立体系的分析和选择。</li>
-                  </ul>
-                </div>
-
-                {/* 2 */}
-                <div className="pb-4 border-b border-gray-200">
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-center">
-                      <img src="/img/lead-program/33.svg" alt="Sports Growth Plan" className="w-8 h-8" />
-                      <span className="pl-2 font-semibold">Sports Growth Plan</span>
-                    </div>
-                    <span className="text-primary text-xl leading-none select-none">＋</span>
-                  </div>
-                </div>
-
-                {/* 3 */}
-                <div className="pb-4 border-b border-gray-200">
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-center">
-                      <img src="/img/lead-program/55.svg" alt="领导力成长计划" className="w-8 h-8" />
-                      <span className="pl-2 font-semibold">领导力成长计划</span>
-                    </div>
-                    <span className="text-primary text-xl leading-none select-none">＋</span>
-                  </div>
-                </div>
-
-                {/* 4 */}
-                <div className="pb-4 border-b border-gray-200">
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-center">
-                      <img src="/img/lead-program/77.svg" alt="海外成长计划" className="w-8 h-8" />
-                      <span className="pl-2 font-semibold">海外成长计划</span>
-                    </div>
-                    <span className="text-primary text-xl leading-none select-none">＋</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* 右列 */}
-              <div className="space-y-6">
-                {/* 1 */}
-                <div className="pb-4 border-b border-gray-200">
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-center">
-                      <img src="/img/lead-program/22.svg" alt="艺术成长计划" className="w-8 h-8" />
-                      <span className="pl-2 font-semibold">艺术成长计划</span>
-                    </div>
-                    <span className="text-primary text-xl leading-none select-none">－</span>
-                  </div>
-                  <ul className="mt-2 text-gray-600 list-disc pl-6 space-y-1">
-                    <li>启发孩子对艺术发展的认知，优势与劣势分析。</li>
-                    <li>国际化视角与审美力的建立与增长。</li>
-                    <li>艺术/设计类院校的学习节点、方法与资源。</li>
-                    <li>个性化艺术的国际化发展路径。</li>
-                  </ul>
-                </div>
-
-                {/* 2 */}
-                <div className="pb-4 border-b border-gray-200">
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-center">
-                      <img src="/img/lead-program/44.svg" alt="家长教育成长计划" className="w-8 h-8" />
-                      <span className="pl-2 font-semibold">家长教育成长计划</span>
-                    </div>
-                    <span className="text-primary text-xl leading-none select-none">＋</span>
-                  </div>
-                </div>
-
-                {/* 3 */}
-                <div className="pb-4 border-b border-gray-200">
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-center">
-                      <img src="/img/lead-program/66.svg" alt="节假日成长计划" className="w-8 h-8" />
-                      <span className="pl-2 font-semibold">节假日成长计划</span>
-                    </div>
-                    <span className="text-primary text-xl leading-none select-none">＋</span>
-                  </div>
-                </div>
-
-                {/* 4 */}
-                <div className="pb-4 border-b border-gray-200">
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-center">
-                      <img src="/img/lead-program/88.svg" alt="公益活动成长计划" className="w-8 h-8" />
-                      <span className="pl-2 font-semibold">公益活动成长计划</span>
-                    </div>
-                    <span className="text-primary text-xl leading-none select-none">＋</span>
-                  </div>
-                </div>
+            <div className="max-w-6xl mx-8 md:mx-12 lg:mx-auto py-4 px-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mb-8">
+                {services.map((service, index) => (
+                  <ServiceItem
+                    key={index}
+                    title={service.title}
+                    icon={service.icon}
+                    isOpen={service.isOpen}
+                    isRed={service.isRed}
+                    description={service.description}
+                  />
+                ))}
               </div>
             </div>
           </section>
+
 
           {/* ===== 能力训练 ===== */}
           <section id="section-abilities" className="mx-auto mt-16 py-6 px-4 text-center">
