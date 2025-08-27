@@ -198,7 +198,7 @@ async function TeamSection() {
     {
       title: '资深顾问',
       content: (
-        <div>
+        <div className="flex justify-center">
           <Image alt="" src="/img/zh/home/consultant.svg" height={800} width={800} />
         </div>
       ),
