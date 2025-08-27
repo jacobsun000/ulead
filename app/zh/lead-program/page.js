@@ -1,6 +1,4 @@
 import PageBackground from "@/ui/zh/PageBackground";
-import Footer from "@/ui/zh/Footer";
-import SectionHeader from "@/ui/zh/SectionHeader";
 import Image from 'next/image'
 
 const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {
@@ -79,36 +77,46 @@ export default function LeadProgramPage() {
     },
   ];
   return (
-    <PageBackground page="lead-program">
+    <div>
       {/* ===== Hero ===== */}
-      <div className="w-full px-0 pt-[96px] lg:pt-[128px]">
-        <header className="text-center text-white">
+      <div className="w-full">
+        <header className="text-center text-white pt-24 pb-8 bg-ulead-gradient">
           <h1 className="text-4xl lg:text-6xl font-bold leading-tight">合领领航计划</h1>
 
-          <div className="mt-8 flex items-center justify-center gap-4">
-            <button
-              type="button"
-              className="rounded-full px-5 py-2 text-sm sm:text-base bg-white/90 text-primary shadow hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-            >
-              美国大学领航计划
-            </button>
-            <button
-              type="button"
-              className="rounded-full px-5 py-2 text-sm sm:text-base bg-white/20 text-white ring-1 ring-white/50 hover:bg-white/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-            >
-              美国高中领航计划
-            </button>
+          <div className="mt-8 flex items-center justify-center gap-6">
+            {/* Left button - gradient background */}
+            <div className="bg-white rounded-full px-6 py-2 opacity-60 hover:opacity-90 transition">
+              <a
+                href="#"
+                className="text-sm sm:text-base
+               text-transparent bg-clip-text bg-ulead-gradient"
+              >
+                美国大学领航计划
+              </a>
+            </div>
+
+            {/* Right button - white background, gradient text */}
+            <div className="bg-white rounded-full px-6 py-2 opacity-90 hover:opacity-100 transition">
+              <a
+                href="#"
+                className="text-sm sm:text-base
+               text-transparent bg-clip-text bg-ulead-gradient"
+              >
+                美国高中领航计划
+              </a>
+            </div>
           </div>
 
+
           <div className="mt-8 flex justify-center">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" className="opacity-90">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" className="opacity-90">
               <path d="M6 9l6 6 6-6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
         </header>
 
         {/* ===== 主体容器 ===== */}
-        <main className="w-full mt-10 bg-white p-6 sm:p-10 shadow-xl ring-1 ring-black/5">
+        <main className="w-full mt-10 p-6 sm:p-10 shadow-xl ring-1 ring-black/5">
 
           {/* ===== 美国高中领航计划 ===== */}
           <section id="section-highschool-plan">
@@ -227,8 +235,6 @@ export default function LeadProgramPage() {
         </main>
       </div>
 
-      {/* ===== Footer ===== */}
-      <Footer />
-    </PageBackground>
+    </div>
   );
 }
