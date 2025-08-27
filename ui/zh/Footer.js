@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import BackToTopButton from './Back';
 
 function getLink(title, href) {
   if (href !== undefined) {
@@ -23,6 +24,7 @@ const FooterItem = ({ title, href, sections }) => (
 export default function Footer() {
   return (
     <footer className="bg-ulead-gradient text-white py-10 px-8 md:px-[8vw]">
+      <BackToTopButton />
       <div className="flex flex-wrap justify-between mb-8">
         <div className="flex flex-col items-center">
           <div

@@ -8,7 +8,6 @@ import OfferReport from "@/ui/zh/OfferReport";
 import { AlumniCard } from '@/ui/zh/AlumniCard'
 import Panel from "@/ui/zh/Panel";
 import Panes from '@/ui/zh/Panes'
-import BackToTopButton from "@/ui/zh/Back";
 import IASBadge from "@/ui/en/IASBadge";
 
 export default function ChineseHomePage() {
@@ -22,7 +21,6 @@ export default function ChineseHomePage() {
       <LeadProgramSection />
       <ResearchSection />
       <QualificationsSection />
-      <BackToTopButton />
     </main>
   );
 }
