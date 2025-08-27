@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react';
-import { ProgramCard } from '@/ui/zh/ProgramCard';
 import Image from 'next/image';
 
 const CATEGORIES = ['全部', 'AI', 'CS', '机器人', '新闻学', '电影', '艺术', '商科']
