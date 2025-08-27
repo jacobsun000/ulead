@@ -1,4 +1,3 @@
-import PageBackground from "@/ui/zh/PageBackground";
 import Image from 'next/image'
 
 const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {
@@ -87,7 +86,7 @@ export default function LeadProgramPage() {
             {/* Left button - gradient background */}
             <div className="bg-white rounded-full px-6 py-2 opacity-60 hover:opacity-90 transition">
               <a
-                href="#"
+                href="/zh/lead-program/university"
                 className="text-sm sm:text-base
                text-transparent bg-clip-text bg-ulead-gradient"
               >
@@ -98,7 +97,7 @@ export default function LeadProgramPage() {
             {/* Right button - white background, gradient text */}
             <div className="bg-white rounded-full px-6 py-2 opacity-90 hover:opacity-100 transition">
               <a
-                href="#"
+                href="/zh/lead-program/highschool"
                 className="text-sm sm:text-base
                text-transparent bg-clip-text bg-ulead-gradient"
               >
