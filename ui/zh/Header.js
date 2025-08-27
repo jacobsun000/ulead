@@ -49,7 +49,7 @@ export default function Header() {
       {/* Desktop Nav Items */}
       <nav className="hidden lg:flex w-full h-full justify-between items-center ml-16 space-x-6">
         {navItems.map(({ label, href }) => (
-          <NavItem key={label} label={label} href={href} setIsMobileMenuOpen={setIsMobileMenuOpen} selected={pathname === href} />
+          <NavItem key={label} label={label} href={href} setIsMobileMenuOpen={setIsMobileMenuOpen} selected={href === "/zh" ? pathname === href : pathname.startsWith(href)} />
         ))}
         <a href="/zh/contacts" className="bg-white text-lg ml-4 px-6 py-2 rounded-full hover:bg-gray-100 transition duration-300 font-medium">
           <span className="bg-ulead-gradient bg-clip-text text-transparent font-semibold">
