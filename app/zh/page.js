@@ -38,7 +38,7 @@ function HeroSection() {
       <DecorativeShapes />
 
       {/* Content container */}
-      <div className="px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-end justify-between gap-8 lg:gap-6 min-h-[480px]">
           {/* Copy block */}
           <div className="w-full h-full min-h-[480px] lg:w-7/12 flex items-center">
