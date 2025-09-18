@@ -25,14 +25,14 @@ const ContactItem = ({ src, alt, text }) => (
 const SuccessModal = ({ message }) => (
   <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
     <div className="bg-white p-6 rounded-lg shadow-lg w-4/5 md:w-1/3">
-      <h2 className="text-xl font-bold mb-4 text-center">Success</h2>
+      <h2 className="text-xl font-bold mb-4 text-center">提交成功</h2>
       <p className="text-center mb-6">{message}</p>
       <div className="flex justify-center">
         <button
           onClick={() => (window.location.href = '/zh')}
-          className="px-6 py-2 bg-primary text-white font-semibold rounded hover:bg-primaryLight transition duration-300"
+          className="px-6 py-2 bg-ulead-gradient text-white font-semibold rounded hover:bg-primaryLight transition duration-300"
         >
-          Close
+          返回首页
         </button>
       </div>
     </div>
@@ -63,14 +63,14 @@ export default function Contacts() {
       });
 
       if (response.ok) {
-        setSuccessMessage('Your contact information has been submitted successfully!');
+        setSuccessMessage('我们已收到您的信息，会尽快与您联系！');
         setShowSuccess(true);
       } else {
-        setSuccessMessage('There was an error submitting your contact information. Please try again later.');
+        setSuccessMessage('提交信息时出错，请稍后再试。');
         setShowSuccess(true);
       }
     } catch (error) {
-      setSuccessMessage('There was an error submitting your contact information. Please try again later.');
+      setSuccessMessage('提交信息时出错，请稍后再试。');
       setShowSuccess(true);
     }
   };
