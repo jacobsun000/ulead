@@ -210,7 +210,7 @@ async function TeamSection() {
       <div className="absolute -left-5 w-16 h-16 md:w-36 md:h-36 bg-ulead-gradient rounded-full z-0" />
       <div className="absolute -bottom-10 -right-10 w-20 h-20 md:w-40 md:h-40 bg-gradient-to-br from-[#6E4AC8] to-[#0796E5] rounded-full z-0" />
       <h1 className="relative text-center text-3xl font-bold pb-10 z-10">我们的团队</h1>
-      <div className="relative text-center text-xl pb-10 z-10">合领教育与其他教育公司不同之处在于，它同样重视学生的成长与申请结果。ULead 致力于通过提供心理支持、学术辅导和整体规划，引导学生走向终身成功。</div>
+      <div className="relative text-center text-xl pb-10 z-10">合领教育与其他教育公司不同之处在于，我们同样重视学生的成长与申请结果。ULead 致力于通过提供心理支持、学术辅导和整体规划，引导学生走向终身成功。</div>
       <Panes panes={panes} />
     </div>
   )
