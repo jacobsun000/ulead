@@ -9,6 +9,7 @@ const navItems = [
   { label: '美国高中', href: '/zh/highschool' },
   { label: '领航计划', href: '/zh/lead-program' },
   { label: '夏校', href: '/zh/summer-school' },
+  { label: '资讯', href: '/zh/news' },
 ];
 
 function NavItem({ label, href, selected, setIsMobileMenuOpen, isMobile = false }) {
