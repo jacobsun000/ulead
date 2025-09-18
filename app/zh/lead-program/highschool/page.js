@@ -87,7 +87,7 @@ export default function LeadProgramPage() {
         <main className="w-full mt-10 p-6 sm:p-10 shadow-xl ring-1 ring-black/5">
 
           {/* ===== 美国高中领航计划 ===== */}
-          <section id="section-highschool-plan">
+          <section id="highschool">
             <div className="text-center">
               <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">美国高中领航计划</h2>
               <p className="mt-4 text-gray-600">

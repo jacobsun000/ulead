@@ -70,12 +70,12 @@ export default function Footer() {
             href="/zh"
             sections={[
               { title: "关于我们", href: "#about" },
-              { title: "录取报告", href: "#about" },
-              { title: "我们的团队", href: "#about" },
-              { title: "合领校友会", href: "#about" },
-              { title: "领航计划", href: "#about" },
-              { title: "科研夏校项目", href: "#about" },
-              { title: "资质证明", href: "#about" },
+              { title: "录取报告", href: "#matriculation" },
+              { title: "我们的团队", href: "#team" },
+              { title: "合领校友会", href: "#alumni" },
+              { title: "领航计划", href: "#lead-program" },
+              { title: "科研夏校项目", href: "#summer-school" },
+              { title: "资质证明", href: "#qualifications" },
             ]}
           />
         </div>
@@ -93,8 +93,8 @@ export default function Footer() {
             title="领航计划"
             href="/zh/lead-program"
             sections={[
-              { title: "高中领航计划", href: "#highschool" },
-              { title: "大学领航计划", href: "#university" },
+              { title: "高中领航计划", href: "/highschool#highschool" },
+              { title: "大学领航计划", href: "/university#university" },
             ]} />
         </div>
 
@@ -112,8 +112,8 @@ export default function Footer() {
             title="夏校项目"
             href="/zh/summer-school"
             sections={[
-              { title: "高中夏校项目", href: "#highschool" },
-              { title: "大学夏校项目", href: "#university" },
+              { title: "高中夏校项目", href: "/highschool#highschool" },
+              { title: "大学夏校项目", href: "/university#university" },
             ]} />
         </div>
 

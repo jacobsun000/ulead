@@ -86,7 +86,7 @@ function HeroSection() {
 
 function AboutSection() {
   return (
-    <section className="w-full px-4 md:py-12 py-6 flex items-center bg-white flex-col">
+    <section id="about" className="w-full px-4 md:py-12 py-6 flex items-center bg-white flex-col">
       <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-8 mt-4 md:mb-16 md:mt-8">
         合领教育
       </h1>
@@ -156,7 +156,7 @@ async function MatriculationSection() {
 
   ]
   return (
-    <section className="px-8 pb-16 md:px-[8vw] flex flex-col items-center bg-ulead-gradient">
+    <section id="matriculation" className="px-8 pb-16 md:px-[8vw] flex flex-col items-center bg-ulead-gradient">
       <h1 className="text-xl md:text-3xl font-bold text-white py-8">录取报告</h1>
       <Panel elements={panels} />
     </section>
@@ -220,7 +220,7 @@ async function AlumniShowcaseSection() {
   const { rows: alumnies } = await sql`SELECT * FROM alumni_zh`;
 
   return (
-    <section className="w-full py-16 mt-16 overflow-hidden">
+    <section id="alumni" className="w-full py-16 mt-16 overflow-hidden">
       <div className="flex flex-row w-full justify-center items-center">
         {/* Vertical Title */}
         <div className="text-3xl md:text-[5rem] text-center md:w-1/4 w-1/6 md:ml-8 font-extrabold leading-tight text-transparent bg-clip-text bg-ulead-gradient">
@@ -410,7 +410,7 @@ function LeadProgramSection() {
   ];
 
   return (
-    <section className="px-8 md:py-16 pb-8 md:px-[8vw]">
+    <section id="lead-program" className="px-8 md:py-16 pb-8 md:px-[8vw]">
       <h1 className="text-center text-3xl font-bold pb-10">领航计划</h1>
       <Panel elements={elements} variant="black" />
     </section>
@@ -436,7 +436,7 @@ function ResearchSection() {
     },
   ];
   return (
-    <section className="relative overflow-hidden py-20 px-6 md:px-[8vw]">
+    <section id="summer-school" className="relative overflow-hidden py-20 px-6 md:px-[8vw]">
       {/* Decorative Eclipse Background */}
       <Image
         src="/img/zh/home/research.svg"
@@ -499,7 +499,7 @@ function QualificationsSection() {
     "/img/home/qualification4.png",
   ]
   return (
-    <section className="mx-16 md:mx-[8vw] pb-16 flex flex-col items-center">
+    <section id="qualifications" className="mx-16 md:mx-[8vw] pb-16 flex flex-col items-center">
       <h1 className="font-bold text-3xl text-center mb-8">资质证明</h1>
       <div className="flex items-center  gap-x-2 md:gap-x-20">
         {qualifications.map((qualification, index) => (
