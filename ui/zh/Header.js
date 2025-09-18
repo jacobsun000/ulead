@@ -82,7 +82,7 @@ export default function Header() {
       {isMobileMenuOpen && (
         <nav className={`
           absolute top-14 left-0 w-full 
-          ${transparent ? 'bg-black/80 backdrop-blur-sm' : 'bg-secondary'} 
+          bg-ulead-gradient
           flex flex-col items-start p-4 space-y-4 lg:hidden z-50
         `}>
           {navItems.map(({ label, href }) => (
