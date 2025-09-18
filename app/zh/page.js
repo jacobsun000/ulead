@@ -31,33 +31,33 @@ function HeroSection() {
       className={clsx(
         "relative isolate w-full overflow-hidden",
         "bg-ulead-gradient text-white",
-        "px-4 lg:px-16 xl:px-20 min-h-[420px]",
+        "px-4 lg:px-16 xl:px-20 min-h-[180px] md:min-h-[420px]",
       )}
     >
       {/* Decorative bubbles */}
       <DecorativeShapes />
 
       {/* Content container */}
-      <div className="relative z-10 px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-end justify-between gap-8 lg:gap-6 min-h-[480px]">
+      <div className="relative z-10 px-2 sm:px-4 lg:px-8">
+        <div className="flex flex-row items-end justify-between lg:gap-6 min-h-[180px] md:min-h-[480px]">
           {/* Copy block */}
-          <div className="w-full h-full min-h-[480px] lg:w-7/12 flex items-center">
-            <div className="text-center lg:text-left">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight">
+          <div className="h-full min-h-[180px] md:min-h-[480px] w-7/12 flex items-center">
+            <div className="text-left">
+              <h1 className="text-xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight">
                 高端申请规划服务
               </h1>
-              <p className="mt-4 text-base sm:text-lg md:text-2xl/relaxed text-white/90 font-bold">
+              <p className="mt-4 text-xs sm:text-lg md:text-2xl/relaxed text-white/90 font-bold">
                 家庭的教育管家，孩子的成长导师
               </p>
 
-              <div className="mt-6 flex justify-center lg:justify-start">
+              <div className="mt-4 md:mt-6 flex justify-start">
                 <a
-                  href="/zh/contact"
-                  className="px-8 py-2 md:py-3 rounded-full shadow-lg
+                  href="/zh/contacts"
+                  className="px-4 md:px-8 py-1 md:py-3 rounded-full shadow-lg
                  bg-white hover:bg-white/90 transition-colors border-2 border-transparent
                  active:scale-95"
                 >
-                  <span className="bg-ulead-gradient bg-clip-text text-transparent text-xl font-semibold">
+                  <span className="bg-ulead-gradient bg-clip-text text-transparent text-sm md:text-xl font-semibold">
                     现在沟通
                   </span>
                 </a>
@@ -66,7 +66,7 @@ function HeroSection() {
           </div>
 
           {/* Photo block */}
-          <div className="w-full lg:w-5/12 flex justify-center lg:justify-end self-end">
+          <div className="w-5/12 flex justify-end self-end">
             <div className="relative h-full max-w-[100rem]">
               <Image
                 src="/img/zh/home/woman.png"
@@ -86,8 +86,8 @@ function HeroSection() {
 
 function AboutSection() {
   return (
-    <section className="w-full px-4 py-12 flex items-center bg-white flex-col">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-16 mt-8">
+    <section className="w-full px-4 md:py-12 py-6 flex items-center bg-white flex-col">
+      <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-8 mt-4 md:mb-16 md:mt-8">
         合领教育
       </h1>
       <div className="relative w-full flex flex-col lg:flex-row items-center justify-center lg:items-start">
@@ -143,11 +143,11 @@ async function MatriculationSection() {
   const panels = [
     {
       title: "美国大学录取",
-      content: <OfferReport schools={university} href="/university" />,
+      content: <OfferReport schools={university} href="/zh/university" />,
     },
     {
       title: "美国高中录取",
-      content: <OfferReport schools={highSchool} href="/highschool" />,
+      content: <OfferReport schools={highSchool} href="/zh/highschool" />,
     },
     {
       title: "其他",
@@ -157,7 +157,7 @@ async function MatriculationSection() {
   ]
   return (
     <section className="px-8 pb-16 md:px-[8vw] flex flex-col items-center bg-ulead-gradient">
-      <h1 className="text-3xl font-bold text-white py-8">录取报告</h1>
+      <h1 className="text-xl md:text-3xl font-bold text-white py-8">录取报告</h1>
       <Panel elements={panels} />
     </section>
   );
@@ -166,7 +166,7 @@ async function MatriculationSection() {
 function TeamMemberCard({ name_zh, image_url, title_zh, description_zh }) {
   return (
     <div className="text-center max-w-xs mx-auto">
-      <div className="w-28 h-28 mx-auto rounded-full overflow-hidden">
+      <div className="w-20 h-20 md:w-28 md:h-28 mx-auto rounded-full overflow-hidden">
         <Image
           src={image_url}
           alt={name_zh}
@@ -175,9 +175,9 @@ function TeamMemberCard({ name_zh, image_url, title_zh, description_zh }) {
           className="object-cover w-full h-full"
         />
       </div>
-      <p className="mt-4 text-lg">{name_zh}</p>
-      <p className="text-sm text-gray-600">{title_zh}</p>
-      <div className="mt-2 text-xs text-gray-700 leading-relaxed">
+      <p className="mt-4 md:text-lg">{name_zh}</p>
+      <p className="text-xs md:text-sm text-gray-600">{title_zh}</p>
+      <div className="mt-2 text-[0.5rem] md:text-xs text-gray-700 leading-relaxed">
         {(description_zh || []).join("\n")}
       </div>
     </div>
@@ -190,7 +190,7 @@ async function TeamSection() {
     {
       title: '核心团队',
       content: (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 md:gap-8">
           {members.map((member) => (<TeamMemberCard key={member.id} {...member} />))}
         </div>
       ),
@@ -206,11 +206,11 @@ async function TeamSection() {
   ]
 
   return (
-    <div className="px-8 py-16 md:px-[8vw] relative overflow-hidden">
-      <div className="absolute -left-5 w-36 h-36 bg-ulead-gradient rounded-full z-0" />
-      <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-gradient-to-br from-[#6E4AC8] to-[#0796E5] rounded-full z-0" />
-      <h1 className="text-center text-3xl font-bold pb-10">我们的团队</h1>
-      <div className="text-center text-xl pb-10">合领教育与其他教育公司不同之处在于，它同样重视学生的成长与申请结果。ULead 致力于通过提供心理支持、学术辅导和整体规划，引导学生走向终身成功。</div>
+    <div id="team" className="px-8 py-16 md:px-[8vw] relative overflow-hidden">
+      <div className="absolute -left-5 w-16 h-16 md:w-36 md:h-36 bg-ulead-gradient rounded-full z-0" />
+      <div className="absolute -bottom-10 -right-10 w-20 h-20 md:w-40 md:h-40 bg-gradient-to-br from-[#6E4AC8] to-[#0796E5] rounded-full z-0" />
+      <h1 className="relative text-center text-3xl font-bold pb-10 z-10">我们的团队</h1>
+      <div className="relative text-center text-xl pb-10 z-10">合领教育与其他教育公司不同之处在于，它同样重视学生的成长与申请结果。ULead 致力于通过提供心理支持、学术辅导和整体规划，引导学生走向终身成功。</div>
       <Panes panes={panes} />
     </div>
   )
@@ -220,10 +220,10 @@ async function AlumniShowcaseSection() {
   const { rows: alumnies } = await sql`SELECT * FROM alumni_zh`;
 
   return (
-    <section className="w-full py-16 mt-16">
+    <section className="w-full py-16 mt-16 overflow-hidden">
       <div className="flex flex-row w-full justify-center items-center">
         {/* Vertical Title */}
-        <div className="text-[5rem] text-center w-1/4 ml-8 font-extrabold leading-tight text-transparent bg-clip-text bg-ulead-gradient">
+        <div className="text-3xl md:text-[5rem] text-center md:w-1/4 w-1/6 md:ml-8 font-extrabold leading-tight text-transparent bg-clip-text bg-ulead-gradient">
           <div>合</div>
           <div>领</div>
           <div>校</div>
@@ -232,7 +232,7 @@ async function AlumniShowcaseSection() {
         </div>
 
         {/* Cards container */}
-        <div className="w-3/4 flex items-center gap-[-60px] lg:gap-[-100px] overflow-visible px-4 relative z-10">
+        <div className="md:w-3/4 w-5/6 flex items-center gap-[-60px] lg:gap-[-100px] overflow-visible md:px-4 relative z-10">
           {alumnies.map((alumnus, idx) => (
             <div
               key={idx}
@@ -247,9 +247,9 @@ async function AlumniShowcaseSection() {
 
       {/* CTA Button */}
       <div className="mt-12 flex justify-center">
-        <button className="bg-ulead-gradient text-white font-semibold px-6 py-3 rounded-full flex items-center gap-2 shadow-md hover:scale-105 transition">
+        <a className="bg-ulead-gradient text-white font-semibold px-6 py-3 rounded-full flex items-center gap-2 shadow-md hover:scale-105 transition" href="/zh/university">
           查看更多 <ArrowRight className="w-5 h-5" />
-        </button>
+        </a>
       </div>
     </section>
   )
@@ -376,7 +376,7 @@ function LeadProgramSection() {
             return (
               <div
                 key={idx}
-                className={`flex items-center justify-between px-6 py-4 rounded-full bg-ulead-gradient text-white ${isLeftCol ? "flex-row" : "flex-row-reverse"
+                className={`flex items-center justify-between px-6 py-4 rounded-full bg-ulead-gradient text-white ${isLeftCol ? "flex-row" : "md:flex-row-reverse"
                   }`}
               >
                 {/* Icon */}
@@ -390,7 +390,7 @@ function LeadProgramSection() {
                 </div>
 
                 {/* Text */}
-                <div className={`mx-4 w-full text-left ${isLeftCol ? "" : "text-right"}`}>
+                <div className={`mx-4 w-full text-left ${isLeftCol ? "" : "md:text-right"}`}>
                   <h3 className="font-semibold text-sm md:text-base">
                     {item.title}
                   </h3>
@@ -410,7 +410,7 @@ function LeadProgramSection() {
   ];
 
   return (
-    <section className="px-8 py-16 md:px-[8vw]">
+    <section className="px-8 md:py-16 pb-8 md:px-[8vw]">
       <h1 className="text-center text-3xl font-bold pb-10">领航计划</h1>
       <Panel elements={elements} variant="black" />
     </section>
@@ -482,9 +482,9 @@ function ResearchSection() {
               </div>
             ))}
 
-            <button className="mt-4 w-full bg-gradient-to-r from-[#6E4AC8] to-[#0796E5] text-white text-sm font-semibold py-2.5 rounded-full hover:opacity-90 transition">
+            <a className="mt-4 text-center cursor-poointer w-full bg-gradient-to-r from-[#6E4AC8] to-[#0796E5] text-white text-sm font-semibold py-2.5 rounded-full hover:opacity-90 transition" href="/zh/summer-school">
               了解更多
-            </button>
+            </a>
           </div>
         </div>
       </div>

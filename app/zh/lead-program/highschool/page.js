@@ -5,13 +5,13 @@ import clsx from 'clsx';
 const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {
   return (
     <div className="border-b py-4" open={isOpen}>
-      <div className="flex items-center cursor-pointer list-none">
+      <div className="flex items-center cursor-none list-none">
         <div className="w-8 h-8">
           <Image src={icon} alt={title} width={40} height={40} />
         </div>
-        <span className="pl-2 font-semibold text-left">{title}</span>
+        <span className="pl-2 font-semibold text-left text-sm md:text-base">{title}</span>
       </div>
-      <ul className="mt-2 text-gray-600">
+      <ul className="mt-2 text-gray-600 md:text-base text-xs">
         {description && description.map((item, index) => (<li key={index}>{item}</li>))}
       </ul>
     </div>
@@ -35,7 +35,7 @@ export default function LeadProgramPage() {
         "个性化艺术生和艺术性生的国际化发展路径。"]
     },
     {
-      title: "Sports Growth Plan", icon: "/img/lead-program/33.svg", isOpen: false, isRed: false,
+      title: "运动成长计划", icon: "/img/lead-program/33.svg", isOpen: false, isRed: false,
       description: ["挖掘重点特科，并制定发展计划，学术标签打造及发展逻辑梳理。",
         "英语学习节点和方法，其他学科的国际化接轨的学习节点和方法。",
         "国内双语私立体系、国际教育体系、公立体系的分析和选择。",
@@ -98,7 +98,7 @@ export default function LeadProgramPage() {
 
             {/* 卡片 */}
             <div className="mx-auto mt-10 max-w-6xl">
-              <div className="grid gap-6 sm:grid-cols-2">
+              <div className="grid gap-6 grid-cols-2">
                 <img src="/img/lead-program/a.svg" alt="规划整体解决方案" className="w-90 h-auto mx-auto" />
                 <img src="/img/lead-program/b.svg" alt="暑假机会拓展" className="w-90 h-auto mx-auto" />
                 <img src="/img/lead-program/c.svg" alt="英文/文件读计划" className="w-90 h-auto mx-auto" />
@@ -126,8 +126,8 @@ export default function LeadProgramPage() {
           {/* ===== 八项核心竞争力 ===== */}
           <section id="section-core" className="mx-auto mt-16">
             <h2 className="text-center text-2xl md:text-3xl font-bold">八项核心竞争力</h2>
-            <div className="max-w-6xl mx-8 md:mx-12 lg:mx-auto py-4 px-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mb-8">
+            <div className="max-w-6xl mx-2 md:mx-12 lg:mx-auto md:py-4 md:px-4">
+              <div className="grid grid-cols-2 gap-x-8 gap-y-4 mb-8">
                 {services.map((service, index) => (
                   <ServiceItem
                     key={index}
@@ -144,10 +144,10 @@ export default function LeadProgramPage() {
 
 
           {/* ===== 能力训练 ===== */}
-          <section id="section-abilities" className="mx-auto mt-16 py-6 px-4 text-center">
+          <section id="section-abilities" className="mx-auto mt-8 md:mt-16 md:py-6 px-4 text-center">
             <h2 className="text-2xl md:text-3xl font-bold my-4">能力训练</h2>
 
-            <div className="flex flex-wrap justify-center gap-3 mb-6 mt-16">
+            <div className="flex flex-wrap justify-center gap-3 mb-6 mt-4 md:mt-16">
               {[
                 "竞赛资源",
                 "压力写作",
@@ -162,7 +162,7 @@ export default function LeadProgramPage() {
               ].map((tag, idx) => (
                 <span
                   key={idx}
-                  className="px-4 py-1.5 rounded-full text-sm font-medium text-gray-700 border-2 border-transparent"
+                  className="md:px-4 px-2 md:py-1.5 py-1 rounded-full text-xs md:text-sm font-medium text-gray-700 border-2 border-transparent"
                   style={{ borderImage: "linear-gradient(90deg, #6A5AE0, #1F8CEC) 1" }}
                 >
                   {tag}
@@ -192,7 +192,7 @@ export default function LeadProgramPage() {
               ].map((tag, idx) => (
                 <span
                   key={idx}
-                  className="px-4 py-1.5 rounded-full text-sm font-medium text-gray-700 border-2 border-transparent"
+                  className="md:px-4 px-2 md:py-1.5 py-1 rounded-full text-xs md:text-sm font-medium text-gray-700 border-2 border-transparent"
                   style={{ borderImage: "linear-gradient(90deg, #6A5AE0, #1F8CEC) 1" }}
                 >
                   {tag}
@@ -213,19 +213,17 @@ function HeroSection() {
       className={clsx(
         "relative isolate w-full overflow-hidden flex justify-center items-center",
         "bg-ulead-gradient text-white",
-        "px-4 lg:px-16 xl:px-20 min-h-[420px]"
+        "px-4 lg:px-16 xl:px-20 min-h-[280px] md:min-h-[420px]",
       )}
     >
-      {/* Put shapes in a lower layer */}
       <DecorativeShapes className="z-0" />
 
-      {/* Lift content above shapes */}
       <div className="relative z-10 px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl w-full text-center lg:text-6xl font-bold leading-tight">合领领航计划</h1>
+        <h1 className="text-2xl w-full text-center lg:text-6xl font-bold leading-tight">合领领航计划</h1>
 
-        <div className="mt-8 flex items-center justify-center gap-6">
+        <div className="mt-8 flex items-center justify-center gap-4 md:gap-6">
           {/* Left button - gradient background */}
-          <div className="bg-white rounded-full px-6 py-2 opacity-60 hover:opacity-90 transition">
+          <div className="bg-white rounded-full px-4 md:px-6 py-1 md:py-2 opacity-60 hover:opacity-90 transition">
             <a
               href="/zh/lead-program/university"
               className="text-sm sm:text-base
@@ -236,7 +234,7 @@ function HeroSection() {
           </div>
 
           {/* Right button - white background, gradient text */}
-          <div className="bg-white rounded-full px-6 py-2 opacity-90 hover:opacity-100 transition">
+          <div className="bg-white rounded-full px-4 md:px-6 py-1 md:py-2 opacity-90 hover:opacity-100 transition">
             <a
               href="/zh/lead-program/highschool"
               className="text-sm sm:text-base

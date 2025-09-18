@@ -92,7 +92,7 @@ function HeroSection() {
       className={clsx(
         "relative isolate w-full overflow-hidden",
         "bg-ulead-gradient text-white",
-        "px-4 lg:px-16 xl:px-20 min-h-[420px]"
+        "px-4 lg:px-16 xl:px-20 min-h-[280px] md:min-h-[420px]"
       )}
     >
       {/* Put shapes in a lower layer */}
@@ -100,8 +100,8 @@ function HeroSection() {
 
       {/* Lift content above shapes */}
       <div className="relative z-10 px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-6 min-h-[480px]">
-          <div className="w-full h-full min-h-[480px] lg:w-7/12 flex items-center justify-center">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-6 min-h-[280px] md:min-h-[480px]">
+          <div className="w-full h-full min-h-[280px] md:min-h-[480px] lg:w-7/12 flex items-center justify-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight text-center">
               合领资讯
             </h1>

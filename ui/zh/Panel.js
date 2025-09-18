@@ -28,12 +28,12 @@ export default function Panel({ elements, autoplay = false, variant = "white" })
   };
 
   return (
-    <div className="relative w-full mt-4 flex flex-col items-center justify-center">
+    <div className="relative w-full md:mt-4 flex flex-col items-center justify-center">
       <div className="flex justify-center space-x-8 mb-8">
         {elements.map((element, index) => (
           <button
             key={index}
-            className={cn('text-lg font-semibold',
+            className={cn('text-base md:text-lg font-semibold',
               currentIndex === index ? `${variant === 'black' ? "text-black border-[#0796E5]" : "text-white"} border-b-4`
                 : `${variant === 'black' ? "text-black/40" : "text-white/40"}`,
             )}

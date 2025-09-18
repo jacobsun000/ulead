@@ -18,20 +18,20 @@ export function AlumniCard({
   const [tab, setTab] = useState('evaluation')
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg w-[400px] overflow-hidden border border-gray-200">
+    <div className="bg-white rounded-2xl shadow-lg w-[280px] md:w-[400px] overflow-hidden border border-gray-200">
       {/* Profile */}
-      <div className="flex flex-row mt-12">
+      <div className="flex flex-row mt-8 md:mt-12">
         <div className="w-3/5">
           <div className="w-full bg-ulead-gradient text-white text-lg font-bold p-4">
             {name}
           </div>
-          <div className="p-8 pb-0">
-            <div className="text-lg">{university}</div>
-            <div className="text-black/60 text-sm mt-4">
+          <div className="p-4 md:p-8 pb-0">
+            <div className="text-sm md:text-lg">{university}</div>
+            <div className="text-black/60 text-xs md:text-sm mt-2 md:mt-4">
               <div>美国高中：</div>
               <div>{highschool}</div>
               {labels?.map((row, idx) => (
-                <div className="mt-1" key={idx}>{row}</div>
+                <div className="md:mt-1 text-xs md:text-sm" key={idx}>{row}</div>
               ))}
             </div>
           </div>

@@ -48,84 +48,86 @@ export default function Footer() {
 
         <div>
           <FooterItem
-            title="Contact Us"
-            href="/contacts"
+            title="联系我们"
+            href="/zh/contacts"
             sections={[
-              { title: "Tel: +86-10-53350508", href: "" },
-              { title: "E-Mail: program@ulead-edu.com", href: "" },
+              { title: "电话: +86-10-53350508", href: "" },
+              { title: "邮件: program@ulead-edu.com", href: "" },
             ]} />
           <FooterItem
-            title="Our Address"
-            href="/contacts#our-offices"
+            title="我们的地址"
+            href="/zh/contacts#our-offices"
             sections={[
-              { title: "Location: Beijing, Chao Yang", href: "" },
-              { title: "New York, Guangzhou", href: "" },
+              { title: "北京，朝阳区", href: "" },
+              { title: "纽约，广州", href: "" },
             ]} />
         </div>
 
         <div className="hidden lg:block">
           <FooterItem
             className="hidden lg:block"
-            title="Home"
-            href="/"
+            title="首页"
+            href="/zh"
             sections={[
-              { title: "Our Mission" },
-              { title: "Our Services" },
-              { title: "Matriculation" },
-              { title: "Our Team" },
-              { title: "Success Stories" },
-              { title: "Ulead Alumni" },
-              { title: "Qualifications" },
+              { title: "关于我们", href: "#about" },
+              { title: "录取报告", href: "#about" },
+              { title: "我们的团队", href: "#about" },
+              { title: "合领校友会", href: "#about" },
+              { title: "领航计划", href: "#about" },
+              { title: "科研夏校项目", href: "#about" },
+              { title: "资质证明", href: "#about" },
             ]}
           />
         </div>
 
         <div className="hidden lg:block">
           <FooterItem
-            title="About Us"
-            href="/about-us"
+            title="美国大学"
+            href="/zh/university"
             sections={[
-              { title: "Founder" },
-              { title: "Core Team" }
+              { title: "个性化申请服务", href: "#admission" },
+              { title: "录取榜单", href: "#matriculation" },
+              { title: "成功案例", href: "#success-stories" }
             ]} />
           <FooterItem
-            title="Lead Program"
-            href="/lead-program"
+            title="领航计划"
+            href="/zh/lead-program"
             sections={[
-              { title: "Skills Development" },
-              { title: "Lead Program Services" },
-              { title: "8 Core Competences" },
-              { title: "Abilities Training" },
-            ]} />
-        </div>
-
-        <div className="hidden lg:block">
-          <FooterItem
-            title="High School"
-            href="/highschool"
-            sections={[
-              { title: "Personalized Services" },
-              { title: "Application Service Process", href: "#high-school-application-service-process" },
-              { title: "Matriculation" },
-            ]} />
-
-          <FooterItem
-            title="University"
-            href="/university"
-            sections={[
-              { title: "Personalized Services" },
-              { title: "Matriculation" },
+              { title: "高中领航计划", href: "#highschool" },
+              { title: "大学领航计划", href: "#university" },
             ]} />
         </div>
 
         <div className="hidden lg:block">
           <FooterItem
-            title="Schools"
-            href="/schools"
+            title="美国高中"
+            href="/zh/highschool"
             sections={[
-              { title: "Our Target School" },
-              { title: "How Ulead works with schools?" },
-              { title: "Past Events and Admissions" },
+              { title: "个性化申请服务", href: "#admission" },
+              { title: "录取榜单", href: "#matriculation" },
+              { title: "成功案例", href: "#success-stories" }
+            ]} />
+
+          <FooterItem
+            title="夏校项目"
+            href="/zh/summer-school"
+            sections={[
+              { title: "高中夏校项目", href: "#highschool" },
+              { title: "大学夏校项目", href: "#university" },
+            ]} />
+        </div>
+
+        <div className="hidden lg:block">
+          <FooterItem
+            title="合领资讯"
+            href="/zh/news"
+            sections={[
+              { title: "最新资讯" },
+            ]} />
+          <FooterItem
+            title="英文网站"
+            href="/"
+            sections={[
             ]} />
         </div>
 

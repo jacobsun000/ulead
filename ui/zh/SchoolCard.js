@@ -2,11 +2,11 @@ import Image from "next/image"
 
 export function SchoolCards({ schools }) {
   return (
-    <div className="space-y-6 px-4">
+    <div className="space-y-6 md:px-4">
       {schools.map(school => (
         <div
           key={school.id}
-          className="bg-white rounded-2xl p-6 flex gap-4 items-start shadow-sm"
+          className="bg-white rounded-2xl p-4 md:p-6 flex gap-4 items-start shadow-sm"
         >
           <Image
             src={school.image}
@@ -21,7 +21,7 @@ export function SchoolCards({ schools }) {
               {school.tags.map(tag => (
                 <span
                   key={tag}
-                  className="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-blue-600"
+                  className="text-[0.5rem] md:text-xs px-1 md:px-2 py-0.5 rounded-full bg-blue-100 text-blue-600"
                 >
                   {tag}
                 </span>

@@ -8,7 +8,7 @@ export default async function University() {
 
   return (
     <div className="min-w-full flex flex-col items-center mb-16">
-      <section className="relative isolate w-full overflow-hidden bg-ulead-gradient text-white px-4 lg:px-16 xl:px-20 min-h-[420px] flex items-center justify-center" >
+      <section className="relative isolate w-full overflow-hidden bg-ulead-gradient text-white px-4 lg:px-16 xl:px-20 min-h-[280px] md:min-h-[420px] flex items-center justify-center" >
         {/* Decorative bubbles */}
         <DecorativeShapes />
 

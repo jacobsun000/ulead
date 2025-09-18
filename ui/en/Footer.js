@@ -115,6 +115,11 @@ export default function Footer() {
               { title: "How Ulead works with schools?" },
               { title: "Past Events and Admissions" },
             ]} />
+          <FooterItem
+            title="Chinese Website"
+            href="/zh"
+            sections={[
+            ]} />
         </div>
 
 
