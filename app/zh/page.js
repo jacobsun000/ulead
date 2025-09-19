@@ -10,6 +10,7 @@ import { SwipeableCarousel } from '@/ui/zh/SwipeableCarousel'
 import Panel from "@/ui/zh/Panel";
 import Panes from '@/ui/zh/Panes'
 import IASBadge from "@/ui/en/IASBadge";
+import MentorCard from "@/ui/zh/MentorCard";
 
 export default function ChineseHomePage() {
   return (
@@ -187,11 +188,12 @@ function TeamMemberCard({ name_zh, image_url, title_zh, description_zh }) {
 
 async function TeamSection() {
   const { rows: members } = await sql`SELECT * FROM team_members ORDER BY order_index ASC;`;
+  const { rows: mentors } = await sql`SELECT * FROM mentor LIMIT 6`;
   const panes = [
     {
       title: '核心团队',
       content: (
-        <div className="grid grid-cols-2 lg:grid-cols-3 md:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 md:gap-8 gap-2">
           {members.map((member) => (<TeamMemberCard key={member.id} {...member} />))}
         </div>
       ),
@@ -199,8 +201,10 @@ async function TeamSection() {
     {
       title: '资深顾问',
       content: (
-        <div className="flex justify-center">
-          <Image alt="" src="/img/zh/home/consultant.svg" height={800} width={800} />
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8">
+          {mentors.map((mentor) => (
+            <MentorCard key={mentor.id} {...mentor} hide_description />
+          ))}
         </div>
       ),
     },
