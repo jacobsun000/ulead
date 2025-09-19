@@ -144,7 +144,7 @@ export default function LeadProgramPage() {
 
 
           {/* ===== 能力训练 ===== */}
-          <section id="section-abilities" className="mx-auto mt-8 md:mt-16 md:py-6 px-4 text-center">
+          <section id="section-abilities" className="mx-auto mt-8 px-4 text-center">
             <h2 className="text-2xl md:text-3xl font-bold my-4">能力训练</h2>
 
             <div className="flex flex-wrap justify-center gap-3 mb-6 mt-4 md:mt-16">
@@ -162,10 +162,11 @@ export default function LeadProgramPage() {
               ].map((tag, idx) => (
                 <span
                   key={idx}
-                  className="md:px-4 px-2 md:py-1.5 py-1 rounded-full text-xs md:text-sm font-medium text-gray-700 border-2 border-transparent"
-                  style={{ borderImage: "linear-gradient(90deg, #6A5AE0, #1F8CEC) 1" }}
+                  className="relative p-0.5 rounded-full text-xs md:text-sm font-medium text-gray-700 bg-gradient-to-r from-[#6A5AE0] to-[#1F8CEC]"
                 >
-                  {tag}
+                  <span className="bg-white rounded-full px-2 md:px-2 py-1 md:py-0.5 block">
+                    {tag}
+                  </span>
                 </span>
               ))}
             </div>
@@ -192,10 +193,11 @@ export default function LeadProgramPage() {
               ].map((tag, idx) => (
                 <span
                   key={idx}
-                  className="md:px-4 px-2 md:py-1.5 py-1 rounded-full text-xs md:text-sm font-medium text-gray-700 border-2 border-transparent"
-                  style={{ borderImage: "linear-gradient(90deg, #6A5AE0, #1F8CEC) 1" }}
+                  className="relative p-0.5 rounded-full text-xs md:text-sm font-medium text-gray-700 bg-gradient-to-r from-[#6A5AE0] to-[#1F8CEC]"
                 >
-                  {tag}
+                  <span className="bg-white rounded-full px-2 md:px-2 py-1 md:py-0.5 block">
+                    {tag}
+                  </span>
                 </span>
               ))}
             </div>
