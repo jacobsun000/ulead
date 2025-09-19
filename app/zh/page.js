@@ -6,6 +6,7 @@ import { ArrowRight } from 'lucide-react'
 import DecorativeShapes from "@/ui/zh/DecorativeShapes";
 import OfferReport from "@/ui/zh/OfferReport";
 import { AlumniCard } from '@/ui/zh/AlumniCard'
+import { SwipeableCarousel } from '@/ui/zh/SwipeableCarousel'
 import Panel from "@/ui/zh/Panel";
 import Panes from '@/ui/zh/Panes'
 import IASBadge from "@/ui/en/IASBadge";
@@ -220,28 +221,24 @@ async function AlumniShowcaseSection() {
   const { rows: alumnies } = await sql`SELECT * FROM alumni_zh`;
 
   return (
-    <section id="alumni" className="w-full py-16 mt-16 overflow-hidden">
-      <div className="flex flex-row w-full justify-center items-center">
+    <section id="alumni" className="w-full py-16 md:mt-16 overflow-hidden">
+      <div className="flex flex-col lg:flex-row w-full justify-center items-center">
         {/* Vertical Title */}
-        <div className="text-3xl md:text-[5rem] text-center md:w-1/4 w-1/6 md:ml-8 font-extrabold leading-tight text-transparent bg-clip-text bg-ulead-gradient">
-          <div>合</div>
-          <div>领</div>
-          <div>校</div>
-          <div>友</div>
-          <div>会</div>
+        <div className="text-3xl md:text-[5rem] text-center lg:w-1/4 w-full mb-8 lg:mb-0 lg:ml-8 font-extrabold leading-tight text-transparent bg-clip-text bg-ulead-gradient">
+          <div className="lg:block inline-block lg:mr-0 mr-2">合</div>
+          <div className="lg:block inline-block lg:mr-0 mr-2">领</div>
+          <div className="lg:block inline-block lg:mr-0 mr-2">校</div>
+          <div className="lg:block inline-block lg:mr-0 mr-2">友</div>
+          <div className="lg:block inline-block">会</div>
         </div>
 
-        {/* Cards container */}
-        <div className="md:w-3/4 w-5/6 flex items-center gap-[-60px] lg:gap-[-100px] overflow-visible md:px-4 relative z-10">
-          {alumnies.map((alumnus, idx) => (
-            <div
-              key={idx}
-              className="relative first:z-[4] [&:nth-child(2n)]:z-[3] [&:nth-child(3n)]:z-[2] [&:nth-child(4n)]:z-[1] transition-transform"
-              style={{ transform: `translateX(-${idx * 120}px) translateY(-${idx * 20}px)` }} // controls overlapping
-            >
-              <AlumniCard {...alumnus} />
-            </div>
-          ))}
+        {/* Swipeable Cards container */}
+        <div className="lg:w-3/4 w-full px-4">
+          <SwipeableCarousel>
+            {alumnies.map((alumnus, idx) => (
+              <AlumniCard key={idx} {...alumnus} />
+            ))}
+          </SwipeableCarousel>
         </div>
       </div>
     </section>
