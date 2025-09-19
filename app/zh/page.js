@@ -472,7 +472,7 @@ function ResearchSection() {
               </div>
             ))}
 
-            <a className="mt-4 text-center cursor-poointer w-full bg-gradient-to-r from-[#6E4AC8] to-[#0796E5] text-white text-sm font-semibold py-2.5 rounded-full hover:opacity-90 transition" href="/zh/summer-school">
+            <a className="mt-4 text-center cursor-poointer w-full bg-gradient-to-r from-[#6E4AC8] to-[#0796E5] text-white text-sm font-semibold py-2.5 rounded-full hover:opacity-90 transition" href="/zh/contacts">
               了解更多
             </a>
           </div>
