@@ -244,13 +244,6 @@ async function AlumniShowcaseSection() {
           ))}
         </div>
       </div>
-
-      {/* CTA Button */}
-      <div className="mt-12 flex justify-center">
-        <a className="bg-ulead-gradient text-white font-semibold px-6 py-3 rounded-full flex items-center gap-2 shadow-md hover:scale-105 transition" href="/zh/university">
-          查看更多 <ArrowRight className="w-5 h-5" />
-        </a>
-      </div>
     </section>
   )
 }
