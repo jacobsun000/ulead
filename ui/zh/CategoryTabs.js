@@ -3,22 +3,25 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
-const CATEGORIES = ['全部', 'AI', 'CS', '机器人', '新闻学', '电影', '艺术', '商科']
-
 export function CategoryTabs({ schools }) {
   const [category, setCategory] = useState('全部')
+
+  // Generate categories dynamically from school tags
+  const allTags = schools.flatMap(school => school.tags || [])
+  const uniqueTags = [...new Set(allTags)]
+  const categories = ['全部', ...uniqueTags]
 
   const filtered = category === '全部'
     ? schools
     : schools.filter(school =>
-      school.tags.some(tag => tag.includes(category))
+      school.tags && school.tags.some(tag => tag.includes(category))
     )
 
   return (
-    <div>
+    <div className="w-full max-w-5xl mx-auto">
       {/* Tab selector */}
       <div className="flex flex-wrap gap-3 p-4">
-        {CATEGORIES.map(cat => (
+        {categories.map(cat => (
           <button
             key={cat}
             onClick={() => setCategory(cat)}
@@ -36,13 +39,13 @@ export function CategoryTabs({ schools }) {
       {/* Result cards */}
       <div className="flex flex-col gap-8 px-4">
         {filtered.map(school => (
-          <div key={school.id} className="bg-white p-12 rounded-xl shadow-md flex flex-col items-center">
+          <div key={school.id} className="bg-white p-12 rounded-xl shadow-md flex flex-col">
             <div className="flex items-center gap-4 mb-4">
               <Image src={school.image} width={128} height={128} alt={school.name} className="w-20 h-20 object-contain" />
               <div>
                 <h2 className="font-bold text-lg">{school.name}</h2>
                 <div className="flex flex-wrap gap-2 mt-2">
-                  {school.tags.map(tag => (
+                  {school.tags && school.tags.map(tag => (
                     <span key={tag} className="bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full text-xs">
                       {tag}
                     </span>
@@ -52,7 +55,7 @@ export function CategoryTabs({ schools }) {
               </div>
             </div>
             <div className="space-y-3 w-full mb-8">
-              {school.programs.map(program => (
+              {school.programs && school.programs.map(program => (
                 <div key={program.name} className="flex justify-between border-t pt-3">
                   <div>
                     <h3 className="font-semibold">{program.name}</h3>
@@ -67,14 +70,16 @@ export function CategoryTabs({ schools }) {
               ))}
             </div>
 
-            <a
-              href={school.href}
-              className="px-16 py-2 rounded-full bg-ulead-gradient
-                 bg-white hover:shadow-lg transition-shadow text-white
-                 active:scale-95"
-            >
-              更多项目
-            </a>
+            <div className="flex justify-center">
+              <a
+                href={school.href}
+                className="px-16 py-2 rounded-full bg-ulead-gradient
+                   bg-white hover:shadow-lg transition-shadow text-white
+                   active:scale-95"
+              >
+                更多项目
+              </a>
+            </div>
           </div>
         ))}
       </div>
