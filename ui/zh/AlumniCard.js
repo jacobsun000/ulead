@@ -47,7 +47,7 @@ export function AlumniCard({
               src={image}
               alt={name}
               fill
-              className="object-cover"
+              className="object-cover rounded-bl-2xl"
               sizes="(min-width:1024px) 40vw, 100vw"
               priority
             />
