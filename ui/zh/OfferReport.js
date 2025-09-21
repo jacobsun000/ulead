@@ -3,18 +3,18 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
-function OfferItem({ logo, school, school_cn, count }) {
-  const name = school_cn || school;
+function OfferItem({ logo, name, name_cn, count }) {
+  const name_ = name_cn || name;
   return (
     <div className="bg-white flex w-full items-center p-2 md:p-4 rounded-full shadow-md">
       {/* Logo - aligned to the left */}
       <div className="flex-shrink-0 w-8 h-8 md:w-16 md:h-16 rounded-full overflow-hidden mr-4">
-        <Image src={logo} alt={name} width={128} height={128} objectFit="cover" />
+        <Image src={logo} alt={name_} width={128} height={128} objectFit="cover" />
       </div>
 
       {/* School name - centered */}
       <div className="flex-1 text-center">
-        <p className="text-gray-700 text-sm md:text-lg">{name}</p>
+        <p className="text-gray-700 text-sm md:text-lg">{name_}</p>
       </div>
 
       {/* Count and arrow - aligned to the right */}

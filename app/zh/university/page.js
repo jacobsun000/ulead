@@ -5,7 +5,7 @@ import OfferReport from "@/ui/zh/OfferReport";
 import { SchoolCards } from '@/ui/zh/SchoolCard';
 
 export default async function University() {
-  const { rows: university } = await sql`SELECT * FROM university`;
+  const { rows: university } = await sql`SELECT * FROM offer WHERE type='university'`;
   const { rows: schools } = await sql`SELECT * FROM summer_school WHERE type = 'university'`;
 
   return (

@@ -16,7 +16,7 @@ const Card = ({ title }) => (
 );
 
 export default async function Highschool() {
-  const { rows: highSchool } = await sql`SELECT * FROM high_school`;
+  const { rows: highSchool } = await sql`SELECT * FROM offer WHERE type='highschool'`;
   const { rows: profiles } = await sql`SELECT * FROM success_story WHERE type = 'HighSchool'`;
 
   const services = [

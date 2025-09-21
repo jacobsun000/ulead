@@ -13,7 +13,7 @@ const Card = ({ title }) => (
 );
 
 export default async function University() {
-  const { rows: university } = await sql`SELECT * FROM university`;
+  const { rows: university } = await sql`SELECT * FROM offer WHERE type='university'`;
   const { rows: profiles } = await sql`SELECT * FROM success_story WHERE type = 'University'`;
   const services = [
     { title: "Candidacy Development", icon: "img/university/1.svg", isOpen: false, isRed: false },

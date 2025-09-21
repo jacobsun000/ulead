@@ -139,9 +139,9 @@ function AboutSection() {
 }
 
 async function MatriculationSection() {
-  const { rows: university } = await sql`SELECT * FROM university LIMIT 12`;
-  const { rows: highSchool } = await sql`SELECT * FROM high_school LIMIT 12`;
-  const { rows: juniorSchool } = await sql`SELECT * FROM other_school LIMIT 12`;
+  const { rows: university } = await sql`SELECT * FROM offer WHERE type='university' LIMIT 12`;
+  const { rows: highSchool } = await sql`SELECT * FROM offer WHERE type='highschool' LIMIT 12`;
+  const { rows: juniorSchool } = await sql`SELECT * FROM offer WHERE type='other' LIMIT 12`;
   const panels = [
     {
       title: "美国大学录取",
