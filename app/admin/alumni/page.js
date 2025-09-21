@@ -11,7 +11,7 @@ export default function AlumniManager() {
     image: "",
     highschool: "",
     university: "",
-    universitylogo: "",
+    university_logo: "",
   });
   const [imageFile, setImageFile] = useState(null);
   const [logoFile, setLogoFile] = useState(null);
@@ -53,20 +53,20 @@ export default function AlumniManager() {
     try {
       // Upload images if files are provided
       const imageUrl = imageFile ? await handleImageUpload(imageFile) : form.image;
-      const logoUrl = logoFile ? await handleImageUpload(logoFile) : form.universitylogo;
+      const logoUrl = logoFile ? await handleImageUpload(logoFile) : form.university_logo;
 
       const method = form.id ? "PUT" : "POST";
 
       const res = await fetch("/api/admin/alumni", {
         method,
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, image: imageUrl, universitylogo: logoUrl }),
+        body: JSON.stringify({ ...form, image: imageUrl, university_logo: logoUrl }),
       });
 
       const data = await res.json();
       if (data.success) {
         fetchAlumni(); // Refresh list
-        setForm({ id: null, name: "", image: "", highschool: "", university: "", universitylogo: "" });
+        setForm({ id: null, name: "", image: "", highschool: "", university: "", university_logo: "" });
         setImageFile(null);
         setLogoFile(null);
       } else setError(data.message);
@@ -180,7 +180,7 @@ export default function AlumniManager() {
                   <td className="p-4">{a.highschool}</td>
                   <td className="p-4">{a.university}</td>
                   <td className="p-4">
-                    <Image src={a.universitylogo} alt={`${a.university} logo`} width={500} height={500} className="w-16 h-16 rounded" />
+                    <Image src={a.university_logo} alt={`${a.university} logo`} width={500} height={500} className="w-16 h-16 rounded" />
                   </td>
                   <td className="p-4 flex gap-2">
                     <button

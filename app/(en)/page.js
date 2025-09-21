@@ -325,7 +325,7 @@ async function SuccessStoriesSection() {
 }
 
 function AlumniCard({ alumni }) {
-  const { name, image, highschool, university, universitylogo } = alumni;
+  const { name, image, highschool, university, university_logo } = alumni;
   return (
     <div className="bg-white h-48 md:h-64 shadow-lg rounded-xl border">
       <div className="flex flex-col content-start justify-start">
@@ -350,7 +350,7 @@ function AlumniCard({ alumni }) {
           <div className="relative w-24 md:w-32 md:h-32 h-24 mt-4 md:mt-8">
             <div className="absolute z-10 -top-1 border-secrondary rounded-full right-[calc(100%-1.5rem)] md:right-[calc(100%-2rem)] w-12 h-12 md:w-16 md:h-16">
               <Image
-                src={universitylogo}
+                src={university_logo}
                 alt="University Logo"
                 className="rounded-full object-cover border-[1px] border-gray-300"
                 fill

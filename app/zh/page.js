@@ -222,7 +222,7 @@ async function TeamSection() {
 }
 
 async function AlumniShowcaseSection() {
-  const { rows: alumnies } = await sql`SELECT * FROM alumni_zh`;
+  const { rows: alumnies } = await sql`SELECT * FROM alumni`;
 
   return (
     <section id="alumni" className="w-full py-16 md:mt-16 overflow-hidden">

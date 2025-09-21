@@ -16,10 +16,10 @@ export async function GET() {
 
 export async function POST(req) {
   try {
-    const { name, image, highschool, university, universitylogo } =
+    const { name, image, highschool, university, university_logo } =
       await req.json();
 
-    if (!name || !image || !highschool || !university || !universitylogo) {
+    if (!name || !image || !highschool || !university || !university_logo) {
       return new Response(
         JSON.stringify({ success: false, message: "All fields are required" }),
         { status: 400 }
@@ -27,8 +27,8 @@ export async function POST(req) {
     }
 
     const { rows } = await sql`
-      INSERT INTO alumni (name, image, highschool, university, universitylogo)
-      VALUES (${name}, ${image}, ${highschool}, ${university}, ${universitylogo})
+      INSERT INTO alumni (name, image, highschool, university, university_logo)
+      VALUES (${name}, ${image}, ${highschool}, ${university}, ${university_logo})
       RETURNING *;
     `;
     return new Response(JSON.stringify({ success: true, data: rows[0] }), {
@@ -45,10 +45,10 @@ export async function POST(req) {
 
 export async function PUT(req) {
   try {
-    const { id, name, image, highschool, university, universitylogo } =
+    const { id, name, image, highschool, university, university_logo } =
       await req.json();
 
-    if (!id || !name || !image || !highschool || !university || !universitylogo) {
+    if (!id || !name || !image || !highschool || !university || !university_logo) {
       return new Response(
         JSON.stringify({ success: false, message: "All fields are required" }),
         { status: 400 }
@@ -57,7 +57,7 @@ export async function PUT(req) {
 
     const { rows } = await sql`
       UPDATE alumni
-      SET name = ${name}, image = ${image}, highschool = ${highschool}, university = ${university}, universitylogo = ${universitylogo}
+      SET name = ${name}, image = ${image}, highschool = ${highschool}, university = ${university}, university_logo = ${university_logo}
       WHERE id = ${id}
       RETURNING *;
     `;
