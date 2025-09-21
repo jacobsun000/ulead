@@ -8,8 +8,8 @@ export function AlumniCard({
   name,
   image,
   title,
-  university_zh,
-  highschool_zh,
+  university_cn,
+  highschool_cn,
   university_logo,
   labels,
   evaluation,
@@ -26,10 +26,10 @@ export function AlumniCard({
             {name}
           </div>
           <div className="p-4 md:p-8 pb-0">
-            <div className="text-sm md:text-lg">{university_zh}</div>
+            <div className="text-sm md:text-lg">{university_cn}</div>
             <div className="text-black/60 text-xs md:text-sm mt-2 md:mt-4">
               <div>美国高中：</div>
-              <div>{highschool_zh}</div>
+              <div>{highschool_cn}</div>
               {labels?.map((row, idx) => (
                 <div className="md:mt-1 text-xs md:text-sm" key={idx}>{row}</div>
               ))}
