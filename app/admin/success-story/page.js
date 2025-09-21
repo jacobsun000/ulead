@@ -1,48 +1,47 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
-export default function AlumniManager() {
-  const [alumni, setAlumni] = useState([]);
+const storyTypes = ["University", "HighSchool"];
+
+export default function SuccessStoryManager() {
+  const [storyType, setStoryType] = useState("");
+  const [stories, setStories] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [imageFile, setImageFile] = useState(null);
-  const [universityLogoFile, setUniversityLogoFile] = useState(null);
   const [form, setForm] = useState({
     id: null,
+    type: "",
     name: "",
     image: "",
-    highschool: "",
-    university: "",
-    university_logo: "",
-    title: "",
-    highschool_cn: "",
-    university_cn: "",
+    school: "",
     labels: [],
-    evaluation: "",
-    plan: ""
+    offers: [],
+    evaluation: ""
   });
 
-  useEffect(() => {
-    fetchAlumni();
-  }, []);
-
-  const fetchAlumni = async () => {
+  const fetchStories = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch("/api/admin/alumni");
+      const url = storyType ? `/api/admin/success-story?type=${storyType}` : "/api/admin/success-story";
+      const res = await fetch(url);
       const data = await res.json();
       if (data.success) {
-        setAlumni(data.data);
+        setStories(data.data);
       } else {
         setError(data.message);
       }
     } catch (err) {
-      setError("Failed to fetch alumni");
+      setError("Failed to fetch success stories");
     } finally {
       setLoading(false);
     }
-  };
+  }, [storyType]);
+
+  useEffect(() => {
+    fetchStories();
+  }, [fetchStories]);
 
   const handleImageUpload = async (file, filename) => {
     const res = await fetch(`/api/admin/image-upload?filename=${filename}`, {
@@ -62,42 +61,37 @@ export default function AlumniManager() {
         ? await handleImageUpload(imageFile, imageFile.name)
         : form.image;
 
-      const universityLogoUrl = universityLogoFile
-        ? await handleImageUpload(universityLogoFile, universityLogoFile.name)
-        : form.university_logo;
-
       const method = form.id ? "PUT" : "POST";
-      const res = await fetch("/api/admin/alumni", {
+      const res = await fetch("/api/admin/success-story", {
         method,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...form,
           image: imageUrl,
-          university_logo: universityLogoUrl,
         }),
       });
 
       const data = await res.json();
       if (data.success) {
-        fetchAlumni();
+        fetchStories();
         resetForm();
         setError("");
       } else {
         setError(data.message);
       }
     } catch (err) {
-      setError("Failed to save alumni");
+      setError("Failed to save success story");
     } finally {
       setLoading(false);
     }
   };
 
   const handleDelete = async (id) => {
-    if (!confirm("Are you sure you want to delete this alumni record?")) return;
+    if (!confirm("Are you sure you want to delete this success story?")) return;
 
     setLoading(true);
     try {
-      const res = await fetch("/api/admin/alumni", {
+      const res = await fetch("/api/admin/success-story", {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id }),
@@ -105,41 +99,37 @@ export default function AlumniManager() {
 
       const data = await res.json();
       if (data.success) {
-        fetchAlumni();
+        fetchStories();
       } else {
         setError(data.message);
       }
     } catch (err) {
-      setError("Failed to delete alumni");
+      setError("Failed to delete success story");
     } finally {
       setLoading(false);
     }
   };
 
-  const handleEdit = (alumniRecord) => {
+  const handleEdit = (storyRecord) => {
     setForm({
-      ...alumniRecord,
-      labels: alumniRecord.labels || [],
+      ...storyRecord,
+      labels: storyRecord.labels || [],
+      offers: storyRecord.offers || [],
     });
   };
 
   const resetForm = () => {
     setForm({
       id: null,
+      type: "",
       name: "",
       image: "",
-      highschool: "",
-      university: "",
-      university_logo: "",
-      title: "",
-      highschool_cn: "",
-      university_cn: "",
+      school: "",
       labels: [],
-      evaluation: "",
-      plan: ""
+      offers: [],
+      evaluation: ""
     });
     setImageFile(null);
-    setUniversityLogoFile(null);
   };
 
   const handleLabelsChange = (e) => {
@@ -148,9 +138,15 @@ export default function AlumniManager() {
     setForm({ ...form, labels: labelsArray });
   };
 
+  const handleOffersChange = (e) => {
+    const value = e.target.value;
+    const offersArray = value.split(",").map(offer => offer.trim()).filter(offer => offer);
+    setForm({ ...form, offers: offersArray });
+  };
+
   return (
     <div className="min-h-screen bg-background p-6">
-      <h1 className="text-4xl font-bold text-primary mb-6">Alumni Manager</h1>
+      <h1 className="text-4xl font-bold text-primary mb-6">Success Story Manager</h1>
 
       {error && (
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
@@ -158,11 +154,48 @@ export default function AlumniManager() {
         </div>
       )}
 
+      <div className="mb-6">
+        <label className="block text-sm font-medium text-gray-700 mb-2">
+          Filter by Type (optional)
+        </label>
+        <select
+          value={storyType}
+          onChange={(e) => setStoryType(e.target.value)}
+          className="p-2 border border-gray-300 rounded"
+        >
+          <option value="">All Types</option>
+          {storyTypes.map((type) => (
+            <option key={type} value={type}>
+              {type}
+            </option>
+          ))}
+        </select>
+      </div>
+
       <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md mb-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Name *
+              Type *
+            </label>
+            <select
+              value={form.type}
+              onChange={(e) => setForm({ ...form, type: e.target.value })}
+              className="w-full p-2 border border-gray-300 rounded"
+              required
+            >
+              <option value="">Select Type</option>
+              {storyTypes.map((type) => (
+                <option key={type} value={type}>
+                  {type}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Student Name *
             </label>
             <input
               type="text"
@@ -175,24 +208,12 @@ export default function AlumniManager() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Title
+              School *
             </label>
             <input
               type="text"
-              value={form.title}
-              onChange={(e) => setForm({ ...form, title: e.target.value })}
-              className="w-full p-2 border border-gray-300 rounded"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              High School *
-            </label>
-            <input
-              type="text"
-              value={form.highschool}
-              onChange={(e) => setForm({ ...form, highschool: e.target.value })}
+              value={form.school}
+              onChange={(e) => setForm({ ...form, school: e.target.value })}
               className="w-full p-2 border border-gray-300 rounded"
               required
             />
@@ -200,44 +221,7 @@ export default function AlumniManager() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              High School (Chinese)
-            </label>
-            <input
-              type="text"
-              value={form.highschool_cn}
-              onChange={(e) => setForm({ ...form, highschool_cn: e.target.value })}
-              className="w-full p-2 border border-gray-300 rounded"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              University *
-            </label>
-            <input
-              type="text"
-              value={form.university}
-              onChange={(e) => setForm({ ...form, university: e.target.value })}
-              className="w-full p-2 border border-gray-300 rounded"
-              required
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              University (Chinese)
-            </label>
-            <input
-              type="text"
-              value={form.university_cn}
-              onChange={(e) => setForm({ ...form, university_cn: e.target.value })}
-              className="w-full p-2 border border-gray-300 rounded"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Student Image *
+              Student Image
             </label>
             <input
               type="file"
@@ -250,21 +234,6 @@ export default function AlumniManager() {
             )}
           </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              University Logo *
-            </label>
-            <input
-              type="file"
-              onChange={(e) => setUniversityLogoFile(e.target.files[0])}
-              className="w-full p-2 border border-gray-300 rounded"
-              accept="image/*"
-            />
-            {form.university_logo && (
-              <img src={form.university_logo} alt="Current university logo" className="mt-2 w-16 h-16 object-cover rounded" />
-            )}
-          </div>
-
           <div className="md:col-span-2">
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Labels (comma-separated)
@@ -274,7 +243,20 @@ export default function AlumniManager() {
               value={form.labels.join(", ")}
               onChange={handleLabelsChange}
               className="w-full p-2 border border-gray-300 rounded"
-              placeholder="Label 1, Label 2, Label 3"
+              placeholder="Academic Excellence, Leadership, Sports"
+            />
+          </div>
+
+          <div className="md:col-span-2">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Offers (comma-separated)
+            </label>
+            <input
+              type="text"
+              value={form.offers.join(", ")}
+              onChange={handleOffersChange}
+              className="w-full p-2 border border-gray-300 rounded"
+              placeholder="Harvard University, Stanford University, MIT"
             />
           </div>
 
@@ -286,19 +268,8 @@ export default function AlumniManager() {
               value={form.evaluation}
               onChange={(e) => setForm({ ...form, evaluation: e.target.value })}
               className="w-full p-2 border border-gray-300 rounded"
-              rows="3"
-            />
-          </div>
-
-          <div className="md:col-span-2">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Plan
-            </label>
-            <textarea
-              value={form.plan}
-              onChange={(e) => setForm({ ...form, plan: e.target.value })}
-              className="w-full p-2 border border-gray-300 rounded"
-              rows="3"
+              rows="4"
+              placeholder="Student's testimonial or evaluation of the program"
             />
           </div>
         </div>
@@ -309,7 +280,7 @@ export default function AlumniManager() {
             className="bg-primary text-white px-6 py-2 rounded hover:bg-primary/90"
             disabled={loading}
           >
-            {loading ? "Saving..." : form.id ? "Update Alumni" : "Add Alumni"}
+            {loading ? "Saving..." : form.id ? "Update Story" : "Add Story"}
           </button>
           <button
             type="button"
@@ -322,54 +293,50 @@ export default function AlumniManager() {
       </form>
 
       {loading ? (
-        <p>Loading alumni...</p>
+        <p>Loading success stories...</p>
       ) : (
         <div className="bg-white shadow-md rounded-lg overflow-hidden">
           <table className="table-auto w-full text-left">
             <thead className="bg-primary text-white">
               <tr>
                 <th className="p-4">ID</th>
+                <th className="p-4">Type</th>
                 <th className="p-4">Name</th>
                 <th className="p-4">Image</th>
-                <th className="p-4">High School</th>
-                <th className="p-4">University</th>
-                <th className="p-4">University Logo</th>
+                <th className="p-4">School</th>
                 <th className="p-4">Labels</th>
+                <th className="p-4">Offers</th>
                 <th className="p-4">Actions</th>
               </tr>
             </thead>
             <tbody>
-              {alumni.map((record) => (
+              {stories.map((record) => (
                 <tr key={record.id} className="hover:bg-gray-100">
                   <td className="p-4">{record.id}</td>
                   <td className="p-4">
-                    <div>
-                      <div className="font-medium">{record.name}</div>
-                      {record.title && <div className="text-sm text-gray-500">{record.title}</div>}
-                    </div>
+                    <span className={`px-2 py-1 rounded text-xs ${
+                      record.type === 'University'
+                        ? 'bg-blue-100 text-blue-800'
+                        : 'bg-green-100 text-green-800'
+                    }`}>
+                      {record.type}
+                    </span>
                   </td>
+                  <td className="p-4 font-medium">{record.name}</td>
                   <td className="p-4">
-                    <img
-                      src={record.image}
-                      alt="Student"
-                      className="w-16 h-16 object-cover rounded"
-                    />
+                    {record.image ? (
+                      <img
+                        src={record.image}
+                        alt="Student"
+                        className="w-16 h-16 object-cover rounded"
+                      />
+                    ) : (
+                      <div className="w-16 h-16 bg-gray-200 rounded flex items-center justify-center text-gray-500 text-xs">
+                        No Image
+                      </div>
+                    )}
                   </td>
-                  <td className="p-4">
-                    <div>{record.highschool}</div>
-                    {record.highschool_cn && <div className="text-sm text-gray-500">{record.highschool_cn}</div>}
-                  </td>
-                  <td className="p-4">
-                    <div>{record.university}</div>
-                    {record.university_cn && <div className="text-sm text-gray-500">{record.university_cn}</div>}
-                  </td>
-                  <td className="p-4">
-                    <img
-                      src={record.university_logo}
-                      alt="University Logo"
-                      className="w-16 h-16 object-cover rounded"
-                    />
-                  </td>
+                  <td className="p-4">{record.school}</td>
                   <td className="p-4">
                     {record.labels && record.labels.length > 0 ? (
                       <div className="flex flex-wrap gap-1">
@@ -381,6 +348,22 @@ export default function AlumniManager() {
                             {label}
                           </span>
                         ))}
+                      </div>
+                    ) : (
+                      "-"
+                    )}
+                  </td>
+                  <td className="p-4">
+                    {record.offers && record.offers.length > 0 ? (
+                      <div className="max-w-xs">
+                        {record.offers.slice(0, 2).map((offer, index) => (
+                          <div key={index} className="text-sm">{offer}</div>
+                        ))}
+                        {record.offers.length > 2 && (
+                          <div className="text-xs text-gray-500">
+                            +{record.offers.length - 2} more
+                          </div>
+                        )}
                       </div>
                     ) : (
                       "-"

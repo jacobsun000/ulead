@@ -1,28 +1,26 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
-const schoolTypes = ["university", "high_school", "other_school"];
+const schoolTypes = ["university", "highschool", "other"];
 
 export default function OfferManager() {
   const [schoolType, setSchoolType] = useState("");
   const [records, setRecords] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [imageFile, setImageFile] = useState(null);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({
     id: null,
     logo: "",
-    school: "",
+    name: "",
     country: "",
     rank: "",
-    school_cn: "",
+    name_cn: "",
     count: 0,
   });
 
-  useEffect(() => {
-    if (schoolType) fetchRecords();
-  }, [schoolType]);
-
-  const fetchRecords = async () => {
+  const fetchRecords = useCallback(async () => {
     setLoading(true);
     try {
       const res = await fetch(`/api/admin/offer?type=${schoolType}`);
@@ -34,6 +32,21 @@ export default function OfferManager() {
     } finally {
       setLoading(false);
     }
+  }, [schoolType]);
+
+  useEffect(() => {
+    if (schoolType) fetchRecords();
+  }, [schoolType, fetchRecords]);
+
+
+  const handleImageUpload = async () => {
+    const res = await fetch(`/api/admin/image-upload?filename=${imageFile.name}`, {
+      method: "POST",
+      body: imageFile,
+    });
+
+    const data = await res.json();
+    return data.url;
   };
 
   const handleSubmit = async (e) => {
@@ -41,11 +54,12 @@ export default function OfferManager() {
     setLoading(true);
 
     try {
+      const logoUrl = imageFile ? await handleImageUpload() : form.logo;
       const method = form.id ? "PUT" : "POST";
       const res = await fetch(`/api/admin/offer`, {
         method,
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: schoolType, ...form }),
+        body: JSON.stringify({ type: schoolType, ...form, logo: logoUrl }),
       });
 
       const data = await res.json();
@@ -54,12 +68,14 @@ export default function OfferManager() {
         setForm({
           id: null,
           logo: "",
-          school: "",
+          name: "",
           country: "",
           rank: "",
-          school_cn: "",
+          name_cn: "",
           count: 0,
         });
+        setImageFile(null);
+        setError("");
       } else setError(data.message);
     } catch {
       setError("Failed to save record");
@@ -106,24 +122,34 @@ export default function OfferManager() {
       {schoolType && (
         <>
           {loading ? (
-
             <p>Loading...</p>
-          ) :
+          ) : error ? (
+            <p className="text-red-500 mb-4">{error}</p>
+          ) : null}
+          {
             <>
               <form onSubmit={handleSubmit} className="mb-6">
-                <input
-                  type="text"
-                  placeholder="Logo URL"
-                  value={form.logo}
-                  onChange={(e) => setForm({ ...form, logo: e.target.value })}
-                  className="mb-4 w-full p-2 border rounded"
-                  required
-                />
+                <div className="mb-4">
+                  <label className="block">
+                    <span>Logo Image:</span>
+                    <input
+                      type="file"
+                      onChange={(e) => setImageFile(e.target.files[0])}
+                      className="w-full p-2 border rounded"
+                      accept="image/*"
+                    />
+                  </label>
+                  {form.logo && (
+                    <div className="mt-2">
+                      <img src={form.logo} alt="Current logo" className="w-16 h-16 object-cover rounded" />
+                    </div>
+                  )}
+                </div>
                 <input
                   type="text"
                   placeholder="School Name"
-                  value={form.school}
-                  onChange={(e) => setForm({ ...form, school: e.target.value })}
+                  value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
                   className="mb-4 w-full p-2 border rounded"
                   required
                 />
@@ -145,16 +171,15 @@ export default function OfferManager() {
                       className="mb-4 w-full p-2 border rounded"
                       required
                     />
-                    <input
-                      type="text"
-                      placeholder="School CN"
-                      value={form.school_cn}
-                      onChange={(e) => setForm({ ...form, school_cn: e.target.value })}
-                      className="mb-4 w-full p-2 border rounded"
-                      required
-                    />
                   </>
                 )}
+                <input
+                  type="text"
+                  placeholder="Chinese Name"
+                  value={form.name_cn}
+                  onChange={(e) => setForm({ ...form, name_cn: e.target.value })}
+                  className="mb-4 w-full p-2 border rounded"
+                />
                 <input
                   type="number"
                   placeholder="Count"
@@ -162,10 +187,12 @@ export default function OfferManager() {
                   onChange={(e) => setForm({ ...form, count: Number(e.target.value) })}
                   className="mb-4 w-full p-2 border rounded"
                   required
+                  min="0"
                 />
                 <button
                   type="submit"
                   className="bg-primary text-white px-4 py-2 rounded"
+                  disabled={loading}
                 >
                   {form.id ? "Update Record" : "Add Record"}
                 </button>
@@ -176,12 +203,12 @@ export default function OfferManager() {
                     <tr>
                       <th className="p-4">ID</th>
                       <th className="p-4">Logo</th>
-                      <th className="p-4">School</th>
+                      <th className="p-4">School Name</th>
+                      <th className="p-4">Chinese Name</th>
                       {schoolType === "university" && (
                         <>
                           <th className="p-4">Country</th>
                           <th className="p-4">Rank</th>
-                          <th className="p-4">School CN</th>
                         </>
                       )}
                       <th className="p-4">Count</th>
@@ -199,12 +226,12 @@ export default function OfferManager() {
                             className="w-16 h-16 object-cover rounded"
                           />
                         </td>
-                        <td className="p-4">{record.school}</td>
+                        <td className="p-4">{record.name}</td>
+                        <td className="p-4">{record.name_cn}</td>
                         {schoolType === "university" && (
                           <>
                             <td className="p-4">{record.country}</td>
                             <td className="p-4">{record.rank}</td>
-                            <td className="p-4">{record.school_cn}</td>
                           </>
                         )}
                         <td className="p-4">{record.count}</td>

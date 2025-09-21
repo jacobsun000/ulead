@@ -1,13 +1,14 @@
 export default function AdminHomePage() {
   const managers = [
     { name: "Contact", link: "/admin/contact" },
-    { name: "Alumni", link: "/admin/alumni" },
-    // { name: "Matriculation", link: "/admin/matriculation" },
-    { name: "Success Stories", link: "/admin/success-stories" },
-    { name: "Team", link: "/admin/team" },
     { name: "Offer", link: "/admin/offer" },
     { name: "Partner", link: "/admin/partner" },
     { name: "Abilities", link: "/admin/ability" },
+    { name: "Alumni", link: "/admin/alumni" },
+    { name: "Mentor", link: "/admin/mentor" },
+    { name: "Success Story", link: "/admin/success-story" },
+    { name: "Team Member", link: "/admin/team-member" },
+    { name: "Summer School", link: "/admin/summer-school" },
   ];
 
   return (

@@ -1,152 +1,123 @@
 import { sql } from "@vercel/postgres";
 
-const tables = {
-  university: "university",
-  high_school: "high_school",
-  other_school: "other_school",
-};
-
 export async function GET(req) {
-  const { searchParams } = new URL(req.url);
-  const type = searchParams.get("type");
-
-  const school = tables[type];
-  if (!school) {
-    return new Response(
-      JSON.stringify({ success: false, message: "Invalid school type" }),
-      { status: 400 }
-    );
-  }
-
   try {
-    const query = `SELECT * FROM ${school} ORDER BY id ASC`; // Dynamic query
-    const { rows } = await sql.query(query); // Use sql.query for raw string queries
+    const { searchParams } = new URL(req.url);
+    const type = searchParams.get('type');
+
+    if (!type) {
+      return new Response(
+        JSON.stringify({ success: false, message: "Type parameter is required" }),
+        { status: 400 }
+      );
+    }
+
+    const { rows } = await sql`SELECT * FROM offer WHERE type = ${type} ORDER BY id ASC`;
     return new Response(JSON.stringify({ success: true, data: rows }), {
       status: 200,
     });
   } catch (error) {
-    console.error("Error fetching records:", error);
+    console.error('Error fetching offers:', error);
     return new Response(
-      JSON.stringify({ success: false, message: "Error fetching records" }),
+      JSON.stringify({ success: false, message: "Error fetching offers" }),
       { status: 500 }
     );
   }
 }
 
 export async function POST(req) {
-  const { type, logo, school, country, rank, school_cn, count } = await req.json();
-
-  if (!type || !tables[type]) {
-    return new Response(
-      JSON.stringify({ success: false, message: "Invalid school type" }),
-      { status: 400 }
-    );
-  }
-  const schoolType = tables[type];
-
   try {
-    let query;
-    if (type === "university") {
-      query = `
-        INSERT INTO university (logo, school, school_cn, country, rank, count)
-        VALUES ('${logo}', '${school}', '${school_cn}', '${country}', '${rank}', ${count})
-        RETURNING *;
-      `;
-    } else {
-      query = `
-        INSERT INTO ${schoolType} (logo, school, count)
-        VALUES ('${logo}', '${school}', ${count})
-        RETURNING *;
-      `;
+    const { type, logo, count, name, name_cn, country, rank } = await req.json();
+
+    if (!type || !logo || !count || !name) {
+      return new Response(
+        JSON.stringify({ success: false, message: "Type, logo, count, and name are required" }),
+        { status: 400 }
+      );
     }
 
-    const { rows } = await sql.query(query); // Manually constructed query
+    const { rows } = await sql`
+      INSERT INTO offer (type, logo, count, name, name_cn, country, rank)
+      VALUES (${type}, ${logo}, ${count}, ${name}, ${name_cn || null}, ${country || null}, ${rank || null})
+      RETURNING *;
+    `;
     return new Response(JSON.stringify({ success: true, data: rows[0] }), {
       status: 200,
     });
   } catch (error) {
-    console.error("Error adding record:", error);
+    console.error('Error adding offer:', error);
     return new Response(
-      JSON.stringify({ success: false, message: "Error adding record" }),
+      JSON.stringify({ success: false, message: "Error adding offer" }),
       { status: 500 }
     );
   }
 }
 
-
 export async function PUT(req) {
-  const { id, type, logo, school, country, rank, school_cn, count } = await req.json();
-
-  if (!type || !tables[type] || !id) {
-    return new Response(
-      JSON.stringify({ success: false, message: "Invalid school type or ID" }),
-      { status: 400 }
-    );
-  }
-  const schoolType = tables[type];
-
   try {
-    let query;
-    if (type === "university") {
-      query = `
-        UPDATE university
-        SET logo = '${logo}', school = '${school}', school_cn = '${school_cn}', 
-            country = '${country}', rank = '${rank}', count = ${count}
-        WHERE id = ${id}
-        RETURNING *;
-      `;
-    } else {
-      query = `
-        UPDATE ${schoolType}
-        SET logo = '${logo}', school = '${school}', count = ${count}
-        WHERE id = ${id}
-        RETURNING *;
-      `;
+    const { id, type, logo, count, name, name_cn, country, rank } = await req.json();
+
+    if (!id || !type || !logo || !count || !name) {
+      return new Response(
+        JSON.stringify({ success: false, message: "ID, type, logo, count, and name are required" }),
+        { status: 400 }
+      );
     }
 
-    const { rows } = await sql.query(query); // Manually constructed query
+    const { rows } = await sql`
+      UPDATE offer
+      SET type = ${type}, logo = ${logo}, count = ${count}, name = ${name},
+          name_cn = ${name_cn || null}, country = ${country || null}, rank = ${rank || null}
+      WHERE id = ${id}
+      RETURNING *;
+    `;
+
+    if (rows.length === 0) {
+      return new Response(
+        JSON.stringify({ success: false, message: "Offer not found" }),
+        { status: 404 }
+      );
+    }
+
     return new Response(JSON.stringify({ success: true, data: rows[0] }), {
       status: 200,
     });
   } catch (error) {
-    console.error("Error updating record:", error);
+    console.error('Error updating offer:', error);
     return new Response(
-      JSON.stringify({ success: false, message: "Error updating record" }),
+      JSON.stringify({ success: false, message: "Error updating offer" }),
       { status: 500 }
     );
   }
 }
 
 export async function DELETE(req) {
-  const { id, type } = await req.json();
-
-  if (!type || !tables[type] || !id) {
-    return new Response(
-      JSON.stringify({ success: false, message: "Invalid school type or ID" }),
-      { status: 400 }
-    );
-  }
-  const schoolType = tables[type];
-
   try {
-    const query = `DELETE FROM ${schoolType} WHERE id = ${id};`;
-    const { rowCount } = await sql.query(query); // Manually constructed query
+    const { id, type } = await req.json();
 
+    if (!id || !type) {
+      return new Response(
+        JSON.stringify({ success: false, message: "ID and type are required" }),
+        { status: 400 }
+      );
+    }
+
+    const { rowCount } = await sql`DELETE FROM offer WHERE id = ${id} AND type = ${type}`;
     if (rowCount === 0) {
       return new Response(
-        JSON.stringify({ success: false, message: "Record not found" }),
+        JSON.stringify({ success: false, message: "Offer not found" }),
         { status: 404 }
       );
     }
 
     return new Response(
-      JSON.stringify({ success: true, message: "Record deleted" }),
+      JSON.stringify({ success: true, message: "Offer deleted" }),
       { status: 200 }
     );
   } catch (error) {
-    console.error("Error deleting record:", error);
+    console.error('Error deleting offer:', error);
     return new Response(
-      JSON.stringify({ success: false, message: "Error deleting record" }),
+      JSON.stringify({ success: false, message: "Error deleting offer" }),
       { status: 500 }
     );
   }
