@@ -20,6 +20,8 @@ export default function SummerSchoolManager() {
   const [error, setError] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [jsonError, setJsonError] = useState("");
+  const [imageFile, setImageFile] = useState(null);
+  const [programEditMode, setProgramEditMode] = useState("form"); // "form" or "json"
 
   useEffect(() => {
     fetchSummerSchools();
@@ -44,6 +46,15 @@ export default function SummerSchoolManager() {
     }
   };
 
+  const handleImageUpload = async (file, filename) => {
+    const res = await fetch(`/api/admin/image-upload?filename=${filename}`, {
+      method: "POST",
+      body: file,
+    });
+    const data = await res.json();
+    return data.url;
+  };
+
   const resetForm = () => {
     setForm({
       id: null,
@@ -59,6 +70,8 @@ export default function SummerSchoolManager() {
     setProgramsJson(JSON.stringify([{ name: "", description: "", href: "" }], null, 2));
     setIsEditing(false);
     setJsonError("");
+    setImageFile(null);
+    setProgramEditMode("form");
   };
 
   const handleTagsChange = (input) => {
@@ -83,10 +96,28 @@ export default function SummerSchoolManager() {
     }
   };
 
+  const addProgram = () => {
+    setForm({
+      ...form,
+      programs: [...form.programs, { name: "", description: "", href: "" }]
+    });
+  };
+
+  const removeProgram = (index) => {
+    const newPrograms = form.programs.filter((_, i) => i !== index);
+    setForm({ ...form, programs: newPrograms });
+  };
+
+  const updateProgram = (index, field, value) => {
+    const newPrograms = [...form.programs];
+    newPrograms[index] = { ...newPrograms[index], [field]: value };
+    setForm({ ...form, programs: newPrograms });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (jsonError) {
+    if (programEditMode === "json" && jsonError) {
       setError("Please fix JSON errors before submitting");
       return;
     }
@@ -94,13 +125,20 @@ export default function SummerSchoolManager() {
     setLoading(true);
 
     try {
+      const imageUrl = imageFile
+        ? await handleImageUpload(imageFile, imageFile.name)
+        : form.image;
+
       const url = "/api/admin/summer-school";
       const method = isEditing ? "PUT" : "POST";
 
       const res = await fetch(url, {
         method,
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          ...form,
+          image: imageUrl,
+        }),
       });
 
       const data = await res.json();
@@ -210,21 +248,114 @@ export default function SummerSchoolManager() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-1">
-                Programs * (JSON Array)
-                {jsonError && <span className="text-red-500 ml-2">{jsonError}</span>}
-              </label>
-              <textarea
-                value={programsJson}
-                onChange={(e) => handleProgramsJsonChange(e.target.value)}
-                className={`w-full p-2 border rounded font-mono text-sm ${jsonError ? 'border-red-500' : ''}`}
-                rows="8"
-                placeholder='[{"name": "Program Name", "description": "Program Description", "href": "https://..."}]'
-                required
-              />
-              <p className="text-xs text-gray-600 mt-1">
-                Each program should have: name (required), description (optional), href (optional)
-              </p>
+              <div className="flex justify-between items-center mb-2">
+                <label className="block text-sm font-medium">Programs *</label>
+                <div className="flex gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setProgramEditMode("form")}
+                    className={`px-3 py-1 text-xs rounded ${
+                      programEditMode === "form"
+                        ? "bg-blue-500 text-white"
+                        : "bg-gray-200 text-gray-700"
+                    }`}
+                  >
+                    Form Mode
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setProgramEditMode("json")}
+                    className={`px-3 py-1 text-xs rounded ${
+                      programEditMode === "json"
+                        ? "bg-blue-500 text-white"
+                        : "bg-gray-200 text-gray-700"
+                    }`}
+                  >
+                    JSON Mode
+                  </button>
+                </div>
+              </div>
+
+              {programEditMode === "form" ? (
+                <div className="space-y-3 border p-4 rounded">
+                  {form.programs.map((program, index) => (
+                    <div key={index} className="border p-3 rounded bg-gray-50">
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-sm font-medium">Program {index + 1}</span>
+                        {form.programs.length > 1 && (
+                          <button
+                            type="button"
+                            onClick={() => removeProgram(index)}
+                            className="text-red-500 text-xs hover:underline"
+                          >
+                            Remove
+                          </button>
+                        )}
+                      </div>
+                      <div className="grid grid-cols-1 gap-2">
+                        <div>
+                          <label className="block text-xs font-medium text-gray-700 mb-1">
+                            Program Name *
+                          </label>
+                          <input
+                            type="text"
+                            value={program.name || ""}
+                            onChange={(e) => updateProgram(index, "name", e.target.value)}
+                            className="w-full p-2 border rounded text-sm"
+                            placeholder="Enter program name"
+                            required
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs font-medium text-gray-700 mb-1">
+                            Description
+                          </label>
+                          <textarea
+                            value={program.description || ""}
+                            onChange={(e) => updateProgram(index, "description", e.target.value)}
+                            className="w-full p-2 border rounded text-sm"
+                            rows="2"
+                            placeholder="Enter program description"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs font-medium text-gray-700 mb-1">
+                            Website URL
+                          </label>
+                          <input
+                            type="url"
+                            value={program.href || ""}
+                            onChange={(e) => updateProgram(index, "href", e.target.value)}
+                            className="w-full p-2 border rounded text-sm"
+                            placeholder="https://..."
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                  <button
+                    type="button"
+                    onClick={addProgram}
+                    className="w-full p-2 border-2 border-dashed border-gray-300 rounded text-gray-600 hover:border-gray-400 hover:text-gray-800 transition-colors"
+                  >
+                    + Add Another Program
+                  </button>
+                </div>
+              ) : (
+                <div>
+                  {jsonError && <div className="text-red-500 text-sm mb-2">{jsonError}</div>}
+                  <textarea
+                    value={programsJson}
+                    onChange={(e) => handleProgramsJsonChange(e.target.value)}
+                    className={`w-full p-2 border rounded font-mono text-sm ${jsonError ? 'border-red-500' : ''}`}
+                    rows="8"
+                    placeholder='[{"name": "Program Name", "description": "Program Description", "href": "https://..."}]'
+                  />
+                  <p className="text-xs text-gray-600 mt-1">
+                    Each program should have: name (required), description (optional), href (optional)
+                  </p>
+                </div>
+              )}
             </div>
 
             <div>
@@ -238,19 +369,25 @@ export default function SummerSchoolManager() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-1">Image URL</label>
+              <label className="block text-sm font-medium mb-1">Summer School Image</label>
               <input
-                type="text"
-                value={form.image}
-                onChange={(e) => setForm({ ...form, image: e.target.value })}
+                type="file"
+                onChange={(e) => setImageFile(e.target.files[0])}
                 className="w-full p-2 border rounded"
+                accept="image/*"
               />
+              {form.image && (
+                <div className="mt-2">
+                  <img src={form.image} alt="Current image" className="w-20 h-20 object-cover rounded" />
+                  <p className="text-xs text-gray-600 mt-1">Current image</p>
+                </div>
+              )}
             </div>
 
             <div className="flex space-x-2">
               <button
                 type="submit"
-                disabled={loading || jsonError}
+                disabled={loading || (programEditMode === "json" && jsonError)}
                 className="bg-primary text-white px-4 py-2 rounded disabled:opacity-50"
               >
                 {loading ? "Saving..." : isEditing ? "Update" : "Add"}
@@ -277,26 +414,35 @@ export default function SummerSchoolManager() {
               {summerSchools.map((school) => (
                 <div key={school.id} className="border-b p-4 hover:bg-gray-50">
                   <div className="flex justify-between items-start">
-                    <div>
-                      <h3 className="font-semibold">{school.name}</h3>
-                      <div className="text-sm text-gray-600 mt-1">
-                        <span className="bg-blue-100 px-2 py-1 rounded">{school.type}</span>
-                      </div>
-                      {school.tags && (
-                        <div className="mt-2">
-                          {school.tags.map((tag, idx) => (
-                            <span key={idx} className="inline-block bg-gray-200 px-2 py-1 rounded text-xs mr-1">
-                              {tag}
-                            </span>
-                          ))}
+                    <div className="flex gap-3">
+                      {school.image && (
+                        <img
+                          src={school.image}
+                          alt={school.name}
+                          className="w-16 h-16 object-cover rounded"
+                        />
+                      )}
+                      <div>
+                        <h3 className="font-semibold">{school.name}</h3>
+                        <div className="text-sm text-gray-600 mt-1">
+                          <span className="bg-blue-100 px-2 py-1 rounded">{school.type}</span>
                         </div>
-                      )}
-                      <p className="text-sm text-gray-700 mt-2">{school.description.substring(0, 100)}...</p>
-                      {school.programs && (
-                        <p className="text-xs text-gray-500 mt-1">
-                          {school.programs.length} program(s)
-                        </p>
-                      )}
+                        {school.tags && (
+                          <div className="mt-2">
+                            {school.tags.map((tag, idx) => (
+                              <span key={idx} className="inline-block bg-gray-200 px-2 py-1 rounded text-xs mr-1">
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                        <p className="text-sm text-gray-700 mt-2">{school.description.substring(0, 100)}...</p>
+                        {school.programs && (
+                          <p className="text-xs text-gray-500 mt-1">
+                            {school.programs.length} program(s)
+                          </p>
+                        )}
+                      </div>
                     </div>
                     <div className="flex flex-col space-y-1 ml-2">
                       <button
