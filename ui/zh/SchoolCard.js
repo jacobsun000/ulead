@@ -15,8 +15,8 @@ export function SchoolCards({ schools }) {
             height={120}
             className="w-20 h-20 object-contain"
           />
-          <div className="flex-1">
-            <h2 className="text-lg font-bold">{school.name}</h2>
+          <div className="flex-1 min-w-0">
+            <h2 className="text-lg font-bold break-words">{school.name}</h2>
             <div className="flex flex-wrap gap-2 mt-2">
               {school.tags.map(tag => (
                 <span
@@ -27,7 +27,7 @@ export function SchoolCards({ schools }) {
                 </span>
               ))}
             </div>
-            <p className="text-sm text-gray-700 mt-2">{school.description}</p>
+            <p className="text-sm text-gray-700 mt-2 break-words overflow-hidden">{school.description}</p>
           </div>
           <a
             href={school.href}

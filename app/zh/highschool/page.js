@@ -6,7 +6,7 @@ import { SchoolCards } from '@/ui/zh/SchoolCard';
 
 export default async function University() {
   const { rows: highschool } = await sql`SELECT * FROM offer WHERE type='highschool'`;
-  const { rows: schools } = await sql`SELECT * FROM summer_school WHERE type = 'highschool'`;
+  const { rows: schools } = await sql`SELECT * FROM summer_school WHERE type = 'highschool' LIMIT 12`;
 
   return (
     <div className="min-w-full">
