@@ -118,7 +118,7 @@ export function AlumniCardHs({
           <div className="w-full bg-ulead-gradient text-white text-lg font-bold p-4">
             {name}
           </div>
-          <div className="p-2 md:p-4 pb-0">
+          <div className="p-3 md:p-4 pb-0">
             <div className="text-black/60 text-xs md:text-sm">
               <div>初中学校：</div>
               <div>{school}</div>

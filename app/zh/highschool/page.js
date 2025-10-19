@@ -65,7 +65,7 @@ async function AlumniShowcaseSection() {
     <section id="success-stories" className="w-full py-16 md:mt-16 overflow-hidden">
       <div className="flex flex-col lg:flex-row w-full justify-center items-center">
         {/* Vertical Title */}
-        <div className="text-3xl md:text-[5rem] text-center lg:w-1/4 w-full mb-8 lg:mb-0 lg:ml-8 font-extrabold leading-tight text-transparent bg-clip-text bg-ulead-gradient">
+        <div className="text-3xl md:text-[5rem] text-center lg:w-1/4 w-full lg:ml-8 font-extrabold leading-tight text-transparent bg-clip-text bg-ulead-gradient">
           <div className="lg:block inline-block lg:mr-0 mr-2">成</div>
           <div className="lg:block inline-block lg:mr-0 mr-2">功</div>
           <div className="lg:block inline-block lg:mr-0 mr-2">案</div>
@@ -73,7 +73,7 @@ async function AlumniShowcaseSection() {
         </div>
 
         {/* Swipeable Cards container */}
-        <div className="lg:w-3/4 w-full px-4">
+        <div className="lg:w-3/4 w-full md:px-4">
           <SwipeableCarousel>
             {alumnies.map((alumnus, idx) => (
               <AlumniCardHs key={idx} {...alumnus} />
