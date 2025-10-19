@@ -1,6 +1,8 @@
 import { sql } from '@vercel/postgres';
 import Image from 'next/image'
 
+import { AlumniCardHs } from '@/ui/zh/AlumniCard'
+import { SwipeableCarousel } from '@/ui/zh/SwipeableCarousel'
 import OfferReport from "@/ui/zh/OfferReport";
 import { SchoolCards } from '@/ui/zh/SchoolCard';
 
@@ -50,9 +52,35 @@ export default async function University() {
         <Image src="/img/zh/highschool/admissions.png" alt="" width={800} height={400} className="md:w-2/3 h-auto" />
       </div>
 
-      <div id="success-stories" className="px-4 md:px-[8vw] py-16 flex flex-col items-center">
-        <Image src="/img/zh/highschool/successStories.svg" alt="" width={800} height={400} className="h-auto" />
-      </div>
+      <AlumniShowcaseSection />
     </div>
   );
+}
+
+
+async function AlumniShowcaseSection() {
+  const { rows: alumnies } = await sql`SELECT * FROM alumni_hs`;
+
+  return (
+    <section id="success-stories" className="w-full py-16 md:mt-16 overflow-hidden">
+      <div className="flex flex-col lg:flex-row w-full justify-center items-center">
+        {/* Vertical Title */}
+        <div className="text-3xl md:text-[5rem] text-center lg:w-1/4 w-full mb-8 lg:mb-0 lg:ml-8 font-extrabold leading-tight text-transparent bg-clip-text bg-ulead-gradient">
+          <div className="lg:block inline-block lg:mr-0 mr-2">成</div>
+          <div className="lg:block inline-block lg:mr-0 mr-2">功</div>
+          <div className="lg:block inline-block lg:mr-0 mr-2">案</div>
+          <div className="lg:block inline-block">例</div>
+        </div>
+
+        {/* Swipeable Cards container */}
+        <div className="lg:w-3/4 w-full px-4">
+          <SwipeableCarousel>
+            {alumnies.map((alumnus, idx) => (
+              <AlumniCardHs key={idx} {...alumnus} />
+            ))}
+          </SwipeableCarousel>
+        </div>
+      </div>
+    </section>
+  )
 }
