@@ -10,8 +10,24 @@ export default async function University() {
 
   return (
     <div className="min-w-full">
-      <Image src="/img/zh/highschool/head.svg" alt="" width={1920} height={1080} className="w-full h-full hidden md:block" />
-      <Image src="/img/zh/highschool/head_mobile.svg" alt="" width={1920} height={1080} className="w-full h-full block md:hidden" />
+      <div className="w-full bg-ulead-gradient py-8">
+        <div className="w-full flex flex-row items-center contents-center justify-center gap-1 md:gap-8">
+          <Image width={300} height={225} className="w-1/4 md:max-w-[300px]" alt="" src="/img/zh/highschool/photos/11.png"></Image>
+          <Image width={348} height={261} className="w-1/3 md:max-w-[348px]" alt="" src="/img/zh/highschool/photos/12.png"></Image>
+          <Image width={300} height={225} className="w-1/4 md:max-w-[300px]" alt="" src="/img/zh/highschool/photos/13.png"></Image>
+        </div>
+        <div className="w-full flex flex-row items-center contents-center justify-center gap-1 px-2 mt-2 md:gap-16">
+          <Image width={256} height={178} className="w-1/4 md:max-w-[256px]" alt="" src="/img/zh/highschool/photos/21.png"></Image>
+          <Image width={256} height={178} className="w-1/4 md:max-w-[256px]" alt="" src="/img/zh/highschool/photos/22.png"></Image>
+          <Image width={256} height={178} className="w-1/4 md:max-w-[256px]" alt="" src="/img/zh/highschool/photos/23.png"></Image>
+          <Image width={256} height={178} className="w-1/4 md:max-w-[256px]" alt="" src="/img/zh/highschool/photos/24.png"></Image>
+        </div>
+      </div>
+
+      <div className="w-full flex justify-center mt-8">
+        <Image src="/img/zh/university/services.svg" alt="" width={1920} height={1080} className="w-full max-w-7xl hidden md:block" />
+        <Image src="/img/zh/university/services_mobile.svg" alt="" width={1920} height={1080} className="w-full px-4 md:hidden" />
+      </div>
       <div id="matriculation" className="px-8 md:px-[8vw] mt-8 md:mt-0 md:py-16 py-8 bg-ulead-gradient">
         <h1 className="text-2xl md:text-4xl text-white text-center font-bold mb-16">高中录取榜单</h1>
         <OfferReport schools={highschool} expand />
