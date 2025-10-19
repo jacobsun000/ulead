@@ -9,7 +9,6 @@ import { AlumniCard } from '@/ui/zh/AlumniCard'
 import { SwipeableCarousel } from '@/ui/zh/SwipeableCarousel'
 import Panel from "@/ui/zh/Panel";
 import Panes from '@/ui/zh/Panes'
-import IASBadge from "@/ui/en/IASBadge";
 import MentorCard from "@/ui/zh/MentorCard";
 
 export default function ChineseHomePage() {
@@ -22,7 +21,6 @@ export default function ChineseHomePage() {
       <AlumniShowcaseSection />
       <LeadProgramSection />
       <ResearchSection />
-      <QualificationsSection />
     </main>
   );
 }
@@ -485,26 +483,3 @@ function ResearchSection() {
     </section>);
 }
 
-function QualificationsSection() {
-  const qualifications = [
-    "/img/home/qualification1.png",
-    "/img/home/qualification2.png",
-    "/img/home/qualification3.png",
-    "/img/home/qualification4.png",
-  ]
-  return (
-    <section id="qualifications" className="mx-16 md:mx-[8vw] pb-16 flex flex-col items-center">
-      <h1 className="font-bold text-3xl text-center mb-8">资质证明</h1>
-      <div className="flex items-center  gap-x-2 md:gap-x-20">
-        {qualifications.map((qualification, index) => (
-          <div key={index} className="w-1/5">
-            <Image src={qualification} alt={`qualification-${index}`} width={200} height={200} />
-          </div>
-        ))}
-        <div className="w-1/5">
-          <IASBadge className="w-[200px] h-[200px]" certNum={'6036'} />
-        </ div>
-      </ div>
-    </section>
-  )
-}

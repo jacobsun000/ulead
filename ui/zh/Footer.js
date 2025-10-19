@@ -1,5 +1,30 @@
 import Image from 'next/image'
 import BackToTopButton from './Back';
+import IASBadge from "@/ui/en/IASBadge";
+
+function QualificationsSection() {
+  const qualifications = [
+    "/img/home/qualification1.png",
+    "/img/home/qualification2.png",
+    "/img/home/qualification3.png",
+    "/img/home/qualification4.png",
+  ]
+  return (
+    <section id="qualifications" className="mx-16 md:mx-[8vw] flex flex-col items-center">
+      <h1 className="font-bold text-xl text-center mb-8">资质证明</h1>
+      <div className="flex items-center justify-center  gap-x-2 md:gap-x-20">
+        {qualifications.map((qualification, index) => (
+          <div key={index} className="w-[12%]">
+            <Image src={qualification} alt={`qualification-${index}`} width={200} height={200} />
+          </div>
+        ))}
+        <div className="w-[6%]">
+          <IASBadge className="w-[150px] h-[150px]" certNum={'6036'} />
+        </ div>
+      </ div>
+    </section>
+  )
+}
 
 function getLink(title, href) {
   if (href !== undefined) {
@@ -25,7 +50,7 @@ export default function Footer() {
   return (
     <footer className="bg-ulead-gradient text-white py-10 px-8 md:px-[8vw]">
       <BackToTopButton />
-      <div className="flex flex-wrap justify-between mb-8">
+      <div className="flex flex-wrap justify-between">
         <div className="flex flex-col items-center">
           <div
             className="md:w-32 md:h-16 w-24 h-12 bg-white"
@@ -75,7 +100,6 @@ export default function Footer() {
               { title: "合领校友会", href: "#alumni" },
               { title: "领航计划", href: "#lead-program" },
               { title: "科研夏校项目", href: "#summer-school" },
-              { title: "资质证明", href: "#qualifications" },
             ]}
           />
         </div>
@@ -133,7 +157,8 @@ export default function Footer() {
 
 
       </div>
-
+      <div className="w-full border-b-2 my-4"></div>
+      <QualificationsSection />
       <div className="text-center text-sm mt-8">
         版权所有：北京合领教育咨询有限公司 www.ulead-edu.com (京ICP备19029988号-1)
       </div>
