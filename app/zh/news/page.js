@@ -29,6 +29,16 @@ export default async function NewsPage() {
       <HeroSection />
       <section className="mx-4 content-center max-w-6xl my-10">
         <NewsList items={items} />
+        <div className="mt-10 flex justify-center">
+          <a
+            href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=Mzg3MDE1NTUyMQ==&scene=117#wechat_redirect"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-full bg-ulead-gradient px-8 py-2 text-white text-sm md:text-base hover:opacity-90 transition-opacity"
+          >
+            更多内容
+          </a>
+        </div>
       </section>
     </main>
   );
