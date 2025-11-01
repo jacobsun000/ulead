@@ -9,6 +9,7 @@ export default function AdminHomePage() {
     { name: "Success Story", link: "/admin/success-story" },
     { name: "Team Member", link: "/admin/team-member" },
     { name: "Summer School", link: "/admin/summer-school" },
+    { name: "News", link: "/admin/news" },
   ];
 
   return (

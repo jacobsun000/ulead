@@ -1,10 +1,19 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const badgeClass = (variant) => {
+  switch (variant) {
+    case "secondary":
+      return "inline-flex items-center gap-1 rounded-full bg-sky-50 text-sky-700 px-2.5 py-1 text-xs font-medium";
+    case "outline":
+    default:
+      return "inline-flex items-center gap-1 rounded-full border border-gray-300 text-gray-600 px-2.5 py-1 text-xs";
+  }
+};
 
 export function NewsList({ items }) {
   return (
@@ -17,8 +26,10 @@ export function NewsList({ items }) {
           <CardContent className="p-4">
             <div className="grid grid-cols-1 md:grid-cols-[220px_1fr_48px] gap-4 items-stretch">
               {/* Thumbnail */}
-              <Link
+              <a
                 href={n.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="relative aspect-[4/3] md:aspect-[4/3] rounded-lg overflow-hidden bg-muted"
               >
                 <Image
@@ -29,14 +40,14 @@ export function NewsList({ items }) {
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 220px"
                 />
-              </Link>
+              </a>
 
               {/* Text content */}
               <div className="flex flex-col min-w-0">
                 {/* Row: author chip */}
                 {n.authorLabel ? (
                   <div className="mb-2">
-                    <span className="inline-flex items-center gap-1 rounded-full bg-sky-50 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300 px-2.5 py-1 text-xs font-medium">
+                    <span className={badgeClass("secondary")}>
                       <CheckCircle2 className="h-3.5 w-3.5" />
                       {n.authorLabel}
                     </span>
@@ -44,22 +55,26 @@ export function NewsList({ items }) {
                 ) : null}
 
                 {/* Title */}
-                <Link href={n.href} className="group">
+                <a href={n.href} target="_blank" rel="noopener noreferrer" className="group">
                   <h3 className="text-lg md:text-xl font-semibold leading-snug line-clamp-2 group-hover:underline">
                     {n.title}
                   </h3>
-                </Link>
+                </a>
 
                 {/* Badges + date */}
                 <div className="mt-2 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-                  <div className="flex flex-wrap gap-1.5">
-                    {(n.badges ?? []).map((b, i) =>
-                      <div key={i} className={i === 0 ? "text-sky-700 font-bold" : ""}>
+                  <div className="flex flex-wrap gap-1.5 items-center">
+                    {n.author ? (
+                      <span className={badgeClass("secondary")}>
+                        {n.author}
+                      </span>
+                    ) : null}
+                    {(n.badges ?? []).map((b, i) => (
+                      <span key={i} className={badgeClass(b.variant)}>
                         {b.label}
-                      </div>)
-                    }
+                      </span>
+                    ))}
                   </div>
-                  <span className="mx-1"></span>
                   <time>{n.date}</time>
                 </div>
 
@@ -71,11 +86,15 @@ export function NewsList({ items }) {
 
               {/* CTA */}
               <div className="hidden md:flex items-center justify-end">
-                <Link href={n.href}>
-                  <Button size="icon" variant="secondary" className="rounded-full bg-ulead-gradient border-0 text-white hover:text-white hover:opacity-90 p-4">
+                <a href={n.href} target="_blank" rel="noopener noreferrer">
+                  <Button
+                    size="icon"
+                    variant="secondary"
+                    className="rounded-full bg-ulead-gradient border-0 text-white hover:text-white hover:opacity-90 p-4"
+                  >
                     <ArrowRight className="h-5 w-5" />
                   </Button>
-                </Link>
+                </a>
               </div>
             </div>
           </CardContent>
