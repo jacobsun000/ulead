@@ -33,7 +33,7 @@ export default function TeamMemberManager() {
         setError(data.message);
       }
     } catch (err) {
-      setError("Failed to fetch team members");
+      setError("获取团队成员失败");
     } finally {
       setLoading(false);
     }
@@ -76,14 +76,14 @@ export default function TeamMemberManager() {
         setError(data.message);
       }
     } catch (err) {
-      setError("Failed to save team member");
+      setError("保存团队成员失败");
     } finally {
       setLoading(false);
     }
   };
 
   const handleDelete = async (id) => {
-    if (!confirm("Are you sure you want to delete this team member?")) return;
+    if (!confirm("确定要删除该团队成员吗？")) return;
 
     setLoading(true);
     try {
@@ -100,7 +100,7 @@ export default function TeamMemberManager() {
         setError(data.message);
       }
     } catch (err) {
-      setError("Failed to delete team member");
+      setError("删除团队成员失败");
     } finally {
       setLoading(false);
     }
@@ -142,7 +142,7 @@ export default function TeamMemberManager() {
 
   return (
     <div className="min-h-screen bg-background p-6">
-      <h1 className="text-4xl font-bold text-primary mb-6">Team Member Manager</h1>
+      <h1 className="text-4xl font-bold text-primary mb-6">团队成员管理</h1>
 
       {error && (
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
@@ -154,7 +154,7 @@ export default function TeamMemberManager() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Name (English) *
+              姓名（英文）*
             </label>
             <input
               type="text"
@@ -167,7 +167,7 @@ export default function TeamMemberManager() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Name (Chinese)
+              姓名（中文）
             </label>
             <input
               type="text"
@@ -180,7 +180,7 @@ export default function TeamMemberManager() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Order Index
+              排序序号
             </label>
             <input
               type="number"
@@ -193,7 +193,7 @@ export default function TeamMemberManager() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Title (Chinese)
+              中文头衔
             </label>
             <input
               type="text"
@@ -206,7 +206,7 @@ export default function TeamMemberManager() {
 
           <div className="md:col-span-2">
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Profile Image
+              头像
             </label>
             <input
               type="file"
@@ -221,28 +221,28 @@ export default function TeamMemberManager() {
 
           <div className="md:col-span-2">
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Description (English) - One line per item *
+              简介（英文，每行一条）*
             </label>
             <textarea
               value={form.description.join("\n")}
               onChange={handleDescriptionChange}
               className="w-full p-2 border border-gray-300 rounded"
               rows="5"
-              placeholder="Enter each description item on a new line&#10;Ph.D. in Computer Science&#10;10+ years experience&#10;Research focus on AI"
+              placeholder="每行输入一条简介&#10;Ph.D. in Computer Science&#10;10+ years experience&#10;Research focus on AI"
               required
             />
           </div>
 
           <div className="md:col-span-2">
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Description (Chinese) - One line per item
+              简介（中文，每行一条）
             </label>
             <textarea
               value={form.description_zh.join("\n")}
               onChange={handleDescriptionZhChange}
               className="w-full p-2 border border-gray-300 rounded"
               rows="5"
-              placeholder="Enter each description item on a new line (Chinese)&#10;计算机科学博士&#10;10年以上经验&#10;人工智能研究专家"
+              placeholder="每行输入一条中文简介&#10;计算机科学博士&#10;10年以上经验&#10;人工智能研究专家"
             />
           </div>
         </div>
@@ -253,33 +253,33 @@ export default function TeamMemberManager() {
             className="bg-primary text-white px-6 py-2 rounded hover:bg-primary/90"
             disabled={loading}
           >
-            {loading ? "Saving..." : form.id ? "Update Member" : "Add Member"}
+            {loading ? "保存中..." : form.id ? "更新成员" : "添加成员"}
           </button>
           <button
             type="button"
             onClick={resetForm}
             className="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600"
           >
-            Reset Form
+            重置表单
           </button>
         </div>
       </form>
 
       {loading ? (
-        <p>Loading team members...</p>
+        <p>正在加载团队成员...</p>
       ) : (
         <div className="bg-white shadow-md rounded-lg overflow-hidden">
           <table className="table-auto w-full text-left">
             <thead className="bg-primary text-white">
               <tr>
                 <th className="p-4">ID</th>
-                <th className="p-4">Order</th>
-                <th className="p-4">Name</th>
-                <th className="p-4">Image</th>
-                <th className="p-4">Name (ZH)</th>
-                <th className="p-4">Title (ZH)</th>
-                <th className="p-4">Description Items</th>
-                <th className="p-4">Actions</th>
+                <th className="p-4">排序</th>
+                <th className="p-4">姓名</th>
+                <th className="p-4">头像</th>
+                <th className="p-4">中文名</th>
+                <th className="p-4">中文头衔</th>
+                <th className="p-4">简介条目</th>
+                <th className="p-4">操作</th>
               </tr>
             </thead>
             <tbody>
@@ -301,7 +301,7 @@ export default function TeamMemberManager() {
                       />
                     ) : (
                       <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 text-xs">
-                        No Image
+                        暂无头像
                       </div>
                     )}
                   </td>
@@ -310,7 +310,7 @@ export default function TeamMemberManager() {
                   <td className="p-4">
                     <div className="max-w-xs">
                       <div className="text-sm font-medium text-gray-900">
-                        EN: {record.description ? record.description.length : 0} items
+                        EN：{record.description ? record.description.length : 0} 条
                       </div>
                       {record.description && record.description.length > 0 && (
                         <div className="text-xs text-gray-600 truncate">
@@ -320,7 +320,7 @@ export default function TeamMemberManager() {
                       )}
                       {record.description_zh && record.description_zh.length > 0 && (
                         <div className="text-xs text-gray-600 mt-1">
-                          ZH: {record.description_zh.length} items
+                          ZH：{record.description_zh.length} 条
                         </div>
                       )}
                     </div>
@@ -331,13 +331,13 @@ export default function TeamMemberManager() {
                         className="text-blue-500 hover:underline"
                         onClick={() => handleEdit(record)}
                       >
-                        Edit
+                        编辑
                       </button>
                       <button
                         className="text-red-500 hover:underline"
                         onClick={() => handleDelete(record.id)}
                       >
-                        Delete
+                        删除
                       </button>
                     </div>
                   </td>

@@ -20,7 +20,7 @@ export default function PartnerManager() {
       if (data.success) setSchools(data.data);
       else setError(data.message);
     } catch {
-      setError("Failed to fetch target schools");
+      setError("获取目标学校失败");
     } finally {
       setLoading(false);
     }
@@ -41,7 +41,7 @@ export default function PartnerManager() {
         setForm({ id: null, name: "", state: "" }); // Reset form
       } else setError(data.message);
     } catch {
-      setError("Failed to save target school");
+      setError("保存目标学校失败");
     }
   };
 
@@ -56,13 +56,13 @@ export default function PartnerManager() {
       if (data.success) fetchSchools(); // Refresh list
       else setError(data.message);
     } catch {
-      setError("Failed to delete target school");
+      setError("删除目标学校失败");
     }
   };
 
   return (
     <div className="min-h-screen bg-background p-6">
-      <h1 className="text-4xl font-bold text-primary mb-6">Partner Manager</h1>
+      <h1 className="text-4xl font-bold text-primary mb-6">合作院校管理</h1>
 
       <form onSubmit={handleSubmit} className="mb-6">
         <div className="flex gap-4 mb-4">
@@ -70,7 +70,7 @@ export default function PartnerManager() {
             type="text"
             value={form.name}
             onChange={(e) => setForm({ ...form, name: e.target.value })}
-            placeholder="School Name"
+            placeholder="学校名称"
             className="w-1/2 p-2 border rounded"
             required
           />
@@ -78,7 +78,7 @@ export default function PartnerManager() {
             type="text"
             value={form.state}
             onChange={(e) => setForm({ ...form, state: e.target.value })}
-            placeholder="State"
+            placeholder="州/省份"
             className="w-1/2 p-2 border rounded"
             required
           />
@@ -87,12 +87,12 @@ export default function PartnerManager() {
           type="submit"
           className="bg-primary text-white px-4 py-2 rounded"
         >
-          {form.id ? "Update School" : "Add School"}
+          {form.id ? "更新学校" : "新增学校"}
         </button>
       </form>
 
       {loading ? (
-        <p>Loading...</p>
+        <p>加载中...</p>
       ) : error ? (
         <p className="text-red-500">{error}</p>
       ) : (
@@ -101,9 +101,9 @@ export default function PartnerManager() {
             <thead className="bg-primary text-white">
               <tr>
                 <th className="p-4">ID</th>
-                <th className="p-4">Name</th>
-                <th className="p-4">State</th>
-                <th className="p-4">Actions</th>
+                <th className="p-4">学校名称</th>
+                <th className="p-4">州/省份</th>
+                <th className="p-4">操作</th>
               </tr>
             </thead>
             <tbody>
@@ -117,13 +117,13 @@ export default function PartnerManager() {
                       className="text-blue-500 hover:underline"
                       onClick={() => setForm(school)}
                     >
-                      Edit
+                      编辑
                     </button>
                     <button
                       className="text-red-500 hover:underline"
                       onClick={() => handleDelete(school.id)}
                     >
-                      Delete
+                      删除
                     </button>
                   </td>
                 </tr>

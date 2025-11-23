@@ -42,11 +42,11 @@ export default function NewsManager() {
       if (data.success) {
         setNews(data.data);
       } else {
-        setError(data.message || "Failed to fetch news");
+        setError(data.message || "获取新闻失败");
       }
     } catch (err) {
       console.error(err);
-      setError("Failed to fetch news");
+      setError("获取新闻失败");
     } finally {
       setLoading(false);
     }
@@ -101,7 +101,7 @@ export default function NewsManager() {
       }
 
       if (!imageUrl) {
-        setError("Please provide an image URL or upload an image.");
+        setError("请提供封面图片链接或上传图片。");
         setLoading(false);
         return;
       }
@@ -124,18 +124,18 @@ export default function NewsManager() {
         await fetchNews();
         resetForm();
       } else {
-        setError(data.message || "Failed to save news");
+        setError(data.message || "保存新闻失败");
       }
     } catch (err) {
       console.error(err);
-      setError("Failed to save news");
+      setError("保存新闻失败");
     } finally {
       setLoading(false);
     }
   }
 
   async function handleDelete(id) {
-    if (!confirm("Are you sure you want to delete this news item?")) return;
+    if (!confirm("确定要删除该新闻文章吗？")) return;
     setLoading(true);
     try {
       const res = await fetch("/api/admin/news", {
@@ -147,11 +147,11 @@ export default function NewsManager() {
       if (data.success) {
         await fetchNews();
       } else {
-        setError(data.message || "Failed to delete news item");
+        setError(data.message || "删除新闻失败");
       }
     } catch (err) {
       console.error(err);
-      setError("Failed to delete news item");
+      setError("删除新闻失败");
     } finally {
       setLoading(false);
     }
@@ -159,7 +159,7 @@ export default function NewsManager() {
 
   return (
     <div className="min-h-screen bg-background p-6">
-      <h1 className="text-4xl font-bold text-primary mb-6">News Manager</h1>
+      <h1 className="text-4xl font-bold text-primary mb-6">新闻管理</h1>
 
       {error && (
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
@@ -170,23 +170,23 @@ export default function NewsManager() {
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
         <div className="xl:col-span-2 bg-white shadow-md rounded-lg overflow-hidden">
           <div className="p-6 border-b">
-            <h2 className="text-2xl font-semibold">Existing Articles</h2>
+            <h2 className="text-2xl font-semibold">已发布文章</h2>
             <p className="text-sm text-muted-foreground mt-1">
-              Total: {news.length} {loading ? "(Loading…)" : ""}
+              总数：{news.length} {loading ? "(加载中...)" : ""}
             </p>
           </div>
           <div className="overflow-x-auto">
             <table className="min-w-full text-sm">
               <thead className="bg-gray-100 text-gray-700">
                 <tr>
-                  <th className="p-3 text-left">Title</th>
-                  <th className="p-3 text-left">Author</th>
-                  <th className="p-3 text-left">Badges</th>
-                  <th className="p-3 text-left">Link</th>
-                  <th className="p-3 text-center">Top</th>
-                  <th className="p-3 text-center">Published</th>
-                  <th className="p-3 text-left">Date</th>
-                  <th className="p-3 text-right">Actions</th>
+                  <th className="p-3 text-left">标题</th>
+                  <th className="p-3 text-left">作者</th>
+                  <th className="p-3 text-left">徽章</th>
+                  <th className="p-3 text-left">链接</th>
+                  <th className="p-3 text-center">精选</th>
+                  <th className="p-3 text-center">已发布</th>
+                  <th className="p-3 text-left">日期</th>
+                  <th className="p-3 text-right">操作</th>
                 </tr>
               </thead>
               <tbody>
@@ -205,10 +205,10 @@ export default function NewsManager() {
                       {item.external_url}
                     </td>
                     <td className="p-3 text-center">
-                      {item.is_top ? "Yes" : "No"}
+                      {item.is_top ? "是" : "否"}
                     </td>
                     <td className="p-3 text-center">
-                      {item.is_published ? "Yes" : "No"}
+                      {item.is_published ? "是" : "否"}
                     </td>
                     <td className="p-3">
                       {item.published_at
@@ -220,13 +220,13 @@ export default function NewsManager() {
                         className="text-blue-600 hover:underline"
                         onClick={() => handleEdit(item)}
                       >
-                        Edit
+                        编辑
                       </button>
                       <button
                         className="text-red-600 hover:underline"
                         onClick={() => handleDelete(item.id)}
                       >
-                        Delete
+                        删除
                       </button>
                     </td>
                   </tr>
@@ -234,7 +234,7 @@ export default function NewsManager() {
                 {news.length === 0 && !loading && (
                   <tr>
                     <td className="p-4 text-center text-gray-500" colSpan={7}>
-                      No news articles found.
+                      暂无新闻。
                     </td>
                   </tr>
                 )}
@@ -245,11 +245,11 @@ export default function NewsManager() {
 
         <div className="bg-white shadow-md rounded-lg p-6">
           <h2 className="text-2xl font-semibold mb-4">
-            {isEditing ? "Edit Article" : "Add New Article"}
+            {isEditing ? "编辑文章" : "新增文章"}
           </h2>
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
-              <label className="block text-sm font-medium">Title *</label>
+              <label className="block text-sm font-medium">标题 *</label>
               <input
                 type="text"
                 value={form.title}
@@ -261,7 +261,7 @@ export default function NewsManager() {
 
             <div>
               <label className="block text-sm font-medium">
-                Author (displays with special styling)
+                作者（将以特殊样式展示）
               </label>
               <input
                 type="text"
@@ -274,7 +274,7 @@ export default function NewsManager() {
 
             <div>
               <label className="block text-sm font-medium">
-                Additional Badges (comma separated)
+                额外徽章（以逗号分隔）
               </label>
               <input
                 type="text"
@@ -284,12 +284,12 @@ export default function NewsManager() {
                 placeholder="IECA认证专业顾问, Top 30 寄宿高中顾问"
               />
               <p className="mt-1 text-xs text-muted-foreground">
-                These render with outline styling. Leave blank to omit.
+                将以描边样式显示，留空则不展示。
               </p>
             </div>
 
             <div>
-              <label className="block text-sm font-medium">Excerpt</label>
+              <label className="block text-sm font-medium">摘要</label>
               <textarea
                 value={form.excerpt || ""}
                 onChange={(e) => setForm({ ...form, excerpt: e.target.value })}
@@ -300,7 +300,7 @@ export default function NewsManager() {
 
             <div>
               <label className="block text-sm font-medium">
-                Published Date *
+                发布日期 *
               </label>
               <input
                 type="date"
@@ -315,7 +315,7 @@ export default function NewsManager() {
 
             <div>
               <label className="block text-sm font-medium">
-                Cover Image URL (optional if uploading a file)
+                封面图片 URL（上传文件时可选）
               </label>
               <input
                 type="text"
@@ -332,13 +332,13 @@ export default function NewsManager() {
                 onChange={(e) => setImageFile(e.target.files?.[0] || null)}
               />
               <p className="mt-1 text-xs text-muted-foreground">
-                Uploading a file will overwrite the URL with the hosted image.
+                上传文件后会自动替换为托管图片的链接。
               </p>
             </div>
 
             <div>
               <label className="block text-sm font-medium">
-                Article Link (external_url) *
+                文章链接（external_url）*
               </label>
               <input
                 type="text"
@@ -362,7 +362,7 @@ export default function NewsManager() {
                 className="h-4 w-4"
               />
               <label htmlFor="is_top" className="text-sm font-medium">
-                Mark as 作者精选
+                标记为「作者精选」
               </label>
             </div>
 
@@ -377,7 +377,7 @@ export default function NewsManager() {
                 className="h-4 w-4"
               />
               <label htmlFor="is_published" className="text-sm font-medium">
-                Published
+                发布
               </label>
             </div>
 
@@ -387,7 +387,7 @@ export default function NewsManager() {
                 className="bg-primary text-white px-4 py-2 rounded hover:bg-primary/90 disabled:opacity-60"
                 disabled={loading}
               >
-                {isEditing ? "Update" : "Create"}
+                {isEditing ? "更新" : "创建"}
               </button>
               <button
                 type="button"
@@ -395,7 +395,7 @@ export default function NewsManager() {
                 className="px-4 py-2 rounded border border-gray-300 hover:bg-gray-50"
                 disabled={loading}
               >
-                Reset
+                重置
               </button>
             </div>
           </form>

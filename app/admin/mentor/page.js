@@ -33,7 +33,7 @@ export default function MentorManager() {
         setError(data.message);
       }
     } catch (err) {
-      setError("Failed to fetch mentors");
+      setError("获取导师数据失败");
     } finally {
       setLoading(false);
     }
@@ -76,14 +76,14 @@ export default function MentorManager() {
         setError(data.message);
       }
     } catch (err) {
-      setError("Failed to save mentor");
+      setError("保存导师信息失败");
     } finally {
       setLoading(false);
     }
   };
 
   const handleDelete = async (id) => {
-    if (!confirm("Are you sure you want to delete this mentor?")) return;
+    if (!confirm("确定要删除这位导师吗？")) return;
 
     setLoading(true);
     try {
@@ -100,7 +100,7 @@ export default function MentorManager() {
         setError(data.message);
       }
     } catch (err) {
-      setError("Failed to delete mentor");
+      setError("删除导师失败");
     } finally {
       setLoading(false);
     }
@@ -126,7 +126,7 @@ export default function MentorManager() {
 
   return (
     <div className="min-h-screen bg-background p-6">
-      <h1 className="text-4xl font-bold text-primary mb-6">Mentor Manager</h1>
+      <h1 className="text-4xl font-bold text-primary mb-6">导师管理</h1>
 
       {error && (
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
@@ -138,7 +138,7 @@ export default function MentorManager() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Name *
+              姓名 *
             </label>
             <input
               type="text"
@@ -151,33 +151,33 @@ export default function MentorManager() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Degree
+              学位
             </label>
             <input
               type="text"
               value={form.degree}
               onChange={(e) => setForm({ ...form, degree: e.target.value })}
               className="w-full p-2 border border-gray-300 rounded"
-              placeholder="e.g., Ph.D. in Computer Science"
+              placeholder="例如：计算机科学博士"
             />
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Institution
+              任职机构
             </label>
             <input
               type="text"
               value={form.institution}
               onChange={(e) => setForm({ ...form, institution: e.target.value })}
               className="w-full p-2 border border-gray-300 rounded"
-              placeholder="e.g., Stanford University"
+              placeholder="例如：Stanford University"
             />
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Mentor Image
+              导师照片
             </label>
             <input
               type="file"
@@ -192,40 +192,40 @@ export default function MentorManager() {
 
           <div className="md:col-span-2">
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Research Domains
+              研究领域
             </label>
             <textarea
               value={form.research_domains}
               onChange={(e) => setForm({ ...form, research_domains: e.target.value })}
               className="w-full p-2 border border-gray-300 rounded"
               rows="2"
-              placeholder="e.g., Machine Learning, Artificial Intelligence, Data Science"
+              placeholder="例如：Machine Learning, Artificial Intelligence, Data Science"
             />
           </div>
 
           <div className="md:col-span-2">
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Projects
+              重点项目
             </label>
             <textarea
               value={form.projects}
               onChange={(e) => setForm({ ...form, projects: e.target.value })}
               className="w-full p-2 border border-gray-300 rounded"
               rows="3"
-              placeholder="Describe notable projects and achievements"
+              placeholder="填写代表性项目与成果"
             />
           </div>
 
           <div className="md:col-span-2">
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Supported Programs
+              支持的项目
             </label>
             <textarea
               value={form.supported_programs}
               onChange={(e) => setForm({ ...form, supported_programs: e.target.value })}
               className="w-full p-2 border border-gray-300 rounded"
               rows="2"
-              placeholder="e.g., Undergraduate Research, Graduate Admissions, PhD Applications"
+              placeholder="例如：本科科研、研究生申请、博士申请"
             />
           </div>
         </div>
@@ -236,32 +236,32 @@ export default function MentorManager() {
             className="bg-primary text-white px-6 py-2 rounded hover:bg-primary/90"
             disabled={loading}
           >
-            {loading ? "Saving..." : form.id ? "Update Mentor" : "Add Mentor"}
+            {loading ? "保存中..." : form.id ? "更新导师" : "添加导师"}
           </button>
           <button
             type="button"
             onClick={resetForm}
             className="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600"
           >
-            Reset Form
+            重置表单
           </button>
         </div>
       </form>
 
       {loading ? (
-        <p>Loading mentors...</p>
+        <p>正在加载导师...</p>
       ) : (
         <div className="bg-white shadow-md rounded-lg overflow-hidden">
           <table className="table-auto w-full text-left">
             <thead className="bg-primary text-white">
               <tr>
                 <th className="p-4">ID</th>
-                <th className="p-4">Name</th>
-                <th className="p-4">Image</th>
-                <th className="p-4">Degree</th>
-                <th className="p-4">Institution</th>
-                <th className="p-4">Research Domains</th>
-                <th className="p-4">Actions</th>
+                <th className="p-4">姓名</th>
+                <th className="p-4">照片</th>
+                <th className="p-4">学位</th>
+                <th className="p-4">任职机构</th>
+                <th className="p-4">研究领域</th>
+                <th className="p-4">操作</th>
               </tr>
             </thead>
             <tbody>
@@ -278,7 +278,7 @@ export default function MentorManager() {
                       />
                     ) : (
                       <div className="w-16 h-16 bg-gray-200 rounded flex items-center justify-center text-gray-500 text-xs">
-                        No Image
+                        暂无照片
                       </div>
                     )}
                   </td>
@@ -295,13 +295,13 @@ export default function MentorManager() {
                         className="text-blue-500 hover:underline"
                         onClick={() => handleEdit(record)}
                       >
-                        Edit
+                        编辑
                       </button>
                       <button
                         className="text-red-500 hover:underline"
                         onClick={() => handleDelete(record.id)}
                       >
-                        Delete
+                        删除
                       </button>
                     </div>
                   </td>

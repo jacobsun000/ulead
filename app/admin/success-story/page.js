@@ -3,6 +3,10 @@
 import { useState, useEffect, useCallback } from "react";
 
 const storyTypes = ["University", "HighSchool"];
+const storyTypeLabels = {
+  University: "大学",
+  HighSchool: "高中",
+};
 
 export default function SuccessStoryManager() {
   const [storyType, setStoryType] = useState("");
@@ -33,7 +37,7 @@ export default function SuccessStoryManager() {
         setError(data.message);
       }
     } catch (err) {
-      setError("Failed to fetch success stories");
+      setError("获取成功案例失败");
     } finally {
       setLoading(false);
     }
@@ -80,14 +84,14 @@ export default function SuccessStoryManager() {
         setError(data.message);
       }
     } catch (err) {
-      setError("Failed to save success story");
+      setError("保存成功案例失败");
     } finally {
       setLoading(false);
     }
   };
 
   const handleDelete = async (id) => {
-    if (!confirm("Are you sure you want to delete this success story?")) return;
+    if (!confirm("确定要删除该成功案例吗？")) return;
 
     setLoading(true);
     try {
@@ -104,7 +108,7 @@ export default function SuccessStoryManager() {
         setError(data.message);
       }
     } catch (err) {
-      setError("Failed to delete success story");
+      setError("删除成功案例失败");
     } finally {
       setLoading(false);
     }
@@ -146,7 +150,7 @@ export default function SuccessStoryManager() {
 
   return (
     <div className="min-h-screen bg-background p-6">
-      <h1 className="text-4xl font-bold text-primary mb-6">Success Story Manager</h1>
+      <h1 className="text-4xl font-bold text-primary mb-6">成功案例管理</h1>
 
       {error && (
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
@@ -156,17 +160,17 @@ export default function SuccessStoryManager() {
 
       <div className="mb-6">
         <label className="block text-sm font-medium text-gray-700 mb-2">
-          Filter by Type (optional)
+          按类型筛选（可选）
         </label>
         <select
           value={storyType}
           onChange={(e) => setStoryType(e.target.value)}
           className="p-2 border border-gray-300 rounded"
         >
-          <option value="">All Types</option>
+          <option value="">全部类型</option>
           {storyTypes.map((type) => (
             <option key={type} value={type}>
-              {type}
+              {storyTypeLabels[type]}
             </option>
           ))}
         </select>
@@ -176,7 +180,7 @@ export default function SuccessStoryManager() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Type *
+              类型 *
             </label>
             <select
               value={form.type}
@@ -184,10 +188,10 @@ export default function SuccessStoryManager() {
               className="w-full p-2 border border-gray-300 rounded"
               required
             >
-              <option value="">Select Type</option>
+              <option value="">请选择类型</option>
               {storyTypes.map((type) => (
                 <option key={type} value={type}>
-                  {type}
+                  {storyTypeLabels[type]}
                 </option>
               ))}
             </select>
@@ -195,7 +199,7 @@ export default function SuccessStoryManager() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Student Name *
+              学生姓名 *
             </label>
             <input
               type="text"
@@ -208,7 +212,7 @@ export default function SuccessStoryManager() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              School *
+              就读学校 *
             </label>
             <input
               type="text"
@@ -221,7 +225,7 @@ export default function SuccessStoryManager() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Student Image
+              学生照片
             </label>
             <input
               type="file"
@@ -236,7 +240,7 @@ export default function SuccessStoryManager() {
 
           <div className="md:col-span-2">
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Labels (comma-separated)
+              标签（逗号分隔）
             </label>
             <input
               type="text"
@@ -249,7 +253,7 @@ export default function SuccessStoryManager() {
 
           <div className="md:col-span-2">
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Offers (comma-separated)
+              Offer（逗号分隔）
             </label>
             <input
               type="text"
@@ -262,14 +266,14 @@ export default function SuccessStoryManager() {
 
           <div className="md:col-span-2">
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Evaluation
+              评价
             </label>
             <textarea
               value={form.evaluation}
               onChange={(e) => setForm({ ...form, evaluation: e.target.value })}
               className="w-full p-2 border border-gray-300 rounded"
               rows="4"
-              placeholder="Student's testimonial or evaluation of the program"
+              placeholder="学生反馈或导师评价"
             />
           </div>
         </div>
@@ -280,33 +284,33 @@ export default function SuccessStoryManager() {
             className="bg-primary text-white px-6 py-2 rounded hover:bg-primary/90"
             disabled={loading}
           >
-            {loading ? "Saving..." : form.id ? "Update Story" : "Add Story"}
+            {loading ? "保存中..." : form.id ? "更新案例" : "添加案例"}
           </button>
           <button
             type="button"
             onClick={resetForm}
             className="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600"
           >
-            Reset Form
+            重置表单
           </button>
         </div>
       </form>
 
       {loading ? (
-        <p>Loading success stories...</p>
+        <p>正在加载成功案例...</p>
       ) : (
         <div className="bg-white shadow-md rounded-lg overflow-hidden">
           <table className="table-auto w-full text-left">
             <thead className="bg-primary text-white">
               <tr>
                 <th className="p-4">ID</th>
-                <th className="p-4">Type</th>
-                <th className="p-4">Name</th>
-                <th className="p-4">Image</th>
-                <th className="p-4">School</th>
-                <th className="p-4">Labels</th>
-                <th className="p-4">Offers</th>
-                <th className="p-4">Actions</th>
+                <th className="p-4">类型</th>
+                <th className="p-4">姓名</th>
+                <th className="p-4">照片</th>
+                <th className="p-4">学校</th>
+                <th className="p-4">标签</th>
+                <th className="p-4">Offer</th>
+                <th className="p-4">操作</th>
               </tr>
             </thead>
             <tbody>
@@ -319,7 +323,7 @@ export default function SuccessStoryManager() {
                         ? 'bg-blue-100 text-blue-800'
                         : 'bg-green-100 text-green-800'
                     }`}>
-                      {record.type}
+                      {storyTypeLabels[record.type] || record.type}
                     </span>
                   </td>
                   <td className="p-4 font-medium">{record.name}</td>
@@ -332,7 +336,7 @@ export default function SuccessStoryManager() {
                       />
                     ) : (
                       <div className="w-16 h-16 bg-gray-200 rounded flex items-center justify-center text-gray-500 text-xs">
-                        No Image
+                        暂无照片
                       </div>
                     )}
                   </td>
@@ -361,7 +365,7 @@ export default function SuccessStoryManager() {
                         ))}
                         {record.offers.length > 2 && (
                           <div className="text-xs text-gray-500">
-                            +{record.offers.length - 2} more
+                            +{record.offers.length - 2} 条更多
                           </div>
                         )}
                       </div>
@@ -375,13 +379,13 @@ export default function SuccessStoryManager() {
                         className="text-blue-500 hover:underline"
                         onClick={() => handleEdit(record)}
                       >
-                        Edit
+                        编辑
                       </button>
                       <button
                         className="text-red-500 hover:underline"
                         onClick={() => handleDelete(record.id)}
                       >
-                        Delete
+                        删除
                       </button>
                     </div>
                   </td>

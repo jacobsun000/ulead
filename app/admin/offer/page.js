@@ -3,6 +3,11 @@
 import { useState, useEffect, useCallback } from "react";
 
 const schoolTypes = ["university", "highschool", "other"];
+const schoolTypeLabels = {
+  university: "大学",
+  highschool: "高中",
+  other: "其他",
+};
 
 export default function OfferManager() {
   const [schoolType, setSchoolType] = useState("");
@@ -28,7 +33,7 @@ export default function OfferManager() {
       if (data.success) setRecords(data.data);
       else console.error(data.message);
     } catch {
-      console.error("Failed to fetch records");
+      console.error("获取录取数据失败");
     } finally {
       setLoading(false);
     }
@@ -78,7 +83,7 @@ export default function OfferManager() {
         setError("");
       } else setError(data.message);
     } catch {
-      setError("Failed to save record");
+      setError("保存数据失败");
     } finally {
       setLoading(false);
     }
@@ -96,7 +101,7 @@ export default function OfferManager() {
       if (data.success) fetchRecords();
       else setError(data.message);
     } catch {
-      setError("Failed to delete record");
+      setError("删除数据失败");
     } finally {
       setLoading(false);
     }
@@ -104,17 +109,17 @@ export default function OfferManager() {
 
   return (
     <div className="min-h-screen bg-background p-6">
-      <h1 className="text-4xl font-bold text-primary mb-6">Offer Manager</h1>
+      <h1 className="text-4xl font-bold text-primary mb-6">Offer 管理</h1>
 
       <select
         value={schoolType}
         onChange={(e) => setSchoolType(e.target.value)}
         className="mb-6 p-2 border rounded"
       >
-        <option value="">Select School Type</option>
+        <option value="">请选择学校类型</option>
         {schoolTypes.map((type) => (
           <option key={type} value={type}>
-            {type.replace("_", " ").toUpperCase()}
+            {schoolTypeLabels[type]}
           </option>
         ))}
       </select>
@@ -122,7 +127,7 @@ export default function OfferManager() {
       {schoolType && (
         <>
           {loading ? (
-            <p>Loading...</p>
+            <p>加载中...</p>
           ) : error ? (
             <p className="text-red-500 mb-4">{error}</p>
           ) : null}
@@ -131,7 +136,7 @@ export default function OfferManager() {
               <form onSubmit={handleSubmit} className="mb-6">
                 <div className="mb-4">
                   <label className="block">
-                    <span>Logo Image:</span>
+                    <span>Logo 图片：</span>
                     <input
                       type="file"
                       onChange={(e) => setImageFile(e.target.files[0])}
@@ -147,7 +152,7 @@ export default function OfferManager() {
                 </div>
                 <input
                   type="text"
-                  placeholder="School Name"
+                  placeholder="学校名称"
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   className="mb-4 w-full p-2 border rounded"
@@ -157,7 +162,7 @@ export default function OfferManager() {
                   <>
                     <input
                       type="text"
-                      placeholder="Country"
+                      placeholder="国家"
                       value={form.country}
                       onChange={(e) => setForm({ ...form, country: e.target.value })}
                       className="mb-4 w-full p-2 border rounded"
@@ -165,7 +170,7 @@ export default function OfferManager() {
                     />
                     <input
                       type="text"
-                      placeholder="Rank"
+                      placeholder="排名"
                       value={form.rank}
                       onChange={(e) => setForm({ ...form, rank: e.target.value })}
                       className="mb-4 w-full p-2 border rounded"
@@ -175,14 +180,14 @@ export default function OfferManager() {
                 )}
                 <input
                   type="text"
-                  placeholder="Chinese Name"
+                  placeholder="中文名称"
                   value={form.name_cn}
                   onChange={(e) => setForm({ ...form, name_cn: e.target.value })}
                   className="mb-4 w-full p-2 border rounded"
                 />
                 <input
                   type="number"
-                  placeholder="Count"
+                  placeholder="数量"
                   value={form.count}
                   onChange={(e) => setForm({ ...form, count: Number(e.target.value) })}
                   className="mb-4 w-full p-2 border rounded"
@@ -194,7 +199,7 @@ export default function OfferManager() {
                   className="bg-primary text-white px-4 py-2 rounded"
                   disabled={loading}
                 >
-                  {form.id ? "Update Record" : "Add Record"}
+                  {form.id ? "更新记录" : "新增记录"}
                 </button>
               </form>
               <div className="bg-white shadow-md rounded-lg overflow-hidden">
@@ -203,16 +208,16 @@ export default function OfferManager() {
                     <tr>
                       <th className="p-4">ID</th>
                       <th className="p-4">Logo</th>
-                      <th className="p-4">School Name</th>
-                      <th className="p-4">Chinese Name</th>
+                      <th className="p-4">学校名称</th>
+                      <th className="p-4">中文名称</th>
                       {schoolType === "university" && (
                         <>
-                          <th className="p-4">Country</th>
-                          <th className="p-4">Rank</th>
+                          <th className="p-4">国家</th>
+                          <th className="p-4">排名</th>
                         </>
                       )}
-                      <th className="p-4">Count</th>
-                      <th className="p-4">Actions</th>
+                      <th className="p-4">数量</th>
+                      <th className="p-4">操作</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -240,13 +245,13 @@ export default function OfferManager() {
                             className="text-blue-500 hover:underline"
                             onClick={() => setForm(record)}
                           >
-                            Edit
+                            编辑
                           </button>
                           <button
                             className="text-red-500 hover:underline"
                             onClick={() => handleDelete(record.id)}
                           >
-                            Delete
+                            删除
                           </button>
                         </td>
                       </tr>

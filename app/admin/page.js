@@ -1,15 +1,15 @@
 export default function AdminHomePage() {
   const managers = [
-    { name: "Contact", link: "/admin/contact" },
-    { name: "Offer", link: "/admin/offer" },
-    { name: "Partner", link: "/admin/partner" },
-    { name: "Abilities", link: "/admin/ability" },
-    { name: "Alumni", link: "/admin/alumni" },
-    { name: "Mentor", link: "/admin/mentor" },
-    { name: "Success Story", link: "/admin/success-story" },
-    { name: "Team Member", link: "/admin/team-member" },
-    { name: "Summer School", link: "/admin/summer-school" },
-    { name: "News", link: "/admin/news" },
+    { name: "联系表单", link: "/admin/contact" },
+    { name: "Offer 管理", link: "/admin/offer" },
+    { name: "合作院校", link: "/admin/partner" },
+    { name: "能力标签", link: "/admin/ability" },
+    { name: "校友故事", link: "/admin/alumni" },
+    { name: "导师团队", link: "/admin/mentor" },
+    { name: "成功案例", link: "/admin/success-story" },
+    { name: "团队成员", link: "/admin/team-member" },
+    { name: "暑校项目", link: "/admin/summer-school" },
+    { name: "新闻文章", link: "/admin/news" },
   ];
 
   return (

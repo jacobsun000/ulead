@@ -24,7 +24,7 @@ export default function ContactManager() {
         setError(data.message);
       }
     } catch (err) {
-      setError("Failed to fetch contacts");
+      setError("获取联系人失败");
     } finally {
       setLoading(false);
     }
@@ -48,7 +48,7 @@ export default function ContactManager() {
         setError(data.message);
       }
     } catch (err) {
-      setError("Failed to delete contacts");
+      setError("删除联系人失败");
     }
   };
 
@@ -85,10 +85,10 @@ export default function ContactManager() {
 
   return (
     <div className="min-h-screen bg-background p-6">
-      <h1 className="text-4xl font-bold text-primary mb-6">Contact Manager</h1>
+      <h1 className="text-4xl font-bold text-primary mb-6">联系表单管理</h1>
 
       {loading ? (
-        <p>Loading contacts...</p>
+        <p>正在加载联系人...</p>
       ) : error ? (
         <p className="text-red-500">{error}</p>
       ) : (
@@ -100,13 +100,13 @@ export default function ContactManager() {
                 }`}
               disabled={selectedContacts.length === 0}
             >
-              Delete Selected
+              删除所选
             </button>
             <button
               onClick={handleDownloadCSV}
               className="bg-secondary text-white px-4 py-2 rounded"
             >
-              Download CSV
+              下载 CSV
             </button>
           </div>
           <table className="table-auto w-full text-left border-collapse">
@@ -122,10 +122,10 @@ export default function ContactManager() {
                     }
                   />
                 </th>
-                <th className="p-4">Name</th>
-                <th className="p-4">Contact</th>
-                <th className="p-4">Source</th>
-                <th className="p-4">Questions</th>
+                <th className="p-4">姓名</th>
+                <th className="p-4">联系方式</th>
+                <th className="p-4">来源</th>
+                <th className="p-4">问题</th>
               </tr>
             </thead>
             <tbody>

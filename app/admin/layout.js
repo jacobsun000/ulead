@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
         <div>
           <h1 className="text-center pt-8">
             <a className="text-4xl font-bold text-primary hover:text-primaryLight no-underline" href="/admin">
-              Admin Home
+              管理员首页
             </a>
           </h1>
         </div>

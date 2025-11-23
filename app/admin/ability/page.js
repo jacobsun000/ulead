@@ -94,7 +94,7 @@ export default function AbilitiesManager() {
 
   return (
     <div className="max-w-6xl mx-auto mt-10 p-5 bg-white shadow-lg rounded-lg">
-      <h2 className="text-2xl font-semibold mb-4">Ability Tag Management</h2>
+      <h2 className="text-2xl font-semibold mb-4">能力标签管理</h2>
       <div className="space-y-4">
         {tags.map((tag) => (
           <div key={tag.id} className="flex items-center gap-3">
@@ -115,8 +115,8 @@ export default function AbilitiesManager() {
               onBlur={() => updateTag(tag)}
               className="border p-2"
             >
-              <option value="top">Top</option>
-              <option value="bottom">Bottom</option>
+              <option value="top">顶部</option>
+              <option value="bottom">底部</option>
             </select>
             <select
               value={tag.type}
@@ -132,7 +132,7 @@ export default function AbilitiesManager() {
               className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
               onClick={() => deleteTag(tag.id)}
             >
-              Delete
+              删除
             </button>
           </div>
         ))}
@@ -140,7 +140,7 @@ export default function AbilitiesManager() {
       <div className="mt-6 flex gap-3">
         <input
           type="text"
-          placeholder="New Tag Name"
+          placeholder="新标签名称"
           value={newTag.text}
           className="border p-2 w-full"
           onChange={(e) => setNewTag({ ...newTag, text: e.target.value })}
@@ -150,8 +150,8 @@ export default function AbilitiesManager() {
           onChange={(e) => setNewTag({ ...newTag, pos: e.target.value })}
           className="border p-2"
         >
-          <option value="top">Top</option>
-          <option value="bottom">Bottom</option>
+          <option value="top">顶部</option>
+          <option value="bottom">底部</option>
         </select>
         <select
           value={newTag.type}
@@ -164,11 +164,11 @@ export default function AbilitiesManager() {
           className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
           onClick={addTag}
         >
-          Add
+          新增
         </button>
       </div>
 
-      <h2 className="text-2xl font-semibold mt-10 mb-4">Ability Tag Type Management</h2>
+      <h2 className="text-2xl font-semibold mt-10 mb-4">能力标签类型管理</h2>
       <div className="space-y-4">
         {tagColors.map((color) => (
           <div key={color.id} className="flex items-center gap-3">
@@ -193,7 +193,7 @@ export default function AbilitiesManager() {
               className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
               onClick={() => deleteTagColor(color.id)}
             >
-              Delete
+              删除
             </button>
           </div>
         ))}

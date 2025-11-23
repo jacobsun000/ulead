@@ -38,7 +38,7 @@ export default function AlumniManager() {
         setError(data.message);
       }
     } catch (err) {
-      setError("Failed to fetch alumni");
+      setError("获取校友数据失败");
     } finally {
       setLoading(false);
     }
@@ -86,14 +86,14 @@ export default function AlumniManager() {
         setError(data.message);
       }
     } catch (err) {
-      setError("Failed to save alumni");
+      setError("保存校友信息失败");
     } finally {
       setLoading(false);
     }
   };
 
   const handleDelete = async (id) => {
-    if (!confirm("Are you sure you want to delete this alumni record?")) return;
+    if (!confirm("确定要删除这条校友记录吗？")) return;
 
     setLoading(true);
     try {
@@ -110,7 +110,7 @@ export default function AlumniManager() {
         setError(data.message);
       }
     } catch (err) {
-      setError("Failed to delete alumni");
+      setError("删除校友记录失败");
     } finally {
       setLoading(false);
     }
@@ -150,7 +150,7 @@ export default function AlumniManager() {
 
   return (
     <div className="min-h-screen bg-background p-6">
-      <h1 className="text-4xl font-bold text-primary mb-6">Alumni Manager</h1>
+      <h1 className="text-4xl font-bold text-primary mb-6">校友案例管理</h1>
 
       {error && (
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
@@ -162,7 +162,7 @@ export default function AlumniManager() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Name *
+              姓名 *
             </label>
             <input
               type="text"
@@ -175,7 +175,7 @@ export default function AlumniManager() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Title
+              头衔
             </label>
             <input
               type="text"
@@ -187,7 +187,7 @@ export default function AlumniManager() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              High School *
+              高中 *
             </label>
             <input
               type="text"
@@ -200,7 +200,7 @@ export default function AlumniManager() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              High School (Chinese)
+              高中（中文）
             </label>
             <input
               type="text"
@@ -212,7 +212,7 @@ export default function AlumniManager() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              University *
+              大学 *
             </label>
             <input
               type="text"
@@ -225,7 +225,7 @@ export default function AlumniManager() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              University (Chinese)
+              大学（中文）
             </label>
             <input
               type="text"
@@ -237,7 +237,7 @@ export default function AlumniManager() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Student Image *
+              学生照片 *
             </label>
             <input
               type="file"
@@ -252,7 +252,7 @@ export default function AlumniManager() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              University Logo *
+              大学 Logo *
             </label>
             <input
               type="file"
@@ -267,20 +267,20 @@ export default function AlumniManager() {
 
           <div className="md:col-span-2">
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Labels (comma-separated)
+              标签（逗号分隔）
             </label>
             <input
               type="text"
               value={form.labels.join(", ")}
               onChange={handleLabelsChange}
               className="w-full p-2 border border-gray-300 rounded"
-              placeholder="Label 1, Label 2, Label 3"
+              placeholder="标签1, 标签2, 标签3"
             />
           </div>
 
           <div className="md:col-span-2">
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Evaluation
+              评价
             </label>
             <textarea
               value={form.evaluation}
@@ -292,7 +292,7 @@ export default function AlumniManager() {
 
           <div className="md:col-span-2">
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Plan
+              规划
             </label>
             <textarea
               value={form.plan}
@@ -309,33 +309,33 @@ export default function AlumniManager() {
             className="bg-primary text-white px-6 py-2 rounded hover:bg-primary/90"
             disabled={loading}
           >
-            {loading ? "Saving..." : form.id ? "Update Alumni" : "Add Alumni"}
+            {loading ? "保存中..." : form.id ? "更新校友" : "添加校友"}
           </button>
           <button
             type="button"
             onClick={resetForm}
             className="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600"
           >
-            Reset Form
+            重置表单
           </button>
         </div>
       </form>
 
       {loading ? (
-        <p>Loading alumni...</p>
+        <p>正在加载校友...</p>
       ) : (
         <div className="bg-white shadow-md rounded-lg overflow-hidden">
           <table className="table-auto w-full text-left">
             <thead className="bg-primary text-white">
               <tr>
                 <th className="p-4">ID</th>
-                <th className="p-4">Name</th>
-                <th className="p-4">Image</th>
-                <th className="p-4">High School</th>
-                <th className="p-4">University</th>
-                <th className="p-4">University Logo</th>
-                <th className="p-4">Labels</th>
-                <th className="p-4">Actions</th>
+                <th className="p-4">姓名</th>
+                <th className="p-4">照片</th>
+                <th className="p-4">高中</th>
+                <th className="p-4">大学</th>
+                <th className="p-4">大学 Logo</th>
+                <th className="p-4">标签</th>
+                <th className="p-4">操作</th>
               </tr>
             </thead>
             <tbody>
@@ -392,13 +392,13 @@ export default function AlumniManager() {
                         className="text-blue-500 hover:underline"
                         onClick={() => handleEdit(record)}
                       >
-                        Edit
+                        编辑
                       </button>
                       <button
                         className="text-red-500 hover:underline"
                         onClick={() => handleDelete(record.id)}
                       >
-                        Delete
+                        删除
                       </button>
                     </div>
                   </td>
