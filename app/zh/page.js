@@ -186,7 +186,7 @@ function TeamMemberCard({ name_zh, image_url, title_zh, description_zh }) {
 
 async function TeamSection() {
   const { rows: members } = await sql`SELECT * FROM team_members ORDER BY order_index ASC;`;
-  const { rows: mentors } = await sql`SELECT * FROM mentor ORDER BY order_index ASC, id ASC LIMIT 6`;
+  const { rows: mentors } = await sql`SELECT * FROM consultant ORDER BY order_index ASC, id ASC`;
   const panes = [
     {
       title: '核心团队',

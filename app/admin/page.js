@@ -8,6 +8,7 @@ export default function AdminHomePage() {
     { name: "导师团队", link: "/admin/mentor" },
     { name: "成功案例", link: "/admin/success-story" },
     { name: "团队成员", link: "/admin/team-member" },
+    { name: "顾问成员", link: "/admin/consultant" },
     { name: "暑校项目", link: "/admin/summer-school" },
     { name: "新闻文章", link: "/admin/news" },
   ];
