@@ -58,6 +58,10 @@ export default function SuccessStoryManager() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const action = form.id ? "更新" : "添加";
+    if (!confirm(`确定要${action}该成功案例吗？`)) return;
+
     setLoading(true);
 
     try {

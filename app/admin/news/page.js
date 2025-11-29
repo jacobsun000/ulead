@@ -90,6 +90,10 @@ export default function NewsManager() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+
+    const action = isEditing ? "更新" : "创建";
+    if (!confirm(`确定要${action}该新闻文章吗？`)) return;
+
     setLoading(true);
     setError("");
 

@@ -56,6 +56,10 @@ export default function OfferManager() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const action = form.id ? "更新" : "新增";
+    if (!confirm(`确定要${action}该 Offer 记录吗？`)) return;
+
     setLoading(true);
 
     try {
@@ -90,6 +94,8 @@ export default function OfferManager() {
   };
 
   const handleDelete = async (id) => {
+    if (!confirm("确定要删除该 Offer 记录吗？")) return;
+
     setLoading(true);
     try {
       const res = await fetch(`/api/admin/offer`, {

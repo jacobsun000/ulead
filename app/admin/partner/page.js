@@ -28,6 +28,10 @@ export default function PartnerManager() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const action = form.id ? "更新" : "新增";
+    if (!confirm(`确定要${action}该合作院校吗？`)) return;
+
     const method = form.id ? "PUT" : "POST";
     try {
       const res = await fetch("/api/admin/partner", {
@@ -46,6 +50,8 @@ export default function PartnerManager() {
   };
 
   const handleDelete = async (id) => {
+    if (!confirm("确定要删除该合作院校吗？")) return;
+
     try {
       const res = await fetch("/api/admin/partner", {
         method: "DELETE",

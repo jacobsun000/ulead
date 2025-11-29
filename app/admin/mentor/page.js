@@ -50,6 +50,10 @@ export default function MentorManager() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const action = form.id ? "更新" : "添加";
+    if (!confirm(`确定要${action}该导师信息吗？`)) return;
+
     setLoading(true);
 
     try {

@@ -31,6 +31,8 @@ export default function ContactManager() {
   };
 
   const handleDelete = async () => {
+    if (!confirm(`确定要删除所选的 ${selectedContacts.length} 条联系人记录吗？`)) return;
+
     try {
       const res = await fetch("/api/admin/contact", {
         method: "DELETE",

@@ -34,6 +34,11 @@ export default function AbilitiesManager() {
   }
 
   async function updateTag(updatedTag) {
+    if (!confirm("确定要更新该标签吗？")) {
+      fetchTags(); // Refresh to revert changes
+      return;
+    }
+
     await fetch(`/api/admin/tag`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -43,6 +48,11 @@ export default function AbilitiesManager() {
   }
 
   async function updateTagColor(updatedTagColor) {
+    if (!confirm("确定要更新该标签颜色类型吗？")) {
+      fetchTagColors(); // Refresh to revert changes
+      return;
+    }
+
     await fetch(`/api/admin/tag-color`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -53,6 +63,8 @@ export default function AbilitiesManager() {
 
   async function addTag() {
     if (!newTag.text.trim()) return;
+    if (!confirm("确定要新增该标签吗？")) return;
+
     await fetch("/api/admin/tag", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -64,6 +76,8 @@ export default function AbilitiesManager() {
 
   async function addTagColor() {
     if (!newTagColor.type.trim()) return;
+    if (!confirm("确定要新增该标签颜色类型吗？")) return;
+
     await fetch("/api/admin/tag-color", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -74,6 +88,8 @@ export default function AbilitiesManager() {
   }
 
   async function deleteTag(id) {
+    if (!confirm("确定要删除该标签吗？")) return;
+
     await fetch("/api/admin/tag", {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
@@ -83,6 +99,7 @@ export default function AbilitiesManager() {
   }
 
   async function deleteTagColor(id) {
+    if (!confirm("确定要删除该标签颜色类型吗？")) return;
 
     await fetch("/api/admin/tag-color", {
       method: "DELETE",

@@ -55,6 +55,10 @@ export default function AlumniManager() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const action = form.id ? "更新" : "添加";
+    if (!confirm(`确定要${action}该校友记录吗？`)) return;
+
     setLoading(true);
 
     try {

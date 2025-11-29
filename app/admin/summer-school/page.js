@@ -126,6 +126,9 @@ export default function SummerSchoolManager() {
       return;
     }
 
+    const action = isEditing ? "更新" : "新增";
+    if (!confirm(`确定要${action}该暑校项目吗？`)) return;
+
     setLoading(true);
 
     try {
