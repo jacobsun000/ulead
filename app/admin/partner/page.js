@@ -7,6 +7,7 @@ export default function PartnerManager() {
   const [form, setForm] = useState({ id: null, name: "", state: "" });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     fetchSchools();
@@ -66,6 +67,15 @@ export default function PartnerManager() {
     }
   };
 
+  // Filter schools based on search term
+  const filteredSchools = schools.filter((school) => {
+    const search = searchTerm.toLowerCase();
+    return (
+      school.name.toLowerCase().includes(search) ||
+      school.state.toLowerCase().includes(search)
+    );
+  });
+
   return (
     <div className="min-h-screen bg-background p-6">
       <h1 className="text-4xl font-bold text-primary mb-6">合作院校管理</h1>
@@ -97,6 +107,16 @@ export default function PartnerManager() {
         </button>
       </form>
 
+      <div className="mb-6">
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          placeholder="搜索学校名称或州/省份..."
+          className="w-full p-2 border rounded"
+        />
+      </div>
+
       {loading ? (
         <p>加载中...</p>
       ) : error ? (
@@ -106,16 +126,14 @@ export default function PartnerManager() {
           <table className="table-auto w-full text-left">
             <thead className="bg-primary text-white">
               <tr>
-                <th className="p-4">ID</th>
                 <th className="p-4">学校名称</th>
                 <th className="p-4">州/省份</th>
                 <th className="p-4">操作</th>
               </tr>
             </thead>
             <tbody>
-              {schools.map((school) => (
+              {filteredSchools.map((school) => (
                 <tr key={school.id} className="hover:bg-gray-100">
-                  <td className="p-4">{school.id}</td>
                   <td className="p-4">{school.name}</td>
                   <td className="p-4">{school.state}</td>
                   <td className="p-4 flex gap-2">
