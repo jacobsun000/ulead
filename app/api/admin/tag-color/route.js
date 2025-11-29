@@ -2,7 +2,7 @@ import { sql } from "@vercel/postgres";
 
 export async function GET() {
   try {
-    const { rows } = await sql`SELECT * FROM tag_color ORDER BY id ASC`;
+    const { rows } = await sql`SELECT * FROM tag_color ORDER BY order_index ASC, id ASC`;
     return new Response(JSON.stringify({ success: true, data: rows }), { status: 200 });
   } catch (error) {
     return new Response(JSON.stringify({ success: false, message: "Error fetching tag colors" }), { status: 500 });
@@ -36,5 +36,38 @@ export async function DELETE(req) {
     return new Response(JSON.stringify({ success: true, message: "Tag color deleted" }), { status: 200 });
   } catch (error) {
     return new Response(JSON.stringify({ success: false, message: "Error deleting tag color" }), { status: 500 });
+  }
+}
+
+export async function PATCH(req) {
+  try {
+    const { items } = await req.json();
+
+    if (!items || !Array.isArray(items)) {
+      return new Response(
+        JSON.stringify({ success: false, message: "Items array is required" }),
+        { status: 400 }
+      );
+    }
+
+    // Update order_index for each item
+    for (const item of items) {
+      await sql`
+        UPDATE tag_color
+        SET order_index = ${item.order_index}
+        WHERE id = ${item.id}
+      `;
+    }
+
+    return new Response(
+      JSON.stringify({ success: true, message: "Order updated successfully" }),
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error('Error updating order:', error);
+    return new Response(
+      JSON.stringify({ success: false, message: "Error updating order" }),
+      { status: 500 }
+    );
   }
 }

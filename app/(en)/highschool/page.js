@@ -16,8 +16,8 @@ const Card = ({ title }) => (
 );
 
 export default async function Highschool() {
-  const { rows: highSchool } = await sql`SELECT * FROM offer WHERE type='highschool'`;
-  const { rows: profiles } = await sql`SELECT * FROM success_story WHERE type = 'HighSchool'`;
+  const { rows: highSchool } = await sql`SELECT * FROM offer WHERE type='highschool' ORDER BY order_index ASC, id ASC`;
+  const { rows: profiles } = await sql`SELECT * FROM success_story WHERE type = 'HighSchool' ORDER BY order_index ASC, id ASC`;
 
   const services = [
     { title: "Comprehensive Candidacy Development Plan", icon: "img/highschool/1.svg", isOpen: false, isRed: false },

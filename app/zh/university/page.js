@@ -7,8 +7,8 @@ import OfferReport from "@/ui/zh/OfferReport";
 import { SchoolCards } from '@/ui/zh/SchoolCard';
 
 export default async function University() {
-  const { rows: university } = await sql`SELECT * FROM offer WHERE type='university'`;
-  const { rows: schools } = await sql`SELECT * FROM summer_school WHERE type = 'university' LIMIT 12`;
+  const { rows: university } = await sql`SELECT * FROM offer WHERE type='university' ORDER BY order_index ASC, id ASC`;
+  const { rows: schools } = await sql`SELECT * FROM summer_school WHERE type = 'university' ORDER BY order_index ASC, id ASC LIMIT 12`;
 
   return (
     <div className="min-w-full">
@@ -56,7 +56,7 @@ export default async function University() {
 }
 
 async function AlumniShowcaseSection() {
-  const { rows: alumnies } = await sql`SELECT * FROM alumni`;
+  const { rows: alumnies } = await sql`SELECT * FROM alumni ORDER BY order_index ASC, id ASC`;
 
   return (
     <section id="success-stories" className="w-full py-16 md:mt-16 overflow-hidden">

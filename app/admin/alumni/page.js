@@ -1,6 +1,55 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import {
+  DndContext,
+  closestCenter,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
+import {
+  arrayMove,
+  SortableContext,
+  sortableKeyboardCoordinates,
+  useSortable,
+  verticalListSortingStrategy,
+} from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
+
+function SortableRow({ record, children }) {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ id: record.id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1,
+  };
+
+  return (
+    <tr ref={setNodeRef} style={style} className="hover:bg-gray-100">
+      <td className="p-4">
+        <button
+          {...attributes}
+          {...listeners}
+          className="cursor-grab active:cursor-grabbing p-1 hover:bg-gray-200 rounded"
+          aria-label="Drag handle"
+        >
+          ☰
+        </button>
+      </td>
+      {children}
+    </tr>
+  );
+}
 
 export default function AlumniManager() {
   const [alumni, setAlumni] = useState([]);
@@ -8,6 +57,7 @@ export default function AlumniManager() {
   const [error, setError] = useState("");
   const [imageFile, setImageFile] = useState(null);
   const [universityLogoFile, setUniversityLogoFile] = useState(null);
+  const [hasOrderChanged, setHasOrderChanged] = useState(false);
   const [form, setForm] = useState({
     id: null,
     name: "",
@@ -22,6 +72,13 @@ export default function AlumniManager() {
     evaluation: "",
     plan: ""
   });
+
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
 
   useEffect(() => {
     fetchAlumni();
@@ -150,6 +207,51 @@ export default function AlumniManager() {
     const value = e.target.value;
     const labelsArray = value.split(",").map(label => label.trim()).filter(label => label);
     setForm({ ...form, labels: labelsArray });
+  };
+
+  const handleDragEnd = (event) => {
+    const { active, over } = event;
+
+    if (active.id !== over.id) {
+      setAlumni((items) => {
+        const oldIndex = items.findIndex((item) => item.id === active.id);
+        const newIndex = items.findIndex((item) => item.id === over.id);
+        const newItems = arrayMove(items, oldIndex, newIndex);
+        setHasOrderChanged(true);
+        return newItems;
+      });
+    }
+  };
+
+  const handleUpdateOrder = async () => {
+    if (!confirm("确定要更新排序吗？")) return;
+
+    setLoading(true);
+    try {
+      const items = alumni.map((item, index) => ({
+        id: item.id,
+        order_index: index,
+      }));
+
+      const res = await fetch("/api/admin/alumni", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items }),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        setHasOrderChanged(false);
+        fetchAlumni();
+        setError("");
+      } else {
+        setError(data.message);
+      }
+    } catch (err) {
+      setError("更新排序失败");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -328,89 +430,113 @@ export default function AlumniManager() {
       {loading ? (
         <p>正在加载校友...</p>
       ) : (
-        <div className="bg-white shadow-md rounded-lg overflow-hidden">
-          <table className="table-auto w-full text-left">
-            <thead className="bg-primary text-white">
-              <tr>
-                <th className="p-4">ID</th>
-                <th className="p-4">姓名</th>
-                <th className="p-4">照片</th>
-                <th className="p-4">高中</th>
-                <th className="p-4">大学</th>
-                <th className="p-4">大学 Logo</th>
-                <th className="p-4">标签</th>
-                <th className="p-4">操作</th>
-              </tr>
-            </thead>
-            <tbody>
-              {alumni.map((record) => (
-                <tr key={record.id} className="hover:bg-gray-100">
-                  <td className="p-4">{record.id}</td>
-                  <td className="p-4">
-                    <div>
-                      <div className="font-medium">{record.name}</div>
-                      {record.title && <div className="text-sm text-gray-500">{record.title}</div>}
-                    </div>
-                  </td>
-                  <td className="p-4">
-                    <img
-                      src={record.image}
-                      alt="Student"
-                      className="w-16 h-16 object-cover rounded"
-                    />
-                  </td>
-                  <td className="p-4">
-                    <div>{record.highschool}</div>
-                    {record.highschool_cn && <div className="text-sm text-gray-500">{record.highschool_cn}</div>}
-                  </td>
-                  <td className="p-4">
-                    <div>{record.university}</div>
-                    {record.university_cn && <div className="text-sm text-gray-500">{record.university_cn}</div>}
-                  </td>
-                  <td className="p-4">
-                    <img
-                      src={record.university_logo}
-                      alt="University Logo"
-                      className="w-16 h-16 object-cover rounded"
-                    />
-                  </td>
-                  <td className="p-4">
-                    {record.labels && record.labels.length > 0 ? (
-                      <div className="flex flex-wrap gap-1">
-                        {record.labels.map((label, index) => (
-                          <span
-                            key={index}
-                            className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
-                          >
-                            {label}
-                          </span>
-                        ))}
-                      </div>
-                    ) : (
-                      "-"
-                    )}
-                  </td>
-                  <td className="p-4">
-                    <div className="flex gap-2">
-                      <button
-                        className="text-blue-500 hover:underline"
-                        onClick={() => handleEdit(record)}
-                      >
-                        编辑
-                      </button>
-                      <button
-                        className="text-red-500 hover:underline"
-                        onClick={() => handleDelete(record.id)}
-                      >
-                        删除
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <>
+          {hasOrderChanged && (
+            <div className="mb-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg flex justify-between items-center">
+              <span className="text-yellow-800">排序已更改，请保存新的排序</span>
+              <button
+                onClick={handleUpdateOrder}
+                className="bg-primary text-white px-4 py-2 rounded hover:bg-primary/90"
+                disabled={loading}
+              >
+                {loading ? "保存中..." : "更新排序"}
+              </button>
+            </div>
+          )}
+          <div className="bg-white shadow-md rounded-lg overflow-hidden">
+            <DndContext
+              sensors={sensors}
+              collisionDetection={closestCenter}
+              onDragEnd={handleDragEnd}
+            >
+              <table className="table-auto w-full text-left">
+                <thead className="bg-primary text-white">
+                  <tr>
+                    <th className="p-4">拖动</th>
+                    <th className="p-4">姓名</th>
+                    <th className="p-4">照片</th>
+                    <th className="p-4">高中</th>
+                    <th className="p-4">大学</th>
+                    <th className="p-4">大学 Logo</th>
+                    <th className="p-4">标签</th>
+                    <th className="p-4">操作</th>
+                  </tr>
+                </thead>
+                <SortableContext
+                  items={alumni.map((a) => a.id)}
+                  strategy={verticalListSortingStrategy}
+                >
+                  <tbody>
+                    {alumni.map((record) => (
+                      <SortableRow key={record.id} record={record}>
+                        <td className="p-4">
+                          <div>
+                            <div className="font-medium">{record.name}</div>
+                            {record.title && <div className="text-sm text-gray-500">{record.title}</div>}
+                          </div>
+                        </td>
+                        <td className="p-4">
+                          <img
+                            src={record.image}
+                            alt="Student"
+                            className="w-16 h-16 object-cover rounded"
+                          />
+                        </td>
+                        <td className="p-4">
+                          <div>{record.highschool}</div>
+                          {record.highschool_cn && <div className="text-sm text-gray-500">{record.highschool_cn}</div>}
+                        </td>
+                        <td className="p-4">
+                          <div>{record.university}</div>
+                          {record.university_cn && <div className="text-sm text-gray-500">{record.university_cn}</div>}
+                        </td>
+                        <td className="p-4">
+                          <img
+                            src={record.university_logo}
+                            alt="University Logo"
+                            className="w-16 h-16 object-cover rounded"
+                          />
+                        </td>
+                        <td className="p-4">
+                          {record.labels && record.labels.length > 0 ? (
+                            <div className="flex flex-wrap gap-1">
+                              {record.labels.map((label, index) => (
+                                <span
+                                  key={index}
+                                  className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                                >
+                                  {label}
+                                </span>
+                              ))}
+                            </div>
+                          ) : (
+                            "-"
+                          )}
+                        </td>
+                        <td className="p-4">
+                          <div className="flex gap-2">
+                            <button
+                              className="text-blue-500 hover:underline"
+                              onClick={() => handleEdit(record)}
+                            >
+                              编辑
+                            </button>
+                            <button
+                              className="text-red-500 hover:underline"
+                              onClick={() => handleDelete(record.id)}
+                            >
+                              删除
+                            </button>
+                          </div>
+                        </td>
+                      </SortableRow>
+                    ))}
+                  </tbody>
+                </SortableContext>
+              </table>
+            </DndContext>
+          </div>
+        </>
       )}
     </div>
   );

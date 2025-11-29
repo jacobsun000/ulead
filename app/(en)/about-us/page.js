@@ -26,7 +26,7 @@ const TeamMember = ({ name, image_url: imageSrc, description }) => (
 );
 
 export default async function AboutUs() {
-  let { rows: members } = await sql`SELECT * FROM team_members`;
+  let { rows: members } = await sql`SELECT * FROM team_members ORDER BY order_index ASC, id ASC`;
   const founder = members.find(member => member.id === 1);
   members = members.filter(member => member.id !== 1);
 

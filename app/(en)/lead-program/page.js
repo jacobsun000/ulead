@@ -22,8 +22,8 @@ const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {
 
 
 const GrowthPlan = async () => {
-  const { rows: tags } = await sql`SELECT * FROM tag`;
-  const { rows: tagColors } = await sql`SELECT * FROM tag_color`;
+  const { rows: tags } = await sql`SELECT * FROM tag ORDER BY order_index ASC, id ASC`;
+  const { rows: tagColors } = await sql`SELECT * FROM tag_color ORDER BY order_index ASC, id ASC`;
   const colors = Object.fromEntries(tagColors.map(tag => [tag.type, tag.color]));
 
   const topTags = tags.filter(tag => tag.pos === 'top');

@@ -1,6 +1,22 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import {
+  DndContext,
+  closestCenter,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
+import {
+  arrayMove,
+  SortableContext,
+  sortableKeyboardCoordinates,
+  useSortable,
+  verticalListSortingStrategy,
+} from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 
 const schoolTypes = ["university", "highschool", "other"];
 const schoolTypeLabels = {
@@ -9,12 +25,46 @@ const schoolTypeLabels = {
   other: "其他",
 };
 
+function SortableRow({ record, children }) {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ id: record.id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1,
+  };
+
+  return (
+    <tr ref={setNodeRef} style={style} className="hover:bg-gray-100">
+      <td className="p-4">
+        <button
+          {...attributes}
+          {...listeners}
+          className="cursor-grab active:cursor-grabbing p-1 hover:bg-gray-200 rounded"
+          aria-label="Drag handle"
+        >
+          ☰
+        </button>
+      </td>
+      {children}
+    </tr>
+  );
+}
+
 export default function OfferManager() {
   const [schoolType, setSchoolType] = useState("");
   const [records, setRecords] = useState([]);
   const [loading, setLoading] = useState(false);
   const [imageFile, setImageFile] = useState(null);
   const [error, setError] = useState("");
+  const [hasOrderChanged, setHasOrderChanged] = useState(false);
   const [form, setForm] = useState({
     id: null,
     logo: "",
@@ -24,6 +74,13 @@ export default function OfferManager() {
     name_cn: "",
     count: 0,
   });
+
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
 
   const fetchRecords = useCallback(async () => {
     setLoading(true);
@@ -108,6 +165,51 @@ export default function OfferManager() {
       else setError(data.message);
     } catch {
       setError("删除数据失败");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleDragEnd = (event) => {
+    const { active, over } = event;
+
+    if (active.id !== over.id) {
+      setRecords((items) => {
+        const oldIndex = items.findIndex((item) => item.id === active.id);
+        const newIndex = items.findIndex((item) => item.id === over.id);
+        const newItems = arrayMove(items, oldIndex, newIndex);
+        setHasOrderChanged(true);
+        return newItems;
+      });
+    }
+  };
+
+  const handleUpdateOrder = async () => {
+    if (!confirm("确定要更新排序吗？")) return;
+
+    setLoading(true);
+    try {
+      const items = records.map((item, index) => ({
+        id: item.id,
+        order_index: index,
+      }));
+
+      const res = await fetch("/api/admin/offer", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items }),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        setHasOrderChanged(false);
+        fetchRecords();
+        setError("");
+      } else {
+        setError(data.message);
+      }
+    } catch (err) {
+      setError("更新排序失败");
     } finally {
       setLoading(false);
     }
@@ -208,62 +310,86 @@ export default function OfferManager() {
                   {form.id ? "更新记录" : "新增记录"}
                 </button>
               </form>
+
+              {hasOrderChanged && (
+                <div className="mb-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg flex justify-between items-center">
+                  <span className="text-yellow-800">排序已更改，请保存新的排序</span>
+                  <button
+                    onClick={handleUpdateOrder}
+                    className="bg-primary text-white px-4 py-2 rounded hover:bg-primary/90"
+                    disabled={loading}
+                  >
+                    {loading ? "保存中..." : "更新排序"}
+                  </button>
+                </div>
+              )}
+
               <div className="bg-white shadow-md rounded-lg overflow-hidden">
-                <table className="table-auto w-full text-left">
-                  <thead className="bg-primary text-white">
-                    <tr>
-                      <th className="p-4">ID</th>
-                      <th className="p-4">Logo</th>
-                      <th className="p-4">学校名称</th>
-                      <th className="p-4">中文名称</th>
-                      {schoolType === "university" && (
-                        <>
-                          <th className="p-4">国家</th>
-                          <th className="p-4">排名</th>
-                        </>
-                      )}
-                      <th className="p-4">数量</th>
-                      <th className="p-4">操作</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {records.map((record) => (
-                      <tr key={record.id} className="hover:bg-gray-100">
-                        <td className="p-4">{record.id}</td>
-                        <td className="p-4">
-                          <img
-                            src={record.logo}
-                            alt="Logo"
-                            className="w-16 h-16 object-cover rounded"
-                          />
-                        </td>
-                        <td className="p-4">{record.name}</td>
-                        <td className="p-4">{record.name_cn}</td>
+                <DndContext
+                  sensors={sensors}
+                  collisionDetection={closestCenter}
+                  onDragEnd={handleDragEnd}
+                >
+                  <table className="table-auto w-full text-left">
+                    <thead className="bg-primary text-white">
+                      <tr>
+                        <th className="p-4">拖动</th>
+                        <th className="p-4">Logo</th>
+                        <th className="p-4">学校名称</th>
+                        <th className="p-4">中文名称</th>
                         {schoolType === "university" && (
                           <>
-                            <td className="p-4">{record.country}</td>
-                            <td className="p-4">{record.rank}</td>
+                            <th className="p-4">国家</th>
+                            <th className="p-4">排名</th>
                           </>
                         )}
-                        <td className="p-4">{record.count}</td>
-                        <td className="p-4 flex gap-2">
-                          <button
-                            className="text-blue-500 hover:underline"
-                            onClick={() => setForm(record)}
-                          >
-                            编辑
-                          </button>
-                          <button
-                            className="text-red-500 hover:underline"
-                            onClick={() => handleDelete(record.id)}
-                          >
-                            删除
-                          </button>
-                        </td>
+                        <th className="p-4">数量</th>
+                        <th className="p-4">操作</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <SortableContext
+                      items={records.map((r) => r.id)}
+                      strategy={verticalListSortingStrategy}
+                    >
+                      <tbody>
+                        {records.map((record) => (
+                          <SortableRow key={record.id} record={record}>
+                            <td className="p-4">
+                              <img
+                                src={record.logo}
+                                alt="Logo"
+                                className="w-16 h-16 object-cover rounded"
+                              />
+                            </td>
+                            <td className="p-4">{record.name}</td>
+                            <td className="p-4">{record.name_cn}</td>
+                            {schoolType === "university" && (
+                              <>
+                                <td className="p-4">{record.country}</td>
+                                <td className="p-4">{record.rank}</td>
+                              </>
+                            )}
+                            <td className="p-4">{record.count}</td>
+                            <td className="p-4 flex gap-2">
+                              <button
+                                className="text-blue-500 hover:underline"
+                                onClick={() => setForm(record)}
+                              >
+                                编辑
+                              </button>
+                              <button
+                                className="text-red-500 hover:underline"
+                                onClick={() => handleDelete(record.id)}
+                              >
+                                删除
+                              </button>
+                            </td>
+                          </SortableRow>
+                        ))}
+                      </tbody>
+                    </SortableContext>
+                  </table>
+                </DndContext>
               </div>
             </>
           }

@@ -137,9 +137,9 @@ function AboutSection() {
 }
 
 async function MatriculationSection() {
-  const { rows: university } = await sql`SELECT * FROM offer WHERE type='university' LIMIT 12`;
-  const { rows: highSchool } = await sql`SELECT * FROM offer WHERE type='highschool' LIMIT 12`;
-  const { rows: juniorSchool } = await sql`SELECT * FROM offer WHERE type='other' LIMIT 12`;
+  const { rows: university } = await sql`SELECT * FROM offer WHERE type='university' ORDER BY order_index ASC, id ASC LIMIT 12`;
+  const { rows: highSchool } = await sql`SELECT * FROM offer WHERE type='highschool' ORDER BY order_index ASC, id ASC LIMIT 12`;
+  const { rows: juniorSchool } = await sql`SELECT * FROM offer WHERE type='other' ORDER BY order_index ASC, id ASC LIMIT 12`;
   const panels = [
     {
       title: "美国大学录取",
@@ -186,7 +186,7 @@ function TeamMemberCard({ name_zh, image_url, title_zh, description_zh }) {
 
 async function TeamSection() {
   const { rows: members } = await sql`SELECT * FROM team_members ORDER BY order_index ASC;`;
-  const { rows: mentors } = await sql`SELECT * FROM mentor LIMIT 6`;
+  const { rows: mentors } = await sql`SELECT * FROM mentor ORDER BY order_index ASC, id ASC LIMIT 6`;
   const panes = [
     {
       title: '核心团队',
@@ -220,7 +220,7 @@ async function TeamSection() {
 }
 
 async function AlumniShowcaseSection() {
-  const { rows: alumnies } = await sql`SELECT * FROM alumni`;
+  const { rows: alumnies } = await sql`SELECT * FROM alumni ORDER BY order_index ASC, id ASC`;
 
   return (
     <section id="alumni" className="w-full py-16 md:mt-16 overflow-hidden">

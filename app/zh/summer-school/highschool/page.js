@@ -4,7 +4,7 @@ import { sql } from '@vercel/postgres';
 
 
 export default async function Highschool() {
-  const { rows: schools } = await sql`SELECT * FROM summer_school WHERE type = 'highschool'`;
+  const { rows: schools } = await sql`SELECT * FROM summer_school WHERE type = 'highschool' ORDER BY order_index ASC, id ASC`;
 
   return (
     <div id="highschool" className="min-w-full flex flex-col items-center mb-16">

@@ -1,12 +1,62 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import {
+  DndContext,
+  closestCenter,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
+import {
+  arrayMove,
+  SortableContext,
+  sortableKeyboardCoordinates,
+  useSortable,
+  verticalListSortingStrategy,
+} from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
+
+function SortableRow({ record, children }) {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ id: record.id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1,
+  };
+
+  return (
+    <tr ref={setNodeRef} style={style} className="hover:bg-gray-100">
+      <td className="p-4">
+        <button
+          {...attributes}
+          {...listeners}
+          className="cursor-grab active:cursor-grabbing p-1 hover:bg-gray-200 rounded"
+          aria-label="Drag handle"
+        >
+          ☰
+        </button>
+      </td>
+      {children}
+    </tr>
+  );
+}
 
 export default function TeamMemberManager() {
   const [teamMembers, setTeamMembers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [imageFile, setImageFile] = useState(null);
+  const [hasOrderChanged, setHasOrderChanged] = useState(false);
   const [form, setForm] = useState({
     id: null,
     name: "",
@@ -17,6 +67,13 @@ export default function TeamMemberManager() {
     title_zh: "",
     description_zh: []
   });
+
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
 
   useEffect(() => {
     fetchTeamMembers();
@@ -142,6 +199,51 @@ export default function TeamMemberManager() {
     const value = e.target.value;
     const descArray = value.split("\n").filter(line => line.trim());
     setForm({ ...form, description_zh: descArray });
+  };
+
+  const handleDragEnd = (event) => {
+    const { active, over } = event;
+
+    if (active.id !== over.id) {
+      setTeamMembers((items) => {
+        const oldIndex = items.findIndex((item) => item.id === active.id);
+        const newIndex = items.findIndex((item) => item.id === over.id);
+        const newItems = arrayMove(items, oldIndex, newIndex);
+        setHasOrderChanged(true);
+        return newItems;
+      });
+    }
+  };
+
+  const handleUpdateOrder = async () => {
+    if (!confirm("确定要更新排序吗？")) return;
+
+    setLoading(true);
+    try {
+      const items = teamMembers.map((member, index) => ({
+        id: member.id,
+        order_index: index,
+      }));
+
+      const res = await fetch("/api/admin/team-member", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items }),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        setHasOrderChanged(false);
+        fetchTeamMembers();
+        setError("");
+      } else {
+        setError(data.message);
+      }
+    } catch (err) {
+      setError("更新排序失败");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -272,84 +374,102 @@ export default function TeamMemberManager() {
       {loading ? (
         <p>正在加载团队成员...</p>
       ) : (
-        <div className="bg-white shadow-md rounded-lg overflow-hidden">
-          <table className="table-auto w-full text-left">
-            <thead className="bg-primary text-white">
-              <tr>
-                <th className="p-4">ID</th>
-                <th className="p-4">排序</th>
-                <th className="p-4">姓名</th>
-                <th className="p-4">头像</th>
-                <th className="p-4">中文名</th>
-                <th className="p-4">中文头衔</th>
-                <th className="p-4">简介条目</th>
-                <th className="p-4">操作</th>
-              </tr>
-            </thead>
-            <tbody>
-              {teamMembers.map((record) => (
-                <tr key={record.id} className="hover:bg-gray-100">
-                  <td className="p-4">{record.id}</td>
-                  <td className="p-4">
-                    <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
-                      {record.order_index}
-                    </span>
-                  </td>
-                  <td className="p-4 font-medium">{record.name}</td>
-                  <td className="p-4">
-                    {record.image_url ? (
-                      <img
-                        src={record.image_url}
-                        alt="Team member"
-                        className="w-16 h-16 object-cover rounded-full"
-                      />
-                    ) : (
-                      <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 text-xs">
-                        暂无头像
-                      </div>
-                    )}
-                  </td>
-                  <td className="p-4">{record.name_zh || "-"}</td>
-                  <td className="p-4">{record.title_zh || "-"}</td>
-                  <td className="p-4">
-                    <div className="max-w-xs">
-                      <div className="text-sm font-medium text-gray-900">
-                        EN：{record.description ? record.description.length : 0} 条
-                      </div>
-                      {record.description && record.description.length > 0 && (
-                        <div className="text-xs text-gray-600 truncate">
-                          {record.description[0]}
-                          {record.description.length > 1 && "..."}
-                        </div>
-                      )}
-                      {record.description_zh && record.description_zh.length > 0 && (
-                        <div className="text-xs text-gray-600 mt-1">
-                          ZH：{record.description_zh.length} 条
-                        </div>
-                      )}
-                    </div>
-                  </td>
-                  <td className="p-4">
-                    <div className="flex gap-2">
-                      <button
-                        className="text-blue-500 hover:underline"
-                        onClick={() => handleEdit(record)}
-                      >
-                        编辑
-                      </button>
-                      <button
-                        className="text-red-500 hover:underline"
-                        onClick={() => handleDelete(record.id)}
-                      >
-                        删除
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <>
+          {hasOrderChanged && (
+            <div className="mb-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg flex justify-between items-center">
+              <span className="text-yellow-800">排序已更改，请保存新的排序</span>
+              <button
+                onClick={handleUpdateOrder}
+                className="bg-primary text-white px-4 py-2 rounded hover:bg-primary/90"
+                disabled={loading}
+              >
+                {loading ? "保存中..." : "更新排序"}
+              </button>
+            </div>
+          )}
+          <div className="bg-white shadow-md rounded-lg overflow-hidden">
+            <DndContext
+              sensors={sensors}
+              collisionDetection={closestCenter}
+              onDragEnd={handleDragEnd}
+            >
+              <table className="table-auto w-full text-left">
+                <thead className="bg-primary text-white">
+                  <tr>
+                    <th className="p-4">拖动</th>
+                    <th className="p-4">姓名</th>
+                    <th className="p-4">头像</th>
+                    <th className="p-4">中文名</th>
+                    <th className="p-4">中文头衔</th>
+                    <th className="p-4">简介条目</th>
+                    <th className="p-4">操作</th>
+                  </tr>
+                </thead>
+                <SortableContext
+                  items={teamMembers.map((m) => m.id)}
+                  strategy={verticalListSortingStrategy}
+                >
+                  <tbody>
+                    {teamMembers.map((record) => (
+                      <SortableRow key={record.id} record={record}>
+                        <td className="p-4 font-medium">{record.name}</td>
+                        <td className="p-4">
+                          {record.image_url ? (
+                            <img
+                              src={record.image_url}
+                              alt="Team member"
+                              className="w-16 h-16 object-cover rounded-full"
+                            />
+                          ) : (
+                            <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 text-xs">
+                              暂无头像
+                            </div>
+                          )}
+                        </td>
+                        <td className="p-4">{record.name_zh || "-"}</td>
+                        <td className="p-4">{record.title_zh || "-"}</td>
+                        <td className="p-4">
+                          <div className="max-w-xs">
+                            <div className="text-sm font-medium text-gray-900">
+                              EN：{record.description ? record.description.length : 0} 条
+                            </div>
+                            {record.description && record.description.length > 0 && (
+                              <div className="text-xs text-gray-600 truncate">
+                                {record.description[0]}
+                                {record.description.length > 1 && "..."}
+                              </div>
+                            )}
+                            {record.description_zh && record.description_zh.length > 0 && (
+                              <div className="text-xs text-gray-600 mt-1">
+                                ZH：{record.description_zh.length} 条
+                              </div>
+                            )}
+                          </div>
+                        </td>
+                        <td className="p-4">
+                          <div className="flex gap-2">
+                            <button
+                              className="text-blue-500 hover:underline"
+                              onClick={() => handleEdit(record)}
+                            >
+                              编辑
+                            </button>
+                            <button
+                              className="text-red-500 hover:underline"
+                              onClick={() => handleDelete(record.id)}
+                            >
+                              删除
+                            </button>
+                          </div>
+                        </td>
+                      </SortableRow>
+                    ))}
+                  </tbody>
+                </SortableContext>
+              </table>
+            </DndContext>
+          </div>
+        </>
       )}
     </div>
   );

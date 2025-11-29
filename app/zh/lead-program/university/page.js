@@ -22,7 +22,7 @@ const ServiceItem = ({ title, description, isOpen, isRed, icon }) => {
 
 
 export default async function LeadProgramPage() {
-  const { rows: mentors } = await sql`SELECT * FROM mentor`;
+  const { rows: mentors } = await sql`SELECT * FROM mentor ORDER BY order_index ASC, id ASC`;
   const services = [
     {
       title: "学术成长计划", icon: "/img/lead-program/11.svg", isOpen: false, isRed: false,

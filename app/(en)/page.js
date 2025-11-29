@@ -213,9 +213,9 @@ function OurServicesSection() {
 }
 
 async function MatriculationSection() {
-  const { rows: university } = await sql`SELECT * FROM offer WHERE type='university' LIMIT 12`;
-  const { rows: highSchool } = await sql`SELECT * FROM offer WHERE type='highschool' LIMIT 12`;
-  const { rows: juniorSchool } = await sql`SELECT * FROM offer WHERE type='other' LIMIT 12`;
+  const { rows: university } = await sql`SELECT * FROM offer WHERE type='university' ORDER BY order_index ASC, id ASC LIMIT 12`;
+  const { rows: highSchool } = await sql`SELECT * FROM offer WHERE type='highschool' ORDER BY order_index ASC, id ASC LIMIT 12`;
+  const { rows: juniorSchool } = await sql`SELECT * FROM offer WHERE type='other' ORDER BY order_index ASC, id ASC LIMIT 12`;
   const panels = [
     {
       title: "University",
@@ -309,8 +309,8 @@ async function OurTeamSection() {
 }
 
 async function SuccessStoriesSection() {
-  const { rows: hProfiles } = await sql`SELECT * FROM success_story WHERE type = 'HighSchool'`;
-  const { rows: uProfiles } = await sql`SELECT * FROM success_story WHERE type = 'University'`;
+  const { rows: hProfiles } = await sql`SELECT * FROM success_story WHERE type = 'HighSchool' ORDER BY order_index ASC, id ASC`;
+  const { rows: uProfiles } = await sql`SELECT * FROM success_story WHERE type = 'University' ORDER BY order_index ASC, id ASC`;
 
   const panels = [
     { title: "High School", content: <SuccessStories profiles={hProfiles} /> },
@@ -370,7 +370,7 @@ function AlumniCard({ alumni }) {
 }
 
 async function UleadAlumnSection() {
-  const { rows: alumns } = await sql`SELECT * FROM alumni`;
+  const { rows: alumns } = await sql`SELECT * FROM alumni ORDER BY order_index ASC, id ASC`;
 
   let alumnCardsMobile = alumns.map((alumni, index) => (
     <AlumniCard alumni={alumni} key={index} />

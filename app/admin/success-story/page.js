@@ -1,6 +1,22 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import {
+  DndContext,
+  closestCenter,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
+import {
+  arrayMove,
+  SortableContext,
+  sortableKeyboardCoordinates,
+  useSortable,
+  verticalListSortingStrategy,
+} from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 
 const storyTypes = ["University", "HighSchool"];
 const storyTypeLabels = {
@@ -8,12 +24,46 @@ const storyTypeLabels = {
   HighSchool: "高中",
 };
 
+function SortableRow({ record, children }) {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ id: record.id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1,
+  };
+
+  return (
+    <tr ref={setNodeRef} style={style} className="hover:bg-gray-100">
+      <td className="p-4">
+        <button
+          {...attributes}
+          {...listeners}
+          className="cursor-grab active:cursor-grabbing p-1 hover:bg-gray-200 rounded"
+          aria-label="Drag handle"
+        >
+          ☰
+        </button>
+      </td>
+      {children}
+    </tr>
+  );
+}
+
 export default function SuccessStoryManager() {
   const [storyType, setStoryType] = useState("");
   const [stories, setStories] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [imageFile, setImageFile] = useState(null);
+  const [hasOrderChanged, setHasOrderChanged] = useState(false);
   const [form, setForm] = useState({
     id: null,
     type: "",
@@ -24,6 +74,13 @@ export default function SuccessStoryManager() {
     offers: [],
     evaluation: ""
   });
+
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
 
   const fetchStories = useCallback(async () => {
     setLoading(true);
@@ -150,6 +207,51 @@ export default function SuccessStoryManager() {
     const value = e.target.value;
     const offersArray = value.split(",").map(offer => offer.trim()).filter(offer => offer);
     setForm({ ...form, offers: offersArray });
+  };
+
+  const handleDragEnd = (event) => {
+    const { active, over } = event;
+
+    if (active.id !== over.id) {
+      setStories((items) => {
+        const oldIndex = items.findIndex((item) => item.id === active.id);
+        const newIndex = items.findIndex((item) => item.id === over.id);
+        const newItems = arrayMove(items, oldIndex, newIndex);
+        setHasOrderChanged(true);
+        return newItems;
+      });
+    }
+  };
+
+  const handleUpdateOrder = async () => {
+    if (!confirm("确定要更新排序吗？")) return;
+
+    setLoading(true);
+    try {
+      const items = stories.map((item, index) => ({
+        id: item.id,
+        order_index: index,
+      }));
+
+      const res = await fetch("/api/admin/success-story", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items }),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        setHasOrderChanged(false);
+        fetchStories();
+        setError("");
+      } else {
+        setError(data.message);
+      }
+    } catch (err) {
+      setError("更新排序失败");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -303,101 +405,125 @@ export default function SuccessStoryManager() {
       {loading ? (
         <p>正在加载成功案例...</p>
       ) : (
-        <div className="bg-white shadow-md rounded-lg overflow-hidden">
-          <table className="table-auto w-full text-left">
-            <thead className="bg-primary text-white">
-              <tr>
-                <th className="p-4">ID</th>
-                <th className="p-4">类型</th>
-                <th className="p-4">姓名</th>
-                <th className="p-4">照片</th>
-                <th className="p-4">学校</th>
-                <th className="p-4">标签</th>
-                <th className="p-4">Offer</th>
-                <th className="p-4">操作</th>
-              </tr>
-            </thead>
-            <tbody>
-              {stories.map((record) => (
-                <tr key={record.id} className="hover:bg-gray-100">
-                  <td className="p-4">{record.id}</td>
-                  <td className="p-4">
-                    <span className={`px-2 py-1 rounded text-xs ${
-                      record.type === 'University'
-                        ? 'bg-blue-100 text-blue-800'
-                        : 'bg-green-100 text-green-800'
-                    }`}>
-                      {storyTypeLabels[record.type] || record.type}
-                    </span>
-                  </td>
-                  <td className="p-4 font-medium">{record.name}</td>
-                  <td className="p-4">
-                    {record.image ? (
-                      <img
-                        src={record.image}
-                        alt="Student"
-                        className="w-16 h-16 object-cover rounded"
-                      />
-                    ) : (
-                      <div className="w-16 h-16 bg-gray-200 rounded flex items-center justify-center text-gray-500 text-xs">
-                        暂无照片
-                      </div>
-                    )}
-                  </td>
-                  <td className="p-4">{record.school}</td>
-                  <td className="p-4">
-                    {record.labels && record.labels.length > 0 ? (
-                      <div className="flex flex-wrap gap-1">
-                        {record.labels.map((label, index) => (
-                          <span
-                            key={index}
-                            className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
-                          >
-                            {label}
+        <>
+          {hasOrderChanged && (
+            <div className="mb-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg flex justify-between items-center">
+              <span className="text-yellow-800">排序已更改，请保存新的排序</span>
+              <button
+                onClick={handleUpdateOrder}
+                className="bg-primary text-white px-4 py-2 rounded hover:bg-primary/90"
+                disabled={loading}
+              >
+                {loading ? "保存中..." : "更新排序"}
+              </button>
+            </div>
+          )}
+          <div className="bg-white shadow-md rounded-lg overflow-hidden">
+            <DndContext
+              sensors={sensors}
+              collisionDetection={closestCenter}
+              onDragEnd={handleDragEnd}
+            >
+              <table className="table-auto w-full text-left">
+                <thead className="bg-primary text-white">
+                  <tr>
+                    <th className="p-4">拖动</th>
+                    <th className="p-4">类型</th>
+                    <th className="p-4">姓名</th>
+                    <th className="p-4">照片</th>
+                    <th className="p-4">学校</th>
+                    <th className="p-4">标签</th>
+                    <th className="p-4">Offer</th>
+                    <th className="p-4">操作</th>
+                  </tr>
+                </thead>
+                <SortableContext
+                  items={stories.map((s) => s.id)}
+                  strategy={verticalListSortingStrategy}
+                >
+                  <tbody>
+                    {stories.map((record) => (
+                      <SortableRow key={record.id} record={record}>
+                        <td className="p-4">
+                          <span className={`px-2 py-1 rounded text-xs ${
+                            record.type === 'University'
+                              ? 'bg-blue-100 text-blue-800'
+                              : 'bg-green-100 text-green-800'
+                          }`}>
+                            {storyTypeLabels[record.type] || record.type}
                           </span>
-                        ))}
-                      </div>
-                    ) : (
-                      "-"
-                    )}
-                  </td>
-                  <td className="p-4">
-                    {record.offers && record.offers.length > 0 ? (
-                      <div className="max-w-xs">
-                        {record.offers.slice(0, 2).map((offer, index) => (
-                          <div key={index} className="text-sm">{offer}</div>
-                        ))}
-                        {record.offers.length > 2 && (
-                          <div className="text-xs text-gray-500">
-                            +{record.offers.length - 2} 条更多
+                        </td>
+                        <td className="p-4 font-medium">{record.name}</td>
+                        <td className="p-4">
+                          {record.image ? (
+                            <img
+                              src={record.image}
+                              alt="Student"
+                              className="w-16 h-16 object-cover rounded"
+                            />
+                          ) : (
+                            <div className="w-16 h-16 bg-gray-200 rounded flex items-center justify-center text-gray-500 text-xs">
+                              暂无照片
+                            </div>
+                          )}
+                        </td>
+                        <td className="p-4">{record.school}</td>
+                        <td className="p-4">
+                          {record.labels && record.labels.length > 0 ? (
+                            <div className="flex flex-wrap gap-1">
+                              {record.labels.map((label, index) => (
+                                <span
+                                  key={index}
+                                  className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                                >
+                                  {label}
+                                </span>
+                              ))}
+                            </div>
+                          ) : (
+                            "-"
+                          )}
+                        </td>
+                        <td className="p-4">
+                          {record.offers && record.offers.length > 0 ? (
+                            <div className="max-w-xs">
+                              {record.offers.slice(0, 2).map((offer, index) => (
+                                <div key={index} className="text-sm">{offer}</div>
+                              ))}
+                              {record.offers.length > 2 && (
+                                <div className="text-xs text-gray-500">
+                                  +{record.offers.length - 2} 条更多
+                                </div>
+                              )}
+                            </div>
+                          ) : (
+                            "-"
+                          )}
+                        </td>
+                        <td className="p-4">
+                          <div className="flex gap-2">
+                            <button
+                              className="text-blue-500 hover:underline"
+                              onClick={() => handleEdit(record)}
+                            >
+                              编辑
+                            </button>
+                            <button
+                              className="text-red-500 hover:underline"
+                              onClick={() => handleDelete(record.id)}
+                            >
+                              删除
+                            </button>
                           </div>
-                        )}
-                      </div>
-                    ) : (
-                      "-"
-                    )}
-                  </td>
-                  <td className="p-4">
-                    <div className="flex gap-2">
-                      <button
-                        className="text-blue-500 hover:underline"
-                        onClick={() => handleEdit(record)}
-                      >
-                        编辑
-                      </button>
-                      <button
-                        className="text-red-500 hover:underline"
-                        onClick={() => handleDelete(record.id)}
-                      >
-                        删除
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+                        </td>
+                      </SortableRow>
+                    ))}
+                  </tbody>
+                </SortableContext>
+              </table>
+            </DndContext>
+          </div>
+        </>
       )}
     </div>
   );

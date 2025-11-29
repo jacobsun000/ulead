@@ -2,7 +2,7 @@ import { sql } from "@vercel/postgres";
 
 export async function GET() {
   try {
-    const { rows } = await sql`SELECT * FROM summer_school ORDER BY id ASC`;
+    const { rows } = await sql`SELECT * FROM summer_school ORDER BY order_index ASC, id ASC`;
     return new Response(JSON.stringify({ success: true, data: rows }), {
       status: 200,
     });
@@ -131,6 +131,39 @@ export async function DELETE(req) {
   } catch (error) {
     return new Response(
       JSON.stringify({ success: false, message: "Error deleting summer school" }),
+      { status: 500 }
+    );
+  }
+}
+
+export async function PATCH(req) {
+  try {
+    const { items } = await req.json();
+
+    if (!items || !Array.isArray(items)) {
+      return new Response(
+        JSON.stringify({ success: false, message: "Items array is required" }),
+        { status: 400 }
+      );
+    }
+
+    // Update order_index for each item
+    for (const item of items) {
+      await sql`
+        UPDATE summer_school
+        SET order_index = ${item.order_index}
+        WHERE id = ${item.id}
+      `;
+    }
+
+    return new Response(
+      JSON.stringify({ success: true, message: "Order updated successfully" }),
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error('Error updating order:', error);
+    return new Response(
+      JSON.stringify({ success: false, message: "Error updating order" }),
       { status: 500 }
     );
   }

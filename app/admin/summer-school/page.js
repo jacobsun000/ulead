@@ -1,6 +1,55 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import {
+  DndContext,
+  closestCenter,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
+import {
+  arrayMove,
+  SortableContext,
+  sortableKeyboardCoordinates,
+  useSortable,
+  verticalListSortingStrategy,
+} from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
+
+function SortableRow({ record, children }) {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ id: record.id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1,
+  };
+
+  return (
+    <div ref={setNodeRef} style={style} className="border-b p-4 hover:bg-gray-50">
+      <div className="flex gap-3">
+        <button
+          {...attributes}
+          {...listeners}
+          className="cursor-grab active:cursor-grabbing p-1 hover:bg-gray-200 rounded self-start"
+          aria-label="Drag handle"
+        >
+          ☰
+        </button>
+        {children}
+      </div>
+    </div>
+  );
+}
 
 export default function SummerSchoolManager() {
   const [summerSchools, setSummerSchools] = useState([]);
@@ -21,11 +70,19 @@ export default function SummerSchoolManager() {
   const [isEditing, setIsEditing] = useState(false);
   const [jsonError, setJsonError] = useState("");
   const [imageFile, setImageFile] = useState(null);
-  const [programEditMode, setProgramEditMode] = useState("form"); // "form" or "json"
+  const [programEditMode, setProgramEditMode] = useState("form");
+  const [hasOrderChanged, setHasOrderChanged] = useState(false);
   const summerSchoolTypeLabels = {
     university: "大学",
     highschool: "高中",
   };
+
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
 
   useEffect(() => {
     fetchSummerSchools();
@@ -192,6 +249,51 @@ export default function SummerSchoolManager() {
       }
     } catch {
       setError("删除暑校项目失败");
+    }
+  };
+
+  const handleDragEnd = (event) => {
+    const { active, over } = event;
+
+    if (active.id !== over.id) {
+      setSummerSchools((items) => {
+        const oldIndex = items.findIndex((item) => item.id === active.id);
+        const newIndex = items.findIndex((item) => item.id === over.id);
+        const newItems = arrayMove(items, oldIndex, newIndex);
+        setHasOrderChanged(true);
+        return newItems;
+      });
+    }
+  };
+
+  const handleUpdateOrder = async () => {
+    if (!confirm("确定要更新排序吗？")) return;
+
+    setLoading(true);
+    try {
+      const items = summerSchools.map((item, index) => ({
+        id: item.id,
+        order_index: index,
+      }));
+
+      const res = await fetch("/api/admin/summer-school", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items }),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        setHasOrderChanged(false);
+        fetchSummerSchools();
+        setError("");
+      } else {
+        setError(data.message);
+      }
+    } catch (err) {
+      setError("更新排序失败");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -417,58 +519,85 @@ export default function SummerSchoolManager() {
           {loading && !summerSchools.length ? (
             <p className="p-6">正在加载暑校项目...</p>
           ) : (
-            <div className="max-h-screen overflow-y-auto">
-              {summerSchools.map((school) => (
-                <div key={school.id} className="border-b p-4 hover:bg-gray-50">
-                  <div className="flex justify-between items-start">
-                    <div className="flex gap-3">
-                      {school.image && (
-                        <img
-                          src={school.image}
-                          alt={school.name}
-                          className="w-16 h-16 object-cover rounded"
-                        />
-                      )}
-                      <div>
-                        <h3 className="font-semibold">{school.name}</h3>
-                        <div className="text-sm text-gray-600 mt-1">
-                          <span className="bg-blue-100 px-2 py-1 rounded">{summerSchoolTypeLabels[school.type] || school.type}</span>
-                        </div>
-                        {school.tags && (
-                          <div className="mt-2">
-                            {school.tags.map((tag, idx) => (
-                              <span key={idx} className="inline-block bg-gray-200 px-2 py-1 rounded text-xs mr-1">
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
-                        )}
-                        <p className="text-sm text-gray-700 mt-2">{school.description.substring(0, 100)}...</p>
-                        {school.programs && (
-                          <p className="text-xs text-gray-500 mt-1">
-                            {school.programs.length} 个子项目
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                    <div className="flex flex-col space-y-1 ml-2">
-                      <button
-                        onClick={() => handleEdit(school)}
-                        className="bg-blue-500 text-white px-2 py-1 rounded text-xs"
-                      >
-                        编辑
-                      </button>
-                      <button
-                        onClick={() => handleDelete(school.id)}
-                        className="bg-red-500 text-white px-2 py-1 rounded text-xs"
-                      >
-                        删除
-                      </button>
-                    </div>
-                  </div>
+            <>
+              {hasOrderChanged && (
+                <div className="m-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg flex justify-between items-center">
+                  <span className="text-yellow-800">排序已更改，请保存新的排序</span>
+                  <button
+                    onClick={handleUpdateOrder}
+                    className="bg-primary text-white px-4 py-2 rounded hover:bg-primary/90"
+                    disabled={loading}
+                  >
+                    {loading ? "保存中..." : "更新排序"}
+                  </button>
                 </div>
-              ))}
-            </div>
+              )}
+              <div className="max-h-screen overflow-y-auto">
+                <DndContext
+                  sensors={sensors}
+                  collisionDetection={closestCenter}
+                  onDragEnd={handleDragEnd}
+                >
+                  <SortableContext
+                    items={summerSchools.map((s) => s.id)}
+                    strategy={verticalListSortingStrategy}
+                  >
+                    {summerSchools.map((school) => (
+                      <SortableRow key={school.id} record={school}>
+                        <div className="flex-1">
+                          <div className="flex justify-between items-start">
+                            <div className="flex gap-3 flex-1">
+                              {school.image && (
+                                <img
+                                  src={school.image}
+                                  alt={school.name}
+                                  className="w-16 h-16 object-cover rounded"
+                                />
+                              )}
+                              <div className="flex-1">
+                                <h3 className="font-semibold">{school.name}</h3>
+                                <div className="text-sm text-gray-600 mt-1">
+                                  <span className="bg-blue-100 px-2 py-1 rounded">{summerSchoolTypeLabels[school.type] || school.type}</span>
+                                </div>
+                                {school.tags && (
+                                  <div className="mt-2">
+                                    {school.tags.map((tag, idx) => (
+                                      <span key={idx} className="inline-block bg-gray-200 px-2 py-1 rounded text-xs mr-1">
+                                        {tag}
+                                      </span>
+                                    ))}
+                                  </div>
+                                )}
+                                <p className="text-sm text-gray-700 mt-2">{school.description.substring(0, 100)}...</p>
+                                {school.programs && (
+                                  <p className="text-xs text-gray-500 mt-1">
+                                    {school.programs.length} 个子项目
+                                  </p>
+                                )}
+                              </div>
+                            </div>
+                            <div className="flex flex-col space-y-1 ml-2">
+                              <button
+                                onClick={() => handleEdit(school)}
+                                className="bg-blue-500 text-white px-2 py-1 rounded text-xs"
+                              >
+                                编辑
+                              </button>
+                              <button
+                                onClick={() => handleDelete(school.id)}
+                                className="bg-red-500 text-white px-2 py-1 rounded text-xs"
+                              >
+                                删除
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </SortableRow>
+                    ))}
+                  </SortableContext>
+                </DndContext>
+              </div>
+            </>
           )}
         </div>
       </div>
