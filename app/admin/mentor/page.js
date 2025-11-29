@@ -311,7 +311,7 @@ export default function MentorManager() {
 
           <div className="md:col-span-2">
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              重点项目
+              可参与项目
             </label>
             <textarea
               value={form.projects}
