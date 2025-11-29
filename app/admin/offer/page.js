@@ -244,11 +244,11 @@ export default function OfferManager() {
               <form onSubmit={handleSubmit} className="mb-6">
                 <div className="mb-4">
                   <label className="block">
-                    <span>Logo 图片：</span>
+                    <span className="">Logo 图片:</span>
                     <input
                       type="file"
                       onChange={(e) => setImageFile(e.target.files[0])}
-                      className="w-full p-2 border rounded"
+                      className="w-full p-2 border rounded mt-1"
                       accept="image/*"
                     />
                   </label>
@@ -258,50 +258,75 @@ export default function OfferManager() {
                     </div>
                   )}
                 </div>
-                <input
-                  type="text"
-                  placeholder="学校名称"
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="mb-4 w-full p-2 border rounded"
-                  required
-                />
+                <div className="mb-4">
+                  <label className="block">
+                    <span className="">学校名称:</span>
+                    <input
+                      type="text"
+                      placeholder="Princenton University"
+                      value={form.name}
+                      onChange={(e) => setForm({ ...form, name: e.target.value })}
+                      className="w-full p-2 border rounded mt-1"
+                      required
+                    />
+                  </label>
+                </div>
                 {schoolType === "university" && (
                   <>
-                    <input
-                      type="text"
-                      placeholder="国家"
-                      value={form.country}
-                      onChange={(e) => setForm({ ...form, country: e.target.value })}
-                      className="mb-4 w-full p-2 border rounded"
-                      required
-                    />
-                    <input
-                      type="text"
-                      placeholder="排名"
-                      value={form.rank}
-                      onChange={(e) => setForm({ ...form, rank: e.target.value })}
-                      className="mb-4 w-full p-2 border rounded"
-                      required
-                    />
+                    <div className="mb-4">
+                      <label className="block">
+                        <span className="">国家:</span>
+                        <input
+                          type="text"
+                          placeholder="美国"
+                          value={form.country}
+                          onChange={(e) => setForm({ ...form, country: e.target.value })}
+                          className="w-full p-2 border rounded mt-1"
+                          required
+                        />
+                      </label>
+                    </div>
+                    <div className="mb-4">
+                      <label className="block">
+                        <span className="">排名:</span>
+                        <input
+                          type="text"
+                          placeholder="US#1"
+                          value={form.rank}
+                          onChange={(e) => setForm({ ...form, rank: e.target.value })}
+                          className="w-full p-2 border rounded mt-1"
+                          required
+                        />
+                      </label>
+                    </div>
                   </>
                 )}
-                <input
-                  type="text"
-                  placeholder="中文名称"
-                  value={form.name_cn}
-                  onChange={(e) => setForm({ ...form, name_cn: e.target.value })}
-                  className="mb-4 w-full p-2 border rounded"
-                />
-                <input
-                  type="number"
-                  placeholder="数量"
-                  value={form.count}
-                  onChange={(e) => setForm({ ...form, count: Number(e.target.value) })}
-                  className="mb-4 w-full p-2 border rounded"
-                  required
-                  min="0"
-                />
+                <div className="mb-4">
+                  <label className="block">
+                    <span className="">中文名称:</span>
+                    <input
+                      type="text"
+                      placeholder="普林斯顿大学"
+                      value={form.name_cn}
+                      onChange={(e) => setForm({ ...form, name_cn: e.target.value })}
+                      className="w-full p-2 border rounded mt-1"
+                    />
+                  </label>
+                </div>
+                <div className="mb-4">
+                  <label className="block">
+                    <span className="">录取数量:</span>
+                    <input
+                      type="number"
+                      placeholder="1"
+                      value={form.count}
+                      onChange={(e) => setForm({ ...form, count: Number(e.target.value) })}
+                      className="w-full p-2 border rounded mt-1"
+                      required
+                      min="0"
+                    />
+                  </label>
+                </div>
                 <button
                   type="submit"
                   className="bg-primary text-white px-4 py-2 rounded"
