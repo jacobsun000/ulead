@@ -15,6 +15,8 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+export const revalidate = 300;
+
 export const metadata = {
   title: "Ulead Education",
   description: "Focus on US High School Application and College Admission",

@@ -1,4 +1,5 @@
 import { sql } from "@vercel/postgres";
+import { revalidatePublicPages } from "@/lib/revalidate";
 
 function normalizeBadges(badges) {
   if (Array.isArray(badges)) {
@@ -114,6 +115,8 @@ export async function POST(req) {
       RETURNING *;
     `;
 
+    revalidatePublicPages();
+
     return new Response(JSON.stringify({ success: true, data: inserted.rows[0] }), {
       status: 201,
     });
@@ -160,6 +163,8 @@ export async function PUT(req) {
       );
     }
 
+    revalidatePublicPages();
+
     return new Response(JSON.stringify({ success: true, data: updated.rows[0] }), {
       status: 200,
     });
@@ -189,6 +194,8 @@ export async function DELETE(req) {
         { status: 404 },
       );
     }
+
+    revalidatePublicPages();
 
     return new Response(
       JSON.stringify({ success: true, message: "News item deleted" }),

@@ -1,4 +1,5 @@
 import { sql } from "@vercel/postgres";
+import { revalidatePublicPages } from "@/lib/revalidate";
 
 export async function GET(req) {
   try {
@@ -53,6 +54,8 @@ export async function POST(req) {
       )
       RETURNING *;
     `;
+
+    revalidatePublicPages();
 
     return new Response(JSON.stringify({ success: true, data: rows[0] }), {
       status: 200,
@@ -118,6 +121,8 @@ export async function PUT(req) {
       );
     }
 
+    revalidatePublicPages();
+
     return new Response(JSON.stringify({ success: true, data: rows[0] }), {
       status: 200,
     });
@@ -148,6 +153,8 @@ export async function DELETE(req) {
         { status: 404 }
       );
     }
+
+    revalidatePublicPages();
 
     return new Response(
       JSON.stringify({ success: true, message: "Alumni deleted" }),
@@ -181,6 +188,8 @@ export async function PATCH(req) {
         WHERE id = ${item.id}
       `;
     }
+
+    revalidatePublicPages();
 
     return new Response(
       JSON.stringify({ success: true, message: "Order updated successfully" }),

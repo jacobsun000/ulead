@@ -1,4 +1,5 @@
 import { sql } from "@vercel/postgres";
+import { revalidatePublicPages } from "@/lib/revalidate";
 
 export async function GET(req) {
   try {
@@ -26,6 +27,7 @@ export async function DELETE(req) {
     }
 
     const { rowCount } = await sql`DELETE FROM contact_us WHERE id = ANY(${ids})`;
+    revalidatePublicPages();
     return new Response(
       JSON.stringify({
         success: true,

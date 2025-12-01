@@ -15,6 +15,8 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+export const revalidate = 300;
+
 export const metadata = {
   title: "合领教育 - 美国高中大学申请咨询",
   description: "专注于美国高中申请和大学录取的专业教育咨询服务",

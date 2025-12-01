@@ -1,4 +1,5 @@
 import { sql } from "@vercel/postgres";
+import { revalidatePublicPages } from "@/lib/revalidate";
 
 export async function GET() {
   try {
@@ -13,6 +14,7 @@ export async function POST(req) {
   try {
     const { text, type, pos } = await req.json();
     await sql`INSERT INTO tag (text, type, pos) VALUES (${text}, ${type}, ${pos})`;
+    revalidatePublicPages();
     return new Response(JSON.stringify({ success: true, message: "Tag added" }), { status: 201 });
   } catch (error) {
     return new Response(JSON.stringify({ success: false, message: "Error adding tag" }), { status: 500 });
@@ -23,6 +25,7 @@ export async function PUT(req) {
   try {
     const { id, text, type, pos } = await req.json();
     await sql`UPDATE tag SET text = ${text}, type = ${type}, pos = ${pos} WHERE id = ${id}`;
+    revalidatePublicPages();
     return new Response(JSON.stringify({ success: true, message: "Tag updated" }), { status: 200 });
   } catch (error) {
     return new Response(JSON.stringify({ success: false, message: "Error updating tag" }), { status: 500 });
@@ -33,6 +36,7 @@ export async function DELETE(req) {
   try {
     const { id } = await req.json();
     await sql`DELETE FROM tag WHERE id = ${id}`;
+    revalidatePublicPages();
     return new Response(JSON.stringify({ success: true, message: "Tag deleted" }), { status: 200 });
   } catch (error) {
     return new Response(JSON.stringify({ success: false, message: "Error deleting tag" }), { status: 500 });
@@ -58,6 +62,8 @@ export async function PATCH(req) {
         WHERE id = ${item.id}
       `;
     }
+
+    revalidatePublicPages();
 
     return new Response(
       JSON.stringify({ success: true, message: "Order updated successfully" }),

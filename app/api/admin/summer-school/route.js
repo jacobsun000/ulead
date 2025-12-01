@@ -1,4 +1,5 @@
 import { sql } from "@vercel/postgres";
+import { revalidatePublicPages } from "@/lib/revalidate";
 
 export async function GET() {
   try {
@@ -46,6 +47,7 @@ export async function POST(req) {
       VALUES (${name}, ${tags}, ${description}, ${JSON.stringify(programs)}, ${type}, ${href || null}, ${image || null})
       RETURNING *;
     `;
+    revalidatePublicPages();
     return new Response(JSON.stringify({ success: true, data: rows[0] }), {
       status: 200,
     });
@@ -93,6 +95,7 @@ export async function PUT(req) {
       WHERE id = ${id}
       RETURNING *;
     `;
+    revalidatePublicPages();
     return new Response(JSON.stringify({ success: true, data: rows[0] }), {
       status: 200,
     });
@@ -123,6 +126,8 @@ export async function DELETE(req) {
         { status: 404 }
       );
     }
+
+    revalidatePublicPages();
 
     return new Response(
       JSON.stringify({ success: true, message: "Summer school deleted" }),
@@ -155,6 +160,8 @@ export async function PATCH(req) {
         WHERE id = ${item.id}
       `;
     }
+
+    revalidatePublicPages();
 
     return new Response(
       JSON.stringify({ success: true, message: "Order updated successfully" }),
