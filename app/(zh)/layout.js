@@ -29,8 +29,8 @@ export const metadata = {
   },
   alternates: {
     languages: {
-      'en-US': '/',
-      'zh-CN': '/zh',
+      'en-US': '/en',
+      'zh-CN': '/',
     }
   }
 };
