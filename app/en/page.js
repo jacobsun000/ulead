@@ -6,7 +6,6 @@ import SectionHeader from "@/ui/en/SectionHeader";
 import Button from "@/ui/en/Button";
 import BackToTopButton from "@/ui/en/Back";
 import Video from "@/ui/en/Video";
-import IASBadge from "@/ui/en/IASBadge";
 import OfferReport from "@/ui/en/OfferReport";
 import SuccessStories from '@/ui/en/SuccessStories';
 
@@ -29,11 +28,6 @@ export default function Home() {
       <SuccessStoriesSection />
       <SectionHeader title="Ulead Alumni" />
       <UleadAlumnSection />
-      <SectionHeader title="Qualifications" />
-      <QualificationsSection />
-      <div className="text-center mb-4">
-        <Button text="More Details" href="/contacts" />
-      </div>
       <BackToTopButton />
     </div>
   );
@@ -396,29 +390,6 @@ async function UleadAlumnSection() {
         <Slider showBullet showArrow elements={alumnCardsDesktop} />
         <Button text="Explore More" href="/about-us" style={"bg-secondary"} />
       </div>
-    </section>
-  )
-}
-
-function QualificationsSection() {
-  const qualifications = [
-    "/img/home/qualification1.png",
-    "/img/home/qualification2.png",
-    "/img/home/qualification3.png",
-    "/img/home/qualification4.png",
-  ]
-  return (
-    <section className="mx-8 md:mx-[8vw] mb-16 flex flex-col items-center">
-      <div className="flex items-center  gap-x-2 md:gap-x-20">
-        {qualifications.map((qualification, index) => (
-          <div key={index} className="w-1/5">
-            <Image src={qualification} alt={`qualification-${index}`} width={200} height={200} />
-          </div>
-        ))}
-        <div className="w-1/5">
-          <IASBadge className="w-[200px] h-[200px]" certNum={'6036'} />
-        </ div>
-      </ div>
     </section>
   )
 }
