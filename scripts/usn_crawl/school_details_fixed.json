@@ -1,0 +1,7649 @@
+[
+  {
+    "name": "Princeton University",
+    "link": "https://www.usnews.com/best-colleges/princeton-university-2627",
+    "location": "Princeton, NJ",
+    "rank": "#1",
+    "glance": {
+      "Setting": "Suburban",
+      "Tuition & Fees": "$65,210",
+      "Undergraduate Enrollment": "5,813",
+      "Acceptance Rate": "5%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Jan. 1",
+      "Acceptance Rate": "5%",
+      "SAT Range*": "1510-1580",
+      "ACT Range*": "34-35",
+      "High School GPA*": "3.9"
+    },
+    "cost": {
+      "Tuition & Fees": "$65,210",
+      "Food & Housing": "$21,170(2025-26)",
+      "Average Need-Based Aid Package": "$71,237",
+      "Annual Cost*": "$8,143"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "75%",
+      "Student/Faculty Ratio": "5:1",
+      "Classes With Fewer Than 20 Students": "76%",
+      "Popular Majors": [
+        {
+          "major": "Social Sciences",
+          "percent_of_graduates": "20%",
+          "alumni_starting_salary": "$94,020"
+        },
+        {
+          "major": "Engineering",
+          "percent_of_graduates": "17%",
+          "alumni_starting_salary": "$243,825"
+        },
+        {
+          "major": "Computer and Information Sciences and Support Services",
+          "percent_of_graduates": "16%",
+          "alumni_starting_salary": "N/A"
+        },
+        {
+          "major": "Biological and Biomedical Sciences",
+          "percent_of_graduates": "10%",
+          "alumni_starting_salary": "N/A"
+        },
+        {
+          "major": "Public Administration and Social Service Professions",
+          "percent_of_graduates": "10%",
+          "alumni_starting_salary": "$98,995"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "5",
+        "Publication share in the Top 25% of Journals by CiteScore": "74%",
+        "Publication share in the Top 5% of Journals by CiteScore": "27%",
+        "Field Weighted Citation Impact": "2.22",
+        "Total Papers published between 2020-2024": "24,798",
+        "Citations Per Publication": "22"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#1",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": [
+          {
+            "rank": "#19",
+            "category": "Aerospace /Aeronautical / Astronautical",
+            "children": []
+          },
+          {
+            "rank": "#10",
+            "category": "Chemical",
+            "children": []
+          },
+          {
+            "rank": "#16",
+            "category": "Civil",
+            "children": []
+          },
+          {
+            "rank": "#12",
+            "category": "Computer",
+            "children": []
+          },
+          {
+            "rank": "#14",
+            "category": "Electrical / Electronic / Communications",
+            "children": []
+          },
+          {
+            "rank": "#14",
+            "category": "Environmental / Environmental Health",
+            "children": []
+          },
+          {
+            "rank": "#12",
+            "category": "Mechanical",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#19",
+        "category": "Aerospace /Aeronautical / Astronautical",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Chemical",
+        "children": []
+      },
+      {
+        "rank": "#16",
+        "category": "Civil",
+        "children": []
+      },
+      {
+        "rank": "#12",
+        "category": "Computer",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Electrical / Electronic / Communications",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Environmental / Environmental Health",
+        "children": []
+      },
+      {
+        "rank": "#12",
+        "category": "Mechanical",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Computer Science",
+        "children": [
+          {
+            "rank": "#13",
+            "category": "Artificial Intelligence",
+            "children": []
+          },
+          {
+            "rank": "#4",
+            "category": "Biocomputing/Bioinformatics/Biotechnology",
+            "children": []
+          },
+          {
+            "rank": "#14",
+            "category": "Computer Systems",
+            "children": []
+          },
+          {
+            "rank": "#9",
+            "category": "Programming Languages",
+            "children": []
+          },
+          {
+            "rank": "#5",
+            "category": "Theory",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#13",
+        "category": "Artificial Intelligence",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Biocomputing/Bioinformatics/Biotechnology",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Computer Systems",
+        "children": []
+      },
+      {
+        "rank": "#9",
+        "category": "Programming Languages",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Theory",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Writing in the Disciplines",
+        "children": []
+      },
+      {
+        "rank": "#36",
+        "category": "Study Abroad",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Learning Communities",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Undergraduate Research/Creative Projects",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "First-Year Experiences",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Senior Capstone",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Best Colleges for Veterans",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#31",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#52",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Massachusetts Institute of Technology",
+    "link": "https://www.usnews.com/best-colleges/massachusetts-institute-of-technology-2178",
+    "location": "Cambridge, MA",
+    "rank": "#2",
+    "glance": {
+      "Setting": "Urban",
+      "Tuition & Fees": "$64,730",
+      "Undergraduate Enrollment": "4,535",
+      "Acceptance Rate": "5%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Jan. 1",
+      "Acceptance Rate": "5%",
+      "SAT Range*": "1520-1580",
+      "ACT Range*": "34-36",
+      "High School GPA*": "N/A"
+    },
+    "cost": {
+      "Tuition & Fees": "$64,730",
+      "Food & Housing": "$21,264(2025-26)",
+      "Average Need-Based Aid Package": "$69,036",
+      "Annual Cost*": "$20,338"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "83%",
+      "Student/Faculty Ratio": "3:1",
+      "Classes With Fewer Than 20 Students": "68%",
+      "Popular Majors": [
+        {
+          "major": "Computer Science",
+          "percent_of_graduates": "26%",
+          "alumni_starting_salary": "$220,064"
+        },
+        {
+          "major": "Mathematics, General",
+          "percent_of_graduates": "13%",
+          "alumni_starting_salary": "$226,193"
+        },
+        {
+          "major": "Mechanical Engineering",
+          "percent_of_graduates": "8%",
+          "alumni_starting_salary": "$106,765"
+        },
+        {
+          "major": "Electrical and Electronics Engineering",
+          "percent_of_graduates": "5%",
+          "alumni_starting_salary": "$190,731"
+        },
+        {
+          "major": "Physics, General",
+          "percent_of_graduates": "5%",
+          "alumni_starting_salary": "$126,258"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "1",
+        "Publication share in the Top 25% of Journals by CiteScore": "73%",
+        "Publication share in the Top 5% of Journals by CiteScore": "32%",
+        "Field Weighted Citation Impact": "2.41",
+        "Total Papers published between 2020-2024": "55,219",
+        "Citations Per Publication": "26"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#2",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": [
+          {
+            "rank": "#1",
+            "category": "Aerospace /Aeronautical / Astronautical",
+            "children": []
+          },
+          {
+            "rank": "#5",
+            "category": "Biomedical",
+            "children": []
+          },
+          {
+            "rank": "#1",
+            "category": "Chemical",
+            "children": []
+          },
+          {
+            "rank": "#6",
+            "category": "Civil",
+            "children": []
+          },
+          {
+            "rank": "#1",
+            "category": "Computer",
+            "children": []
+          },
+          {
+            "rank": "#2",
+            "category": "Electrical / Electronic / Communications",
+            "children": []
+          },
+          {
+            "rank": "#9",
+            "category": "Environmental / Environmental Health",
+            "children": []
+          },
+          {
+            "rank": "#16",
+            "category": "Industrial / Manufacturing",
+            "children": []
+          },
+          {
+            "rank": "#1",
+            "category": "Materials",
+            "children": []
+          },
+          {
+            "rank": "#1",
+            "category": "Mechanical",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#1",
+        "category": "Aerospace /Aeronautical / Astronautical",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Biomedical",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Chemical",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Civil",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Computer",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Electrical / Electronic / Communications",
+        "children": []
+      },
+      {
+        "rank": "#9",
+        "category": "Environmental / Environmental Health",
+        "children": []
+      },
+      {
+        "rank": "#16",
+        "category": "Industrial / Manufacturing",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Materials",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Mechanical",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Business Programs",
+        "children": [
+          {
+            "rank": "#47",
+            "category": "Accounting",
+            "children": []
+          },
+          {
+            "rank": "#2",
+            "category": "Analytics",
+            "children": []
+          },
+          {
+            "rank": "#2",
+            "category": "Entrepreneurship",
+            "children": []
+          },
+          {
+            "rank": "#4",
+            "category": "Finance",
+            "children": []
+          },
+          {
+            "rank": "#8",
+            "category": "Management",
+            "children": []
+          },
+          {
+            "rank": "#2",
+            "category": "Management Information Systems",
+            "children": []
+          },
+          {
+            "rank": "#18",
+            "category": "Marketing",
+            "children": []
+          },
+          {
+            "rank": "#1",
+            "category": "Production / Operation Management",
+            "children": []
+          },
+          {
+            "rank": "#1",
+            "category": "Quantitative Analysis",
+            "children": []
+          },
+          {
+            "rank": "#4",
+            "category": "Supply Chain Management / Logistics",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#47",
+        "category": "Accounting",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Analytics",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Entrepreneurship",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Finance",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Management",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Management Information Systems",
+        "children": []
+      },
+      {
+        "rank": "#18",
+        "category": "Marketing",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Production / Operation Management",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Quantitative Analysis",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Supply Chain Management / Logistics",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Computer Science",
+        "children": [
+          {
+            "rank": "#1",
+            "category": "Artificial Intelligence",
+            "children": []
+          },
+          {
+            "rank": "#1",
+            "category": "Biocomputing/Bioinformatics/Biotechnology",
+            "children": []
+          },
+          {
+            "rank": "#1",
+            "category": "Computer Systems",
+            "children": []
+          },
+          {
+            "rank": "#3",
+            "category": "Cybersecurity",
+            "children": []
+          },
+          {
+            "rank": "#3",
+            "category": "Data Analytics/Science",
+            "children": []
+          },
+          {
+            "rank": "#4",
+            "category": "Game/Simulation Development",
+            "children": []
+          },
+          {
+            "rank": "#4",
+            "category": "Mobile/Web Applications",
+            "children": []
+          },
+          {
+            "rank": "#2",
+            "category": "Programming Languages",
+            "children": []
+          },
+          {
+            "rank": "#2",
+            "category": "Software Engineering",
+            "children": []
+          },
+          {
+            "rank": "#1",
+            "category": "Theory",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#1",
+        "category": "Artificial Intelligence",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Biocomputing/Bioinformatics/Biotechnology",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Computer Systems",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Cybersecurity",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Data Analytics/Science",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Game/Simulation Development",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Mobile/Web Applications",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Programming Languages",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Software Engineering",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Theory",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Learning Communities",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Undergraduate Research/Creative Projects",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Senior Capstone",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Co-ops/Internships",
+        "children": []
+      },
+      {
+        "rank": "#58",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#95",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Harvard University",
+    "link": "https://www.usnews.com/best-colleges/harvard-university-2155",
+    "location": "Cambridge, MA",
+    "rank": "#3",
+    "glance": {
+      "Setting": "N/A",
+      "Tuition & Fees": "$64,796",
+      "Undergraduate Enrollment": "7,038",
+      "Acceptance Rate": "4%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Jan. 1",
+      "Acceptance Rate": "4%",
+      "SAT Range*": "1510-1580",
+      "ACT Range*": "34-36",
+      "High School GPA*": "3.9"
+    },
+    "cost": {
+      "Tuition & Fees": "$64,796",
+      "Food & Housing": "$22,130(2025-26)",
+      "Average Need-Based Aid Package": "$75,305",
+      "Annual Cost*": "$19,500"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "56%",
+      "Student/Faculty Ratio": "7:1",
+      "Classes With Fewer Than 20 Students": "72%",
+      "Popular Majors": [
+        {
+          "major": "Social Sciences",
+          "percent_of_graduates": "27%",
+          "alumni_starting_salary": "$76,293"
+        },
+        {
+          "major": "Biological and Biomedical Sciences",
+          "percent_of_graduates": "13%",
+          "alumni_starting_salary": "$87,380"
+        },
+        {
+          "major": "Mathematics and Statistics",
+          "percent_of_graduates": "12%",
+          "alumni_starting_salary": "$178,318"
+        },
+        {
+          "major": "Computer and Information Sciences and Support Services",
+          "percent_of_graduates": "11%",
+          "alumni_starting_salary": "$219,550"
+        },
+        {
+          "major": "History",
+          "percent_of_graduates": "8%",
+          "alumni_starting_salary": "$94,015"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "3",
+        "Publication share in the Top 25% of Journals by CiteScore": "72%",
+        "Publication share in the Top 5% of Journals by CiteScore": "28%",
+        "Field Weighted Citation Impact": "2.18",
+        "Total Papers published between 2020-2024": "147,158",
+        "Citations Per Publication": "23"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#3",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#21",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": [
+          {
+            "rank": "#20",
+            "category": "Biomedical",
+            "children": []
+          },
+          {
+            "rank": "#24",
+            "category": "Electrical / Electronic / Communications",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#20",
+        "category": "Biomedical",
+        "children": []
+      },
+      {
+        "rank": "#24",
+        "category": "Electrical / Electronic / Communications",
+        "children": []
+      },
+      {
+        "rank": "#12",
+        "category": "Computer Science",
+        "children": [
+          {
+            "rank": "#15",
+            "category": "Artificial Intelligence",
+            "children": []
+          },
+          {
+            "rank": "#9",
+            "category": "Biocomputing/Bioinformatics/Biotechnology",
+            "children": []
+          },
+          {
+            "rank": "#10",
+            "category": "Data Analytics/Science",
+            "children": []
+          },
+          {
+            "rank": "#14",
+            "category": "Programming Languages",
+            "children": []
+          },
+          {
+            "rank": "#7",
+            "category": "Theory",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#15",
+        "category": "Artificial Intelligence",
+        "children": []
+      },
+      {
+        "rank": "#9",
+        "category": "Biocomputing/Bioinformatics/Biotechnology",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Data Analytics/Science",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Programming Languages",
+        "children": []
+      },
+      {
+        "rank": "#7",
+        "category": "Theory",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Writing in the Disciplines",
+        "children": []
+      },
+      {
+        "rank": "#36",
+        "category": "Study Abroad",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Undergraduate Research/Creative Projects",
+        "children": []
+      },
+      {
+        "rank": "#33",
+        "category": "First-Year Experiences",
+        "children": []
+      },
+      {
+        "rank": "#18",
+        "category": "Senior Capstone",
+        "children": []
+      },
+      {
+        "rank": "#22",
+        "category": "Co-ops/Internships",
+        "children": []
+      },
+      {
+        "rank": "#35",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#13",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#85",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Stanford University",
+    "link": "https://www.usnews.com/best-colleges/stanford-university-1305",
+    "location": "Stanford, CA",
+    "rank": "#4",
+    "glance": {
+      "Setting": "Suburban",
+      "Tuition & Fees": "$68,544",
+      "Undergraduate Enrollment": "7,904",
+      "Acceptance Rate": "4%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Jan. 5",
+      "Acceptance Rate": "4%",
+      "SAT Range*": "1510-1580",
+      "ACT Range*": "34-35",
+      "High School GPA*": "3.9"
+    },
+    "cost": {
+      "Tuition & Fees": "$68,544",
+      "Food & Housing": "$22,167(2025-26)",
+      "Average Need-Based Aid Package": "$76,000",
+      "Annual Cost*": "$10,851"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "56%",
+      "Student/Faculty Ratio": "6:1",
+      "Classes With Fewer Than 20 Students": "71%",
+      "Popular Majors": [
+        {
+          "major": "Computer and Information Sciences and Support Services",
+          "percent_of_graduates": "18%",
+          "alumni_starting_salary": "$247,797"
+        },
+        {
+          "major": "Social Sciences",
+          "percent_of_graduates": "17%",
+          "alumni_starting_salary": "$148,692"
+        },
+        {
+          "major": "Engineering",
+          "percent_of_graduates": "16%",
+          "alumni_starting_salary": "$187,527"
+        },
+        {
+          "major": "Multi/Interdisciplinary Studies",
+          "percent_of_graduates": "15%",
+          "alumni_starting_salary": "$92,295"
+        },
+        {
+          "major": "Mathematics and Statistics",
+          "percent_of_graduates": "5%",
+          "alumni_starting_salary": "N/A"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "2",
+        "Publication share in the Top 25% of Journals by CiteScore": "70%",
+        "Publication share in the Top 5% of Journals by CiteScore": "28%",
+        "Field Weighted Citation Impact": "2.33",
+        "Total Papers published between 2020-2024": "80,876",
+        "Citations Per Publication": "23"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#4",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": [
+          {
+            "rank": "#8",
+            "category": "Aerospace /Aeronautical / Astronautical",
+            "children": []
+          },
+          {
+            "rank": "#4",
+            "category": "Biomedical",
+            "children": []
+          },
+          {
+            "rank": "#6",
+            "category": "Chemical",
+            "children": []
+          },
+          {
+            "rank": "#8",
+            "category": "Civil",
+            "children": []
+          },
+          {
+            "rank": "#3",
+            "category": "Computer",
+            "children": []
+          },
+          {
+            "rank": "#4",
+            "category": "Electrical / Electronic / Communications",
+            "children": []
+          },
+          {
+            "rank": "#5",
+            "category": "Environmental / Environmental Health",
+            "children": []
+          },
+          {
+            "rank": "#9",
+            "category": "Industrial / Manufacturing",
+            "children": []
+          },
+          {
+            "rank": "#5",
+            "category": "Materials",
+            "children": []
+          },
+          {
+            "rank": "#2",
+            "category": "Mechanical",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#8",
+        "category": "Aerospace /Aeronautical / Astronautical",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Biomedical",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Chemical",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Civil",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Computer",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Electrical / Electronic / Communications",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Environmental / Environmental Health",
+        "children": []
+      },
+      {
+        "rank": "#9",
+        "category": "Industrial / Manufacturing",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Materials",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Mechanical",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Computer Science",
+        "children": [
+          {
+            "rank": "#3",
+            "category": "Artificial Intelligence",
+            "children": []
+          },
+          {
+            "rank": "#4",
+            "category": "Biocomputing/Bioinformatics/Biotechnology",
+            "children": []
+          },
+          {
+            "rank": "#5",
+            "category": "Computer Systems",
+            "children": []
+          },
+          {
+            "rank": "#5",
+            "category": "Cybersecurity",
+            "children": []
+          },
+          {
+            "rank": "#2",
+            "category": "Data Analytics/Science",
+            "children": []
+          },
+          {
+            "rank": "#1",
+            "category": "Mobile/Web Applications",
+            "children": []
+          },
+          {
+            "rank": "#3",
+            "category": "Programming Languages",
+            "children": []
+          },
+          {
+            "rank": "#3",
+            "category": "Software Engineering",
+            "children": []
+          },
+          {
+            "rank": "#2",
+            "category": "Theory",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#3",
+        "category": "Artificial Intelligence",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Biocomputing/Bioinformatics/Biotechnology",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Computer Systems",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Cybersecurity",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Data Analytics/Science",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Mobile/Web Applications",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Programming Languages",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Software Engineering",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Theory",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Writing in the Disciplines",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Undergraduate Research/Creative Projects",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Service Learning",
+        "children": []
+      },
+      {
+        "rank": "#23",
+        "category": "First-Year Experiences",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Senior Capstone",
+        "children": []
+      },
+      {
+        "rank": "#12",
+        "category": "Best Colleges for Veterans",
+        "children": []
+      },
+      {
+        "rank": "#27",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#153",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Yale University",
+    "link": "https://www.usnews.com/best-colleges/yale-university-1426",
+    "location": "New Haven, CT",
+    "rank": "#4",
+    "glance": {
+      "Setting": "N/A",
+      "Tuition & Fees": "$69,900",
+      "Undergraduate Enrollment": "6,814",
+      "Acceptance Rate": "4%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Jan. 2",
+      "Acceptance Rate": "4%",
+      "SAT Range*": "1470-1570",
+      "ACT Range*": "33-35",
+      "High School GPA*": "N/A"
+    },
+    "cost": {
+      "Tuition & Fees": "$69,900",
+      "Food & Housing": "$20,650(2025-26)",
+      "Average Need-Based Aid Package": "$75,093",
+      "Annual Cost*": "$18,535"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "58%",
+      "Student/Faculty Ratio": "5:1",
+      "Classes With Fewer Than 20 Students": "74%",
+      "Popular Majors": [
+        {
+          "major": "Social Sciences",
+          "percent_of_graduates": "23%",
+          "alumni_starting_salary": "$131,171"
+        },
+        {
+          "major": "Biological and Biomedical Sciences",
+          "percent_of_graduates": "11%",
+          "alumni_starting_salary": "N/A"
+        },
+        {
+          "major": "Computer and Information Sciences and Support Services",
+          "percent_of_graduates": "9%",
+          "alumni_starting_salary": "$271,466"
+        },
+        {
+          "major": "Multi/Interdisciplinary Studies",
+          "percent_of_graduates": "9%",
+          "alumni_starting_salary": "$130,467"
+        },
+        {
+          "major": "Mathematics and Statistics",
+          "percent_of_graduates": "8%",
+          "alumni_starting_salary": "N/A"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "7",
+        "Publication share in the Top 25% of Journals by CiteScore": "70%",
+        "Publication share in the Top 5% of Journals by CiteScore": "26%",
+        "Field Weighted Citation Impact": "2.1",
+        "Total Papers published between 2020-2024": "56,265",
+        "Citations Per Publication": "20"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#4",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#35",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": []
+      },
+      {
+        "rank": "#16",
+        "category": "Computer Science",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#7",
+        "category": "Writing in the Disciplines",
+        "children": []
+      },
+      {
+        "rank": "#27",
+        "category": "Study Abroad",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Learning Communities",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Undergraduate Research/Creative Projects",
+        "children": []
+      },
+      {
+        "rank": "#17",
+        "category": "First-Year Experiences",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Senior Capstone",
+        "children": []
+      },
+      {
+        "rank": "#12",
+        "category": "Best Colleges for Veterans",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#25",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#95",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "University of Chicago",
+    "link": "https://www.usnews.com/best-colleges/university-of-chicago-1774",
+    "location": "Chicago, IL",
+    "rank": "#6",
+    "glance": {
+      "Setting": "N/A",
+      "Tuition & Fees": "$73,266",
+      "Undergraduate Enrollment": "7,519",
+      "Acceptance Rate": "4%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "N/A",
+      "Acceptance Rate": "4%",
+      "SAT Range*": "1510-1580",
+      "ACT Range*": "34-35",
+      "High School GPA*": "N/A"
+    },
+    "cost": {
+      "Tuition & Fees": "$73,266",
+      "Food & Housing": "$20,835(2025-26)",
+      "Average Need-Based Aid Package": "$82,308",
+      "Annual Cost*": "$20,531"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "87%",
+      "Student/Faculty Ratio": "5:1",
+      "Classes With Fewer Than 20 Students": "78%",
+      "Popular Majors": [],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "11",
+        "Publication share in the Top 25% of Journals by CiteScore": "70%",
+        "Publication share in the Top 5% of Journals by CiteScore": "25%",
+        "Field Weighted Citation Impact": "2.09",
+        "Total Papers published between 2020-2024": "35,180",
+        "Citations Per Publication": "20"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#6",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#25",
+        "category": "Computer Science",
+        "children": [
+          {
+            "rank": "#12",
+            "category": "Data Analytics/Science",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#12",
+        "category": "Data Analytics/Science",
+        "children": []
+      },
+      {
+        "rank": "#19",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#44",
+        "category": "Undergraduate Research/Creative Projects",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Best Colleges for Veterans",
+        "children": []
+      },
+      {
+        "rank": "#58",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#48",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#204",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Duke University",
+    "link": "https://www.usnews.com/best-colleges/duke-university-2920",
+    "location": "Durham, NC",
+    "rank": "#7",
+    "glance": {
+      "Setting": "N/A",
+      "Tuition & Fees": "$73,172",
+      "Undergraduate Enrollment": "6,523",
+      "Acceptance Rate": "6%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "N/A",
+      "Acceptance Rate": "6%",
+      "SAT Range*": "1500-1570",
+      "ACT Range*": "34-35",
+      "High School GPA*": "N/A"
+    },
+    "cost": {
+      "Tuition & Fees": "$73,172",
+      "Food & Housing": "$20,985(2025-26)",
+      "Average Need-Based Aid Package": "$76,028",
+      "Annual Cost*": "$30,785"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "87%",
+      "Student/Faculty Ratio": "5:1",
+      "Classes With Fewer Than 20 Students": "72%",
+      "Popular Majors": [],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "21",
+        "Publication share in the Top 25% of Journals by CiteScore": "68%",
+        "Publication share in the Top 5% of Journals by CiteScore": "24%",
+        "Field Weighted Citation Impact": "2.01",
+        "Total Papers published between 2020-2024": "59,184",
+        "Citations Per Publication": "19"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#7",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#17",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": [
+          {
+            "rank": "#3",
+            "category": "Biomedical",
+            "children": []
+          },
+          {
+            "rank": "#29",
+            "category": "Civil",
+            "children": []
+          },
+          {
+            "rank": "#19",
+            "category": "Computer",
+            "children": []
+          },
+          {
+            "rank": "#16",
+            "category": "Electrical / Electronic / Communications",
+            "children": []
+          },
+          {
+            "rank": "#12",
+            "category": "Environmental / Environmental Health",
+            "children": []
+          },
+          {
+            "rank": "#20",
+            "category": "Mechanical",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#3",
+        "category": "Biomedical",
+        "children": []
+      },
+      {
+        "rank": "#29",
+        "category": "Civil",
+        "children": []
+      },
+      {
+        "rank": "#19",
+        "category": "Computer",
+        "children": []
+      },
+      {
+        "rank": "#16",
+        "category": "Electrical / Electronic / Communications",
+        "children": []
+      },
+      {
+        "rank": "#12",
+        "category": "Environmental / Environmental Health",
+        "children": []
+      },
+      {
+        "rank": "#20",
+        "category": "Mechanical",
+        "children": []
+      },
+      {
+        "rank": "#24",
+        "category": "Computer Science",
+        "children": [
+          {
+            "rank": "#21",
+            "category": "Artificial Intelligence",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#21",
+        "category": "Artificial Intelligence",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Nursing",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Writing in the Disciplines",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Study Abroad",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Learning Communities",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Undergraduate Research/Creative Projects",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Service Learning",
+        "children": []
+      },
+      {
+        "rank": "#19",
+        "category": "First-Year Experiences",
+        "children": []
+      },
+      {
+        "rank": "#16",
+        "category": "Senior Capstone",
+        "children": []
+      },
+      {
+        "rank": "#13",
+        "category": "Co-ops/Internships",
+        "children": []
+      },
+      {
+        "rank": "#7",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#104",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Johns Hopkins University",
+    "link": "https://www.usnews.com/best-colleges/jhu-2077",
+    "location": "Baltimore, MD",
+    "rank": "#7",
+    "glance": {
+      "Setting": "Urban",
+      "Tuition & Fees": "$67,170",
+      "Undergraduate Enrollment": "6,356",
+      "Acceptance Rate": "6%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Jan. 3",
+      "Acceptance Rate": "6%",
+      "SAT Range*": "1520-1570",
+      "ACT Range*": "34-36",
+      "High School GPA*": "3.9"
+    },
+    "cost": {
+      "Tuition & Fees": "$67,170",
+      "Food & Housing": "$21,002(2025-26)",
+      "Average Need-Based Aid Package": "$67,159",
+      "Annual Cost*": "$20,820"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "87%",
+      "Student/Faculty Ratio": "6:1",
+      "Classes With Fewer Than 20 Students": "N/A",
+      "Popular Majors": [
+        {
+          "major": "Cell/Cellular and Molecular Biology",
+          "percent_of_graduates": "14%",
+          "alumni_starting_salary": "$66,379"
+        },
+        {
+          "major": "Computer and Information Sciences, General",
+          "percent_of_graduates": "10%",
+          "alumni_starting_salary": "$183,104"
+        },
+        {
+          "major": "Neuroscience",
+          "percent_of_graduates": "10%",
+          "alumni_starting_salary": "$70,736"
+        },
+        {
+          "major": "Public Health, General",
+          "percent_of_graduates": "8%",
+          "alumni_starting_salary": "$89,081"
+        },
+        {
+          "major": "Bioengineering and Biomedical Engineering",
+          "percent_of_graduates": "8%",
+          "alumni_starting_salary": "$118,167"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "21",
+        "Publication share in the Top 25% of Journals by CiteScore": "67%",
+        "Publication share in the Top 5% of Journals by CiteScore": "22%",
+        "Field Weighted Citation Impact": "2.05",
+        "Total Papers published between 2020-2024": "81,356",
+        "Citations Per Publication": "20"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#7",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#12",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#13",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": [
+          {
+            "rank": "#1",
+            "category": "Biomedical",
+            "children": []
+          },
+          {
+            "rank": "#24",
+            "category": "Chemical",
+            "children": []
+          },
+          {
+            "rank": "#24",
+            "category": "Computer",
+            "children": []
+          },
+          {
+            "rank": "#20",
+            "category": "Materials",
+            "children": []
+          },
+          {
+            "rank": "#23",
+            "category": "Mechanical",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#1",
+        "category": "Biomedical",
+        "children": []
+      },
+      {
+        "rank": "#24",
+        "category": "Chemical",
+        "children": []
+      },
+      {
+        "rank": "#24",
+        "category": "Computer",
+        "children": []
+      },
+      {
+        "rank": "#20",
+        "category": "Materials",
+        "children": []
+      },
+      {
+        "rank": "#23",
+        "category": "Mechanical",
+        "children": []
+      },
+      {
+        "rank": "#16",
+        "category": "Computer Science",
+        "children": [
+          {
+            "rank": "#20",
+            "category": "Artificial Intelligence",
+            "children": []
+          },
+          {
+            "rank": "#4",
+            "category": "Biocomputing/Bioinformatics/Biotechnology",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#20",
+        "category": "Artificial Intelligence",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Biocomputing/Bioinformatics/Biotechnology",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#21",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#9",
+        "category": "Undergraduate Research/Creative Projects",
+        "children": []
+      },
+      {
+        "rank": "#58",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#101",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Northwestern University",
+    "link": "https://www.usnews.com/best-colleges/northwestern-university-1739",
+    "location": "Evanston, IL",
+    "rank": "#7",
+    "glance": {
+      "Setting": "N/A",
+      "Tuition & Fees": "$70,589",
+      "Undergraduate Enrollment": "9,060",
+      "Acceptance Rate": "8%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Jan. 1",
+      "Acceptance Rate": "8%",
+      "SAT Range*": "1510-1570",
+      "ACT Range*": "34-35",
+      "High School GPA*": "N/A"
+    },
+    "cost": {
+      "Tuition & Fees": "$70,589",
+      "Food & Housing": "$21,975(2025-26)",
+      "Average Need-Based Aid Package": "$67,785",
+      "Annual Cost*": "$25,057"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "83%",
+      "Student/Faculty Ratio": "6:1",
+      "Classes With Fewer Than 20 Students": "76%",
+      "Popular Majors": [],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "8",
+        "Publication share in the Top 25% of Journals by CiteScore": "70%",
+        "Publication share in the Top 5% of Journals by CiteScore": "26%",
+        "Field Weighted Citation Impact": "2.11",
+        "Total Papers published between 2020-2024": "47,177",
+        "Citations Per Publication": "21"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#7",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#19",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#17",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": [
+          {
+            "rank": "#12",
+            "category": "Biomedical",
+            "children": []
+          },
+          {
+            "rank": "#16",
+            "category": "Chemical",
+            "children": []
+          },
+          {
+            "rank": "#18",
+            "category": "Civil",
+            "children": []
+          },
+          {
+            "rank": "#17",
+            "category": "Electrical / Electronic / Communications",
+            "children": []
+          },
+          {
+            "rank": "#20",
+            "category": "Environmental / Environmental Health",
+            "children": []
+          },
+          {
+            "rank": "#5",
+            "category": "Industrial / Manufacturing",
+            "children": []
+          },
+          {
+            "rank": "#4",
+            "category": "Materials",
+            "children": []
+          },
+          {
+            "rank": "#15",
+            "category": "Mechanical",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#12",
+        "category": "Biomedical",
+        "children": []
+      },
+      {
+        "rank": "#16",
+        "category": "Chemical",
+        "children": []
+      },
+      {
+        "rank": "#18",
+        "category": "Civil",
+        "children": []
+      },
+      {
+        "rank": "#17",
+        "category": "Electrical / Electronic / Communications",
+        "children": []
+      },
+      {
+        "rank": "#20",
+        "category": "Environmental / Environmental Health",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Industrial / Manufacturing",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Materials",
+        "children": []
+      },
+      {
+        "rank": "#15",
+        "category": "Mechanical",
+        "children": []
+      },
+      {
+        "rank": "#30",
+        "category": "Computer Science",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#35",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#28",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#69",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "University of Pennsylvania",
+    "link": "https://www.usnews.com/best-colleges/university-of-pennsylvania-3378",
+    "location": "Philadelphia, PA",
+    "rank": "#7",
+    "glance": {
+      "Setting": "Urban",
+      "Tuition & Fees": "$71,236",
+      "Undergraduate Enrollment": "10,013",
+      "Acceptance Rate": "5%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Jan. 5",
+      "Acceptance Rate": "5%",
+      "SAT Range*": "1510-1570",
+      "ACT Range*": "34-36",
+      "High School GPA*": "3.9"
+    },
+    "cost": {
+      "Tuition & Fees": "$71,236",
+      "Food & Housing": "$19,876(2025-26)",
+      "Average Need-Based Aid Package": "$70,971",
+      "Annual Cost*": "$26,138"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "86%",
+      "Student/Faculty Ratio": "8:1",
+      "Classes With Fewer Than 20 Students": "59%",
+      "Popular Majors": [
+        {
+          "major": "Business, Management, Marketing, and Related Support Services",
+          "percent_of_graduates": "21%",
+          "alumni_starting_salary": "$116,666"
+        },
+        {
+          "major": "Biological and Biomedical Sciences",
+          "percent_of_graduates": "14%",
+          "alumni_starting_salary": "$78,245"
+        },
+        {
+          "major": "Social Sciences",
+          "percent_of_graduates": "13%",
+          "alumni_starting_salary": "$152,236"
+        },
+        {
+          "major": "Computer and Information Sciences and Support Services",
+          "percent_of_graduates": "9%",
+          "alumni_starting_salary": "$298,016"
+        },
+        {
+          "major": "Engineering",
+          "percent_of_graduates": "8%",
+          "alumni_starting_salary": "$121,488"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "16",
+        "Publication share in the Top 25% of Journals by CiteScore": "68%",
+        "Publication share in the Top 5% of Journals by CiteScore": "25%",
+        "Field Weighted Citation Impact": "1.99",
+        "Total Papers published between 2020-2024": "70,543",
+        "Citations Per Publication": "19"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#7",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#13",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#21",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": [
+          {
+            "rank": "#11",
+            "category": "Biomedical",
+            "children": []
+          },
+          {
+            "rank": "#20",
+            "category": "Chemical",
+            "children": []
+          },
+          {
+            "rank": "#20",
+            "category": "Electrical / Electronic / Communications",
+            "children": []
+          },
+          {
+            "rank": "#20",
+            "category": "Materials",
+            "children": []
+          },
+          {
+            "rank": "#20",
+            "category": "Mechanical",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#11",
+        "category": "Biomedical",
+        "children": []
+      },
+      {
+        "rank": "#20",
+        "category": "Chemical",
+        "children": []
+      },
+      {
+        "rank": "#20",
+        "category": "Electrical / Electronic / Communications",
+        "children": []
+      },
+      {
+        "rank": "#20",
+        "category": "Materials",
+        "children": []
+      },
+      {
+        "rank": "#20",
+        "category": "Mechanical",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Business Programs",
+        "children": [
+          {
+            "rank": "#5",
+            "category": "Accounting",
+            "children": []
+          },
+          {
+            "rank": "#5",
+            "category": "Analytics",
+            "children": []
+          },
+          {
+            "rank": "#5",
+            "category": "Entrepreneurship",
+            "children": []
+          },
+          {
+            "rank": "#1",
+            "category": "Finance",
+            "children": []
+          },
+          {
+            "rank": "#5",
+            "category": "Insurance",
+            "children": []
+          },
+          {
+            "rank": "#6",
+            "category": "International Business",
+            "children": []
+          },
+          {
+            "rank": "#2",
+            "category": "Management",
+            "children": []
+          },
+          {
+            "rank": "#10",
+            "category": "Management Information Systems",
+            "children": []
+          },
+          {
+            "rank": "#2",
+            "category": "Marketing",
+            "children": []
+          },
+          {
+            "rank": "#4",
+            "category": "Production / Operation Management",
+            "children": []
+          },
+          {
+            "rank": "#2",
+            "category": "Quantitative Analysis",
+            "children": []
+          },
+          {
+            "rank": "#2",
+            "category": "Real Estate",
+            "children": []
+          },
+          {
+            "rank": "#18",
+            "category": "Supply Chain Management / Logistics",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#5",
+        "category": "Accounting",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Analytics",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Entrepreneurship",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Finance",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Insurance",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "International Business",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Management",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Management Information Systems",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Marketing",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Production / Operation Management",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Quantitative Analysis",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Real Estate",
+        "children": []
+      },
+      {
+        "rank": "#18",
+        "category": "Supply Chain Management / Logistics",
+        "children": []
+      },
+      {
+        "rank": "#16",
+        "category": "Computer Science",
+        "children": [
+          {
+            "rank": "#21",
+            "category": "Artificial Intelligence",
+            "children": []
+          },
+          {
+            "rank": "#6",
+            "category": "Programming Languages",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#21",
+        "category": "Artificial Intelligence",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Programming Languages",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Nursing",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#22",
+        "category": "Undergraduate Research/Creative Projects",
+        "children": []
+      },
+      {
+        "rank": "#51",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#136",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "California Institute of Technology",
+    "link": "https://www.usnews.com/best-colleges/california-institute-of-technology-1131",
+    "location": "Pasadena, CA",
+    "rank": "#11",
+    "glance": {
+      "Setting": "Suburban",
+      "Tuition & Fees": "$68,208",
+      "Undergraduate Enrollment": "987",
+      "Acceptance Rate": "3%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Jan. 3",
+      "Acceptance Rate": "3%",
+      "SAT Range*": "N/A",
+      "ACT Range*": "N/A",
+      "High School GPA*": "N/A"
+    },
+    "cost": {
+      "Tuition & Fees": "$68,208",
+      "Food & Housing": "$20,991(2025-26)",
+      "Average Need-Based Aid Package": "$74,780",
+      "Annual Cost*": "$16,550"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "77%",
+      "Student/Faculty Ratio": "3:1",
+      "Classes With Fewer Than 20 Students": "71%",
+      "Popular Majors": [
+        {
+          "major": "Computer Science",
+          "percent_of_graduates": "40%",
+          "alumni_starting_salary": "$232,903"
+        },
+        {
+          "major": "Mechanical Engineering",
+          "percent_of_graduates": "16%",
+          "alumni_starting_salary": "N/A"
+        },
+        {
+          "major": "Physics, General",
+          "percent_of_graduates": "9%",
+          "alumni_starting_salary": "N/A"
+        },
+        {
+          "major": "Electrical and Electronics Engineering",
+          "percent_of_graduates": "6%",
+          "alumni_starting_salary": "N/A"
+        },
+        {
+          "major": "Computational Mathematics",
+          "percent_of_graduates": "4%",
+          "alumni_starting_salary": "N/A"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "16",
+        "Publication share in the Top 25% of Journals by CiteScore": "74%",
+        "Publication share in the Top 5% of Journals by CiteScore": "22%",
+        "Field Weighted Citation Impact": "2.02",
+        "Total Papers published between 2020-2024": "23,891",
+        "Citations Per Publication": "22"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#11",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": [
+          {
+            "rank": "#4",
+            "category": "Aerospace /Aeronautical / Astronautical",
+            "children": []
+          },
+          {
+            "rank": "#25",
+            "category": "Biomedical",
+            "children": []
+          },
+          {
+            "rank": "#9",
+            "category": "Chemical",
+            "children": []
+          },
+          {
+            "rank": "#11",
+            "category": "Computer",
+            "children": []
+          },
+          {
+            "rank": "#6",
+            "category": "Electrical / Electronic / Communications",
+            "children": []
+          },
+          {
+            "rank": "#10",
+            "category": "Materials",
+            "children": []
+          },
+          {
+            "rank": "#7",
+            "category": "Mechanical",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#4",
+        "category": "Aerospace /Aeronautical / Astronautical",
+        "children": []
+      },
+      {
+        "rank": "#25",
+        "category": "Biomedical",
+        "children": []
+      },
+      {
+        "rank": "#9",
+        "category": "Chemical",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Computer",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Electrical / Electronic / Communications",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Materials",
+        "children": []
+      },
+      {
+        "rank": "#7",
+        "category": "Mechanical",
+        "children": []
+      },
+      {
+        "rank": "#9",
+        "category": "Computer Science",
+        "children": [
+          {
+            "rank": "#10",
+            "category": "Artificial Intelligence",
+            "children": []
+          },
+          {
+            "rank": "#13",
+            "category": "Computer Systems",
+            "children": []
+          },
+          {
+            "rank": "#12",
+            "category": "Data Analytics/Science",
+            "children": []
+          },
+          {
+            "rank": "#14",
+            "category": "Theory",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#10",
+        "category": "Artificial Intelligence",
+        "children": []
+      },
+      {
+        "rank": "#13",
+        "category": "Computer Systems",
+        "children": []
+      },
+      {
+        "rank": "#12",
+        "category": "Data Analytics/Science",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Theory",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Undergraduate Research/Creative Projects",
+        "children": []
+      },
+      {
+        "rank": "#7",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#173",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Cornell University",
+    "link": "https://www.usnews.com/best-colleges/cornell-university-2711",
+    "location": "Ithaca, NY",
+    "rank": "#12",
+    "glance": {
+      "Setting": "Rural",
+      "Tuition & Fees": "$72,270",
+      "Undergraduate Enrollment": "16,128",
+      "Acceptance Rate": "8%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Jan. 2",
+      "Acceptance Rate": "8%",
+      "SAT Range*": "1500-1570",
+      "ACT Range*": "33-35",
+      "High School GPA*": "N/A"
+    },
+    "cost": {
+      "Tuition & Fees": "$72,270",
+      "Food & Housing": "$20,574(2025-26)",
+      "Average Need-Based Aid Package": "$62,720",
+      "Annual Cost*": "$29,651"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "87%",
+      "Student/Faculty Ratio": "9:1",
+      "Classes With Fewer Than 20 Students": "54%",
+      "Popular Majors": [
+        {
+          "major": "Computer and Information Sciences and Support Services",
+          "percent_of_graduates": "18%",
+          "alumni_starting_salary": "$140,860"
+        },
+        {
+          "major": "Business, Management, Marketing, and Related Support Services",
+          "percent_of_graduates": "14%",
+          "alumni_starting_salary": "$98,785"
+        },
+        {
+          "major": "Engineering",
+          "percent_of_graduates": "13%",
+          "alumni_starting_salary": "$115,100"
+        },
+        {
+          "major": "Agricultural / Animal / Plant / Veterinary Science and Related Fields",
+          "percent_of_graduates": "11%",
+          "alumni_starting_salary": "$56,857"
+        },
+        {
+          "major": "Biological and Biomedical Sciences",
+          "percent_of_graduates": "10%",
+          "alumni_starting_salary": "$69,997"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "13",
+        "Publication share in the Top 25% of Journals by CiteScore": "68%",
+        "Publication share in the Top 5% of Journals by CiteScore": "25%",
+        "Field Weighted Citation Impact": "1.96",
+        "Total Papers published between 2020-2024": "59,212",
+        "Citations Per Publication": "20"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#12",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#23",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": [
+          {
+            "rank": "#16",
+            "category": "Aerospace /Aeronautical / Astronautical",
+            "children": []
+          },
+          {
+            "rank": "#12",
+            "category": "Biomedical",
+            "children": []
+          },
+          {
+            "rank": "#15",
+            "category": "Chemical",
+            "children": []
+          },
+          {
+            "rank": "#12",
+            "category": "Civil",
+            "children": []
+          },
+          {
+            "rank": "#10",
+            "category": "Computer",
+            "children": []
+          },
+          {
+            "rank": "#11",
+            "category": "Electrical / Electronic / Communications",
+            "children": []
+          },
+          {
+            "rank": "#11",
+            "category": "Environmental / Environmental Health",
+            "children": []
+          },
+          {
+            "rank": "#12",
+            "category": "Industrial / Manufacturing",
+            "children": []
+          },
+          {
+            "rank": "#8",
+            "category": "Materials",
+            "children": []
+          },
+          {
+            "rank": "#10",
+            "category": "Mechanical",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#16",
+        "category": "Aerospace /Aeronautical / Astronautical",
+        "children": []
+      },
+      {
+        "rank": "#12",
+        "category": "Biomedical",
+        "children": []
+      },
+      {
+        "rank": "#15",
+        "category": "Chemical",
+        "children": []
+      },
+      {
+        "rank": "#12",
+        "category": "Civil",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Computer",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Electrical / Electronic / Communications",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Environmental / Environmental Health",
+        "children": []
+      },
+      {
+        "rank": "#12",
+        "category": "Industrial / Manufacturing",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Materials",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Mechanical",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Business Programs",
+        "children": [
+          {
+            "rank": "#26",
+            "category": "Accounting",
+            "children": []
+          },
+          {
+            "rank": "#13",
+            "category": "Analytics",
+            "children": []
+          },
+          {
+            "rank": "#11",
+            "category": "Finance",
+            "children": []
+          },
+          {
+            "rank": "#21",
+            "category": "Management",
+            "children": []
+          },
+          {
+            "rank": "#16",
+            "category": "Marketing",
+            "children": []
+          },
+          {
+            "rank": "#17",
+            "category": "Production / Operation Management",
+            "children": []
+          },
+          {
+            "rank": "#8",
+            "category": "Quantitative Analysis",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#26",
+        "category": "Accounting",
+        "children": []
+      },
+      {
+        "rank": "#13",
+        "category": "Analytics",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Finance",
+        "children": []
+      },
+      {
+        "rank": "#21",
+        "category": "Management",
+        "children": []
+      },
+      {
+        "rank": "#16",
+        "category": "Marketing",
+        "children": []
+      },
+      {
+        "rank": "#17",
+        "category": "Production / Operation Management",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Quantitative Analysis",
+        "children": []
+      },
+      {
+        "rank": "#7",
+        "category": "Computer Science",
+        "children": [
+          {
+            "rank": "#9",
+            "category": "Artificial Intelligence",
+            "children": []
+          },
+          {
+            "rank": "#11",
+            "category": "Computer Systems",
+            "children": []
+          },
+          {
+            "rank": "#9",
+            "category": "Cybersecurity",
+            "children": []
+          },
+          {
+            "rank": "#5",
+            "category": "Programming Languages",
+            "children": []
+          },
+          {
+            "rank": "#6",
+            "category": "Software Engineering",
+            "children": []
+          },
+          {
+            "rank": "#6",
+            "category": "Theory",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#9",
+        "category": "Artificial Intelligence",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Computer Systems",
+        "children": []
+      },
+      {
+        "rank": "#9",
+        "category": "Cybersecurity",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Programming Languages",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Software Engineering",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Theory",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Writing in the Disciplines",
+        "children": []
+      },
+      {
+        "rank": "#44",
+        "category": "Undergraduate Research/Creative Projects",
+        "children": []
+      },
+      {
+        "rank": "#24",
+        "category": "Service Learning",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Co-ops/Internships",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Best Colleges for Veterans",
+        "children": []
+      },
+      {
+        "rank": "#51",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#23",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#117",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Brown University",
+    "link": "https://www.usnews.com/best-colleges/brown-university-3401",
+    "location": "Providence, RI",
+    "rank": "#13",
+    "glance": {
+      "Setting": "City",
+      "Tuition & Fees": "$74,550",
+      "Undergraduate Enrollment": "7,910",
+      "Acceptance Rate": "5%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Jan. 3",
+      "Acceptance Rate": "5%",
+      "SAT Range*": "1510-1580",
+      "ACT Range*": "34-35",
+      "High School GPA*": "N/A"
+    },
+    "cost": {
+      "Tuition & Fees": "$74,550",
+      "Food & Housing": "$18,514(2025-26)",
+      "Average Need-Based Aid Package": "$68,926",
+      "Annual Cost*": "$27,157"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "77%",
+      "Student/Faculty Ratio": "6:1",
+      "Classes With Fewer Than 20 Students": "68%",
+      "Popular Majors": [
+        {
+          "major": "Social Sciences",
+          "percent_of_graduates": "25%",
+          "alumni_starting_salary": "$112,306"
+        },
+        {
+          "major": "Computer and Information Sciences and Support Services",
+          "percent_of_graduates": "13%",
+          "alumni_starting_salary": "$271,601"
+        },
+        {
+          "major": "Mathematics and Statistics",
+          "percent_of_graduates": "10%",
+          "alumni_starting_salary": "$135,511"
+        },
+        {
+          "major": "Biological and Biomedical Sciences",
+          "percent_of_graduates": "9%",
+          "alumni_starting_salary": "$65,144"
+        },
+        {
+          "major": "Multi/Interdisciplinary Studies",
+          "percent_of_graduates": "6%",
+          "alumni_starting_salary": "$77,466"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "43",
+        "Publication share in the Top 25% of Journals by CiteScore": "67%",
+        "Publication share in the Top 5% of Journals by CiteScore": "21%",
+        "Field Weighted Citation Impact": "1.84",
+        "Total Papers published between 2020-2024": "26,234",
+        "Citations Per Publication": "17"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#13",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#15",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#42",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": []
+      },
+      {
+        "rank": "#25",
+        "category": "Computer Science",
+        "children": []
+      },
+      {
+        "rank": "#19",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Writing in the Disciplines",
+        "children": []
+      },
+      {
+        "rank": "#28",
+        "category": "Undergraduate Research/Creative Projects",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Service Learning",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "First-Year Experiences",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Senior Capstone",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Best Colleges for Veterans",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#31",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#159",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Dartmouth College",
+    "link": "https://www.usnews.com/best-colleges/dartmouth-college-2573",
+    "location": "Hanover, NH",
+    "rank": "#13",
+    "glance": {
+      "Setting": "N/A",
+      "Tuition & Fees": "$71,265",
+      "Undergraduate Enrollment": "4,570",
+      "Acceptance Rate": "5%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Jan. 3",
+      "Acceptance Rate": "5%",
+      "SAT Range*": "1500-1570",
+      "ACT Range*": "33-35",
+      "High School GPA*": "N/A"
+    },
+    "cost": {
+      "Tuition & Fees": "$71,265",
+      "Food & Housing": "$20,670(2025-26)",
+      "Average Need-Based Aid Package": "$71,318",
+      "Annual Cost*": "$31,120"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "75%",
+      "Student/Faculty Ratio": "6:1",
+      "Classes With Fewer Than 20 Students": "59%",
+      "Popular Majors": [
+        {
+          "major": "Social Sciences",
+          "percent_of_graduates": "29%",
+          "alumni_starting_salary": "$153,295"
+        },
+        {
+          "major": "Computer and Information Sciences and Support Services",
+          "percent_of_graduates": "10%",
+          "alumni_starting_salary": "$192,848"
+        },
+        {
+          "major": "Multi/Interdisciplinary Studies",
+          "percent_of_graduates": "9%",
+          "alumni_starting_salary": "N/A"
+        },
+        {
+          "major": "Engineering",
+          "percent_of_graduates": "8%",
+          "alumni_starting_salary": "$120,347"
+        },
+        {
+          "major": "Mathematics and Statistics",
+          "percent_of_graduates": "7%",
+          "alumni_starting_salary": "N/A"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "55",
+        "Publication share in the Top 25% of Journals by CiteScore": "67%",
+        "Publication share in the Top 5% of Journals by CiteScore": "22%",
+        "Field Weighted Citation Impact": "1.63",
+        "Total Papers published between 2020-2024": "12,240",
+        "Citations Per Publication": "16"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#13",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#9",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#57",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": []
+      },
+      {
+        "rank": "#39",
+        "category": "Computer Science",
+        "children": []
+      },
+      {
+        "rank": "#19",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#18",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#25",
+        "category": "Writing in the Disciplines",
+        "children": []
+      },
+      {
+        "rank": "#15",
+        "category": "Study Abroad",
+        "children": []
+      },
+      {
+        "rank": "#22",
+        "category": "Learning Communities",
+        "children": []
+      },
+      {
+        "rank": "#34",
+        "category": "Undergraduate Research/Creative Projects",
+        "children": []
+      },
+      {
+        "rank": "#52",
+        "category": "First-Year Experiences",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#125",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Columbia University",
+    "link": "https://www.usnews.com/best-colleges/columbia-university-2707",
+    "location": "New York, NY",
+    "rank": "#15",
+    "glance": {
+      "Setting": "N/A",
+      "Tuition & Fees": "$71,845",
+      "Undergraduate Enrollment": "9,111",
+      "Acceptance Rate": "4%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "N/A",
+      "Acceptance Rate": "4%",
+      "SAT Range*": "1510-1580",
+      "ACT Range*": "34-35",
+      "High School GPA*": "N/A"
+    },
+    "cost": {
+      "Tuition & Fees": "$71,845",
+      "Food & Housing": "N/A",
+      "Average Need-Based Aid Package": "N/A",
+      "Annual Cost*": "$23,497"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "80%",
+      "Student/Faculty Ratio": "6:1",
+      "Classes With Fewer Than 20 Students": "N/A",
+      "Popular Majors": [],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "13",
+        "Publication share in the Top 25% of Journals by CiteScore": "69%",
+        "Publication share in the Top 5% of Journals by CiteScore": "26%",
+        "Field Weighted Citation Impact": "1.99",
+        "Total Papers published between 2020-2024": "63,675",
+        "Citations Per Publication": "20"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#15",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#21",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": [
+          {
+            "rank": "#17",
+            "category": "Biomedical",
+            "children": []
+          },
+          {
+            "rank": "#23",
+            "category": "Civil",
+            "children": []
+          },
+          {
+            "rank": "#21",
+            "category": "Computer",
+            "children": []
+          },
+          {
+            "rank": "#16",
+            "category": "Industrial / Manufacturing",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#17",
+        "category": "Biomedical",
+        "children": []
+      },
+      {
+        "rank": "#23",
+        "category": "Civil",
+        "children": []
+      },
+      {
+        "rank": "#21",
+        "category": "Computer",
+        "children": []
+      },
+      {
+        "rank": "#16",
+        "category": "Industrial / Manufacturing",
+        "children": []
+      },
+      {
+        "rank": "#16",
+        "category": "Computer Science",
+        "children": [
+          {
+            "rank": "#12",
+            "category": "Artificial Intelligence",
+            "children": []
+          },
+          {
+            "rank": "#16",
+            "category": "Computer Systems",
+            "children": []
+          },
+          {
+            "rank": "#11",
+            "category": "Data Analytics/Science",
+            "children": []
+          },
+          {
+            "rank": "#8",
+            "category": "Theory",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#12",
+        "category": "Artificial Intelligence",
+        "children": []
+      },
+      {
+        "rank": "#16",
+        "category": "Computer Systems",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Data Analytics/Science",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Theory",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#38",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#87",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "University of California, Berkeley",
+    "link": "https://www.usnews.com/best-colleges/university-of-california-berkeley-1312",
+    "location": "Berkeley, CA",
+    "rank": "#15",
+    "glance": {
+      "Setting": "City",
+      "In-state tuition and fees": "$17,721",
+      "Undergraduate Enrollment": "33,469",
+      "Acceptance Rate": "11%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Nov. 30",
+      "Acceptance Rate": "11%",
+      "SAT Range*": "N/A",
+      "ACT Range*": "N/A",
+      "High School GPA*": "3.9"
+    },
+    "cost": {
+      "Out-of-State Tuition & Fees": "$55,323",
+      "In-State Tuition & Fees": "$17,721",
+      "Food & Housing": "$24,558(2025-26)",
+      "Average Need-Based Aid Package": "$37,119",
+      "Annual Cost*": "$17,371"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "80%",
+      "Student/Faculty Ratio": "18:1",
+      "Classes With Fewer Than 20 Students": "50%",
+      "Popular Majors": [
+        {
+          "major": "Computer and Information Sciences and Support Services",
+          "percent_of_graduates": "17%",
+          "alumni_starting_salary": "$225,140"
+        },
+        {
+          "major": "Social Sciences",
+          "percent_of_graduates": "16%",
+          "alumni_starting_salary": "$63,390"
+        },
+        {
+          "major": "Engineering",
+          "percent_of_graduates": "12%",
+          "alumni_starting_salary": "$89,225"
+        },
+        {
+          "major": "Biological and Biomedical Sciences",
+          "percent_of_graduates": "10%",
+          "alumni_starting_salary": "$76,503"
+        },
+        {
+          "major": "Multi/Interdisciplinary Studies",
+          "percent_of_graduates": "5%",
+          "alumni_starting_salary": "$75,726"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "3",
+        "Publication share in the Top 25% of Journals by CiteScore": "72%",
+        "Publication share in the Top 5% of Journals by CiteScore": "27%",
+        "Field Weighted Citation Impact": "2.2",
+        "Total Papers published between 2020-2024": "49,518",
+        "Citations Per Publication": "22"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#15",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Top Public Schools",
+        "children": []
+      },
+      {
+        "rank": "#190",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": [
+          {
+            "rank": "#17",
+            "category": "Aerospace /Aeronautical / Astronautical",
+            "children": []
+          },
+          {
+            "rank": "#8",
+            "category": "Biomedical",
+            "children": []
+          },
+          {
+            "rank": "#3",
+            "category": "Chemical",
+            "children": []
+          },
+          {
+            "rank": "#1",
+            "category": "Civil",
+            "children": []
+          },
+          {
+            "rank": "#3",
+            "category": "Computer",
+            "children": []
+          },
+          {
+            "rank": "#1",
+            "category": "Electrical / Electronic / Communications",
+            "children": []
+          },
+          {
+            "rank": "#2",
+            "category": "Environmental / Environmental Health",
+            "children": []
+          },
+          {
+            "rank": "#4",
+            "category": "Industrial / Manufacturing",
+            "children": []
+          },
+          {
+            "rank": "#2",
+            "category": "Materials",
+            "children": []
+          },
+          {
+            "rank": "#2",
+            "category": "Mechanical",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#17",
+        "category": "Aerospace /Aeronautical / Astronautical",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Biomedical",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Chemical",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Civil",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Computer",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Electrical / Electronic / Communications",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Environmental / Environmental Health",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Industrial / Manufacturing",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Materials",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Mechanical",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Business Programs",
+        "children": [
+          {
+            "rank": "#15",
+            "category": "Accounting",
+            "children": []
+          },
+          {
+            "rank": "#8",
+            "category": "Analytics",
+            "children": []
+          },
+          {
+            "rank": "#4",
+            "category": "Entrepreneurship",
+            "children": []
+          },
+          {
+            "rank": "#6",
+            "category": "Finance",
+            "children": []
+          },
+          {
+            "rank": "#8",
+            "category": "International Business",
+            "children": []
+          },
+          {
+            "rank": "#3",
+            "category": "Management",
+            "children": []
+          },
+          {
+            "rank": "#15",
+            "category": "Management Information Systems",
+            "children": []
+          },
+          {
+            "rank": "#7",
+            "category": "Marketing",
+            "children": []
+          },
+          {
+            "rank": "#10",
+            "category": "Production / Operation Management",
+            "children": []
+          },
+          {
+            "rank": "#4",
+            "category": "Quantitative Analysis",
+            "children": []
+          },
+          {
+            "rank": "#7",
+            "category": "Real Estate",
+            "children": []
+          },
+          {
+            "rank": "#24",
+            "category": "Supply Chain Management / Logistics",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#15",
+        "category": "Accounting",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Analytics",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Entrepreneurship",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Finance",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "International Business",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Management",
+        "children": []
+      },
+      {
+        "rank": "#15",
+        "category": "Management Information Systems",
+        "children": []
+      },
+      {
+        "rank": "#7",
+        "category": "Marketing",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Production / Operation Management",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Quantitative Analysis",
+        "children": []
+      },
+      {
+        "rank": "#7",
+        "category": "Real Estate",
+        "children": []
+      },
+      {
+        "rank": "#24",
+        "category": "Supply Chain Management / Logistics",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Computer Science",
+        "children": [
+          {
+            "rank": "#4",
+            "category": "Artificial Intelligence",
+            "children": []
+          },
+          {
+            "rank": "#9",
+            "category": "Biocomputing/Bioinformatics/Biotechnology",
+            "children": []
+          },
+          {
+            "rank": "#2",
+            "category": "Computer Systems",
+            "children": []
+          },
+          {
+            "rank": "#6",
+            "category": "Cybersecurity",
+            "children": []
+          },
+          {
+            "rank": "#1",
+            "category": "Data Analytics/Science",
+            "children": []
+          },
+          {
+            "rank": "#4",
+            "category": "Programming Languages",
+            "children": []
+          },
+          {
+            "rank": "#6",
+            "category": "Software Engineering",
+            "children": []
+          },
+          {
+            "rank": "#4",
+            "category": "Theory",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#4",
+        "category": "Artificial Intelligence",
+        "children": []
+      },
+      {
+        "rank": "#9",
+        "category": "Biocomputing/Bioinformatics/Biotechnology",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Computer Systems",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Cybersecurity",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Data Analytics/Science",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Programming Languages",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Software Engineering",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Theory",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#13",
+        "category": "Undergraduate Research/Creative Projects",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Best Colleges for Veterans",
+        "children": []
+      },
+      {
+        "rank": "#39",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#22",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#87",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Rice University",
+    "link": "https://www.usnews.com/best-colleges/rice-3604",
+    "location": "Houston, TX",
+    "rank": "#17",
+    "glance": {
+      "Setting": "Urban",
+      "Tuition & Fees": "$65,475",
+      "Undergraduate Enrollment": "4,789",
+      "Acceptance Rate": "8%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Jan. 4",
+      "Acceptance Rate": "8%",
+      "SAT Range*": "1510-1570",
+      "ACT Range*": "34-35",
+      "High School GPA*": "N/A"
+    },
+    "cost": {
+      "Tuition & Fees": "$65,475",
+      "Food & Housing": "$19,550(2025-26)",
+      "Average Need-Based Aid Package": "$71,698",
+      "Annual Cost*": "$15,091"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "87%",
+      "Student/Faculty Ratio": "6:1",
+      "Classes With Fewer Than 20 Students": "64%",
+      "Popular Majors": [
+        {
+          "major": "Computer and Information Sciences, General",
+          "percent_of_graduates": "13%",
+          "alumni_starting_salary": "$213,603"
+        },
+        {
+          "major": "Biology/Biological Sciences, General",
+          "percent_of_graduates": "9%",
+          "alumni_starting_salary": "$67,158"
+        },
+        {
+          "major": "Management Sciences and Quantitative Methods, Other",
+          "percent_of_graduates": "5%",
+          "alumni_starting_salary": "N/A"
+        },
+        {
+          "major": "Mechanical Engineering",
+          "percent_of_graduates": "5%",
+          "alumni_starting_salary": "$105,734"
+        },
+        {
+          "major": "Psychology, General",
+          "percent_of_graduates": "4%",
+          "alumni_starting_salary": "$67,648"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "16",
+        "Publication share in the Top 25% of Journals by CiteScore": "73%",
+        "Publication share in the Top 5% of Journals by CiteScore": "27%",
+        "Field Weighted Citation Impact": "1.84",
+        "Total Papers published between 2020-2024": "14,081",
+        "Citations Per Publication": "19"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#17",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#21",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": [
+          {
+            "rank": "#9",
+            "category": "Biomedical",
+            "children": []
+          },
+          {
+            "rank": "#21",
+            "category": "Chemical",
+            "children": []
+          },
+          {
+            "rank": "#24",
+            "category": "Electrical / Electronic / Communications",
+            "children": []
+          },
+          {
+            "rank": "#16",
+            "category": "Environmental / Environmental Health",
+            "children": []
+          },
+          {
+            "rank": "#26",
+            "category": "Mechanical",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#9",
+        "category": "Biomedical",
+        "children": []
+      },
+      {
+        "rank": "#21",
+        "category": "Chemical",
+        "children": []
+      },
+      {
+        "rank": "#24",
+        "category": "Electrical / Electronic / Communications",
+        "children": []
+      },
+      {
+        "rank": "#16",
+        "category": "Environmental / Environmental Health",
+        "children": []
+      },
+      {
+        "rank": "#26",
+        "category": "Mechanical",
+        "children": []
+      },
+      {
+        "rank": "#24",
+        "category": "Business Programs",
+        "children": [
+          {
+            "rank": "#12",
+            "category": "Entrepreneurship",
+            "children": []
+          },
+          {
+            "rank": "#29",
+            "category": "Finance",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#12",
+        "category": "Entrepreneurship",
+        "children": []
+      },
+      {
+        "rank": "#29",
+        "category": "Finance",
+        "children": []
+      },
+      {
+        "rank": "#30",
+        "category": "Computer Science",
+        "children": []
+      },
+      {
+        "rank": "#43",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#39",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#17",
+        "category": "Learning Communities",
+        "children": []
+      },
+      {
+        "rank": "#15",
+        "category": "Undergraduate Research/Creative Projects",
+        "children": []
+      },
+      {
+        "rank": "#45",
+        "category": "First-Year Experiences",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#15",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#98",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "University of California, Los Angeles",
+    "link": "https://www.usnews.com/best-colleges/ucla-1315",
+    "location": "Los Angeles, CA",
+    "rank": "#17",
+    "glance": {
+      "Setting": "N/A",
+      "In-state tuition and fees": "$14,824",
+      "Undergraduate Enrollment": "33,471",
+      "Acceptance Rate": "9%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Nov. 30",
+      "Acceptance Rate": "9%",
+      "SAT Range*": "N/A",
+      "ACT Range*": "N/A",
+      "High School GPA*": "3.9"
+    },
+    "cost": {
+      "Out-of-State Tuition & Fees": "$48,674",
+      "In-State Tuition & Fees": "$14,824",
+      "Food & Housing": "$18,960(2025-26)",
+      "Average Need-Based Aid Package": "$30,522",
+      "Annual Cost*": "$15,637"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "85%",
+      "Student/Faculty Ratio": "20:1",
+      "Classes With Fewer Than 20 Students": "47%",
+      "Popular Majors": [
+        {
+          "major": "Social Sciences",
+          "percent_of_graduates": "25%",
+          "alumni_starting_salary": "$55,070"
+        },
+        {
+          "major": "Biological and Biomedical Sciences",
+          "percent_of_graduates": "16%",
+          "alumni_starting_salary": "$75,609"
+        },
+        {
+          "major": "Psychology",
+          "percent_of_graduates": "12%",
+          "alumni_starting_salary": "$65,954"
+        },
+        {
+          "major": "Mathematics and Statistics",
+          "percent_of_graduates": "8%",
+          "alumni_starting_salary": "$91,295"
+        },
+        {
+          "major": "Engineering",
+          "percent_of_graduates": "8%",
+          "alumni_starting_salary": "$97,069"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "21",
+        "Publication share in the Top 25% of Journals by CiteScore": "68%",
+        "Publication share in the Top 5% of Journals by CiteScore": "24%",
+        "Field Weighted Citation Impact": "1.96",
+        "Total Papers published between 2020-2024": "65,035",
+        "Citations Per Publication": "19"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#17",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Top Public Schools",
+        "children": []
+      },
+      {
+        "rank": "#149",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": [
+          {
+            "rank": "#13",
+            "category": "Aerospace /Aeronautical / Astronautical",
+            "children": []
+          },
+          {
+            "rank": "#21",
+            "category": "Biomedical",
+            "children": []
+          },
+          {
+            "rank": "#25",
+            "category": "Chemical",
+            "children": []
+          },
+          {
+            "rank": "#18",
+            "category": "Civil",
+            "children": []
+          },
+          {
+            "rank": "#14",
+            "category": "Computer",
+            "children": []
+          },
+          {
+            "rank": "#12",
+            "category": "Electrical / Electronic / Communications",
+            "children": []
+          },
+          {
+            "rank": "#22",
+            "category": "Environmental / Environmental Health",
+            "children": []
+          },
+          {
+            "rank": "#17",
+            "category": "Materials",
+            "children": []
+          },
+          {
+            "rank": "#16",
+            "category": "Mechanical",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#13",
+        "category": "Aerospace /Aeronautical / Astronautical",
+        "children": []
+      },
+      {
+        "rank": "#21",
+        "category": "Biomedical",
+        "children": []
+      },
+      {
+        "rank": "#25",
+        "category": "Chemical",
+        "children": []
+      },
+      {
+        "rank": "#18",
+        "category": "Civil",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Computer",
+        "children": []
+      },
+      {
+        "rank": "#12",
+        "category": "Electrical / Electronic / Communications",
+        "children": []
+      },
+      {
+        "rank": "#22",
+        "category": "Environmental / Environmental Health",
+        "children": []
+      },
+      {
+        "rank": "#17",
+        "category": "Materials",
+        "children": []
+      },
+      {
+        "rank": "#16",
+        "category": "Mechanical",
+        "children": []
+      },
+      {
+        "rank": "#15",
+        "category": "Computer Science",
+        "children": [
+          {
+            "rank": "#16",
+            "category": "Artificial Intelligence",
+            "children": []
+          },
+          {
+            "rank": "#8",
+            "category": "Biocomputing/Bioinformatics/Biotechnology",
+            "children": []
+          },
+          {
+            "rank": "#15",
+            "category": "Computer Systems",
+            "children": []
+          },
+          {
+            "rank": "#15",
+            "category": "Cybersecurity",
+            "children": []
+          },
+          {
+            "rank": "#11",
+            "category": "Programming Languages",
+            "children": []
+          },
+          {
+            "rank": "#14",
+            "category": "Software Engineering",
+            "children": []
+          },
+          {
+            "rank": "#10",
+            "category": "Theory",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#16",
+        "category": "Artificial Intelligence",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Biocomputing/Bioinformatics/Biotechnology",
+        "children": []
+      },
+      {
+        "rank": "#15",
+        "category": "Computer Systems",
+        "children": []
+      },
+      {
+        "rank": "#15",
+        "category": "Cybersecurity",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Programming Languages",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Software Engineering",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Theory",
+        "children": []
+      },
+      {
+        "rank": "#13",
+        "category": "Nursing",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#40",
+        "category": "Undergraduate Research/Creative Projects",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Best Colleges for Veterans",
+        "children": []
+      },
+      {
+        "rank": "#39",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#26",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#30",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Vanderbilt University",
+    "link": "https://www.usnews.com/best-colleges/vanderbilt-3535",
+    "location": "Nashville, TN",
+    "rank": "#17",
+    "glance": {
+      "Setting": "Urban",
+      "Tuition & Fees": "$71,226",
+      "Undergraduate Enrollment": "7,221",
+      "Acceptance Rate": "6%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Jan. 1",
+      "Acceptance Rate": "6%",
+      "SAT Range*": "1500-1570",
+      "ACT Range*": "34-35",
+      "High School GPA*": "3.8"
+    },
+    "cost": {
+      "Tuition & Fees": "$71,226",
+      "Food & Housing": "$23,048(2025-26)",
+      "Average Need-Based Aid Package": "$78,832",
+      "Annual Cost*": "$20,917"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "90%",
+      "Student/Faculty Ratio": "8:1",
+      "Classes With Fewer Than 20 Students": "60%",
+      "Popular Majors": [
+        {
+          "major": "Social Sciences",
+          "percent_of_graduates": "29%",
+          "alumni_starting_salary": "$90,203"
+        },
+        {
+          "major": "Multi/Interdisciplinary Studies",
+          "percent_of_graduates": "15%",
+          "alumni_starting_salary": "$73,586"
+        },
+        {
+          "major": "Computer and Information Sciences and Support Services",
+          "percent_of_graduates": "9%",
+          "alumni_starting_salary": "N/A"
+        },
+        {
+          "major": "Biological and Biomedical Sciences",
+          "percent_of_graduates": "8%",
+          "alumni_starting_salary": "$70,739"
+        },
+        {
+          "major": "Engineering",
+          "percent_of_graduates": "8%",
+          "alumni_starting_salary": "$105,677"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "16",
+        "Publication share in the Top 25% of Journals by CiteScore": "67%",
+        "Publication share in the Top 5% of Journals by CiteScore": "24%",
+        "Field Weighted Citation Impact": "2.05",
+        "Total Papers published between 2020-2024": "35,899",
+        "Citations Per Publication": "20"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#17",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#7",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#32",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": [
+          {
+            "rank": "#23",
+            "category": "Biomedical",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#23",
+        "category": "Biomedical",
+        "children": []
+      },
+      {
+        "rank": "#39",
+        "category": "Computer Science",
+        "children": []
+      },
+      {
+        "rank": "#19",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#21",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Learning Communities",
+        "children": []
+      },
+      {
+        "rank": "#30",
+        "category": "Undergraduate Research/Creative Projects",
+        "children": []
+      },
+      {
+        "rank": "#24",
+        "category": "Service Learning",
+        "children": []
+      },
+      {
+        "rank": "#15",
+        "category": "First-Year Experiences",
+        "children": []
+      },
+      {
+        "rank": "#22",
+        "category": "Senior Capstone",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#15",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#185",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Carnegie Mellon University",
+    "link": "https://www.usnews.com/best-colleges/carnegie-mellon-university-3242",
+    "location": "Pittsburgh, PA",
+    "rank": "#20",
+    "glance": {
+      "Setting": "N/A",
+      "Tuition & Fees": "$68,096",
+      "Undergraduate Enrollment": "7,824",
+      "Acceptance Rate": "12%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Jan. 1",
+      "Acceptance Rate": "12%",
+      "SAT Range*": "1500-1570",
+      "ACT Range*": "34-35",
+      "High School GPA*": "3.9"
+    },
+    "cost": {
+      "Tuition & Fees": "$68,096",
+      "Food & Housing": "$21,698(2025-26)",
+      "Average Need-Based Aid Package": "$56,005",
+      "Annual Cost*": "$34,550"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "81%",
+      "Student/Faculty Ratio": "6:1",
+      "Classes With Fewer Than 20 Students": "68%",
+      "Popular Majors": [
+        {
+          "major": "Computer Science",
+          "percent_of_graduates": "13%",
+          "alumni_starting_salary": "$251,632"
+        },
+        {
+          "major": "Business Administration and Management, General",
+          "percent_of_graduates": "12%",
+          "alumni_starting_salary": "$159,088"
+        },
+        {
+          "major": "Electrical and Electronics Engineering",
+          "percent_of_graduates": "11%",
+          "alumni_starting_salary": "$183,814"
+        },
+        {
+          "major": "Systems Science and Theory",
+          "percent_of_graduates": "10%",
+          "alumni_starting_salary": "$133,740"
+        },
+        {
+          "major": "Mechanical Engineering",
+          "percent_of_graduates": "6%",
+          "alumni_starting_salary": "$115,666"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "24",
+        "Publication share in the Top 25% of Journals by CiteScore": "61%",
+        "Publication share in the Top 5% of Journals by CiteScore": "21%",
+        "Field Weighted Citation Impact": "2.23",
+        "Total Papers published between 2020-2024": "22,241",
+        "Citations Per Publication": "18"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#20",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#25",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": [
+          {
+            "rank": "#21",
+            "category": "Biomedical",
+            "children": []
+          },
+          {
+            "rank": "#11",
+            "category": "Chemical",
+            "children": []
+          },
+          {
+            "rank": "#9",
+            "category": "Civil",
+            "children": []
+          },
+          {
+            "rank": "#2",
+            "category": "Computer",
+            "children": []
+          },
+          {
+            "rank": "#7",
+            "category": "Electrical / Electronic / Communications",
+            "children": []
+          },
+          {
+            "rank": "#6",
+            "category": "Environmental / Environmental Health",
+            "children": []
+          },
+          {
+            "rank": "#7",
+            "category": "Materials",
+            "children": []
+          },
+          {
+            "rank": "#9",
+            "category": "Mechanical",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#21",
+        "category": "Biomedical",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Chemical",
+        "children": []
+      },
+      {
+        "rank": "#9",
+        "category": "Civil",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Computer",
+        "children": []
+      },
+      {
+        "rank": "#7",
+        "category": "Electrical / Electronic / Communications",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Environmental / Environmental Health",
+        "children": []
+      },
+      {
+        "rank": "#7",
+        "category": "Materials",
+        "children": []
+      },
+      {
+        "rank": "#9",
+        "category": "Mechanical",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Business Programs",
+        "children": [
+          {
+            "rank": "#37",
+            "category": "Accounting",
+            "children": []
+          },
+          {
+            "rank": "#1",
+            "category": "Analytics",
+            "children": []
+          },
+          {
+            "rank": "#17",
+            "category": "Entrepreneurship",
+            "children": []
+          },
+          {
+            "rank": "#10",
+            "category": "Finance",
+            "children": []
+          },
+          {
+            "rank": "#23",
+            "category": "Management",
+            "children": []
+          },
+          {
+            "rank": "#1",
+            "category": "Management Information Systems",
+            "children": []
+          },
+          {
+            "rank": "#32",
+            "category": "Marketing",
+            "children": []
+          },
+          {
+            "rank": "#3",
+            "category": "Production / Operation Management",
+            "children": []
+          },
+          {
+            "rank": "#3",
+            "category": "Quantitative Analysis",
+            "children": []
+          },
+          {
+            "rank": "#14",
+            "category": "Supply Chain Management / Logistics",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#37",
+        "category": "Accounting",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Analytics",
+        "children": []
+      },
+      {
+        "rank": "#17",
+        "category": "Entrepreneurship",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Finance",
+        "children": []
+      },
+      {
+        "rank": "#23",
+        "category": "Management",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Management Information Systems",
+        "children": []
+      },
+      {
+        "rank": "#32",
+        "category": "Marketing",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Production / Operation Management",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Quantitative Analysis",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Supply Chain Management / Logistics",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Computer Science",
+        "children": [
+          {
+            "rank": "#1",
+            "category": "Artificial Intelligence",
+            "children": []
+          },
+          {
+            "rank": "#4",
+            "category": "Biocomputing/Bioinformatics/Biotechnology",
+            "children": []
+          },
+          {
+            "rank": "#3",
+            "category": "Computer Systems",
+            "children": []
+          },
+          {
+            "rank": "#1",
+            "category": "Cybersecurity",
+            "children": []
+          },
+          {
+            "rank": "#4",
+            "category": "Data Analytics/Science",
+            "children": []
+          },
+          {
+            "rank": "#4",
+            "category": "Game/Simulation Development",
+            "children": []
+          },
+          {
+            "rank": "#1",
+            "category": "Mobile/Web Applications",
+            "children": []
+          },
+          {
+            "rank": "#1",
+            "category": "Programming Languages",
+            "children": []
+          },
+          {
+            "rank": "#1",
+            "category": "Software Engineering",
+            "children": []
+          },
+          {
+            "rank": "#3",
+            "category": "Theory",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#1",
+        "category": "Artificial Intelligence",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Biocomputing/Bioinformatics/Biotechnology",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Computer Systems",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Cybersecurity",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Data Analytics/Science",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Game/Simulation Development",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Mobile/Web Applications",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Programming Languages",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Software Engineering",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Theory",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#21",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Undergraduate Research/Creative Projects",
+        "children": []
+      },
+      {
+        "rank": "#39",
+        "category": "First-Year Experiences",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Senior Capstone",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Co-ops/Internships",
+        "children": []
+      },
+      {
+        "rank": "#16",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#136",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "University of Michigan--Ann Arbor",
+    "link": "https://www.usnews.com/best-colleges/university-of-michigan-ann-arbor-9092",
+    "location": "Ann Arbor, MI",
+    "rank": "#20",
+    "glance": {
+      "Setting": "City",
+      "In-state tuition and fees": "$19,497",
+      "Undergraduate Enrollment": "34,454",
+      "Acceptance Rate": "16%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Feb. 1",
+      "Acceptance Rate": "16%",
+      "SAT Range*": "1360-1530",
+      "ACT Range*": "31-34",
+      "High School GPA*": "3.9"
+    },
+    "cost": {
+      "Out-of-State Tuition & Fees": "$66,203",
+      "In-State Tuition & Fees": "$19,497",
+      "Food & Housing": "$16,246(2025-26)",
+      "Average Need-Based Aid Package": "$35,086",
+      "Annual Cost*": "$16,792"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "82%",
+      "Student/Faculty Ratio": "15:1",
+      "Classes With Fewer Than 20 Students": "52%",
+      "Popular Majors": [
+        {
+          "major": "Computer and Information Sciences, General",
+          "percent_of_graduates": "13%",
+          "alumni_starting_salary": "$153,297"
+        },
+        {
+          "major": "Economics, General",
+          "percent_of_graduates": "8%",
+          "alumni_starting_salary": "$108,627"
+        },
+        {
+          "major": "Business Administration and Management, General",
+          "percent_of_graduates": "7%",
+          "alumni_starting_salary": "$140,827"
+        },
+        {
+          "major": "Experimental Psychology",
+          "percent_of_graduates": "4%",
+          "alumni_starting_salary": "$63,419"
+        },
+        {
+          "major": "Behavioral Neuroscience",
+          "percent_of_graduates": "4%",
+          "alumni_starting_salary": "$63,419"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "27",
+        "Publication share in the Top 25% of Journals by CiteScore": "69%",
+        "Publication share in the Top 5% of Journals by CiteScore": "23%",
+        "Field Weighted Citation Impact": "1.89",
+        "Total Papers published between 2020-2024": "76,883",
+        "Citations Per Publication": "18"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#20",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Top Public Schools",
+        "children": []
+      },
+      {
+        "rank": "#79",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": [
+          {
+            "rank": "#4",
+            "category": "Aerospace /Aeronautical / Astronautical",
+            "children": []
+          },
+          {
+            "rank": "#6",
+            "category": "Biomedical",
+            "children": []
+          },
+          {
+            "rank": "#6",
+            "category": "Chemical",
+            "children": []
+          },
+          {
+            "rank": "#7",
+            "category": "Civil",
+            "children": []
+          },
+          {
+            "rank": "#7",
+            "category": "Computer",
+            "children": []
+          },
+          {
+            "rank": "#8",
+            "category": "Electrical / Electronic / Communications",
+            "children": []
+          },
+          {
+            "rank": "#3",
+            "category": "Environmental / Environmental Health",
+            "children": []
+          },
+          {
+            "rank": "#3",
+            "category": "Industrial / Manufacturing",
+            "children": []
+          },
+          {
+            "rank": "#8",
+            "category": "Materials",
+            "children": []
+          },
+          {
+            "rank": "#6",
+            "category": "Mechanical",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#4",
+        "category": "Aerospace /Aeronautical / Astronautical",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Biomedical",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Chemical",
+        "children": []
+      },
+      {
+        "rank": "#7",
+        "category": "Civil",
+        "children": []
+      },
+      {
+        "rank": "#7",
+        "category": "Computer",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Electrical / Electronic / Communications",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Environmental / Environmental Health",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Industrial / Manufacturing",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Materials",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Mechanical",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Business Programs",
+        "children": [
+          {
+            "rank": "#6",
+            "category": "Accounting",
+            "children": []
+          },
+          {
+            "rank": "#6",
+            "category": "Analytics",
+            "children": []
+          },
+          {
+            "rank": "#3",
+            "category": "Entrepreneurship",
+            "children": []
+          },
+          {
+            "rank": "#3",
+            "category": "Finance",
+            "children": []
+          },
+          {
+            "rank": "#10",
+            "category": "International Business",
+            "children": []
+          },
+          {
+            "rank": "#1",
+            "category": "Management",
+            "children": []
+          },
+          {
+            "rank": "#14",
+            "category": "Management Information Systems",
+            "children": []
+          },
+          {
+            "rank": "#1",
+            "category": "Marketing",
+            "children": []
+          },
+          {
+            "rank": "#2",
+            "category": "Production / Operation Management",
+            "children": []
+          },
+          {
+            "rank": "#6",
+            "category": "Quantitative Analysis",
+            "children": []
+          },
+          {
+            "rank": "#13",
+            "category": "Real Estate",
+            "children": []
+          },
+          {
+            "rank": "#7",
+            "category": "Supply Chain Management / Logistics",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#6",
+        "category": "Accounting",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Analytics",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Entrepreneurship",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Finance",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "International Business",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Management",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Management Information Systems",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Marketing",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Production / Operation Management",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Quantitative Analysis",
+        "children": []
+      },
+      {
+        "rank": "#13",
+        "category": "Real Estate",
+        "children": []
+      },
+      {
+        "rank": "#7",
+        "category": "Supply Chain Management / Logistics",
+        "children": []
+      },
+      {
+        "rank": "#12",
+        "category": "Computer Science",
+        "children": [
+          {
+            "rank": "#11",
+            "category": "Artificial Intelligence",
+            "children": []
+          },
+          {
+            "rank": "#9",
+            "category": "Computer Systems",
+            "children": []
+          },
+          {
+            "rank": "#11",
+            "category": "Cybersecurity",
+            "children": []
+          },
+          {
+            "rank": "#6",
+            "category": "Data Analytics/Science",
+            "children": []
+          },
+          {
+            "rank": "#11",
+            "category": "Software Engineering",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#11",
+        "category": "Artificial Intelligence",
+        "children": []
+      },
+      {
+        "rank": "#9",
+        "category": "Computer Systems",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Cybersecurity",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Data Analytics/Science",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Software Engineering",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Nursing",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#12",
+        "category": "Study Abroad",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Learning Communities",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Undergraduate Research/Creative Projects",
+        "children": []
+      },
+      {
+        "rank": "#33",
+        "category": "First-Year Experiences",
+        "children": []
+      },
+      {
+        "rank": "#25",
+        "category": "Senior Capstone",
+        "children": []
+      },
+      {
+        "rank": "#7",
+        "category": "Best Colleges for Veterans",
+        "children": []
+      },
+      {
+        "rank": "#15",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#13",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#166",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "University of Notre Dame",
+    "link": "https://www.usnews.com/best-colleges/university-of-notre-dame-1840",
+    "location": "Notre Dame, IN",
+    "rank": "#20",
+    "glance": {
+      "Setting": "Suburban",
+      "Tuition & Fees": "$67,607",
+      "Undergraduate Enrollment": "8,880",
+      "Acceptance Rate": "11%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Jan. 3",
+      "Acceptance Rate": "11%",
+      "SAT Range*": "1455-1560",
+      "ACT Range*": "33-35",
+      "High School GPA*": "N/A"
+    },
+    "cost": {
+      "Tuition & Fees": "$67,607",
+      "Food & Housing": "$18,438(2025-26)",
+      "Average Need-Based Aid Package": "$67,855",
+      "Annual Cost*": "$29,974"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "89%",
+      "Student/Faculty Ratio": "8:1",
+      "Classes With Fewer Than 20 Students": "60%",
+      "Popular Majors": [
+        {
+          "major": "Finance, General",
+          "percent_of_graduates": "10%",
+          "alumni_starting_salary": "$138,141"
+        },
+        {
+          "major": "Econometrics and Quantitative Economics",
+          "percent_of_graduates": "8%",
+          "alumni_starting_salary": "$120,257"
+        },
+        {
+          "major": "Political Science and Government, General",
+          "percent_of_graduates": "6%",
+          "alumni_starting_salary": "$81,595"
+        },
+        {
+          "major": "Computer and Information Sciences, General",
+          "percent_of_graduates": "5%",
+          "alumni_starting_salary": "$149,206"
+        },
+        {
+          "major": "Neuroscience",
+          "percent_of_graduates": "5%",
+          "alumni_starting_salary": "$67,689"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "117",
+        "Publication share in the Top 25% of Journals by CiteScore": "67%",
+        "Publication share in the Top 5% of Journals by CiteScore": "18%",
+        "Field Weighted Citation Impact": "1.51",
+        "Total Papers published between 2020-2024": "13,557",
+        "Citations Per Publication": "13"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#20",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#20",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#42",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": []
+      },
+      {
+        "rank": "#12",
+        "category": "Business Programs",
+        "children": [
+          {
+            "rank": "#10",
+            "category": "Accounting",
+            "children": []
+          },
+          {
+            "rank": "#38",
+            "category": "Analytics",
+            "children": []
+          },
+          {
+            "rank": "#15",
+            "category": "Finance",
+            "children": []
+          },
+          {
+            "rank": "#15",
+            "category": "Management",
+            "children": []
+          },
+          {
+            "rank": "#18",
+            "category": "Marketing",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#10",
+        "category": "Accounting",
+        "children": []
+      },
+      {
+        "rank": "#38",
+        "category": "Analytics",
+        "children": []
+      },
+      {
+        "rank": "#15",
+        "category": "Finance",
+        "children": []
+      },
+      {
+        "rank": "#15",
+        "category": "Management",
+        "children": []
+      },
+      {
+        "rank": "#18",
+        "category": "Marketing",
+        "children": []
+      },
+      {
+        "rank": "#45",
+        "category": "Computer Science",
+        "children": []
+      },
+      {
+        "rank": "#26",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#27",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#24",
+        "category": "Study Abroad",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Service Learning",
+        "children": []
+      },
+      {
+        "rank": "#20",
+        "category": "First-Year Experiences",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#56",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#198",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Washington University in St. Louis",
+    "link": "https://www.usnews.com/best-colleges/washington-university-in-st-louis-2520",
+    "location": "St. Louis, MO",
+    "rank": "#20",
+    "glance": {
+      "Setting": "N/A",
+      "Tuition & Fees": "$69,594",
+      "Undergraduate Enrollment": "8,220",
+      "Acceptance Rate": "12%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Jan. 2",
+      "Acceptance Rate": "12%",
+      "SAT Range*": "1500-1570",
+      "ACT Range*": "33-35",
+      "High School GPA*": "N/A"
+    },
+    "cost": {
+      "Tuition & Fees": "$69,594",
+      "Food & Housing": "$23,338(2025-26)",
+      "Average Need-Based Aid Package": "$77,091",
+      "Annual Cost*": "$20,768"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "85%",
+      "Student/Faculty Ratio": "7:1",
+      "Classes With Fewer Than 20 Students": "65%",
+      "Popular Majors": [
+        {
+          "major": "Computer Science",
+          "percent_of_graduates": "11%",
+          "alumni_starting_salary": "N/A"
+        },
+        {
+          "major": "Experimental Psychology",
+          "percent_of_graduates": "6%",
+          "alumni_starting_salary": "$56,053"
+        },
+        {
+          "major": "Finance, General",
+          "percent_of_graduates": "6%",
+          "alumni_starting_salary": "$190,811"
+        },
+        {
+          "major": "Mechanical Engineering",
+          "percent_of_graduates": "6%",
+          "alumni_starting_salary": "$101,263"
+        },
+        {
+          "major": "Biology/Biological Sciences, General",
+          "percent_of_graduates": "5%",
+          "alumni_starting_salary": "$76,908"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "6",
+        "Publication share in the Top 25% of Journals by CiteScore": "69%",
+        "Publication share in the Top 5% of Journals by CiteScore": "26%",
+        "Field Weighted Citation Impact": "2.22",
+        "Total Papers published between 2020-2024": "37,812",
+        "Citations Per Publication": "21"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#20",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#42",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": [
+          {
+            "rank": "#19",
+            "category": "Biomedical",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#19",
+        "category": "Biomedical",
+        "children": []
+      },
+      {
+        "rank": "#12",
+        "category": "Business Programs",
+        "children": [
+          {
+            "rank": "#50",
+            "category": "Accounting",
+            "children": []
+          },
+          {
+            "rank": "#20",
+            "category": "Entrepreneurship",
+            "children": []
+          },
+          {
+            "rank": "#22",
+            "category": "Finance",
+            "children": []
+          },
+          {
+            "rank": "#37",
+            "category": "Management",
+            "children": []
+          },
+          {
+            "rank": "#36",
+            "category": "Marketing",
+            "children": []
+          },
+          {
+            "rank": "#10",
+            "category": "Quantitative Analysis",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#50",
+        "category": "Accounting",
+        "children": []
+      },
+      {
+        "rank": "#20",
+        "category": "Entrepreneurship",
+        "children": []
+      },
+      {
+        "rank": "#22",
+        "category": "Finance",
+        "children": []
+      },
+      {
+        "rank": "#37",
+        "category": "Management",
+        "children": []
+      },
+      {
+        "rank": "#36",
+        "category": "Marketing",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Quantitative Analysis",
+        "children": []
+      },
+      {
+        "rank": "#45",
+        "category": "Computer Science",
+        "children": []
+      },
+      {
+        "rank": "#19",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#27",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#58",
+        "category": "First-Year Experiences",
+        "children": []
+      },
+      {
+        "rank": "#136",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Emory University",
+    "link": "https://www.usnews.com/best-colleges/emory-university-1564",
+    "location": "Atlanta, GA",
+    "rank": "#24",
+    "glance": {
+      "Setting": "City",
+      "Tuition & Fees": "$68,056",
+      "Undergraduate Enrollment": "7,407",
+      "Acceptance Rate": "10%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Jan. 1",
+      "Acceptance Rate": "10%",
+      "SAT Range*": "1470-1550",
+      "ACT Range*": "32-35",
+      "High School GPA*": "3.8"
+    },
+    "cost": {
+      "Tuition & Fees": "$68,056",
+      "Food & Housing": "$21,244(2025-26)",
+      "Average Need-Based Aid Package": "$67,329",
+      "Annual Cost*": "$24,142"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "81%",
+      "Student/Faculty Ratio": "8:1",
+      "Classes With Fewer Than 20 Students": "64%",
+      "Popular Majors": [
+        {
+          "major": "Management Science",
+          "percent_of_graduates": "17%",
+          "alumni_starting_salary": "$127,583"
+        },
+        {
+          "major": "Biology/Biological Sciences, General",
+          "percent_of_graduates": "9%",
+          "alumni_starting_salary": "$67,087"
+        },
+        {
+          "major": "Neuroscience",
+          "percent_of_graduates": "7%",
+          "alumni_starting_salary": "$66,695"
+        },
+        {
+          "major": "Registered Nursing/Registered Nurse",
+          "percent_of_graduates": "6%",
+          "alumni_starting_salary": "$89,034"
+        },
+        {
+          "major": "Psychology, General",
+          "percent_of_graduates": "6%",
+          "alumni_starting_salary": "$67,538"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "16",
+        "Publication share in the Top 25% of Journals by CiteScore": "65%",
+        "Publication share in the Top 5% of Journals by CiteScore": "23%",
+        "Field Weighted Citation Impact": "2.08",
+        "Total Papers published between 2020-2024": "40,503",
+        "Citations Per Publication": "20"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#24",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#21",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#12",
+        "category": "Business Programs",
+        "children": [
+          {
+            "rank": "#40",
+            "category": "Accounting",
+            "children": []
+          },
+          {
+            "rank": "#33",
+            "category": "Analytics",
+            "children": []
+          },
+          {
+            "rank": "#45",
+            "category": "Finance",
+            "children": []
+          },
+          {
+            "rank": "#30",
+            "category": "Management",
+            "children": []
+          },
+          {
+            "rank": "#32",
+            "category": "Marketing",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#40",
+        "category": "Accounting",
+        "children": []
+      },
+      {
+        "rank": "#33",
+        "category": "Analytics",
+        "children": []
+      },
+      {
+        "rank": "#45",
+        "category": "Finance",
+        "children": []
+      },
+      {
+        "rank": "#30",
+        "category": "Management",
+        "children": []
+      },
+      {
+        "rank": "#32",
+        "category": "Marketing",
+        "children": []
+      },
+      {
+        "rank": "#63",
+        "category": "Computer Science",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Nursing",
+        "children": []
+      },
+      {
+        "rank": "#26",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#39",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#17",
+        "category": "Writing in the Disciplines",
+        "children": []
+      },
+      {
+        "rank": "#40",
+        "category": "Undergraduate Research/Creative Projects",
+        "children": []
+      },
+      {
+        "rank": "#58",
+        "category": "First-Year Experiences",
+        "children": []
+      },
+      {
+        "rank": "#27",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#31",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#65",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Georgetown University",
+    "link": "https://www.usnews.com/best-colleges/georgetown-university-1445",
+    "location": "Washington, DC",
+    "rank": "#24",
+    "glance": {
+      "Setting": "N/A",
+      "Tuition & Fees": "$71,338",
+      "Undergraduate Enrollment": "7,833",
+      "Acceptance Rate": "13%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Jan. 10",
+      "Acceptance Rate": "13%",
+      "SAT Range*": "1390-1550",
+      "ACT Range*": "31-35",
+      "High School GPA*": "N/A"
+    },
+    "cost": {
+      "Tuition & Fees": "$71,338",
+      "Food & Housing": "$21,974(2025-26)",
+      "Average Need-Based Aid Package": "$60,931",
+      "Annual Cost*": "$35,965"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "87%",
+      "Student/Faculty Ratio": "11:1",
+      "Classes With Fewer Than 20 Students": "66%",
+      "Popular Majors": [],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "57",
+        "Publication share in the Top 25% of Journals by CiteScore": "59%",
+        "Publication share in the Top 5% of Journals by CiteScore": "19%",
+        "Field Weighted Citation Impact": "1.85",
+        "Total Papers published between 2020-2024": "14,188",
+        "Citations Per Publication": "16"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#24",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#57",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#12",
+        "category": "Business Programs",
+        "children": [
+          {
+            "rank": "#47",
+            "category": "Accounting",
+            "children": []
+          },
+          {
+            "rank": "#28",
+            "category": "Analytics",
+            "children": []
+          },
+          {
+            "rank": "#18",
+            "category": "Finance",
+            "children": []
+          },
+          {
+            "rank": "#2",
+            "category": "International Business",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#47",
+        "category": "Accounting",
+        "children": []
+      },
+      {
+        "rank": "#28",
+        "category": "Analytics",
+        "children": []
+      },
+      {
+        "rank": "#18",
+        "category": "Finance",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "International Business",
+        "children": []
+      },
+      {
+        "rank": "#63",
+        "category": "Computer Science",
+        "children": []
+      },
+      {
+        "rank": "#26",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#34",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Writing in the Disciplines",
+        "children": []
+      },
+      {
+        "rank": "#7",
+        "category": "Study Abroad",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Service Learning",
+        "children": []
+      },
+      {
+        "rank": "#33",
+        "category": "Best Colleges for Veterans",
+        "children": []
+      },
+      {
+        "rank": "#23",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#42",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#153",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "University of North Carolina--Chapel Hill",
+    "link": "https://www.usnews.com/best-colleges/university-of-north-carolina-chapel-hill-2974",
+    "location": "Chapel Hill, NC",
+    "rank": "#26",
+    "glance": {
+      "Setting": "Suburban",
+      "In-state tuition and fees": "$9,096",
+      "Undergraduate Enrollment": "21,075",
+      "Acceptance Rate": "15%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Jan. 15",
+      "Acceptance Rate": "15%",
+      "SAT Range*": "1390-1530",
+      "ACT Range*": "28-34",
+      "High School GPA*": "N/A"
+    },
+    "cost": {
+      "Out-of-State Tuition & Fees": "$45,228",
+      "In-State Tuition & Fees": "$9,096",
+      "Food & Housing": "$15,038(2025-26)",
+      "Average Need-Based Aid Package": "$21,699",
+      "Annual Cost*": "$12,414"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "84%",
+      "Student/Faculty Ratio": "14:1",
+      "Classes With Fewer Than 20 Students": "42%",
+      "Popular Majors": [
+        {
+          "major": "Social Sciences",
+          "percent_of_graduates": "17%",
+          "alumni_starting_salary": "$43,860"
+        },
+        {
+          "major": "Biological and Biomedical Sciences",
+          "percent_of_graduates": "12%",
+          "alumni_starting_salary": "$64,430"
+        },
+        {
+          "major": "Multi/Interdisciplinary Studies",
+          "percent_of_graduates": "9%",
+          "alumni_starting_salary": "$78,097"
+        },
+        {
+          "major": "Communication, Journalism, and Related Programs",
+          "percent_of_graduates": "8%",
+          "alumni_starting_salary": "$67,532"
+        },
+        {
+          "major": "Business, Management, Marketing, and Related Support Services",
+          "percent_of_graduates": "8%",
+          "alumni_starting_salary": "$125,645"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "31",
+        "Publication share in the Top 25% of Journals by CiteScore": "67%",
+        "Publication share in the Top 5% of Journals by CiteScore": "23%",
+        "Field Weighted Citation Impact": "1.85",
+        "Total Papers published between 2020-2024": "45,498",
+        "Citations Per Publication": "19"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#26",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Top Public Schools",
+        "children": []
+      },
+      {
+        "rank": "#16",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#50",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Business Programs",
+        "children": [
+          {
+            "rank": "#20",
+            "category": "Accounting",
+            "children": []
+          },
+          {
+            "rank": "#38",
+            "category": "Analytics",
+            "children": []
+          },
+          {
+            "rank": "#12",
+            "category": "Entrepreneurship",
+            "children": []
+          },
+          {
+            "rank": "#8",
+            "category": "Finance",
+            "children": []
+          },
+          {
+            "rank": "#7",
+            "category": "Management",
+            "children": []
+          },
+          {
+            "rank": "#7",
+            "category": "Marketing",
+            "children": []
+          },
+          {
+            "rank": "#14",
+            "category": "Production / Operation Management",
+            "children": []
+          },
+          {
+            "rank": "#10",
+            "category": "Real Estate",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#20",
+        "category": "Accounting",
+        "children": []
+      },
+      {
+        "rank": "#38",
+        "category": "Analytics",
+        "children": []
+      },
+      {
+        "rank": "#12",
+        "category": "Entrepreneurship",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Finance",
+        "children": []
+      },
+      {
+        "rank": "#7",
+        "category": "Management",
+        "children": []
+      },
+      {
+        "rank": "#7",
+        "category": "Marketing",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Production / Operation Management",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Real Estate",
+        "children": []
+      },
+      {
+        "rank": "#30",
+        "category": "Computer Science",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Nursing",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#34",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#32",
+        "category": "Study Abroad",
+        "children": []
+      },
+      {
+        "rank": "#21",
+        "category": "Undergraduate Research/Creative Projects",
+        "children": []
+      },
+      {
+        "rank": "#23",
+        "category": "Service Learning",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Best Colleges for Veterans",
+        "children": []
+      },
+      {
+        "rank": "#39",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#56",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#77",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "University of Virginia",
+    "link": "https://www.usnews.com/best-colleges/uva-6968",
+    "location": "Charlottesville, VA",
+    "rank": "#26",
+    "glance": {
+      "Setting": "City",
+      "In-state tuition and fees": "$23,897",
+      "Undergraduate Enrollment": "17,901",
+      "Acceptance Rate": "17%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Jan. 5",
+      "Acceptance Rate": "17%",
+      "SAT Range*": "1410-1540",
+      "ACT Range*": "32-35",
+      "High School GPA*": "N/A"
+    },
+    "cost": {
+      "Out-of-State Tuition & Fees": "$62,923",
+      "In-State Tuition & Fees": "$23,897",
+      "Food & Housing": "$16,416(2025-26)",
+      "Average Need-Based Aid Package": "$37,123",
+      "Annual Cost*": "$23,101"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "92%",
+      "Student/Faculty Ratio": "14:1",
+      "Classes With Fewer Than 20 Students": "48%",
+      "Popular Majors": [
+        {
+          "major": "Computer Science",
+          "percent_of_graduates": "9%",
+          "alumni_starting_salary": "$160,993"
+        },
+        {
+          "major": "Econometrics and Quantitative Economics",
+          "percent_of_graduates": "8%",
+          "alumni_starting_salary": "$95,941"
+        },
+        {
+          "major": "Biology/Biological Sciences, General",
+          "percent_of_graduates": "6%",
+          "alumni_starting_salary": "$67,974"
+        },
+        {
+          "major": "Management Sciences and Quantitative Methods, Other",
+          "percent_of_graduates": "6%",
+          "alumni_starting_salary": "$130,586"
+        },
+        {
+          "major": "Liberal Arts and Sciences/Liberal Studies",
+          "percent_of_graduates": "5%",
+          "alumni_starting_salary": "N/A"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "51",
+        "Publication share in the Top 25% of Journals by CiteScore": "65%",
+        "Publication share in the Top 5% of Journals by CiteScore": "20%",
+        "Field Weighted Citation Impact": "1.78",
+        "Total Papers published between 2020-2024": "28,454",
+        "Citations Per Publication": "16"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#26",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#4",
+        "category": "Top Public Schools",
+        "children": []
+      },
+      {
+        "rank": "#27",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#35",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": []
+      },
+      {
+        "rank": "#12",
+        "category": "Business Programs",
+        "children": [
+          {
+            "rank": "#26",
+            "category": "Accounting",
+            "children": []
+          },
+          {
+            "rank": "#12",
+            "category": "Finance",
+            "children": []
+          },
+          {
+            "rank": "#9",
+            "category": "Management",
+            "children": []
+          },
+          {
+            "rank": "#13",
+            "category": "Marketing",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#26",
+        "category": "Accounting",
+        "children": []
+      },
+      {
+        "rank": "#12",
+        "category": "Finance",
+        "children": []
+      },
+      {
+        "rank": "#9",
+        "category": "Management",
+        "children": []
+      },
+      {
+        "rank": "#13",
+        "category": "Marketing",
+        "children": []
+      },
+      {
+        "rank": "#39",
+        "category": "Computer Science",
+        "children": []
+      },
+      {
+        "rank": "#13",
+        "category": "Nursing",
+        "children": []
+      },
+      {
+        "rank": "#26",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#27",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#53",
+        "category": "Undergraduate Research/Creative Projects",
+        "children": []
+      },
+      {
+        "rank": "#45",
+        "category": "First-Year Experiences",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Best Colleges for Veterans",
+        "children": []
+      },
+      {
+        "rank": "#27",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#173",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "University of Southern California",
+    "link": "https://www.usnews.com/best-colleges/university-of-southern-california-1328",
+    "location": "Los Angeles, CA",
+    "rank": "#28",
+    "glance": {
+      "Setting": "N/A",
+      "Tuition & Fees": "$75,162",
+      "Undergraduate Enrollment": "20,630",
+      "Acceptance Rate": "10%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Jan. 15",
+      "Acceptance Rate": "10%",
+      "SAT Range*": "1450-1550",
+      "ACT Range*": "32-35",
+      "High School GPA*": "3.8"
+    },
+    "cost": {
+      "Tuition & Fees": "$75,162",
+      "Food & Housing": "$20,907(2025-26)",
+      "Average Need-Based Aid Package": "$71,169",
+      "Annual Cost*": "$29,462"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "74%",
+      "Student/Faculty Ratio": "8:1",
+      "Classes With Fewer Than 20 Students": "62%",
+      "Popular Majors": [
+        {
+          "major": "Business, Management, Marketing, and Related Support Services",
+          "percent_of_graduates": "23%",
+          "alumni_starting_salary": "$104,833"
+        },
+        {
+          "major": "Visual and Performing Arts",
+          "percent_of_graduates": "12%",
+          "alumni_starting_salary": "$55,678"
+        },
+        {
+          "major": "Communication, Journalism, and Related Programs",
+          "percent_of_graduates": "7%",
+          "alumni_starting_salary": "$77,431"
+        },
+        {
+          "major": "Computer and Information Sciences and Support Services",
+          "percent_of_graduates": "7%",
+          "alumni_starting_salary": "$180,906"
+        },
+        {
+          "major": "Multi/Interdisciplinary Studies",
+          "percent_of_graduates": "7%",
+          "alumni_starting_salary": "$80,692"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "33",
+        "Publication share in the Top 25% of Journals by CiteScore": "65%",
+        "Publication share in the Top 5% of Journals by CiteScore": "22%",
+        "Field Weighted Citation Impact": "1.89",
+        "Total Papers published between 2020-2024": "41,725",
+        "Citations Per Publication": "17"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#28",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#64",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#28",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": [
+          {
+            "rank": "#26",
+            "category": "Civil",
+            "children": []
+          },
+          {
+            "rank": "#24",
+            "category": "Electrical / Electronic / Communications",
+            "children": []
+          },
+          {
+            "rank": "#14",
+            "category": "Industrial / Manufacturing",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#26",
+        "category": "Civil",
+        "children": []
+      },
+      {
+        "rank": "#24",
+        "category": "Electrical / Electronic / Communications",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Industrial / Manufacturing",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Business Programs",
+        "children": [
+          {
+            "rank": "#7",
+            "category": "Accounting",
+            "children": []
+          },
+          {
+            "rank": "#24",
+            "category": "Analytics",
+            "children": []
+          },
+          {
+            "rank": "#15",
+            "category": "Entrepreneurship",
+            "children": []
+          },
+          {
+            "rank": "#22",
+            "category": "Finance",
+            "children": []
+          },
+          {
+            "rank": "#10",
+            "category": "International Business",
+            "children": []
+          },
+          {
+            "rank": "#14",
+            "category": "Management",
+            "children": []
+          },
+          {
+            "rank": "#10",
+            "category": "Marketing",
+            "children": []
+          },
+          {
+            "rank": "#3",
+            "category": "Real Estate",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#7",
+        "category": "Accounting",
+        "children": []
+      },
+      {
+        "rank": "#24",
+        "category": "Analytics",
+        "children": []
+      },
+      {
+        "rank": "#15",
+        "category": "Entrepreneurship",
+        "children": []
+      },
+      {
+        "rank": "#22",
+        "category": "Finance",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "International Business",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Management",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Marketing",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Real Estate",
+        "children": []
+      },
+      {
+        "rank": "#16",
+        "category": "Computer Science",
+        "children": [
+          {
+            "rank": "#19",
+            "category": "Artificial Intelligence",
+            "children": []
+          },
+          {
+            "rank": "#1",
+            "category": "Game/Simulation Development",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#19",
+        "category": "Artificial Intelligence",
+        "children": []
+      },
+      {
+        "rank": "#1",
+        "category": "Game/Simulation Development",
+        "children": []
+      },
+      {
+        "rank": "#33",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#27",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Best Colleges for Veterans",
+        "children": []
+      },
+      {
+        "rank": "#87",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "University of California San Diego",
+    "link": "https://www.usnews.com/best-colleges/university-of-california-san-diego-1317",
+    "location": "La Jolla, CA",
+    "rank": "#29",
+    "glance": {
+      "Setting": "City",
+      "In-state tuition and fees": "$17,256",
+      "Undergraduate Enrollment": "34,955",
+      "Acceptance Rate": "27%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Nov. 30",
+      "Acceptance Rate": "27%",
+      "SAT Range*": "N/A",
+      "ACT Range*": "N/A",
+      "High School GPA*": "3.9"
+    },
+    "cost": {
+      "Out-of-State Tuition & Fees": "$54,858",
+      "In-State Tuition & Fees": "$17,256",
+      "Food & Housing": "$19,629(2025-26)",
+      "Average Need-Based Aid Package": "$30,932",
+      "Annual Cost*": "$15,069"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "86%",
+      "Student/Faculty Ratio": "19:1",
+      "Classes With Fewer Than 20 Students": "39%",
+      "Popular Majors": [
+        {
+          "major": "Cognitive Science, General",
+          "percent_of_graduates": "7%",
+          "alumni_starting_salary": "$85,159"
+        },
+        {
+          "major": "Anatomy",
+          "percent_of_graduates": "7%",
+          "alumni_starting_salary": "$69,381"
+        },
+        {
+          "major": "Management Sciences and Quantitative Methods, Other",
+          "percent_of_graduates": "5%",
+          "alumni_starting_salary": "$86,000"
+        },
+        {
+          "major": "Computer Science",
+          "percent_of_graduates": "4%",
+          "alumni_starting_salary": "$160,463"
+        },
+        {
+          "major": "Biology/Biological Sciences, General",
+          "percent_of_graduates": "4%",
+          "alumni_starting_salary": "$69,381"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "8",
+        "Publication share in the Top 25% of Journals by CiteScore": "69%",
+        "Publication share in the Top 5% of Journals by CiteScore": "25%",
+        "Field Weighted Citation Impact": "2.14",
+        "Total Papers published between 2020-2024": "55,397",
+        "Citations Per Publication": "22"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#29",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Top Public Schools",
+        "children": []
+      },
+      {
+        "rank": "#182",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#17",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": [
+          {
+            "rank": "#7",
+            "category": "Biomedical",
+            "children": []
+          },
+          {
+            "rank": "#26",
+            "category": "Civil",
+            "children": []
+          },
+          {
+            "rank": "#15",
+            "category": "Computer",
+            "children": []
+          },
+          {
+            "rank": "#13",
+            "category": "Electrical / Electronic / Communications",
+            "children": []
+          },
+          {
+            "rank": "#24",
+            "category": "Mechanical",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#7",
+        "category": "Biomedical",
+        "children": []
+      },
+      {
+        "rank": "#26",
+        "category": "Civil",
+        "children": []
+      },
+      {
+        "rank": "#15",
+        "category": "Computer",
+        "children": []
+      },
+      {
+        "rank": "#13",
+        "category": "Electrical / Electronic / Communications",
+        "children": []
+      },
+      {
+        "rank": "#24",
+        "category": "Mechanical",
+        "children": []
+      },
+      {
+        "rank": "#51",
+        "category": "Business Programs",
+        "children": []
+      },
+      {
+        "rank": "#12",
+        "category": "Computer Science",
+        "children": [
+          {
+            "rank": "#13",
+            "category": "Artificial Intelligence",
+            "children": []
+          },
+          {
+            "rank": "#2",
+            "category": "Biocomputing/Bioinformatics/Biotechnology",
+            "children": []
+          },
+          {
+            "rank": "#9",
+            "category": "Computer Systems",
+            "children": []
+          },
+          {
+            "rank": "#7",
+            "category": "Cybersecurity",
+            "children": []
+          },
+          {
+            "rank": "#8",
+            "category": "Data Analytics/Science",
+            "children": []
+          },
+          {
+            "rank": "#11",
+            "category": "Programming Languages",
+            "children": []
+          },
+          {
+            "rank": "#14",
+            "category": "Software Engineering",
+            "children": []
+          },
+          {
+            "rank": "#14",
+            "category": "Theory",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#13",
+        "category": "Artificial Intelligence",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Biocomputing/Bioinformatics/Biotechnology",
+        "children": []
+      },
+      {
+        "rank": "#9",
+        "category": "Computer Systems",
+        "children": []
+      },
+      {
+        "rank": "#7",
+        "category": "Cybersecurity",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Data Analytics/Science",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Programming Languages",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Software Engineering",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Theory",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#18",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Best Colleges for Veterans",
+        "children": []
+      },
+      {
+        "rank": "#23",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#27",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "University of Florida",
+    "link": "https://www.usnews.com/best-colleges/university-of-florida-1535",
+    "location": "Gainesville, FL",
+    "rank": "#30",
+    "glance": {
+      "Setting": "City",
+      "In-state tuition and fees": "$6,381",
+      "Undergraduate Enrollment": "36,573",
+      "Acceptance Rate": "24%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Jan. 15",
+      "Acceptance Rate": "24%",
+      "SAT Range*": "1320-1500",
+      "ACT Range*": "30-34",
+      "High School GPA*": "3.9"
+    },
+    "cost": {
+      "Out-of-State Tuition & Fees": "$30,886",
+      "In-State Tuition & Fees": "$6,381",
+      "Food & Housing": "$12,615(2025-26)",
+      "Average Need-Based Aid Package": "$19,466",
+      "Annual Cost*": "$6,275"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "83%",
+      "Student/Faculty Ratio": "16:1",
+      "Classes With Fewer Than 20 Students": "51%",
+      "Popular Majors": [
+        {
+          "major": "Business, Management, Marketing, and Related Support Services",
+          "percent_of_graduates": "14%",
+          "alumni_starting_salary": "$73,834"
+        },
+        {
+          "major": "Engineering",
+          "percent_of_graduates": "12%",
+          "alumni_starting_salary": "$100,208"
+        },
+        {
+          "major": "Biological and Biomedical Sciences",
+          "percent_of_graduates": "11%",
+          "alumni_starting_salary": "$66,170"
+        },
+        {
+          "major": "Social Sciences",
+          "percent_of_graduates": "10%",
+          "alumni_starting_salary": "$53,927"
+        },
+        {
+          "major": "Health Professions and Related Programs",
+          "percent_of_graduates": "7%",
+          "alumni_starting_salary": "$81,169"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "88",
+        "Publication share in the Top 25% of Journals by CiteScore": "63%",
+        "Publication share in the Top 5% of Journals by CiteScore": "19%",
+        "Field Weighted Citation Impact": "1.53",
+        "Total Papers published between 2020-2024": "55,906",
+        "Citations Per Publication": "15"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#30",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#7",
+        "category": "Top Public Schools",
+        "children": []
+      },
+      {
+        "rank": "#85",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#32",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": [
+          {
+            "rank": "#6",
+            "category": "Biological / Agricultural",
+            "children": []
+          },
+          {
+            "rank": "#29",
+            "category": "Biomedical",
+            "children": []
+          },
+          {
+            "rank": "#18",
+            "category": "Civil",
+            "children": []
+          },
+          {
+            "rank": "#16",
+            "category": "Industrial / Manufacturing",
+            "children": []
+          },
+          {
+            "rank": "#19",
+            "category": "Materials",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#6",
+        "category": "Biological / Agricultural",
+        "children": []
+      },
+      {
+        "rank": "#29",
+        "category": "Biomedical",
+        "children": []
+      },
+      {
+        "rank": "#18",
+        "category": "Civil",
+        "children": []
+      },
+      {
+        "rank": "#16",
+        "category": "Industrial / Manufacturing",
+        "children": []
+      },
+      {
+        "rank": "#19",
+        "category": "Materials",
+        "children": []
+      },
+      {
+        "rank": "#24",
+        "category": "Business Programs",
+        "children": [
+          {
+            "rank": "#8",
+            "category": "Accounting",
+            "children": []
+          },
+          {
+            "rank": "#29",
+            "category": "Finance",
+            "children": []
+          },
+          {
+            "rank": "#10",
+            "category": "Marketing",
+            "children": []
+          },
+          {
+            "rank": "#6",
+            "category": "Real Estate",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#8",
+        "category": "Accounting",
+        "children": []
+      },
+      {
+        "rank": "#29",
+        "category": "Finance",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Marketing",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Real Estate",
+        "children": []
+      },
+      {
+        "rank": "#48",
+        "category": "Computer Science",
+        "children": []
+      },
+      {
+        "rank": "#40",
+        "category": "Nursing",
+        "children": []
+      },
+      {
+        "rank": "#60",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#66",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Best Colleges for Veterans",
+        "children": []
+      },
+      {
+        "rank": "#39",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#15",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#59",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "The University of Texas--Austin",
+    "link": "https://www.usnews.com/best-colleges/the-university-of-texas-austin-3658",
+    "location": "Austin, TX",
+    "rank": "#30",
+    "glance": {
+      "Setting": "Urban",
+      "In-state tuition and fees": "$11,687",
+      "Undergraduate Enrollment": "43,165",
+      "Acceptance Rate": "27%",
+      "Degrees offered:": "Bachelor\u2019s Degree"
+    },
+    "admissions": {
+      "Application Deadline": "Dec. 1",
+      "Acceptance Rate": "27%",
+      "SAT Range*": "1320-1530",
+      "ACT Range*": "29-34",
+      "High School GPA*": "N/A"
+    },
+    "cost": {
+      "Out-of-State Tuition & Fees": "$44,908",
+      "In-State Tuition & Fees": "$11,687",
+      "Food & Housing": "$15,420(2025-26)",
+      "Average Need-Based Aid Package": "$20,219",
+      "Annual Cost*": "$18,850"
+    },
+    "academics": {
+      "4-Year Graduation Rate": "74%",
+      "Student/Faculty Ratio": "18:1",
+      "Classes With Fewer Than 20 Students": "37%",
+      "Popular Majors": [
+        {
+          "major": "Biological and Biomedical Sciences",
+          "percent_of_graduates": "13%",
+          "alumni_starting_salary": "$65,785"
+        },
+        {
+          "major": "Engineering",
+          "percent_of_graduates": "12%",
+          "alumni_starting_salary": "$100,587"
+        },
+        {
+          "major": "Business, Management, Marketing, and Related Support Services",
+          "percent_of_graduates": "12%",
+          "alumni_starting_salary": "$95,412"
+        },
+        {
+          "major": "Communication, Journalism, and Related Programs",
+          "percent_of_graduates": "11%",
+          "alumni_starting_salary": "$61,070"
+        },
+        {
+          "major": "Social Sciences",
+          "percent_of_graduates": "9%",
+          "alumni_starting_salary": "$43,067"
+        }
+      ],
+      "Faculty Research Impact": {
+        "Bibliometric Rank": "33",
+        "Publication share in the Top 25% of Journals by CiteScore": "68%",
+        "Publication share in the Top 5% of Journals by CiteScore": "22%",
+        "Field Weighted Citation Impact": "1.81",
+        "Total Papers published between 2020-2024": "41,536",
+        "Citations Per Publication": "17"
+      }
+    },
+    "rankings": [
+      {
+        "rank": "#30",
+        "category": "National Universities",
+        "children": []
+      },
+      {
+        "rank": "#7",
+        "category": "Top Public Schools",
+        "children": []
+      },
+      {
+        "rank": "#168",
+        "category": "Best Value Schools",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Best Undergraduate Engineering Programs",
+        "children": [
+          {
+            "rank": "#8",
+            "category": "Aerospace /Aeronautical / Astronautical",
+            "children": []
+          },
+          {
+            "rank": "#10",
+            "category": "Biomedical",
+            "children": []
+          },
+          {
+            "rank": "#5",
+            "category": "Chemical",
+            "children": []
+          },
+          {
+            "rank": "#5",
+            "category": "Civil",
+            "children": []
+          },
+          {
+            "rank": "#8",
+            "category": "Computer",
+            "children": []
+          },
+          {
+            "rank": "#9",
+            "category": "Electrical / Electronic / Communications",
+            "children": []
+          },
+          {
+            "rank": "#6",
+            "category": "Environmental / Environmental Health",
+            "children": []
+          },
+          {
+            "rank": "#20",
+            "category": "Industrial / Manufacturing",
+            "children": []
+          },
+          {
+            "rank": "#18",
+            "category": "Materials",
+            "children": []
+          },
+          {
+            "rank": "#11",
+            "category": "Mechanical",
+            "children": []
+          },
+          {
+            "rank": "#2",
+            "category": "Petroleum",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#8",
+        "category": "Aerospace /Aeronautical / Astronautical",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Biomedical",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Chemical",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Civil",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Computer",
+        "children": []
+      },
+      {
+        "rank": "#9",
+        "category": "Electrical / Electronic / Communications",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Environmental / Environmental Health",
+        "children": []
+      },
+      {
+        "rank": "#20",
+        "category": "Industrial / Manufacturing",
+        "children": []
+      },
+      {
+        "rank": "#18",
+        "category": "Materials",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Mechanical",
+        "children": []
+      },
+      {
+        "rank": "#2",
+        "category": "Petroleum",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Business Programs",
+        "children": [
+          {
+            "rank": "#2",
+            "category": "Accounting",
+            "children": []
+          },
+          {
+            "rank": "#6",
+            "category": "Analytics",
+            "children": []
+          },
+          {
+            "rank": "#6",
+            "category": "Entrepreneurship",
+            "children": []
+          },
+          {
+            "rank": "#5",
+            "category": "Finance",
+            "children": []
+          },
+          {
+            "rank": "#6",
+            "category": "Insurance",
+            "children": []
+          },
+          {
+            "rank": "#15",
+            "category": "International Business",
+            "children": []
+          },
+          {
+            "rank": "#6",
+            "category": "Management",
+            "children": []
+          },
+          {
+            "rank": "#7",
+            "category": "Management Information Systems",
+            "children": []
+          },
+          {
+            "rank": "#3",
+            "category": "Marketing",
+            "children": []
+          },
+          {
+            "rank": "#7",
+            "category": "Production / Operation Management",
+            "children": []
+          },
+          {
+            "rank": "#9",
+            "category": "Quantitative Analysis",
+            "children": []
+          },
+          {
+            "rank": "#8",
+            "category": "Real Estate",
+            "children": []
+          },
+          {
+            "rank": "#10",
+            "category": "Supply Chain Management / Logistics",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#2",
+        "category": "Accounting",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Analytics",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Entrepreneurship",
+        "children": []
+      },
+      {
+        "rank": "#5",
+        "category": "Finance",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Insurance",
+        "children": []
+      },
+      {
+        "rank": "#15",
+        "category": "International Business",
+        "children": []
+      },
+      {
+        "rank": "#6",
+        "category": "Management",
+        "children": []
+      },
+      {
+        "rank": "#7",
+        "category": "Management Information Systems",
+        "children": []
+      },
+      {
+        "rank": "#3",
+        "category": "Marketing",
+        "children": []
+      },
+      {
+        "rank": "#7",
+        "category": "Production / Operation Management",
+        "children": []
+      },
+      {
+        "rank": "#9",
+        "category": "Quantitative Analysis",
+        "children": []
+      },
+      {
+        "rank": "#8",
+        "category": "Real Estate",
+        "children": []
+      },
+      {
+        "rank": "#10",
+        "category": "Supply Chain Management / Logistics",
+        "children": []
+      },
+      {
+        "rank": "#9",
+        "category": "Computer Science",
+        "children": [
+          {
+            "rank": "#7",
+            "category": "Artificial Intelligence",
+            "children": []
+          },
+          {
+            "rank": "#12",
+            "category": "Computer Systems",
+            "children": []
+          },
+          {
+            "rank": "#11",
+            "category": "Cybersecurity",
+            "children": []
+          },
+          {
+            "rank": "#11",
+            "category": "Programming Languages",
+            "children": []
+          },
+          {
+            "rank": "#14",
+            "category": "Software Engineering",
+            "children": []
+          },
+          {
+            "rank": "#9",
+            "category": "Theory",
+            "children": []
+          }
+        ]
+      },
+      {
+        "rank": "#7",
+        "category": "Artificial Intelligence",
+        "children": []
+      },
+      {
+        "rank": "#12",
+        "category": "Computer Systems",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Cybersecurity",
+        "children": []
+      },
+      {
+        "rank": "#11",
+        "category": "Programming Languages",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Software Engineering",
+        "children": []
+      },
+      {
+        "rank": "#9",
+        "category": "Theory",
+        "children": []
+      },
+      {
+        "rank": "#40",
+        "category": "Nursing",
+        "children": []
+      },
+      {
+        "rank": "#19",
+        "category": "Psychology Programs",
+        "children": []
+      },
+      {
+        "rank": "#21",
+        "category": "Economics",
+        "children": []
+      },
+      {
+        "rank": "#25",
+        "category": "Study Abroad",
+        "children": []
+      },
+      {
+        "rank": "#14",
+        "category": "Best Colleges for Veterans",
+        "children": []
+      },
+      {
+        "rank": "#39",
+        "category": "Best Undergraduate Teaching",
+        "children": []
+      },
+      {
+        "rank": "#21",
+        "category": "Most Innovative Schools",
+        "children": []
+      },
+      {
+        "rank": "#101",
+        "category": "Top Performers on Social Mobility",
+        "children": []
+      }
+    ]
+  }
+]

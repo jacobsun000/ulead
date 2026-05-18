@@ -1,0 +1,998 @@
+[
+  {
+    "name": "Princeton University",
+    "link": "https://www.usnews.com/best-colleges/princeton-university-2627",
+    "location": "Princeton, NJ",
+    "rank": "#1",
+    "tuition": "$65210",
+    "enrollment": 5813,
+    "scores": {
+      "SAT": "1510-1580",
+      "ACT": "34-35"
+    }
+  },
+  {
+    "name": "Massachusetts Institute of Technology",
+    "link": "https://www.usnews.com/best-colleges/massachusetts-institute-of-technology-2178",
+    "location": "Cambridge, MA",
+    "rank": "#2",
+    "tuition": "$64730",
+    "enrollment": 4535,
+    "scores": {
+      "SAT": "1520-1580",
+      "ACT": "34-36"
+    }
+  },
+  {
+    "name": "Harvard University",
+    "link": "https://www.usnews.com/best-colleges/harvard-university-2155",
+    "location": "Cambridge, MA",
+    "rank": "#3",
+    "tuition": "$64796",
+    "enrollment": 7038,
+    "scores": {
+      "SAT": "1510-1580",
+      "ACT": "34-36"
+    }
+  },
+  {
+    "name": "Stanford University",
+    "link": "https://www.usnews.com/best-colleges/stanford-university-1305",
+    "location": "Stanford, CA",
+    "rank": "#4",
+    "tuition": "$68544",
+    "enrollment": 7904,
+    "scores": {
+      "SAT": "1510-1580",
+      "ACT": "34-35"
+    }
+  },
+  {
+    "name": "Yale University",
+    "link": "https://www.usnews.com/best-colleges/yale-university-1426",
+    "location": "New Haven, CT",
+    "rank": "#4",
+    "tuition": "$69900",
+    "enrollment": 6814,
+    "scores": {
+      "SAT": "1470-1570",
+      "ACT": "33-35"
+    }
+  },
+  {
+    "name": "University of Chicago",
+    "link": "https://www.usnews.com/best-colleges/university-of-chicago-1774",
+    "location": "Chicago, IL",
+    "rank": "#6",
+    "tuition": "$73266",
+    "enrollment": 7519,
+    "scores": {
+      "SAT": "1510-1580",
+      "ACT": "34-35"
+    }
+  },
+  {
+    "name": "Duke University",
+    "link": "https://www.usnews.com/best-colleges/duke-university-2920",
+    "location": "Durham, NC",
+    "rank": "#7",
+    "tuition": "$73172",
+    "enrollment": 6523,
+    "scores": {
+      "SAT": "1500-1570",
+      "ACT": "34-35"
+    }
+  },
+  {
+    "name": "Johns Hopkins University",
+    "link": "https://www.usnews.com/best-colleges/jhu-2077",
+    "location": "Baltimore, MD",
+    "rank": "#7",
+    "tuition": "$67170",
+    "enrollment": 6356,
+    "scores": {
+      "SAT": "1520-1570",
+      "ACT": "34-36"
+    }
+  },
+  {
+    "name": "Northwestern University",
+    "link": "https://www.usnews.com/best-colleges/northwestern-university-1739",
+    "location": "Evanston, IL",
+    "rank": "#7",
+    "tuition": "$70589",
+    "enrollment": 9060,
+    "scores": {
+      "SAT": "1510-1570",
+      "ACT": "34-35"
+    }
+  },
+  {
+    "name": "University of Pennsylvania",
+    "link": "https://www.usnews.com/best-colleges/university-of-pennsylvania-3378",
+    "location": "Philadelphia, PA",
+    "rank": "#7",
+    "tuition": "$71236",
+    "enrollment": 10013,
+    "scores": {
+      "SAT": "1510-1570",
+      "ACT": "34-36"
+    }
+  },
+  {
+    "name": "California Institute of Technology",
+    "link": "https://www.usnews.com/best-colleges/california-institute-of-technology-1131",
+    "location": "Pasadena, CA",
+    "rank": "#11",
+    "tuition": "$68208",
+    "enrollment": 987,
+    "scores": {
+      "SAT": "N/A",
+      "ACT": "N/A"
+    }
+  },
+  {
+    "name": "Cornell University",
+    "link": "https://www.usnews.com/best-colleges/cornell-university-2711",
+    "location": "Ithaca, NY",
+    "rank": "#12",
+    "tuition": "$72270",
+    "enrollment": 16128,
+    "scores": {
+      "SAT": "1500-1570",
+      "ACT": "33-35"
+    }
+  },
+  {
+    "name": "Brown University",
+    "link": "https://www.usnews.com/best-colleges/brown-university-3401",
+    "location": "Providence, RI",
+    "rank": "#13",
+    "tuition": "$74550",
+    "enrollment": 7910,
+    "scores": {
+      "SAT": "1510-1580",
+      "ACT": "34-35"
+    }
+  },
+  {
+    "name": "Dartmouth College",
+    "link": "https://www.usnews.com/best-colleges/dartmouth-college-2573",
+    "location": "Hanover, NH",
+    "rank": "#13",
+    "tuition": "$71265",
+    "enrollment": 4570,
+    "scores": {
+      "SAT": "1500-1570",
+      "ACT": "33-35"
+    }
+  },
+  {
+    "name": "Columbia University",
+    "link": "https://www.usnews.com/best-colleges/columbia-university-2707",
+    "location": "New York, NY",
+    "rank": "#15",
+    "tuition": "$71845",
+    "enrollment": 9111,
+    "scores": {
+      "SAT": "1510-1580",
+      "ACT": "34-35"
+    }
+  },
+  {
+    "name": "University of California, Berkeley",
+    "link": "https://www.usnews.com/best-colleges/university-of-california-berkeley-1312",
+    "location": "Berkeley, CA",
+    "rank": "#15",
+    "tuition": "$17721",
+    "enrollment": 33469,
+    "scores": {
+      "SAT": "N/A",
+      "ACT": "N/A"
+    }
+  },
+  {
+    "name": "Rice University",
+    "link": "https://www.usnews.com/best-colleges/rice-3604",
+    "location": "Houston, TX",
+    "rank": "#17",
+    "tuition": "$65475",
+    "enrollment": 4789,
+    "scores": {
+      "SAT": "1510-1570",
+      "ACT": "34-35"
+    }
+  },
+  {
+    "name": "University of California, Los Angeles",
+    "link": "https://www.usnews.com/best-colleges/ucla-1315",
+    "location": "Los Angeles, CA",
+    "rank": "#17",
+    "tuition": "$14824",
+    "enrollment": 33471,
+    "scores": {
+      "SAT": "N/A",
+      "ACT": "N/A"
+    }
+  },
+  {
+    "name": "Vanderbilt University",
+    "link": "https://www.usnews.com/best-colleges/vanderbilt-3535",
+    "location": "Nashville, TN",
+    "rank": "#17",
+    "tuition": "$71226",
+    "enrollment": 7221,
+    "scores": {
+      "SAT": "1500-1570",
+      "ACT": "34-35"
+    }
+  },
+  {
+    "name": "Carnegie Mellon University",
+    "link": "https://www.usnews.com/best-colleges/carnegie-mellon-university-3242",
+    "location": "Pittsburgh, PA",
+    "rank": "#20",
+    "tuition": "$68096",
+    "enrollment": 7824,
+    "scores": {
+      "SAT": "1500-1570",
+      "ACT": "34-35"
+    }
+  },
+  {
+    "name": "University of Michigan--Ann Arbor",
+    "link": "https://www.usnews.com/best-colleges/university-of-michigan-ann-arbor-9092",
+    "location": "Ann Arbor, MI",
+    "rank": "#20",
+    "tuition": "$19497",
+    "enrollment": 34454,
+    "scores": {
+      "SAT": "1360-1530",
+      "ACT": "31-34"
+    }
+  },
+  {
+    "name": "University of Notre Dame",
+    "link": "https://www.usnews.com/best-colleges/university-of-notre-dame-1840",
+    "location": "Notre Dame, IN",
+    "rank": "#20",
+    "tuition": "$67607",
+    "enrollment": 8880,
+    "scores": {
+      "SAT": "1455-1560",
+      "ACT": "33-35"
+    }
+  },
+  {
+    "name": "Washington University in St. Louis",
+    "link": "https://www.usnews.com/best-colleges/washington-university-in-st-louis-2520",
+    "location": "St. Louis, MO",
+    "rank": "#20",
+    "tuition": "$69594",
+    "enrollment": 8220,
+    "scores": {
+      "SAT": "1500-1570",
+      "ACT": "33-35"
+    }
+  },
+  {
+    "name": "Emory University",
+    "link": "https://www.usnews.com/best-colleges/emory-university-1564",
+    "location": "Atlanta, GA",
+    "rank": "#24",
+    "tuition": "$68056",
+    "enrollment": 7407,
+    "scores": {
+      "SAT": "1470-1550",
+      "ACT": "32-35"
+    }
+  },
+  {
+    "name": "Georgetown University",
+    "link": "https://www.usnews.com/best-colleges/georgetown-university-1445",
+    "location": "Washington, DC",
+    "rank": "#24",
+    "tuition": "$71338",
+    "enrollment": 7833,
+    "scores": {
+      "SAT": "1390-1550",
+      "ACT": "31-35"
+    }
+  },
+  {
+    "name": "University of North Carolina--Chapel Hill",
+    "link": "https://www.usnews.com/best-colleges/university-of-north-carolina-chapel-hill-2974",
+    "location": "Chapel Hill, NC",
+    "rank": "#26",
+    "tuition": "$9096",
+    "enrollment": 21075,
+    "scores": {
+      "SAT": "1390-1530",
+      "ACT": "28-34"
+    }
+  },
+  {
+    "name": "University of Virginia",
+    "link": "https://www.usnews.com/best-colleges/uva-6968",
+    "location": "Charlottesville, VA",
+    "rank": "#26",
+    "tuition": "$23897",
+    "enrollment": 17901,
+    "scores": {
+      "SAT": "1410-1540",
+      "ACT": "32-35"
+    }
+  },
+  {
+    "name": "University of Southern California",
+    "link": "https://www.usnews.com/best-colleges/university-of-southern-california-1328",
+    "location": "Los Angeles, CA",
+    "rank": "#28",
+    "tuition": "$75162",
+    "enrollment": 20630,
+    "scores": {
+      "SAT": "1450-1550",
+      "ACT": "32-35"
+    }
+  },
+  {
+    "name": "University of California San Diego",
+    "link": "https://www.usnews.com/best-colleges/university-of-california-san-diego-1317",
+    "location": "La Jolla, CA",
+    "rank": "#29",
+    "tuition": "$17256",
+    "enrollment": 34955,
+    "scores": {
+      "SAT": "N/A",
+      "ACT": "N/A"
+    }
+  },
+  {
+    "name": "University of Florida",
+    "link": "https://www.usnews.com/best-colleges/university-of-florida-1535",
+    "location": "Gainesville, FL",
+    "rank": "#30",
+    "tuition": "$6381",
+    "enrollment": 36573,
+    "scores": {
+      "SAT": "1320-1500",
+      "ACT": "30-34"
+    }
+  },
+  {
+    "name": "The University of Texas--Austin",
+    "link": "https://www.usnews.com/best-colleges/the-university-of-texas-austin-3658",
+    "location": "Austin, TX",
+    "rank": "#30",
+    "tuition": "$11687",
+    "enrollment": 43165,
+    "scores": {
+      "SAT": "1320-1530",
+      "ACT": "29-34"
+    }
+  },
+  {
+    "name": "Georgia Institute of Technology",
+    "link": "https://www.usnews.com/best-colleges/georgia-institute-of-technology-1569",
+    "location": "Atlanta, GA",
+    "rank": "#32",
+    "tuition": "$12008",
+    "enrollment": 20592,
+    "scores": {
+      "SAT": "1370-1540",
+      "ACT": "30-34"
+    }
+  },
+  {
+    "name": "New York University",
+    "link": "https://www.usnews.com/best-colleges/nyu-2785",
+    "location": "New York, NY",
+    "rank": "#32",
+    "tuition": "$65622",
+    "enrollment": 29060,
+    "scores": {
+      "SAT": "1480-1560",
+      "ACT": "34-35"
+    }
+  },
+  {
+    "name": "University of California, Davis",
+    "link": "https://www.usnews.com/best-colleges/university-of-california-davis-1313",
+    "location": "Davis, CA",
+    "rank": "#32",
+    "tuition": "$16474",
+    "enrollment": 32273,
+    "scores": {
+      "SAT": "N/A",
+      "ACT": "N/A"
+    }
+  },
+  {
+    "name": "University of California, Irvine",
+    "link": "https://www.usnews.com/best-colleges/university-of-california-irvine-1314",
+    "location": "Irvine, CA",
+    "rank": "#32",
+    "tuition": "$15343",
+    "enrollment": 30204,
+    "scores": {
+      "SAT": "N/A",
+      "ACT": "N/A"
+    }
+  },
+  {
+    "name": "Boston College",
+    "link": "https://www.usnews.com/best-colleges/boston-college-2128",
+    "location": "Chestnut Hill, MA",
+    "rank": "#36",
+    "tuition": "$73508",
+    "enrollment": 9654,
+    "scores": {
+      "SAT": "1440-1540",
+      "ACT": "33-35"
+    }
+  },
+  {
+    "name": "Tufts University",
+    "link": "https://www.usnews.com/best-colleges/tufts-university-2219",
+    "location": "Medford, MA",
+    "rank": "#36",
+    "tuition": "$73616",
+    "enrollment": 7126,
+    "scores": {
+      "SAT": "1470-1560",
+      "ACT": "33-35"
+    }
+  },
+  {
+    "name": "University of Illinois Urbana-Champaign",
+    "link": "https://www.usnews.com/best-colleges/university-of-illinois-urbanachampaign-1775",
+    "location": "Champaign, IL",
+    "rank": "#36",
+    "tuition": "$18046",
+    "enrollment": 37140,
+    "scores": {
+      "SAT": "1380-1540",
+      "ACT": "30-34"
+    }
+  },
+  {
+    "name": "University of Wisconsin--Madison",
+    "link": "https://www.usnews.com/best-colleges/university-of-wisconsin-3895",
+    "location": "Madison, WI",
+    "rank": "#36",
+    "tuition": "$12166",
+    "enrollment": 39083,
+    "scores": {
+      "SAT": "1350-1510",
+      "ACT": "29-33"
+    }
+  },
+  {
+    "name": "University of California, Santa Barbara",
+    "link": "https://www.usnews.com/best-colleges/university-of-california-santa-barbara-1320",
+    "location": "Santa Barbara, CA",
+    "rank": "#40",
+    "tuition": "$16035",
+    "enrollment": 23181,
+    "scores": {
+      "SAT": "N/A",
+      "ACT": "N/A"
+    }
+  },
+  {
+    "name": "The Ohio State University",
+    "link": "https://www.usnews.com/best-colleges/ohio-state-6883",
+    "location": "Columbus, OH",
+    "rank": "#41",
+    "tuition": "$13641",
+    "enrollment": 46815,
+    "scores": {
+      "SAT": "1310-1480",
+      "ACT": "28-32"
+    }
+  },
+  {
+    "name": "Boston University",
+    "link": "https://www.usnews.com/best-colleges/boston-university-2130",
+    "location": "Boston, MA",
+    "rank": "#42",
+    "tuition": "$71372",
+    "enrollment": 18805,
+    "scores": {
+      "SAT": "1420-1530",
+      "ACT": "32-34"
+    }
+  },
+  {
+    "name": "Rutgers University--New Brunswick",
+    "link": "https://www.usnews.com/best-colleges/rutgers-new-brunswick-6964",
+    "location": "Piscataway, NJ",
+    "rank": "#42",
+    "tuition": "$18827",
+    "enrollment": 37985,
+    "scores": {
+      "SAT": "1310-1500",
+      "ACT": "28-33"
+    }
+  },
+  {
+    "name": "University of Maryland, College Park",
+    "link": "https://www.usnews.com/best-colleges/university-of-maryland-2103",
+    "location": "College Park, MD",
+    "rank": "#42",
+    "tuition": "$11809",
+    "enrollment": 31133,
+    "scores": {
+      "SAT": "1390-1530",
+      "ACT": "32-35"
+    }
+  },
+  {
+    "name": "University of Washington",
+    "link": "https://www.usnews.com/best-colleges/university-of-washington-3798",
+    "location": "Seattle, WA",
+    "rank": "#42",
+    "tuition": "$13406",
+    "enrollment": 40754,
+    "scores": {
+      "SAT": "N/A",
+      "ACT": "N/A"
+    }
+  },
+  {
+    "name": "Lehigh University",
+    "link": "https://www.usnews.com/best-colleges/lehigh-university-3289",
+    "location": "Bethlehem, PA",
+    "rank": "#46",
+    "tuition": "$67920",
+    "enrollment": 5911,
+    "scores": {
+      "SAT": "1370-1500",
+      "ACT": "31-34"
+    }
+  },
+  {
+    "name": "Northeastern University",
+    "link": "https://www.usnews.com/best-colleges/northeastern-university-2199",
+    "location": "Boston, MA",
+    "rank": "#46",
+    "tuition": "$69289",
+    "enrollment": 17432,
+    "scores": {
+      "SAT": "1440-1540",
+      "ACT": "33-35"
+    }
+  },
+  {
+    "name": "Purdue University--Main Campus",
+    "link": "https://www.usnews.com/best-colleges/purdue-university-west-lafayette-1825",
+    "location": "West Lafayette, IN",
+    "rank": "#46",
+    "tuition": "$9992",
+    "enrollment": 44819,
+    "scores": {
+      "SAT": "1200-1480",
+      "ACT": "27-34"
+    }
+  },
+  {
+    "name": "University of Georgia",
+    "link": "https://www.usnews.com/best-colleges/university-of-georgia-1598",
+    "location": "Athens, GA",
+    "rank": "#46",
+    "tuition": "$11492",
+    "enrollment": 32399,
+    "scores": {
+      "SAT": "1270-1480",
+      "ACT": "29-34"
+    }
+  },
+  {
+    "name": "University of Rochester",
+    "link": "https://www.usnews.com/best-colleges/university-of-rochester-2894",
+    "location": "Rochester, NY",
+    "rank": "#46",
+    "tuition": "$70384",
+    "enrollment": 6580,
+    "scores": {
+      "SAT": "1410-1540",
+      "ACT": "32-34"
+    }
+  },
+  {
+    "name": "Case Western Reserve University",
+    "link": "https://www.usnews.com/best-colleges/case-western-reserve-university-3024",
+    "location": "Cleveland, OH",
+    "rank": "#51",
+    "tuition": "$69280",
+    "enrollment": 6528,
+    "scores": {
+      "SAT": "1440-1550",
+      "ACT": "32-35"
+    }
+  },
+  {
+    "name": "Florida State University",
+    "link": "https://www.usnews.com/best-colleges/florida-state-university-1489",
+    "location": "Tallahassee, FL",
+    "rank": "#51",
+    "tuition": "$6517",
+    "enrollment": 32720,
+    "scores": {
+      "SAT": "1270-1410",
+      "ACT": "29-32"
+    }
+  },
+  {
+    "name": "Texas A&M University",
+    "link": "https://www.usnews.com/best-colleges/texas-am-university-college-station-10366",
+    "location": "College Station, TX",
+    "rank": "#51",
+    "tuition": "$12928",
+    "enrollment": 60710,
+    "scores": {
+      "SAT": "1150-1400",
+      "ACT": "25-31"
+    }
+  },
+  {
+    "name": "Virginia Tech",
+    "link": "https://www.usnews.com/best-colleges/virginia-tech-3754",
+    "location": "Blacksburg, VA",
+    "rank": "#51",
+    "tuition": "$16450",
+    "enrollment": 31035,
+    "scores": {
+      "SAT": "1280-1450",
+      "ACT": "28-32"
+    }
+  },
+  {
+    "name": "Wake Forest University",
+    "link": "https://www.usnews.com/best-colleges/wake-forest-2978",
+    "location": "Winston-Salem, NC",
+    "rank": "#51",
+    "tuition": "$70332",
+    "enrollment": 5490,
+    "scores": {
+      "SAT": "1410-1520",
+      "ACT": "32-34"
+    }
+  },
+  {
+    "name": "William & Mary",
+    "link": "https://www.usnews.com/best-colleges/william-and-mary-3705",
+    "location": "Williamsburg, VA",
+    "rank": "#51",
+    "tuition": "$26456",
+    "enrollment": 7063,
+    "scores": {
+      "SAT": "1400-1530",
+      "ACT": "32-34"
+    }
+  },
+  {
+    "name": "University of California, Merced",
+    "link": "https://www.usnews.com/best-colleges/university-of-california-merced-4127",
+    "location": "Merced, CA",
+    "rank": "#57",
+    "tuition": "$15244",
+    "enrollment": 8372,
+    "scores": {
+      "SAT": "N/A",
+      "ACT": "N/A"
+    }
+  },
+  {
+    "name": "Villanova University",
+    "link": "https://www.usnews.com/best-colleges/villanova-3388",
+    "location": "Villanova, PA",
+    "rank": "#57",
+    "tuition": "$70826",
+    "enrollment": 7009,
+    "scores": {
+      "SAT": "1395-1510",
+      "ACT": "32-34"
+    }
+  },
+  {
+    "name": "George Washington University",
+    "link": "https://www.usnews.com/best-colleges/george-washington-university-1444",
+    "location": "Washington, DC",
+    "rank": "#59",
+    "tuition": "$70170",
+    "enrollment": 11677,
+    "scores": {
+      "SAT": "1350-1500",
+      "ACT": "30-34"
+    }
+  },
+  {
+    "name": "The Pennsylvania State University--University Park",
+    "link": "https://www.usnews.com/best-colleges/penn-state-6965",
+    "location": "University Park, PA",
+    "rank": "#59",
+    "tuition": "$21098",
+    "enrollment": 42619,
+    "scores": {
+      "SAT": "1240-1420",
+      "ACT": "27-32"
+    }
+  },
+  {
+    "name": "Santa Clara University",
+    "link": "https://www.usnews.com/best-colleges/santa-clara-university-1326",
+    "location": "Santa Clara, CA",
+    "rank": "#59",
+    "tuition": "$63514",
+    "enrollment": 6577,
+    "scores": {
+      "SAT": "1350-1490",
+      "ACT": "31-33"
+    }
+  },
+  {
+    "name": "Stony Brook University--SUNY",
+    "link": "https://www.usnews.com/best-colleges/stony-brook-suny-2838",
+    "location": "Stony Brook, NY",
+    "rank": "#59",
+    "tuition": "$10931",
+    "enrollment": 18263,
+    "scores": {
+      "SAT": "1330-1500",
+      "ACT": "29-33"
+    }
+  },
+  {
+    "name": "University of Minnesota--Twin Cities",
+    "link": "https://www.usnews.com/best-colleges/university-of-minnesota-twin-cities-3969",
+    "location": "Minneapolis, MN",
+    "rank": "#59",
+    "tuition": "$18482",
+    "enrollment": 41303,
+    "scores": {
+      "SAT": "1300-1500",
+      "ACT": "26-31"
+    }
+  },
+  {
+    "name": "Michigan State University",
+    "link": "https://www.usnews.com/best-colleges/michigan-state-2290",
+    "location": "East Lansing, MI",
+    "rank": "#64",
+    "tuition": "$19742",
+    "enrollment": 41234,
+    "scores": {
+      "SAT": "1180-1360",
+      "ACT": "25-31"
+    }
+  },
+  {
+    "name": "North Carolina State University",
+    "link": "https://www.usnews.com/best-colleges/north-carolina-state-raleigh-2972",
+    "location": "Raleigh, NC",
+    "rank": "#64",
+    "tuition": "$9028",
+    "enrollment": 28422,
+    "scores": {
+      "SAT": "1300-1470",
+      "ACT": "28-32"
+    }
+  },
+  {
+    "name": "Rensselaer Polytechnic Institute",
+    "link": "https://www.usnews.com/best-colleges/rpi-2803",
+    "location": "Troy, NY",
+    "rank": "#64",
+    "tuition": "$66024",
+    "enrollment": 5743,
+    "scores": {
+      "SAT": "1375-1510",
+      "ACT": "30-34"
+    }
+  },
+  {
+    "name": "University of Massachusetts--Amherst",
+    "link": "https://www.usnews.com/best-colleges/umass-amherst-2221",
+    "location": "Amherst, MA",
+    "rank": "#64",
+    "tuition": "$18487",
+    "enrollment": 23920,
+    "scores": {
+      "SAT": "1310-1500",
+      "ACT": "30-33"
+    }
+  },
+  {
+    "name": "University of Miami",
+    "link": "https://www.usnews.com/best-colleges/university-of-miami-1536",
+    "location": "Coral Gables, FL",
+    "rank": "#64",
+    "tuition": "$65430",
+    "enrollment": 13250,
+    "scores": {
+      "SAT": "1320-1480",
+      "ACT": "30-33"
+    }
+  },
+  {
+    "name": "Brandeis University",
+    "link": "https://www.usnews.com/best-colleges/brandeis-university-2133",
+    "location": "Waltham, MA",
+    "rank": "#69",
+    "tuition": "$70957",
+    "enrollment": 3632,
+    "scores": {
+      "SAT": "1390-1520",
+      "ACT": "31-34"
+    }
+  },
+  {
+    "name": "Tulane University of Louisiana",
+    "link": "https://www.usnews.com/best-colleges/tulane-university-of-louisiana-2029",
+    "location": "New Orleans, LA",
+    "rank": "#69",
+    "tuition": "$71997",
+    "enrollment": 7283,
+    "scores": {
+      "SAT": "1400-1520",
+      "ACT": "31-34"
+    }
+  },
+  {
+    "name": "University of Connecticut",
+    "link": "https://www.usnews.com/best-colleges/uconn-29013",
+    "location": "Storrs, CT",
+    "rank": "#69",
+    "tuition": "$21336",
+    "enrollment": 20056,
+    "scores": {
+      "SAT": "1210-1440",
+      "ACT": "28-33"
+    }
+  },
+  {
+    "name": "University of Pittsburgh",
+    "link": "https://www.usnews.com/best-colleges/university-of-pittsburgh-3379",
+    "location": "Pittsburgh, PA",
+    "rank": "#69",
+    "tuition": "$22736",
+    "enrollment": 20418,
+    "scores": {
+      "SAT": "1280-1460",
+      "ACT": "29-33"
+    }
+  },
+  {
+    "name": "Binghamton University--SUNY",
+    "link": "https://www.usnews.com/best-colleges/suny-binghamton-2836",
+    "location": "Binghamton, NY",
+    "rank": "#73",
+    "tuition": "$10567",
+    "enrollment": 14668,
+    "scores": {
+      "SAT": "1340-1490",
+      "ACT": "31-34"
+    }
+  },
+  {
+    "name": "Indiana University--Bloomington",
+    "link": "https://www.usnews.com/best-colleges/indiana-university-bloomington-1809",
+    "location": "Bloomington, IN",
+    "rank": "#73",
+    "tuition": "$12144",
+    "enrollment": 38093,
+    "scores": {
+      "SAT": "1170-1400",
+      "ACT": "27-33"
+    }
+  },
+  {
+    "name": "Clemson University",
+    "link": "https://www.usnews.com/best-colleges/clemson-university-3425",
+    "location": "Clemson, SC",
+    "rank": "#75",
+    "tuition": "$15554",
+    "enrollment": 23401,
+    "scores": {
+      "SAT": "1240-1410",
+      "ACT": "28-32"
+    }
+  },
+  {
+    "name": "Rutgers University--Newark",
+    "link": "https://www.usnews.com/best-colleges/rutgers-university-newark-2631",
+    "location": "Newark, NJ",
+    "rank": "#75",
+    "tuition": "$18112",
+    "enrollment": 7989,
+    "scores": {
+      "SAT": "N/A",
+      "ACT": "N/A"
+    }
+  },
+  {
+    "name": "Syracuse University",
+    "link": "https://www.usnews.com/best-colleges/syracuse-university-2882",
+    "location": "Syracuse, NY",
+    "rank": "#75",
+    "tuition": "$68429",
+    "enrollment": 15957,
+    "scores": {
+      "SAT": "1270-1440",
+      "ACT": "29-32"
+    }
+  },
+  {
+    "name": "University at Buffalo--SUNY",
+    "link": "https://www.usnews.com/best-colleges/ub-9554",
+    "location": "Buffalo, NY",
+    "rank": "#75",
+    "tuition": "$10936",
+    "enrollment": 20360,
+    "scores": {
+      "SAT": "1210-1380",
+      "ACT": "27-32"
+    }
+  },
+  {
+    "name": "University of California, Riverside",
+    "link": "https://www.usnews.com/best-colleges/university-of-california-riverside-1316",
+    "location": "Riverside, CA",
+    "rank": "#75",
+    "tuition": "$15101",
+    "enrollment": 22599,
+    "scores": {
+      "SAT": "N/A",
+      "ACT": "N/A"
+    }
+  },
+  {
+    "name": "Colorado School of Mines",
+    "link": "https://www.usnews.com/best-colleges/colorado-school-of-mines-1348",
+    "location": "Golden, CO",
+    "rank": "#80",
+    "tuition": "$22426",
+    "enrollment": 6195,
+    "scores": {
+      "SAT": "1320-1480",
+      "ACT": "29-33"
+    }
+  },
+  {
+    "name": "Drexel University",
+    "link": "https://www.usnews.com/best-colleges/drexel-university-3256",
+    "location": "Philadelphia, PA",
+    "rank": "#80",
+    "tuition": "$64212",
+    "enrollment": 11757,
+    "scores": {
+      "SAT": "1240-1440",
+      "ACT": "27-32"
+    }
+  },
+  {
+    "name": "New Jersey Institute of Technology",
+    "link": "https://www.usnews.com/best-colleges/njit-2621",
+    "location": "Newark, NJ",
+    "rank": "#80",
+    "tuition": "$21162",
+    "enrollment": 10200,
+    "scores": {
+      "SAT": "1240-1480",
+      "ACT": "29-35"
+    }
+  },
+  {
+    "name": "Stevens Institute of Technology",
+    "link": "https://www.usnews.com/best-colleges/stevens-institute-of-technology-2639",
+    "location": "Hoboken, NJ",
+    "rank": "#80",
+    "tuition": "$65606",
+    "enrollment": 4204,
+    "scores": {
+      "SAT": "1380-1505",
+      "ACT": "31-34"
+    }
+  }
+]

@@ -1,0 +1,27 @@
+2026/01/25-22:54:43.470 a9bc5 Reusing MANIFEST /home/jacob/Projects/ulead/scripts/usn_crawl/chrome_profile/Default/Local Storage/leveldb/MANIFEST-000001
+2026/01/25-22:54:43.473 a9bc5 Recovering log #4
+2026/01/25-22:54:43.474 a9bc5 Reusing old log /home/jacob/Projects/ulead/scripts/usn_crawl/chrome_profile/Default/Local Storage/leveldb/000004.log 
+2026/01/25-22:55:05.702 a9bc5 Level-0 table #8: started
+2026/01/25-22:55:05.706 a9bc5 Level-0 table #8: 49977 bytes OK
+2026/01/25-22:55:05.714 a9bc5 Delete type=0 #4
+2026/01/25-22:55:43.475 a9bc7 Level-0 table #10: started
+2026/01/25-22:55:43.480 a9bc7 Level-0 table #10: 41011 bytes OK
+2026/01/25-22:55:43.486 a9bc7 Delete type=0 #7
+2026/01/25-22:56:07.064 a9bc5 Level-0 table #12: started
+2026/01/25-22:56:07.067 a9bc5 Level-0 table #12: 37276 bytes OK
+2026/01/25-22:56:07.074 a9bc5 Delete type=0 #9
+2026/01/25-22:56:29.861 a9bc7 Level-0 table #14: started
+2026/01/25-22:56:29.866 a9bc7 Level-0 table #14: 39912 bytes OK
+2026/01/25-22:56:29.873 a9bc7 Delete type=0 #11
+2026/01/25-22:56:49.700 a9bc7 Level-0 table #16: started
+2026/01/25-22:56:49.719 a9bc7 Level-0 table #16: 42685 bytes OK
+2026/01/25-22:56:49.726 a9bc7 Delete type=0 #13
+2026/01/25-22:56:49.726 a9bc7 Compacting 4@0 + 1@1 files
+2026/01/25-22:56:49.730 a9bc7 Generated table #17@0: 303 keys, 60923 bytes
+2026/01/25-22:56:49.730 a9bc7 Compacted 4@0 + 1@1 files => 60923 bytes
+2026/01/25-22:56:49.737 a9bc7 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/01/25-22:56:49.737 a9bc7 Delete type=2 #8
+2026/01/25-22:56:49.737 a9bc7 Delete type=2 #10
+2026/01/25-22:56:49.737 a9bc7 Delete type=2 #12
+2026/01/25-22:56:49.737 a9bc7 Delete type=2 #14
+2026/01/25-22:56:49.737 a9bc7 Delete type=2 #16

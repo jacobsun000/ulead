@@ -1,0 +1,6 @@
+2026/01/25-22:57:49.446 ac7c3 Reusing MANIFEST /home/jacob/Projects/ulead/scripts/usn_crawl/chrome_profile/Default/Local Storage/leveldb/MANIFEST-000001
+2026/01/25-22:57:49.450 ac7c3 Recovering log #15
+2026/01/25-22:57:49.450 ac7c3 Reusing old log /home/jacob/Projects/ulead/scripts/usn_crawl/chrome_profile/Default/Local Storage/leveldb/000015.log 
+2026/01/25-22:58:01.124 ac7c9 Level-0 table #20: started
+2026/01/25-22:58:01.130 ac7c9 Level-0 table #20: 42246 bytes OK
+2026/01/25-22:58:01.137 ac7c9 Delete type=0 #15
