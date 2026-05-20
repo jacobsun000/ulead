@@ -69,32 +69,32 @@ export function AlumniCard({
       </div>
 
       {/* Tabs */}
-      <div className="mt-4 border-t-2 border-gray-300 mx-4 pt-2">
-        <div className="flex gap-6 text-sm font-medium text-gray-700 mb-2">
-          <button
-            onClick={() => setTab('evaluation')}
-            className={cn(tab === 'evaluation' && 'border-b-4 border-[#3382DB]')}
-          >
-            案例评价
-          </button>
-          <button
-            onClick={() => setTab('plan')}
-            className={cn(tab === 'plan' && 'border-b-4 border-[#3382DB]')}
-          >
-            规划方向
-          </button>
-        </div>
-
-        <div className="relative bg-gray-50 rounded-xl p-3 text-sm text-gray-700 leading-relaxed min-h-[100px]">
-          {tab === 'evaluation' ? (
-            <p>{evaluation || '无评价内容'}</p>
-          ) : (
-            <p>{plan}</p>
-          )}
-          {/* Quotation mark */}
-          <div className="absolute top-0 right-3 -translate-y-1/4 text-[#3382DB] text-[6rem] font-bold select-none leading-none">”</div>
-        </div>
-      </div>
+      {/* <div className="mt-4 border-t-2 border-gray-300 mx-4 pt-2"> */}
+      {/*   <div className="flex gap-6 text-sm font-medium text-gray-700 mb-2"> */}
+      {/*     <button */}
+      {/*       onClick={() => setTab('evaluation')} */}
+      {/*       className={cn(tab === 'evaluation' && 'border-b-4 border-[#3382DB]')} */}
+      {/*     > */}
+      {/*       案例评价 */}
+      {/*     </button> */}
+      {/*     <button */}
+      {/*       onClick={() => setTab('plan')} */}
+      {/*       className={cn(tab === 'plan' && 'border-b-4 border-[#3382DB]')} */}
+      {/*     > */}
+      {/*       规划方向 */}
+      {/*     </button> */}
+      {/*   </div> */}
+      {/**/}
+      {/*   <div className="relative bg-gray-50 rounded-xl p-3 text-sm text-gray-700 leading-relaxed min-h-[100px]"> */}
+      {/*     {tab === 'evaluation' ? ( */}
+      {/*       <p>{evaluation || '无评价内容'}</p> */}
+      {/*     ) : ( */}
+      {/*       <p>{plan}</p> */}
+      {/*     )} */}
+      {/*     {/* Quotation mark */}
+      {/*     <div className="absolute top-0 right-3 -translate-y-1/4 text-[#3382DB] text-[6rem] font-bold select-none leading-none">”</div> */}
+      {/*   </div> */}
+      {/* </div> */}
     </div>
   )
 }
@@ -148,7 +148,7 @@ export function AlumniCardHs({
         </div>
       </div>
 
-      {/* Tabs */}
+      {/* Tabs
       <div className="mt-2 border-t-2 border-gray-300 mx-4 pt-2">
         <div className="flex gap-6 text-sm font-medium text-gray-700 mb-2">
           <button
@@ -173,10 +173,10 @@ export function AlumniCardHs({
               <p key={idx}>{offer}</p>
             ))
           )}
-          {/* Quotation mark */}
+          {/* Quotation mark
           <div className="absolute top-0 right-3 -translate-y-1/4 text-[#3382DB] text-[6rem] font-bold select-none leading-none">”</div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
