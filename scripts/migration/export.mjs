@@ -8,7 +8,7 @@ import { list } from '@vercel/blob';
 // Creates local backups only. No source writes, no target database connection.
 process.umask(0o077);
 const env = parseEnv(await readFile(process.argv[2] || 'neon.env', 'utf8'));
-const output = resolve('.migration', `export-${new Date().toISOString().replaceAll(':', '-')}`);
+const output = resolve(process.argv[3] || 'data/backups', `export-${new Date().toISOString().replaceAll(':', '-')}`);
 await mkdir(`${output}/blobs`, { recursive: true, mode: 0o700 });
 
 try {
@@ -22,10 +22,16 @@ try {
     PGOPTIONS: '-c default_transaction_read_only=on',
   };
   await promisify(execFile)('pg_dump', [
-    '--format=custom', '--no-owner', '--no-acl', '--schema=public',
+    '--format=custom',
     '--file', `${output}/database.dump`,
   ], { env: pgEnv, timeout: 120000 });
-  const manifest = { exportedAt: new Date().toISOString(), blobs: [] };
+  // Preserve all database schemas, data, sequences, ownership and grants in the archive.
+  // Restore elsewhere with --no-owner --no-acl when source roles do not exist there.
+  const { stdout: archiveContents } = await promisify(execFile)('pg_restore', [
+    '--list', `${output}/database.dump`,
+  ], { timeout: 30000 });
+  await writeFile(`${output}/database-contents.txt`, archiveContents, { mode: 0o600 });
+  const manifest = { exportedAt: new Date().toISOString(), databaseScope: 'full-database', blobs: [] };
   let cursor;
   do {
     const page = await list({ token: env.BLOB_READ_WRITE_TOKEN, limit: 1000, cursor });

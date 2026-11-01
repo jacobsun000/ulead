@@ -1,7 +1,11 @@
 # China deployment preparation
 
-Status: prepared locally; no server ordered, no DNS changed, no cloud data written,
-and no deployment triggered. This is not yet a production cutover release.
+Status: local preparation and backups verified. Following user approval, one
+Beijing Lighthouse instance was ordered through the CLI on 2026-11-01 UTC:
+`lhins-dtevgg98` (`ulead-cn-web`), 2 CPU / 4 GB / 5 Mbps / 60 GB SSD,
+Ubuntu 24.04, 12 months, quoted CNY 663, manual renewal. No DNS changed, no
+source database/Blob data written, and no application deployment triggered.
+This is not yet a production cutover release.
 
 ## Confirmed requirements
 
@@ -87,6 +91,23 @@ The dump contains personal information. Keep this directory private, do not uplo
 it to source control or a public bucket, and remove rehearsal copies when no longer
 needed. This initial dump is a rehearsal snapshot, not the final cutover snapshot.
 
+### Full backup before purchase
+
+At the user's request, a fresh full-database archive and every Blob object were
+saved to `data/backups/export-2026-11-01T04-12-34.191Z/` before the purchase.
+Unlike the initial public-schema rehearsal snapshot, this archive has no schema
+filter and preserves database ownership/grant metadata as well as schema/data.
+It is a logical backup of the connected database, not a PostgreSQL cluster/system
+backup or a copy of Neon account settings.
+
+The directory contains `database.dump` (80,720 bytes), `database-contents.txt`,
+`manifest.json`, `verification.json`, and all 122 objects under `blobs/` (14,934,865
+bytes). The manifest maps local filenames to original Blob paths/URLs and includes
+SHA-256 checksums. All hashes passed; an isolated PostgreSQL restore again verified
+14 public tables, 496 records and their column definitions. The test container and
+volume were removed. `data/backups/` is excluded from Git and container builds;
+the existing tracked `data/all_schools.csv` was preserved.
+
 ## Code prepared
 
 - Real `/zh/` routes replace the `(zh)` route group. Old public shortcuts redirect
@@ -132,8 +153,9 @@ These are explicit release gates, not features already implemented:
 
 ## Purchase and migration sequence
 
-Stop for review before the first purchase. No purchasing command is part of the
-preparation scripts.
+The first purchase was approved and submitted as recorded above. No purchasing
+command is part of the preparation scripts; do not repeat the purchase. Continue
+with the remaining implementation and deployment gates before changing live DNS.
 
 After approval:
 
@@ -179,10 +201,14 @@ pnpm migration:export neon.env
 pnpm test:migration
 ```
 
-Exports use `pg_dump` in read-only mode with credentials passed through its child
+Exports default to timestamped folders under `data/backups/`; an optional second
+script argument overrides the parent directory. Exports use `pg_dump` in read-only
+mode with credentials passed through its child
 environment. Use a matching/newer PostgreSQL client and verify the target major
-version; the tested target is PostgreSQL 18. The export only includes `public`,
-so re-evaluate the scope if other application schemas/extensions are introduced.
+version; the tested target is PostgreSQL 18. The export now includes the entire
+connected database, with no schema filter; cluster-wide roles/settings are not
+part of a database dump. Use `--no-owner --no-acl` only when restoring into a target
+whose roles differ from the source.
 The database snapshot and Blob listing are not one distributed transaction:
 freeze edits and repeat the final export before cutover.
 

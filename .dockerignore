@@ -3,6 +3,7 @@ node_modules
 .git
 .vercel
 .migration
+data/backups
 *.env
 .env*
 scripts

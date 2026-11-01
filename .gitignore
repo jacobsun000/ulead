@@ -32,6 +32,7 @@ yarn-error.log*
 
 # Private migration exports and database backups
 /.migration/
+/data/backups/
 
 # vercel
 .vercel
