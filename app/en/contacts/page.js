@@ -153,6 +153,7 @@ export default function Contacts() {
               className="w-full p-2 border border-gray-500 rounded"
             />
           </div>
+          <p className="md:col-span-2 text-sm text-gray-600">Your inquiry is stored in the United States and shared with our China-based team to respond to your request.</p>
           <div className="md:col-span-2 mt-4 mb-4 flex justify-center">
             <button
               type="submit"

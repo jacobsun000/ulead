@@ -1,0 +1,43 @@
+name: ulead
+services:
+  database:
+    image: postgres:18
+    restart: unless-stopped
+    env_file: database.env
+    volumes:
+      - database:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ulead -d ulead"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    logging: &logging
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+  app:
+    image: ${APP_IMAGE:?Set APP_IMAGE}
+    restart: unless-stopped
+    env_file: app.env
+    ports: ["127.0.0.1:3000:3000"]
+    depends_on:
+      database:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/api/health/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    security_opt: ["no-new-privileges:true"]
+    logging: *logging
+  worker:
+    image: ${WORKER_IMAGE:?Set WORKER_IMAGE}
+    profiles: ["maintenance"]
+    env_file: worker.env
+    command: ["node", "scripts/sync/run.mjs"]
+    volumes: ["./backups:/backups:ro", "./scripts/sync:/worker/scripts/sync:ro"]
+    security_opt: ["no-new-privileges:true"]
+    logging: *logging
+volumes:
+  database:

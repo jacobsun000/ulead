@@ -196,6 +196,7 @@ export default function Contacts() {
               className="w-full p-2 border border-gray-500 rounded"
             />
           </div>
+          <p className="md:col-span-2 text-sm text-gray-600">您提交的咨询信息将存储在中国，由合领教育团队用于联系您并回复咨询。</p>
           <div className="md:col-span-2 mt-4 mb-4 flex justify-center">
             <button
               type="submit"

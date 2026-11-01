@@ -127,6 +127,7 @@ export default function ContactManager() {
                 <th className="p-4">姓名</th>
                 <th className="p-4">联系方式</th>
                 <th className="p-4">来源</th>
+                <th className="p-4">站点</th>
                 <th className="p-4">问题</th>
               </tr>
             </thead>
@@ -143,6 +144,7 @@ export default function ContactManager() {
                   <td className="p-4">{contact.name}</td>
                   <td className="p-4">{contact.contact}</td>
                   <td className="p-4">{contact.source || "-"}</td>
+                  <td className="p-4">{{ cn: '中国', us: '美国', historical: '历史数据' }[contact.region] || '-'}</td>
                   <td className="p-4">{contact.questions || "-"}</td>
                 </tr>
               ))}

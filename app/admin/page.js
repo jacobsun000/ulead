@@ -1,3 +1,5 @@
+import SyncStatus from './SyncStatus';
+
 export default function AdminHomePage() {
   const managers = [
     { name: "联系表单", link: "/admin/contact" },
@@ -15,6 +17,7 @@ export default function AdminHomePage() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col items-center py-8">
+      <SyncStatus />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-11/12 max-w-6xl">
         {managers.map((manager) => (
           <a

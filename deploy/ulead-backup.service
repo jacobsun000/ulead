@@ -1,0 +1,9 @@
+[Unit]
+Description=Back up ULEAD PostgreSQL to private COS
+After=docker.service network-online.target
+Requires=docker.service
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/ulead
+ExecStart=/bin/sh /opt/ulead/backup.sh
+TimeoutStartSec=600

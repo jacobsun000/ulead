@@ -1,0 +1,444 @@
+{
+  "alumni": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "name",
+      "type": "character varying"
+    },
+    {
+      "name": "image",
+      "type": "character varying"
+    },
+    {
+      "name": "highschool",
+      "type": "character varying"
+    },
+    {
+      "name": "university",
+      "type": "character varying"
+    },
+    {
+      "name": "university_logo",
+      "type": "character varying"
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "highschool_cn",
+      "type": "text"
+    },
+    {
+      "name": "university_cn",
+      "type": "text"
+    },
+    {
+      "name": "labels",
+      "type": "ARRAY"
+    },
+    {
+      "name": "evaluation",
+      "type": "text"
+    },
+    {
+      "name": "plan",
+      "type": "text"
+    },
+    {
+      "name": "order_index",
+      "type": "integer"
+    }
+  ],
+  "alumni_hs": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "name",
+      "type": "text"
+    },
+    {
+      "name": "school",
+      "type": "text"
+    },
+    {
+      "name": "offers",
+      "type": "ARRAY"
+    },
+    {
+      "name": "tags",
+      "type": "ARRAY"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "school_logo",
+      "type": "text"
+    },
+    {
+      "name": "order_index",
+      "type": "integer"
+    }
+  ],
+  "consultant": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "name",
+      "type": "text"
+    },
+    {
+      "name": "degree",
+      "type": "text"
+    },
+    {
+      "name": "institution",
+      "type": "text"
+    },
+    {
+      "name": "research_domains",
+      "type": "text"
+    },
+    {
+      "name": "projects",
+      "type": "text"
+    },
+    {
+      "name": "supported_programs",
+      "type": "text"
+    },
+    {
+      "name": "image_url",
+      "type": "text"
+    },
+    {
+      "name": "order_index",
+      "type": "integer"
+    }
+  ],
+  "mentor": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "name",
+      "type": "text"
+    },
+    {
+      "name": "degree",
+      "type": "text"
+    },
+    {
+      "name": "institution",
+      "type": "text"
+    },
+    {
+      "name": "research_domains",
+      "type": "text"
+    },
+    {
+      "name": "projects",
+      "type": "text"
+    },
+    {
+      "name": "supported_programs",
+      "type": "text"
+    },
+    {
+      "name": "image_url",
+      "type": "text"
+    },
+    {
+      "name": "order_index",
+      "type": "integer"
+    }
+  ],
+  "news": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "author",
+      "type": "text"
+    },
+    {
+      "name": "badges",
+      "type": "ARRAY"
+    },
+    {
+      "name": "excerpt",
+      "type": "text"
+    },
+    {
+      "name": "published_at",
+      "type": "date"
+    },
+    {
+      "name": "image_url",
+      "type": "text"
+    },
+    {
+      "name": "external_url",
+      "type": "text"
+    },
+    {
+      "name": "is_published",
+      "type": "boolean"
+    },
+    {
+      "name": "created_at",
+      "type": "timestamp with time zone"
+    },
+    {
+      "name": "is_top",
+      "type": "boolean"
+    }
+  ],
+  "offer": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "logo",
+      "type": "text"
+    },
+    {
+      "name": "count",
+      "type": "integer"
+    },
+    {
+      "name": "name",
+      "type": "character varying"
+    },
+    {
+      "name": "name_cn",
+      "type": "character varying"
+    },
+    {
+      "name": "country",
+      "type": "character varying"
+    },
+    {
+      "name": "rank",
+      "type": "character varying"
+    },
+    {
+      "name": "type",
+      "type": "character varying"
+    },
+    {
+      "name": "order_index",
+      "type": "integer"
+    }
+  ],
+  "success_story": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "type",
+      "type": "character varying"
+    },
+    {
+      "name": "name",
+      "type": "character varying"
+    },
+    {
+      "name": "image",
+      "type": "character varying"
+    },
+    {
+      "name": "school",
+      "type": "character varying"
+    },
+    {
+      "name": "labels",
+      "type": "ARRAY"
+    },
+    {
+      "name": "offers",
+      "type": "ARRAY"
+    },
+    {
+      "name": "evaluation",
+      "type": "text"
+    },
+    {
+      "name": "order_index",
+      "type": "integer"
+    }
+  ],
+  "summer_school": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "name",
+      "type": "text"
+    },
+    {
+      "name": "tags",
+      "type": "ARRAY"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "programs",
+      "type": "jsonb"
+    },
+    {
+      "name": "type",
+      "type": "text"
+    },
+    {
+      "name": "href",
+      "type": "text"
+    },
+    {
+      "name": "image",
+      "type": "text"
+    },
+    {
+      "name": "order_index",
+      "type": "integer"
+    }
+  ],
+  "tag": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "text",
+      "type": "text"
+    },
+    {
+      "name": "type",
+      "type": "text"
+    },
+    {
+      "name": "pos",
+      "type": "text"
+    },
+    {
+      "name": "order_index",
+      "type": "integer"
+    }
+  ],
+  "tag_color": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "type",
+      "type": "text"
+    },
+    {
+      "name": "color",
+      "type": "text"
+    },
+    {
+      "name": "order_index",
+      "type": "integer"
+    }
+  ],
+  "target_school": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "name",
+      "type": "character varying"
+    },
+    {
+      "name": "state",
+      "type": "character varying"
+    }
+  ],
+  "team_members": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "name",
+      "type": "character varying"
+    },
+    {
+      "name": "image_url",
+      "type": "text"
+    },
+    {
+      "name": "description",
+      "type": "ARRAY"
+    },
+    {
+      "name": "order_index",
+      "type": "integer"
+    },
+    {
+      "name": "name_zh",
+      "type": "character varying"
+    },
+    {
+      "name": "title_zh",
+      "type": "text"
+    },
+    {
+      "name": "description_zh",
+      "type": "ARRAY"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "image_url",
+      "type": "text"
+    },
+    {
+      "name": "name",
+      "type": "character varying"
+    },
+    {
+      "name": "highschool",
+      "type": "character varying"
+    },
+    {
+      "name": "offers",
+      "type": "ARRAY"
+    },
+    {
+      "name": "experiences",
+      "type": "ARRAY"
+    },
+    {
+      "name": "order_index",
+      "type": "integer"
+    }
+  ]
+}

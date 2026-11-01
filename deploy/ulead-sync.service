@@ -1,0 +1,9 @@
+[Unit]
+Description=Publish ULEAD content and import US inquiries
+After=docker.service network-online.target
+Requires=docker.service
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/ulead
+ExecStart=/usr/bin/docker compose run --rm worker
+TimeoutStartSec=600

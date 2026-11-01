@@ -3,7 +3,7 @@ import { revalidatePublicPages } from "@/lib/revalidate";
 
 export async function GET(req) {
   try {
-    const { rows } = await sql`SELECT * FROM contact_us ORDER BY created_at DESC`;
+    const { rows } = await sql`SELECT * FROM contact_us WHERE deleted_at IS NULL ORDER BY created_at DESC`;
     return new Response(JSON.stringify({ success: true, data: rows }), {
       status: 200,
     });
@@ -26,7 +26,7 @@ export async function DELETE(req) {
       );
     }
 
-    const { rowCount } = await sql`DELETE FROM contact_us WHERE id = ANY(${ids})`;
+    const { rowCount } = await sql`UPDATE contact_us SET deleted_at=now(),name='',contact='',source=NULL,questions=NULL WHERE id = ANY(${ids})`;
     revalidatePublicPages();
     return new Response(
       JSON.stringify({
