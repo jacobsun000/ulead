@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is the Ulead Education website - a Next.js 14 application for an educational consulting company that helps international students apply to US schools and universities. The site includes both public pages and an admin panel for content management.
+This is the Ulead Education website - a Next.js 16 application for an educational consulting company that helps international students apply to US schools and universities. The site includes both public pages and an admin panel for content management.
 
 **Localization Structure:**
 - English site (default): Routes under `app/(en)/` (accessible at `/`)
@@ -24,23 +24,22 @@ The project uses pnpm as the package manager (evidenced by pnpm-lock.yaml).
 ## Architecture & Key Technologies
 
 ### Core Stack
-- **Next.js 14** with App Router
-- **React 18** with Server Components
+- **Next.js 16** with App Router
+- **React 19** with Server Components
 - **Tailwind CSS** for styling
-- **Vercel Postgres** (@vercel/postgres) for database
+- **Neon serverless driver** (@neondatabase/serverless) for database
 - **Vercel Blob** (@vercel/blob) for file storage
-- **NextAuth** for authentication (admin panel)
 - **JWT** (jose library) for session management
 
 ### Database Integration
-- Uses Vercel Postgres with direct SQL queries via `sql` template literals
+- Uses the Neon driver via `lib/db.js` with direct SQL queries via `sql` template literals
 - Database tables include: `team_members`, `alumni`, `success_story`, `university`, `high_school`, `other_school`
 - All database operations are performed server-side in React Server Components or API routes
 
 ### Authentication & Security
-- JWT-based authentication with middleware protection
+- JWT-based authentication with proxy protection
 - Admin routes (`/admin/*` and `/api/admin/*`) require authentication
-- JWT verification handled in `middleware.js` using jose library
+- JWT verification handled in `proxy.js` using jose library
 - Secure cookie-based session management
 
 ## File Structure & Patterns
@@ -106,7 +105,7 @@ The project uses pnpm as the package manager (evidenced by pnpm-lock.yaml).
 ### Security Considerations
 - Environment variables stored in `.env.local`
 - JWT secrets and database credentials kept secure
-- Admin routes protected by middleware
+- Admin routes protected by proxy
 - Input validation in API routes
 
 ## Localization Implementation

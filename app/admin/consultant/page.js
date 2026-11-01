@@ -79,7 +79,7 @@ export default function ConsultantManager() {
     fetchConsultants();
   }, []);
 
-  const fetchConsultants = async () => {
+  async function fetchConsultants() {
     setLoading(true);
     try {
       const res = await fetch("/api/admin/consultant");
@@ -94,7 +94,7 @@ export default function ConsultantManager() {
     } finally {
       setLoading(false);
     }
-  };
+  }
 
   const handleImageUpload = async (file, filename) => {
     const res = await fetch(`/api/admin/image-upload?filename=${filename}`, {

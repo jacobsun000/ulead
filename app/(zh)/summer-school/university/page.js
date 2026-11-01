@@ -1,6 +1,6 @@
 import DecorativeShapes from '@/ui/zh/DecorativeShapes';
 import { CategoryTabs } from '@/ui/zh/CategoryTabs';
-import { sql } from '@vercel/postgres';
+import { sql } from '@/lib/db';
 
 
 export default async function University() {

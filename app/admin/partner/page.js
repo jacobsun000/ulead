@@ -13,7 +13,7 @@ export default function PartnerManager() {
     fetchSchools();
   }, []);
 
-  const fetchSchools = async () => {
+  async function fetchSchools() {
     setLoading(true);
     try {
       const res = await fetch("/api/admin/partner", { method: "GET" });
@@ -25,7 +25,7 @@ export default function PartnerManager() {
     } finally {
       setLoading(false);
     }
-  };
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();

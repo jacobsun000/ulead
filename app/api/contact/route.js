@@ -1,4 +1,4 @@
-import { db } from '@vercel/postgres';
+import { sql } from '@/lib/db';
 
 export async function POST(req) {
   const { name, contact, source, questions } = await req.json();
@@ -8,13 +8,10 @@ export async function POST(req) {
   }
 
   try {
-    const client = await db.connect();
-    const query = `
+    await sql`
       INSERT INTO contact_us (name, contact, source, questions)
-      VALUES ($1, $2, $3, $4)
+      VALUES (${name}, ${contact}, ${source}, ${questions})
     `;
-    await client.query(query, [name, contact, source, questions]);
-    client.release();
 
     return new Response(JSON.stringify({ message: 'Contact information saved successfully' }), { status: 200 });
   } catch (error) {

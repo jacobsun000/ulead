@@ -9,11 +9,7 @@ export default function ContactManager() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  useEffect(() => {
-    fetchContacts();
-  }, []);
-
-  const fetchContacts = async () => {
+  async function fetchContacts() {
     setLoading(true);
     try {
       const res = await fetch("/api/admin/contact", { method: "GET" });
@@ -28,7 +24,11 @@ export default function ContactManager() {
     } finally {
       setLoading(false);
     }
-  };
+  }
+
+  useEffect(() => {
+    fetchContacts();
+  }, []);
 
   const handleDelete = async () => {
     if (!confirm(`确定要删除所选的 ${selectedContacts.length} 条联系人记录吗？`)) return;

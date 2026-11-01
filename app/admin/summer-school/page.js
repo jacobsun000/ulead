@@ -93,7 +93,7 @@ export default function SummerSchoolManager() {
     setProgramsJson(JSON.stringify(form.programs, null, 2));
   }, [form.programs]);
 
-  const fetchSummerSchools = async () => {
+  async function fetchSummerSchools() {
     setLoading(true);
     try {
       const res = await fetch("/api/admin/summer-school", { method: "GET" });
@@ -105,7 +105,7 @@ export default function SummerSchoolManager() {
     } finally {
       setLoading(false);
     }
-  };
+  }
 
   const handleImageUpload = async (file, filename) => {
     const res = await fetch(`/api/admin/image-upload?filename=${filename}`, {

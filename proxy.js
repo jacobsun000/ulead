@@ -3,7 +3,7 @@ import { jwtVerify } from "jose";
 
 const JWT_SECRET = new TextEncoder().encode(process.env.JWT_SECRET);
 
-export async function middleware(req) {
+export async function proxy(req) {
   const token = req.cookies.get("token")?.value; // Extract JWT token from cookies
   const url = req.nextUrl.pathname;
 

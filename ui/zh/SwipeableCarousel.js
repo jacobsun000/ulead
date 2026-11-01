@@ -14,24 +14,6 @@ export function SwipeableCarousel({ children, className = '' }) {
 
   const totalCards = children.length
 
-  // If there are no cards, return early
-  if (totalCards === 0) {
-    return (
-      <div className={`w-full text-center py-8 ${className}`}>
-        <p className="text-gray-500">暂无校友信息</p>
-      </div>
-    )
-  }
-
-  // If there's only one card, show it centered without navigation
-  if (totalCards === 1) {
-    return (
-      <div className={`w-full flex justify-center py-8 ${className}`}>
-        {children[0]}
-      </div>
-    )
-  }
-
   // Track window size for responsive behavior
   useEffect(() => {
     const checkMobile = () => {
@@ -110,6 +92,24 @@ export function SwipeableCarousel({ children, className = '' }) {
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [currentIndex, totalCards])
+
+  // If there are no cards, return early
+  if (totalCards === 0) {
+    return (
+      <div className={`w-full text-center py-8 ${className}`}>
+        <p className="text-gray-500">暂无校友信息</p>
+      </div>
+    )
+  }
+
+  // If there's only one card, show it centered without navigation
+  if (totalCards === 1) {
+    return (
+      <div className={`w-full flex justify-center py-8 ${className}`}>
+        {children[0]}
+      </div>
+    )
+  }
 
   // Calculate card positions and z-indices
   const getCardStyle = (index) => {

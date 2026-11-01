@@ -1,6 +1,6 @@
 import Image from "next/image";
 import clsx from "clsx";
-import { sql } from '@vercel/postgres';
+import { sql } from '@/lib/db';
 import { ArrowRight } from 'lucide-react'
 
 import DecorativeShapes from "@/ui/zh/DecorativeShapes";

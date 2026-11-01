@@ -1,4 +1,4 @@
-import { sql } from '@vercel/postgres';
+import { sql } from '@/lib/db';
 import Image from 'next/image'
 
 import { AlumniCardHs } from '@/ui/zh/AlumniCard'

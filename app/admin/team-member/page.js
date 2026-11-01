@@ -79,7 +79,7 @@ export default function TeamMemberManager() {
     fetchTeamMembers();
   }, []);
 
-  const fetchTeamMembers = async () => {
+  async function fetchTeamMembers() {
     setLoading(true);
     try {
       const res = await fetch("/api/admin/team-member");
@@ -94,7 +94,7 @@ export default function TeamMemberManager() {
     } finally {
       setLoading(false);
     }
-  };
+  }
 
   const handleImageUpload = async (file, filename) => {
     const res = await fetch(`/api/admin/image-upload?filename=${filename}`, {

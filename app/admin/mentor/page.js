@@ -79,7 +79,7 @@ export default function MentorManager() {
     fetchMentors();
   }, []);
 
-  const fetchMentors = async () => {
+  async function fetchMentors() {
     setLoading(true);
     try {
       const res = await fetch("/api/admin/mentor");
@@ -94,7 +94,7 @@ export default function MentorManager() {
     } finally {
       setLoading(false);
     }
-  };
+  }
 
   const handleImageUpload = async (file, filename) => {
     const res = await fetch(`/api/admin/image-upload?filename=${filename}`, {

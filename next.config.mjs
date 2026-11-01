@@ -2,6 +2,7 @@
 export const nextConfig = {
   output: 'standalone',
   images: {
+    qualities: [75, 100],
     remotePatterns: [
       {
         protocol: "https",

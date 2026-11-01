@@ -1,4 +1,4 @@
-import { sql } from "@vercel/postgres";
+import { sql } from "@/lib/db";
 import { revalidatePublicPages } from "@/lib/revalidate";
 
 export async function GET(req) {

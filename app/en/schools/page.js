@@ -1,4 +1,4 @@
-import { sql } from '@vercel/postgres';
+import { sql } from '@/lib/db';
 import { writeFile } from 'fs/promises';
 import path from 'path';
 import BackButton from "@/ui/en/Back";

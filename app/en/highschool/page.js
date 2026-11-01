@@ -1,4 +1,4 @@
-import { sql } from '@vercel/postgres';
+import { sql } from '@/lib/db';
 import BackButton from "@/ui/en/Back";
 import SectionHeader from "@/ui/en/SectionHeader";
 import Image from 'next/image'

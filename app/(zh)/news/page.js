@@ -1,4 +1,4 @@
-import { sql } from "@vercel/postgres";
+import { sql } from "@/lib/db";
 import DecorativeShapes from "@/ui/zh/DecorativeShapes";
 import { NewsList } from "@/ui/zh/NewsList";
 import clsx from "clsx";

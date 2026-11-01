@@ -1,4 +1,4 @@
-import { sql } from '@vercel/postgres';
+import { sql } from '@/lib/db';
 import Image from "next/image";
 import Slider from "@/ui/en/Slider";
 import Panel from "@/ui/en/Panel";

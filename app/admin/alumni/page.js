@@ -84,7 +84,7 @@ export default function AlumniManager() {
     fetchAlumni();
   }, []);
 
-  const fetchAlumni = async () => {
+  async function fetchAlumni() {
     setLoading(true);
     try {
       const res = await fetch("/api/admin/alumni");
@@ -99,7 +99,7 @@ export default function AlumniManager() {
     } finally {
       setLoading(false);
     }
-  };
+  }
 
   const handleImageUpload = async (file, filename) => {
     const res = await fetch(`/api/admin/image-upload?filename=${filename}`, {
