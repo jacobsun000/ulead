@@ -67,7 +67,7 @@ export default async function Schools() {
       </div>
 
       <div className="text-center mb-4">
-        <Button text="More Details" href="/contacts" />
+        <Button text="More Details" href="/en/contacts" />
       </div>
 
       <BackButton />

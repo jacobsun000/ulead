@@ -29,8 +29,8 @@ export const metadata = {
   },
   alternates: {
     languages: {
-      'zh-CN': '/zh',
-      'en-US': '/',
+      'zh-CN': 'https://www.ulead-edu.com/zh/',
+      'en-US': 'https://en.ulead-edu.com/en/',
     }
   }
 };

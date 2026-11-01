@@ -1,5 +1,10 @@
 # ULEAD website
 
+China deployment preparation, verified pricing, migration inventory and cutover
+gates are documented in [deploy/MIGRATION.md](deploy/MIGRATION.md). No cloud
+deployment is performed by the preparation scripts. Keep `neon.env` and
+`.migration/` private and out of Git.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -33,10 +38,12 @@ The application uses Next.js 16 and React 19. `engines.node` selects Node.js
 26.x on Vercel. Use the committed `pnpm-lock.yaml` and `pnpm-workspace.yaml`;
 the workspace file includes security overrides for transitive dependencies.
 
-Database queries use `@neondatabase/serverless` through `lib/db.js`, retaining
+Vercel database queries use `@neondatabase/serverless` through `lib/db.js`, retaining
 the existing `POSTGRES_URL` environment variable (`DATABASE_URL` is a fallback).
-No database or schema migration is required. Production builds prerender public
-pages and need read access to the configured database.
+China deployments select the native PostgreSQL adapter with
+`DATABASE_DRIVER=postgres` and `DATABASE_URL`. Production builds prerender public
+pages and need read access to the configured database. See the migration guide
+before switching database providers.
 
 Run `pnpm lint`, `pnpm build`, and `pnpm audit` before deployment. Existing
 client-side loading effects are reported as lint warnings during the React

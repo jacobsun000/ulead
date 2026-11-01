@@ -46,7 +46,7 @@ export default async function Highschool() {
           <h1 className="text-2xl md:text-6xl font-bold text-white mb-8 md:ml-10">
             Private School <br />Application Consultation
           </h1>
-          <Button href="/contacts" text="Free Consultation" style={"text-white px-11 py-2 rounded-full bg-primary md:text-2xl md:ml-10"} />
+          <Button href="/en/contacts" text="Free Consultation" style={"text-white px-11 py-2 rounded-full bg-primary md:text-2xl md:ml-10"} />
         </div>
       </div>
 

@@ -66,7 +66,7 @@ function MainSection() {
 
         {/* "Chat Now" Button */}
         <a
-          href="/contacts"
+          href="/en/contacts"
           className="
             bg-primary text-white px-10 text-2xl py-3 rounded-sm shadow-lg 
             hidden md:block
@@ -102,7 +102,7 @@ function OurBeliefSection() {
             {`The company is fully committed to each student's individualized growth. Consultants serve as students' academic tutors, personal mentors, and collaborate closely with their families to form intimate, trusting relationships.`}
           </p>
           <div className="grid w-full justify-items-center lg:justify-items-start">
-            <Button href='/about-us' text='About Us' />
+            <Button href='/en/about-us' text='About Us' />
           </div>
         </div>
       </div>
@@ -213,11 +213,11 @@ async function MatriculationSection() {
   const panels = [
     {
       title: "University",
-      content: <OfferReport schools={university} href="/university" />,
+      content: <OfferReport schools={university} href="/en/university" />,
     },
     {
       title: "High School",
-      content: <OfferReport schools={highSchool} href="/highschool" />,
+      content: <OfferReport schools={highSchool} href="/en/highschool" />,
     },
     {
       title: "Junior High School",
@@ -296,7 +296,7 @@ async function OurTeamSection() {
 
       {/* Read More Button */}
       <div className="flex justify-center mt-8">
-        <Button text="Read More" href="/about-us" />
+        <Button text="Read More" href="/en/about-us" />
       </div>
     </section>
   );
@@ -388,7 +388,7 @@ async function UleadAlumnSection() {
       </div>
       <div className="hidden lg:flex flex-col items-center gap-8">
         <Slider showBullet showArrow elements={alumnCardsDesktop} />
-        <Button text="Explore More" href="/about-us" style={"bg-secondary"} />
+        <Button text="Explore More" href="/en/about-us" style={"bg-secondary"} />
       </div>
     </section>
   )

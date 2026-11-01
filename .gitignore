@@ -27,6 +27,11 @@ yarn-error.log*
 
 # local env files
 .env*.local
+*.env
+!*.env.example
+
+# Private migration exports and database backups
+/.migration/
 
 # vercel
 .vercel

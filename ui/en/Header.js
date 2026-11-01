@@ -4,12 +4,12 @@ import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 const navItems = [
-  { label: 'Home', href: '/' },
-  { label: 'About Us', href: '/about-us' },
-  { label: 'High School', href: '/highschool' },
-  { label: 'University', href: '/university' },
-  { label: 'Lead Program', href: '/lead-program' },
-  { label: 'Schools', href: '/schools' },
+  { label: 'Home', href: '/en' },
+  { label: 'About Us', href: '/en/about-us' },
+  { label: 'High School', href: '/en/highschool' },
+  { label: 'University', href: '/en/university' },
+  { label: 'Lead Program', href: '/en/lead-program' },
+  { label: 'Schools', href: '/en/schools' },
 ];
 
 function NavItem({ label, href, selected, setIsMobileMenuOpen, isMobile = false }) {
@@ -33,7 +33,7 @@ function NavItem({ label, href, selected, setIsMobileMenuOpen, isMobile = false 
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const pathname = usePathname();
+  const pathname = usePathname().replace(/\/$/, '') || '/';
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -58,7 +58,7 @@ export default function Header() {
         {navItems.map(({ label, href }) => (
           <NavItem key={label} label={label} href={href} setIsMobileMenuOpen={setIsMobileMenuOpen} selected={pathname === href} />
         ))}
-        <a href="/contacts" className="bg-primary text-white text-lg ml-4 p-1.5 rounded-[0.2rem] hover:bg-primaryLight transition duration-300">
+        <a href="/en/contacts" className="bg-primary text-white text-lg ml-4 p-1.5 rounded-[0.2rem] hover:bg-primaryLight transition duration-300">
           Contact Us
         </a>
       </nav>
@@ -66,7 +66,7 @@ export default function Header() {
       {/* Mobile View */}
       <div className="flex items-center lg:hidden">
         {/* Contact Us Button for Mobile */}
-        <a href="/contacts" className="bg-primary text-white text-xs p-2 rounded-md mr-4 hover:bg-primaryLight transition duration-300">
+        <a href="/en/contacts" className="bg-primary text-white text-xs p-2 rounded-md mr-4 hover:bg-primaryLight transition duration-300">
           Contact Us
         </a>
 

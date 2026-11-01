@@ -62,14 +62,14 @@ export default function Footer() {
         <div>
           <FooterItem
             title="Contact Us"
-            href="/contacts"
+            href="/en/contacts"
             sections={[
               { title: "Tel: +86-10-53350508", href: "" },
               { title: "E-Mail: program@ulead-edu.com", href: "" },
             ]} />
           <FooterItem
             title="Our Address"
-            href="/contacts#our-offices"
+            href="/en/contacts#our-offices"
             sections={[
               { title: "Location: Beijing, Chao Yang", href: "" },
               { title: "New York, Guangzhou", href: "" },
@@ -80,7 +80,7 @@ export default function Footer() {
           <FooterItem
             className="hidden lg:block"
             title="Home"
-            href="/"
+            href="/en"
             sections={[
               { title: "Our Mission" },
               { title: "Our Services" },
@@ -96,14 +96,14 @@ export default function Footer() {
         <div className="hidden lg:block">
           <FooterItem
             title="About Us"
-            href="/about-us"
+            href="/en/about-us"
             sections={[
               { title: "Founder" },
               { title: "Core Team" }
             ]} />
           <FooterItem
             title="Lead Program"
-            href="/lead-program"
+            href="/en/lead-program"
             sections={[
               { title: "Skills Development" },
               { title: "Lead Program Services" },
@@ -115,7 +115,7 @@ export default function Footer() {
         <div className="hidden lg:block">
           <FooterItem
             title="High School"
-            href="/highschool"
+            href="/en/highschool"
             sections={[
               { title: "Personalized Services" },
               { title: "Application Service Process", href: "#high-school-application-service-process" },
@@ -124,7 +124,7 @@ export default function Footer() {
 
           <FooterItem
             title="University"
-            href="/university"
+            href="/en/university"
             sections={[
               { title: "Personalized Services" },
               { title: "Matriculation" },
@@ -134,7 +134,7 @@ export default function Footer() {
         <div className="hidden lg:block">
           <FooterItem
             title="Schools"
-            href="/schools"
+            href="/en/schools"
             sections={[
               { title: "Our Target School" },
               { title: "How Ulead works with schools?" },
@@ -142,7 +142,7 @@ export default function Footer() {
             ]} />
           <FooterItem
             title="Chinese Website"
-            href="/zh"
+            href="https://www.ulead-edu.com/zh/"
             sections={[
             ]} />
         </div>

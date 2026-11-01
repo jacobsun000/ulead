@@ -33,7 +33,7 @@ function NavItem({ label, href, selected, setIsMobileMenuOpen, isMobile = false 
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const pathname = usePathname();
+  const pathname = usePathname().replace(/\/$/, '') || '/';
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);

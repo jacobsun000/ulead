@@ -14,7 +14,7 @@ export default function Services({ services }) {
         ))}
       </div>
       <div className="text-center">
-        <Button text="More Details" href="/contacts" />
+        <Button text="More Details" href="/en/contacts" />
       </div>
     </div>
   );

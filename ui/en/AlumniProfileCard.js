@@ -69,7 +69,7 @@ export default function AlumnProfileCard({ image_url: imageSrc, name, highschool
 
       {/* Read More Button */}
       <div className="flex md:hidden mt-6 justify-center">
-        <Button style={'text-xs'} text="Read More" href="/about-us" />
+        <Button style={'text-xs'} text="Read More" href="/en/about-us" />
       </div>
     </div>
   );

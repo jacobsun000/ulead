@@ -1,44 +1,36 @@
-import { NextResponse } from "next/server";
-import { jwtVerify } from "jose";
-
-const JWT_SECRET = new TextEncoder().encode(process.env.JWT_SECRET);
+import { NextResponse } from 'next/server';
+import { jwtVerify } from 'jose';
+import { legacyDestination, isAdminPath, adminAvailable } from './lib/site-routing.mjs';
 
 export async function proxy(req) {
-  const token = req.cookies.get("token")?.value; // Extract JWT token from cookies
-  const url = req.nextUrl.pathname;
-
-  // Handle admin authentication
-  if (url.startsWith("/admin")) {
-    if (!token) {
-      // Redirect to login if no token is found
-      return NextResponse.redirect(new URL("/login", req.url));
+  const pathname = req.nextUrl.pathname;
+  if (isAdminPath(pathname)) {
+    if (!adminAvailable(req.nextUrl.hostname, process.env)) {
+      return new NextResponse(null, { status: 404 });
     }
-
-    try {
-      // Verify the token using `jose`
-      await jwtVerify(token, JWT_SECRET);
-
-      // Allow access if token is valid
-      return NextResponse.next();
-    } catch (err) {
-      console.error("JWT verification failed:", err);
-      // Redirect to login if token is invalid or expired
-      return NextResponse.redirect(new URL("/login", req.url));
+    if (pathname.startsWith('/api/admin/') || pathname === '/api/admin' ||
+        pathname === '/admin' || pathname.startsWith('/admin/')) {
+      try {
+        if (!process.env.JWT_SECRET) throw new Error('Missing signing secret');
+        await jwtVerify(req.cookies.get('token')?.value || '',
+          new TextEncoder().encode(process.env.JWT_SECRET), { algorithms: ['HS256'] });
+      } catch {
+        if (pathname.startsWith('/api/')) {
+          return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
+        }
+        return NextResponse.redirect(new URL('/en/login/', req.url));
+      }
     }
   }
-
-  // Handle locale redirects for root path
-  if (url === "/") {
-    // You can add logic here to detect user's preferred language
-    // For now, default to English (no redirect needed since (en) is the default)
-    return NextResponse.next();
+  const destination = legacyDestination(pathname, process.env.SITE_REGION);
+  if (destination) {
+    const target = req.nextUrl.clone();
+    target.pathname = destination;
+    return NextResponse.redirect(target, 308);
   }
-
-  // Allow access to other routes
   return NextResponse.next();
 }
 
-// Apply middleware only to admin folder
 export const config = {
-  matcher: ["/admin/:path*", "/admin", "/api/admin/:path*"],
+  matcher: ['/((?!_next/static|_next/image|favicon.ico|img/|fonts/).*)'],
 };

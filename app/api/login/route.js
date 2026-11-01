@@ -1,32 +1,28 @@
-const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
-const JWT_SECRET = new TextEncoder().encode(process.env.JWT_SECRET);
+import { SignJWT } from 'jose';
+import { NextResponse } from 'next/server';
 
 export async function POST(req) {
-  const { username, password } = await req.json();
-
-  // Check if username matches
-  if (username !== ADMIN_USERNAME) {
-    return new Response(JSON.stringify({ message: 'Invalid credentials' }), { status: 401 });
+  const { ADMIN_USERNAME, ADMIN_PASSWORD, JWT_SECRET } = process.env;
+  if (!ADMIN_USERNAME || !ADMIN_PASSWORD || !JWT_SECRET) {
+    return NextResponse.json({ message: 'Login unavailable' }, { status: 503 });
   }
-
-  if (password !== ADMIN_PASSWORD) {
-    return new Response(JSON.stringify({ message: 'Invalid credentials' }), { status: 401 });
+  let credentials;
+  try {
+    credentials = await req.json();
+  } catch {
+    return NextResponse.json({ message: 'Invalid request' }, { status: 400 });
   }
-
-  // Generate a JWT token
-  const token = await generateToken({ username });
-
-  return new Response(JSON.stringify({ token }), { status: 200 });
-}
-
-import { SignJWT } from "jose";
-
-
-async function generateToken(payload) {
-  return await new SignJWT(payload)
-    .setProtectedHeader({ alg: "HS256" })
-    .setIssuedAt()
-    .setExpirationTime("3d")
-    .sign(JWT_SECRET);
+  if (credentials?.username !== ADMIN_USERNAME || credentials?.password !== ADMIN_PASSWORD) {
+    return NextResponse.json({ message: 'Invalid credentials' }, { status: 401 });
+  }
+  const token = await new SignJWT({ username: credentials.username })
+    .setProtectedHeader({ alg: 'HS256' })
+    .setIssuedAt().setExpirationTime('3d')
+    .sign(new TextEncoder().encode(JWT_SECRET));
+  const response = NextResponse.json({ success: true });
+  response.cookies.set('token', token, {
+    httpOnly: true, secure: process.env.NODE_ENV === 'production',
+    sameSite: 'strict', path: '/', maxAge: 3 * 24 * 60 * 60,
+  });
+  return response;
 }

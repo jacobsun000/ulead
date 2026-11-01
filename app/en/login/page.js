@@ -18,8 +18,6 @@ export default function Login() {
     });
 
     if (res.ok) {
-      const { token } = await res.json();
-      document.cookie = `token=${token}; path=/`;
       router.push("/admin"); // Redirect on successful login
     } else {
       setError("Invalid username or password");

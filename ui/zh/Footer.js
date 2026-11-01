@@ -150,7 +150,7 @@ export default function Footer() {
             ]} />
           <FooterItem
             title="英文网站"
-            href="/"
+            href="https://en.ulead-edu.com/en/"
             sections={[
             ]} />
         </div>
