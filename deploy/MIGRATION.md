@@ -7,6 +7,10 @@ Ubuntu 24.04, 12 months, quoted CNY 663, manual renewal. No DNS changed, no
 source database/Blob data written, and no application deployment triggered.
 This is not yet a production cutover release.
 
+Provisioning was verified complete: `RUNNING`, public IP `49.233.128.125`, created
+`2026-11-01T04:14:59Z`, expires `2027-11-01T04:14:59Z`. Renewal is
+`NOTIFY_AND_MANUAL_RENEW`. The server has not yet been configured for the website.
+
 ## Confirmed requirements
 
 - China public site: `www.ulead-edu.com`, root redirects to `/zh/`.
